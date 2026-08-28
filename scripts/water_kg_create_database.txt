@@ -1,0 +1,711 @@
+-- ============================================================================
+-- Water Knowledge Graph – PostgreSQL/PostGIS-Datenbankschema
+-- Ziel: PostgreSQL 15+ mit PostGIS 3+
+--
+-- Ausführung, wenn die Datenbank bereits existiert:
+--   psql -U <BENUTZER> -d <DATENBANK> -f water_kg_create_database.txt
+--
+-- Optionale Neuanlage über die Kommandozeile:
+--   createdb -U <BENUTZER> water_kg
+--   psql -U <BENUTZER> -d water_kg -f water_kg_create_database.txt
+--
+-- Das Skript erzeugt das Schema. Der eigentliche ETL-Import der CSV- und
+-- Shapefile-Daten erfolgt anschließend separat.
+-- ============================================================================
+
+BEGIN;
+
+CREATE EXTENSION IF NOT EXISTS postgis;
+
+CREATE SCHEMA IF NOT EXISTS water_kg;
+
+-- --------------------------------------------------------------------------
+-- Kontrollierte Wertebereiche
+-- --------------------------------------------------------------------------
+
+CREATE TYPE water_kg.surface_water_type AS ENUM ('lake', 'river', 'other');
+
+CREATE TYPE water_kg.provenance_role AS ENUM (
+    'primary_source',
+    'geometry_source',
+    'attribute_source',
+    'derived_from',
+    'spatial_relation_left',
+    'spatial_relation_right',
+    'code_dictionary',
+    'manual_annotation'
+);
+
+-- --------------------------------------------------------------------------
+-- Quellen und Provenienz
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.source_file (
+    source_file_id       bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    file_name            text NOT NULL,
+    relative_path        text,
+    file_type            text NOT NULL
+                             CHECK (file_type IN ('csv', 'shapefile', 'other')),
+    file_checksum        text,
+    companion_files      text[],
+    file_modified_at     timestamptz,
+    imported_at          timestamptz NOT NULL DEFAULT now(),
+    import_version       text,
+    description          text,
+
+    UNIQUE NULLS NOT DISTINCT (file_name, file_checksum)
+);
+
+CREATE TABLE water_kg.source_record (
+    source_record_id     bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    source_file_id       bigint NOT NULL
+                             REFERENCES water_kg.source_file(source_file_id),
+    source_row_number    bigint,
+    source_object_id     text,
+    source_key           jsonb,
+    raw_values           jsonb,
+
+    CHECK (source_row_number IS NULL OR source_row_number > 0),
+    UNIQUE NULLS NOT DISTINCT (
+        source_file_id,
+        source_row_number,
+        source_object_id
+    )
+);
+
+-- Polymorphe Provenienz: entity_type + entity_key bilden die stabile Ziel-URI.
+-- So kann auch eine Entität aus mehreren Quelldatensätzen aufgebaut werden.
+CREATE TABLE water_kg.entity_source_provenance (
+    provenance_id        bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    entity_type          text NOT NULL,
+    entity_key           text NOT NULL,
+    source_record_id     bigint NOT NULL
+                             REFERENCES water_kg.source_record(source_record_id),
+    provenance_role      water_kg.provenance_role NOT NULL,
+    source_columns       text[],
+    transformation       text,
+    confidence           numeric,
+    created_at           timestamptz NOT NULL DEFAULT now(),
+
+    CHECK (confidence IS NULL OR confidence BETWEEN 0 AND 1),
+    UNIQUE (
+        entity_type,
+        entity_key,
+        source_record_id,
+        provenance_role
+    )
+);
+
+-- --------------------------------------------------------------------------
+-- Oberflächenwasserkörper: Seen und Flüsse bleiben von Grundwasser getrennt.
+-- Quellen: lakewaterbody.shp und stammdaten.csv
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.water_body (
+    eu_cd_lw             text PRIMARY KEY,
+    eu_cd_ls             text UNIQUE,
+    water_body_type      water_kg.surface_water_type NOT NULL,
+    name                 text NOT NULL,
+    lawa_id              text,
+    area_km2             numeric CHECK (area_km2 IS NULL OR area_km2 >= 0),
+    volume_m3            numeric CHECK (volume_m3 IS NULL OR volume_m3 >= 0),
+    max_depth_m          numeric CHECK (max_depth_m IS NULL OR max_depth_m >= 0),
+    water_type           text,
+    artificial           boolean,
+    modified             boolean,
+    river_basin_code     text,
+    planning_unit_code   text,
+    geometry             geometry(MultiPolygon, 25833),
+    created_at           timestamptz NOT NULL DEFAULT now()
+);
+
+-- --------------------------------------------------------------------------
+-- Grundwasserkörper
+-- Quelle: groundwaterbody.shp
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.groundwater_body (
+    eu_cd_gb              text PRIMARY KEY,
+    name                  text,
+    horizon               integer,
+    aquifer_type          text,
+    geological_formation  text,
+    layered               text,
+    river_basin_code      text,
+    planning_unit_code    text,
+    quantitative_status   text,
+    chemical_status       text,
+    metadata_reference    text,
+    geometry              geometry(MultiPolygon, 25833),
+    created_at            timestamptz NOT NULL DEFAULT now()
+);
+
+-- --------------------------------------------------------------------------
+-- Einzugsgebiete
+-- Quelle: catchments.shp
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.catchment (
+    catchment_id          text PRIMARY KEY,
+    name                  text,
+    area_km2              numeric CHECK (area_km2 IS NULL OR area_km2 >= 0),
+    area_number           text,
+    water_body_id         text
+                              REFERENCES water_kg.water_body(eu_cd_lw),
+    planning_unit_code    text,
+    river_basin_code      text,
+    water_authority       text,
+    description_from      text,
+    description_to        text,
+    comment               text,
+    metadata_reference    text,
+    geometry              geometry(MultiPolygon, 25833),
+    created_at            timestamptz NOT NULL DEFAULT now()
+);
+
+-- --------------------------------------------------------------------------
+-- Messstellen
+-- Quelle: messstellen.shp
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.monitoring_station (
+    station_id            bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    station_code          text NOT NULL,
+    name                  text,
+    water_body_id         text
+                              REFERENCES water_kg.water_body(eu_cd_lw),
+    location              geometry(Point, 25833),
+    created_at            timestamptz NOT NULL DEFAULT now(),
+
+    UNIQUE NULLS NOT DISTINCT (station_code, water_body_id)
+);
+
+-- --------------------------------------------------------------------------
+-- Parameter
+-- Quellen: einzeldaten.csv und einzeldaten_chemie.csv
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.parameter (
+    parameter_id          bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name                  text NOT NULL,
+    quality_component     text,
+    unit                  text,
+    created_at            timestamptz NOT NULL DEFAULT now(),
+
+    UNIQUE NULLS NOT DISTINCT (name, quality_component, unit)
+);
+
+-- --------------------------------------------------------------------------
+-- Probenabschnitte
+-- Quelle: einzeldaten_abschnitte.csv
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.sampling_section (
+    sampling_section_id   bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    water_body_id         text NOT NULL
+                              REFERENCES water_kg.water_body(eu_cd_lw),
+    station_id            bigint
+                              REFERENCES water_kg.monitoring_station(station_id),
+    source_station_code   text,
+    section_code          text,
+    sampling_year         integer,
+    length_from           numeric,
+    length_to             numeric,
+    depth_from            numeric,
+    depth_to              numeric,
+    created_at            timestamptz NOT NULL DEFAULT now(),
+
+    CHECK (
+        length_from IS NULL OR length_to IS NULL OR length_from <= length_to
+    ),
+    CHECK (
+        depth_from IS NULL OR depth_to IS NULL OR depth_from <= depth_to
+    )
+);
+
+-- --------------------------------------------------------------------------
+-- Einzelmessungen
+-- Quellen: einzeldaten.csv und einzeldaten_chemie.csv
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.measurement (
+    measurement_id        bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    water_body_id         text NOT NULL
+                              REFERENCES water_kg.water_body(eu_cd_lw),
+    station_id            bigint
+                              REFERENCES water_kg.monitoring_station(station_id),
+    source_station_code   text,
+    parameter_id          bigint NOT NULL
+                              REFERENCES water_kg.parameter(parameter_id),
+    sampling_section_id   bigint
+                              REFERENCES water_kg.sampling_section(
+                                  sampling_section_id
+                              ),
+    sampling_section      text,
+    measured_at           date,
+    value                 numeric,
+    comment               text,
+    method                text,
+    monitoring_program    text,
+    abundance_type        text,
+    created_at            timestamptz NOT NULL DEFAULT now()
+);
+
+-- --------------------------------------------------------------------------
+-- Gewässerbewertungen
+-- Quelle: wasserkoerper_bewertung.csv
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.water_body_assessment (
+    assessment_id         bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    water_body_id         text NOT NULL
+                              REFERENCES water_kg.water_body(eu_cd_lw),
+    parameter             text NOT NULL,
+    assessment_year       integer,
+    value                 numeric,
+    method                text,
+    quality_component     text,
+    comment               text,
+    created_at            timestamptz NOT NULL DEFAULT now()
+);
+
+-- --------------------------------------------------------------------------
+-- Messstellenbewertungen
+-- Quelle: messstellen_bewertung.csv
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.station_assessment (
+    station_assessment_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    water_body_id         text NOT NULL
+                              REFERENCES water_kg.water_body(eu_cd_lw),
+    station_id            bigint
+                              REFERENCES water_kg.monitoring_station(station_id),
+    source_station_code   text,
+    parameter             text NOT NULL,
+    assessment_year       integer,
+    value                 numeric,
+    method                text,
+    quality_component     text,
+    unit                  text,
+    description           text,
+    expert_judgement      text,
+    comment               text,
+    reported_x            numeric,
+    reported_y            numeric,
+    created_at            timestamptz NOT NULL DEFAULT now()
+);
+
+-- --------------------------------------------------------------------------
+-- Schadstoffe
+-- Quellen: GW_measures.csv und OW_measures.csv
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.pollutant (
+    pollutant_id          bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    pollutant_code        text NOT NULL UNIQUE,
+    name                  text,
+    description           text,
+    created_at            timestamptz NOT NULL DEFAULT now()
+);
+
+-- Die "measures"-Dateien enthalten Status-, Risiko-, Trend- und
+-- Ausnahmedaten, nicht klassische Einzelmessungen.
+CREATE TABLE water_kg.water_body_chemical_status (
+    chemical_status_id    bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    surface_water_body_id text
+                              REFERENCES water_kg.water_body(eu_cd_lw),
+    groundwater_body_id   text
+                              REFERENCES water_kg.groundwater_body(eu_cd_gb),
+    pollutant_id          bigint NOT NULL
+                              REFERENCES water_kg.pollutant(pollutant_id),
+    failed_standard       boolean,
+    risk_code             text,
+    upward_trend_code     text,
+    trend_code            text,
+    trend_reversal_code   text,
+    exemption_type        text,
+    exemption_reason      text,
+    exception_code        text,
+    fail_reason_code      text,
+    fail_reason_other     text,
+    level_set             text,
+    level_value           numeric,
+    level_unit            text,
+    inserted_at           date,
+    inserted_by           text,
+    river_basin_code      text,
+    metadata_reference    text,
+    created_at            timestamptz NOT NULL DEFAULT now(),
+
+    CHECK (
+        (surface_water_body_id IS NOT NULL)::integer
+        + (groundwater_body_id IS NOT NULL)::integer = 1
+    )
+);
+
+-- --------------------------------------------------------------------------
+-- Schutzgebiete
+-- Quellen: protection_area_bewertung.csv, ffh.shp, waterprotection.shp,
+--          recreation_areas.shp
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.protected_area (
+    protected_area_id     text PRIMARY KEY,
+    name                  text,
+    area_type             text,
+    legislation_code      text,
+    legislation_name      text,
+    legislation_url       text,
+    designation_date      date,
+    geometry              geometry(MultiPolygon, 25833),
+    created_at            timestamptz NOT NULL DEFAULT now()
+);
+
+CREATE TABLE water_kg.water_body_protected_area (
+    relation_id           bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    water_body_id         text NOT NULL
+                              REFERENCES water_kg.water_body(eu_cd_lw),
+    protected_area_id     text NOT NULL
+                              REFERENCES water_kg.protected_area(
+                                  protected_area_id
+                              ),
+    relation_method       text NOT NULL
+                              CHECK (
+                                  relation_method IN (
+                                      'source_reference',
+                                      'spatial_join'
+                                  )
+                              ),
+    evolution_type        text,
+    exemption_code       text,
+    comment               text,
+    overlap_area_km2      numeric,
+    overlap_ratio         numeric,
+    created_at            timestamptz NOT NULL DEFAULT now(),
+
+    CHECK (
+        overlap_ratio IS NULL OR overlap_ratio BETWEEN 0 AND 1
+    ),
+    UNIQUE (water_body_id, protected_area_id, relation_method)
+);
+
+-- --------------------------------------------------------------------------
+-- Räumlich abgeleitete Beziehungen für den Knowledge Graph
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.station_groundwater_body (
+    relation_id           bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    station_id            bigint NOT NULL
+                              REFERENCES water_kg.monitoring_station(station_id),
+    groundwater_body_id   text NOT NULL
+                              REFERENCES water_kg.groundwater_body(eu_cd_gb),
+    relation_type         text NOT NULL DEFAULT 'located_in',
+    determination_method  text NOT NULL DEFAULT 'spatial_join',
+    confidence            numeric,
+    calculated_at         timestamptz NOT NULL DEFAULT now(),
+
+    CHECK (confidence IS NULL OR confidence BETWEEN 0 AND 1),
+    UNIQUE (station_id, groundwater_body_id)
+);
+
+CREATE TABLE water_kg.water_body_groundwater_body (
+    relation_id           bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    water_body_id         text NOT NULL
+                              REFERENCES water_kg.water_body(eu_cd_lw),
+    groundwater_body_id   text NOT NULL
+                              REFERENCES water_kg.groundwater_body(eu_cd_gb),
+    relation_type         text NOT NULL,
+    overlap_area_km2      numeric,
+    water_body_overlap_ratio numeric,
+    determination_method  text NOT NULL DEFAULT 'spatial_join',
+    calculated_at         timestamptz NOT NULL DEFAULT now(),
+
+    CHECK (
+        water_body_overlap_ratio IS NULL
+        OR water_body_overlap_ratio BETWEEN 0 AND 1
+    ),
+    UNIQUE (water_body_id, groundwater_body_id)
+);
+
+CREATE TABLE water_kg.catchment_groundwater_body (
+    relation_id           bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    catchment_id          text NOT NULL
+                              REFERENCES water_kg.catchment(catchment_id),
+    groundwater_body_id   text NOT NULL
+                              REFERENCES water_kg.groundwater_body(eu_cd_gb),
+    relation_type         text NOT NULL,
+    overlap_area_km2      numeric,
+    catchment_overlap_ratio numeric,
+    determination_method  text NOT NULL DEFAULT 'spatial_join',
+    calculated_at         timestamptz NOT NULL DEFAULT now(),
+
+    CHECK (
+        catchment_overlap_ratio IS NULL
+        OR catchment_overlap_ratio BETWEEN 0 AND 1
+    ),
+    UNIQUE (catchment_id, groundwater_body_id)
+);
+
+CREATE TABLE water_kg.station_catchment (
+    relation_id           bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    station_id            bigint NOT NULL
+                              REFERENCES water_kg.monitoring_station(station_id),
+    catchment_id          text NOT NULL
+                              REFERENCES water_kg.catchment(catchment_id),
+    relation_type         text NOT NULL DEFAULT 'located_in',
+    determination_method  text NOT NULL DEFAULT 'spatial_join',
+    calculated_at         timestamptz NOT NULL DEFAULT now(),
+
+    UNIQUE (station_id, catchment_id)
+);
+
+-- --------------------------------------------------------------------------
+-- Kommentare und Annotationen
+-- subject_type + subject_key entsprechen dem Ziel in der Fachtabelle.
+-- Originalkommentare dürfen zusätzlich in der jeweiligen Fachtabelle bleiben.
+-- --------------------------------------------------------------------------
+
+CREATE TABLE water_kg.annotation (
+    annotation_id         bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    subject_type          text NOT NULL,
+    subject_key           text NOT NULL,
+    annotation_type       text NOT NULL DEFAULT 'comment',
+    annotation_text       text NOT NULL,
+    language_code         text DEFAULT 'de',
+    created_at            timestamptz NOT NULL DEFAULT now(),
+    created_by            text,
+    source_record_id      bigint
+                              REFERENCES water_kg.source_record(
+                                  source_record_id
+                              ),
+    source_column         text
+);
+
+-- --------------------------------------------------------------------------
+-- Quellenkatalog: Alle aktuell vorhandenen Eingabedateien
+-- --------------------------------------------------------------------------
+
+INSERT INTO water_kg.source_file (
+    file_name,
+    relative_path,
+    file_type,
+    companion_files,
+    description
+)
+VALUES
+    (
+        'lakewaterbody.shp',
+        'dummy_data/lakewaterbody.shp',
+        'shapefile',
+        ARRAY[
+            'lakewaterbody.dbf',
+            'lakewaterbody.shx',
+            'lakewaterbody.prj'
+        ],
+        'Oberflächenwasserkörper: Attribute und Geometrien'
+    ),
+    (
+        'stammdaten.csv',
+        'dummy_data/stammdaten.csv',
+        'csv',
+        NULL,
+        'Erweiterte Stammdaten der Seen'
+    ),
+    (
+        'groundwaterbody.shp',
+        'dummy_data/groundwaterbody.shp',
+        'shapefile',
+        ARRAY[
+            'groundwaterbody.dbf',
+            'groundwaterbody.shx',
+            'groundwaterbody.prj'
+        ],
+        'Grundwasserkörper: Attribute und Geometrien'
+    ),
+    (
+        'catchments.shp',
+        'dummy_data/catchments.shp',
+        'shapefile',
+        ARRAY['catchments.dbf', 'catchments.shx', 'catchments.prj'],
+        'Einzugsgebiete: Attribute und Geometrien'
+    ),
+    (
+        'messstellen.shp',
+        'dummy_data/messstellen.shp',
+        'shapefile',
+        ARRAY['messstellen.dbf', 'messstellen.shx', 'messstellen.prj'],
+        'Messstellen: Attribute und Punktgeometrien'
+    ),
+    (
+        'einzeldaten.csv',
+        'dummy_data/einzeldaten.csv',
+        'csv',
+        NULL,
+        'Biologische Einzelmessungen'
+    ),
+    (
+        'einzeldaten_chemie.csv',
+        'dummy_data/einzeldaten_chemie.csv',
+        'csv',
+        NULL,
+        'Chemische und hydrologische Einzelmessungen'
+    ),
+    (
+        'einzeldaten_abschnitte.csv',
+        'dummy_data/einzeldaten_abschnitte.csv',
+        'csv',
+        NULL,
+        'Probenabschnitte'
+    ),
+    (
+        'wasserkoerper_bewertung.csv',
+        'dummy_data/wasserkoerper_bewertung.csv',
+        'csv',
+        NULL,
+        'Bewertungen auf Ebene der Oberflächenwasserkörper'
+    ),
+    (
+        'messstellen_bewertung.csv',
+        'dummy_data/messstellen_bewertung.csv',
+        'csv',
+        NULL,
+        'Bewertungen auf Ebene der Messstellen'
+    ),
+    (
+        'GW_measures.csv',
+        'dummy_data/GW_measures.csv',
+        'csv',
+        NULL,
+        'Schadstoff-, Risiko-, Trend- und Ausnahmedaten für Grundwasser'
+    ),
+    (
+        'OW_measures.csv',
+        'dummy_data/OW_measures.csv',
+        'csv',
+        NULL,
+        'Chemischer Status und Ausnahmen für Oberflächenwasser'
+    ),
+    (
+        'protection_area_bewertung.csv',
+        'dummy_data/protection_area_bewertung.csv',
+        'csv',
+        NULL,
+        'Schutzgebietsattribute und Zuordnungen zu Wasserkörpern'
+    ),
+    (
+        'ffh.shp',
+        'dummy_data/ffh.shp',
+        'shapefile',
+        ARRAY['ffh.dbf', 'ffh.shx', 'ffh.prj'],
+        'FFH-Schutzgebiete'
+    ),
+    (
+        'waterprotection.shp',
+        'dummy_data/waterprotection.shp',
+        'shapefile',
+        ARRAY[
+            'waterprotection.dbf',
+            'waterprotection.shx',
+            'waterprotection.prj'
+        ],
+        'Wasserschutzgebiete'
+    ),
+    (
+        'recreation_areas.shp',
+        'dummy_data/recreation_areas.shp',
+        'shapefile',
+        ARRAY[
+            'recreation_areas.dbf',
+            'recreation_areas.shx',
+            'recreation_areas.prj'
+        ],
+        'Geschützte Erholungsgebiete'
+    )
+ON CONFLICT DO NOTHING;
+
+-- --------------------------------------------------------------------------
+-- Indizes
+-- --------------------------------------------------------------------------
+
+CREATE INDEX idx_source_record_file
+    ON water_kg.source_record(source_file_id);
+
+CREATE INDEX idx_provenance_entity
+    ON water_kg.entity_source_provenance(entity_type, entity_key);
+
+CREATE INDEX idx_provenance_source
+    ON water_kg.entity_source_provenance(source_record_id);
+
+CREATE INDEX idx_water_body_geometry
+    ON water_kg.water_body USING gist (geometry);
+
+CREATE INDEX idx_groundwater_body_geometry
+    ON water_kg.groundwater_body USING gist (geometry);
+
+CREATE INDEX idx_catchment_geometry
+    ON water_kg.catchment USING gist (geometry);
+
+CREATE INDEX idx_monitoring_station_location
+    ON water_kg.monitoring_station USING gist (location);
+
+CREATE INDEX idx_measurement_water_body
+    ON water_kg.measurement(water_body_id);
+
+CREATE INDEX idx_measurement_station
+    ON water_kg.measurement(station_id);
+
+CREATE INDEX idx_measurement_parameter
+    ON water_kg.measurement(parameter_id);
+
+CREATE INDEX idx_measurement_date
+    ON water_kg.measurement(measured_at);
+
+CREATE INDEX idx_chemical_status_surface
+    ON water_kg.water_body_chemical_status(surface_water_body_id);
+
+CREATE INDEX idx_chemical_status_groundwater
+    ON water_kg.water_body_chemical_status(groundwater_body_id);
+
+CREATE INDEX idx_annotation_subject
+    ON water_kg.annotation(subject_type, subject_key);
+
+-- --------------------------------------------------------------------------
+-- Sicht für die Quellenprüfung aus Knowledge-Graph-Abfragen
+-- --------------------------------------------------------------------------
+
+CREATE VIEW water_kg.v_entity_provenance AS
+SELECT
+    esp.entity_type,
+    esp.entity_key,
+    esp.provenance_role,
+    sf.file_name,
+    sf.relative_path,
+    sf.file_checksum,
+    sf.import_version,
+    sr.source_row_number,
+    sr.source_object_id,
+    sr.source_key,
+    esp.source_columns,
+    esp.transformation,
+    esp.confidence,
+    sf.imported_at
+FROM water_kg.entity_source_provenance esp
+JOIN water_kg.source_record sr
+    ON sr.source_record_id = esp.source_record_id
+JOIN water_kg.source_file sf
+    ON sf.source_file_id = sr.source_file_id;
+
+COMMIT;
+
+-- --------------------------------------------------------------------------
+-- Prüfung nach der Erstellung
+-- --------------------------------------------------------------------------
+
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'water_kg'
+ORDER BY table_name;
+
+SELECT
+    PostGIS_Full_Version() AS postgis_version;
+

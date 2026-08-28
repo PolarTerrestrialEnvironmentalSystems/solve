@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SOLVE · Seenwissen</title>
+  <style>
+    :root { --ink:#132925; --muted:#60726e; --paper:#f3f6f1; --card:#fff; --lake:#087e74; --lake2:#9dd6c9; --line:#dbe5df; --warn:#a04a29; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:radial-gradient(circle at 85% 5%,#d9eee7 0,transparent 28rem),var(--paper); font:15px/1.5 Inter,Segoe UI,sans-serif; }
+    header,main { width:min(1180px,calc(100% - 32px)); margin:auto; }
+    header { padding:44px 0 24px; display:flex; justify-content:space-between; align-items:end; gap:24px; }
+    .eyebrow { color:var(--lake); font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { margin:4px 0 3px; font:600 clamp(30px,5vw,54px)/1.05 Georgia,serif; letter-spacing:-.035em; }
+    .subtitle { color:var(--muted); max-width:650px; margin:0; }
+    #health { padding:8px 12px; background:#fff9; border:1px solid var(--line); border-radius:99px; white-space:nowrap; font-size:13px; }
+    #health.ok::before { content:'●'; color:#2a9b64; margin-right:7px; }
+    #health.error::before { content:'●'; color:#c34c37; margin-right:7px; }
+    .ask-card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px; box-shadow:0 18px 55px #193c3020; }
+    form { display:flex; gap:10px; }
+    input,textarea,button,select { font:inherit; }
+    input,textarea { width:100%; border:1px solid #bdcec7; border-radius:12px; padding:13px 15px; color:var(--ink); background:#fbfdfb; outline:none; }
+    input:focus,textarea:focus { border-color:var(--lake); box-shadow:0 0 0 3px #087e7418; }
+    button { border:0; border-radius:12px; padding:12px 18px; background:var(--lake); color:white; cursor:pointer; font-weight:700; white-space:nowrap; }
+    button:hover { filter:brightness(.92); }
+    button:disabled { opacity:.55; cursor:wait; }
+    .examples { display:flex; flex-wrap:wrap; gap:7px; margin-top:13px; }
+    .chip { background:#edf6f2; color:#17675e; padding:7px 10px; font-size:13px; font-weight:600; }
+    .workspace { display:grid; grid-template-columns:minmax(0,1fr) 310px; gap:18px; margin:18px 0 48px; align-items:start; }
+    .panel { background:#fffc; border:1px solid var(--line); border-radius:18px; overflow:hidden; }
+    .panel-head { padding:18px 20px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:15px; align-items:start; }
+    h2 { font:600 24px/1.2 Georgia,serif; margin:0 0 5px; }
+    .description,.meta,.empty { color:var(--muted); font-size:13px; }
+    .answer { margin:16px 20px; border-left:4px solid var(--lake); background:#eef8f4; padding:14px 16px; border-radius:0 10px 10px 0; font-size:16px; }
+    .toolbar { display:flex; align-items:center; gap:8px; padding:0 20px 14px; }
+    .toolbar button { background:#e6f1ed; color:#23675f; padding:8px 11px; font-size:13px; }
+    .table-wrap { overflow:auto; max-height:540px; border-top:1px solid var(--line); }
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    th { position:sticky; top:0; z-index:1; background:#edf3ef; text-align:left; padding:10px 12px; white-space:nowrap; }
+    td { border-top:1px solid #e8eeea; padding:9px 12px; max-width:310px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    tr:hover td { background:#f6faf7; }
+    aside { padding:18px; }
+    aside h3 { font-size:14px; margin:0 0 8px; }
+    .metric { font:600 36px/1 Georgia,serif; margin:8px 0 2px; color:var(--lake); }
+    .bar-chart { display:grid; gap:9px; margin-top:13px; }
+    .bar-row { display:grid; grid-template-columns:90px 1fr 48px; gap:8px; align-items:center; font-size:12px; }
+    .bar-label { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .bar-track { height:10px; background:#e4ede9; border-radius:20px; overflow:hidden; }
+    .bar { height:100%; background:linear-gradient(90deg,var(--lake),var(--lake2)); border-radius:20px; }
+    details { margin-top:15px; border-top:1px solid var(--line); padding-top:14px; }
+    summary { cursor:pointer; font-weight:700; }
+    textarea { min-height:130px; resize:vertical; margin:10px 0; font:13px/1.5 Consolas,monospace; }
+    .notice { padding:14px; color:var(--warn); }
+    .loading { opacity:.55; }
+    footer { color:var(--muted); font-size:12px; padding:0 0 30px; }
+    @media(max-width:800px){ header{align-items:start;flex-direction:column}.workspace{grid-template-columns:1fr} form{flex-direction:column} }
+  </style>
+</head>
+<body>
+  <header>
+    <div><div class="eyebrow">SOLVE Knowledge Graph</div><h1>Seenwissen</h1><p class="subtitle">Fragen stellen, Beziehungen nachvollziehen und Ergebnisse als analysefähigen Datamart exportieren.</p></div>
+    <div id="health">Verbindung wird geprüft …</div>
+  </header>
+  <main>
+    <section class="ask-card">
+      <form id="ask-form"><input id="question" required autocomplete="off" placeholder="Was möchten Sie über die Seen wissen?"><button id="ask-button">Analysieren</button></form>
+      <div class="examples">
+        <button class="chip" data-question="Wie hängen chemischer Zustand und Bewertung der Seen zusammen?">Chemie ↔ Bewertung</button>
+        <button class="chip" data-question="Welcher ist der größte See?">Größter See</button>
+        <button class="chip" data-question="Welche chemischen Überschreitungen gibt es?">Überschreitungen</button>
+        <button class="chip" data-question="Gib mir einen Datamart der Messwerte je See und Parameter.">Messdaten-Datamart</button>
+      </div>
+    </section>
+    <div class="workspace">
+      <section class="panel" id="result-panel">
+        <div class="panel-head"><div><h2 id="title">Bereit für eine Frage</h2><div id="description" class="description">Wählen Sie ein Beispiel oder formulieren Sie eine eigene Frage.</div></div><div id="meta" class="meta"></div></div>
+        <div id="content"><p class="empty" style="padding:20px">Ergebnisse erscheinen hier zusammen mit der Herleitung und den exportierbaren Daten.</p></div>
+      </section>
+      <aside class="panel">
+        <h3>Datamart</h3><div id="row-count" class="metric">—</div><div class="meta">Ergebniszeilen</div>
+        <div id="chart" class="bar-chart"></div>
+        <details><summary>Expertenmodus: Cypher</summary><p class="description">Nur lesende Abfragen. Geeignet für weitere, graphnahe Analysen.</p><textarea id="cypher">MATCH (w:WaterBody)
+RETURN w.name AS lake, w.area_km2 AS area_km2
+ORDER BY area_km2 DESC</textarea><button id="run-cypher">Cypher ausführen</button></details>
+      </aside>
+    </div>
+    <footer>Die Aussagen sind deskriptiv. Fachliche Bewertungsskalen, zeitliche Vergleichbarkeit und fehlende Werte müssen bei weiterführenden Analysen berücksichtigt werden.</footer>
+  </main>
+  <script>
+    let currentResult=null;
+    const $=id=>document.getElementById(id);
+    const escapeHtml=value=>String(value??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+    const display=value=>Array.isArray(value)?value.join(', '):(value===true?'Ja':value===false?'Nein':value??'');
+    async function api(path,payload){const response=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const data=await response.json();if(!response.ok)throw new Error(data.error||'Unbekannter Fehler');return data}
+    function setLoading(active){$('result-panel').classList.toggle('loading',active);$('ask-button').disabled=active;$('run-cypher').disabled=active}
+    function render(result){currentResult=result;$('title').textContent=result.title;$('description').textContent=result.description;$('meta').textContent=result.intent;$('row-count').textContent=new Intl.NumberFormat('de-DE').format(result.row_count);let html=`<div class="answer">${escapeHtml(result.answer)}</div>`;if(result.rows.length){html+=`<div class="toolbar"><button onclick="downloadCsv()">CSV herunterladen</button><span class="meta">${result.row_count} Zeilen · ${result.columns.length} Spalten</span></div><div class="table-wrap"><table><thead><tr>${result.columns.map(c=>`<th>${escapeHtml(c)}</th>`).join('')}</tr></thead><tbody>${result.rows.map(row=>`<tr>${result.columns.map(c=>`<td title="${escapeHtml(display(row[c]))}">${escapeHtml(display(row[c]))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}else html+='<p class="empty" style="padding:20px">Keine Datensätze gefunden.</p>';$('content').innerHTML=html;renderChart(result)}
+    function renderChart(result){const numeric=result.columns.find(c=>result.rows.some(r=>typeof r[c]==='number'));if(!numeric){$('chart').innerHTML='';return}const label=result.columns.find(c=>c!==numeric&&result.rows.some(r=>typeof r[c]==='string'));const rows=result.rows.filter(r=>typeof r[numeric]==='number').slice(0,8);const max=Math.max(...rows.map(r=>Math.abs(r[numeric])),1);$('chart').innerHTML=`<div class="meta" style="margin-top:14px">Vorschau: ${escapeHtml(numeric)}</div>`+rows.map((r,i)=>`<div class="bar-row"><div class="bar-label" title="${escapeHtml(label?r[label]:i+1)}">${escapeHtml(label?r[label]:i+1)}</div><div class="bar-track"><div class="bar" style="width:${Math.abs(r[numeric])/max*100}%"></div></div><div>${new Intl.NumberFormat('de-DE',{maximumFractionDigits:1}).format(r[numeric])}</div></div>`).join('')}
+    function showError(error){$('content').innerHTML=`<div class="notice">${escapeHtml(error.message)}</div>`}
+    async function ask(question){setLoading(true);try{render(await api('/api/ask',{question}))}catch(e){showError(e)}finally{setLoading(false)}}
+    $('ask-form').addEventListener('submit',e=>{e.preventDefault();ask($('question').value)});
+    document.querySelectorAll('[data-question]').forEach(button=>button.addEventListener('click',()=>{$('question').value=button.dataset.question;ask(button.dataset.question)}));
+    $('run-cypher').addEventListener('click',async()=>{setLoading(true);try{render(await api('/api/cypher',{cypher:$('cypher').value}))}catch(e){showError(e)}finally{setLoading(false)}});
+    function csvCell(value){const text=Array.isArray(value)?value.join('|'):String(value??'');return `"${text.replaceAll('"','""')}"`}
+    function downloadCsv(){if(!currentResult)return;const lines=[currentResult.columns.map(csvCell).join(';'),...currentResult.rows.map(r=>currentResult.columns.map(c=>csvCell(display(r[c]))).join(';'))];const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download=`${currentResult.intent}_datamart.csv`;link.click();URL.revokeObjectURL(link.href)}
+    fetch('/api/health').then(r=>r.json()).then(data=>{const h=$('health');h.textContent=data.status==='ok'?'Neo4j verbunden':'Neo4j nicht erreichbar';h.className=data.status}).catch(()=>{$('health').textContent='Neo4j nicht erreichbar';$('health').className='error'});
+  </script>
+</body>
+</html>

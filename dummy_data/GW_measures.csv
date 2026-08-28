@@ -1,0 +1,6 @@
+"","TEMPLATE","LAND_CD","EU_CD_GB","POLLCODE","POLLOTHER","INS_WHEN","INS_BY","RBD_CD","METADATA","EX_CHE_TYP","EX_CHE_PR","POLL_RISK","POLL_FAIL","POLLUPWARD","POLLTRENDR","POLLTRER_P","POLLEXNTC","LEVELSET","LEVELVALUE","LEVELUNIT"
+"1","SurfaceWaterMonitoringQualityElement","DEBB","DEGB_DEBB_HAV_NU_3","1245","-9999",2021-06-25,"LfU, BB","5000","WFD_CHEMSTGW_DEBB.xml","10-0-N1","2.2","1","Y","1","2","2","N","N",NA,NA
+"2","SurfaceWaterMonitoringQualityElement","DEBB","DEGB_DEBB_HAV_NU_3","1264","-9999",2021-06-25,"LfU, BB","5000","WFD_CHEMSTGW_DEBB.xml","10-0-N1","2.2","1","Y","2","4","3","N","N",NA,NA
+"3","SurfaceWaterMonitoringQualityElement","DEBB","DEGB_DEBB_HAV_NU_3","1313","-9999",2021-06-25,"LfU, BB","5000","WFD_CHEMSTGW_DEBB.xml","18","10","1","N","1","2","2","Y","N",NA,NA
+"4","SurfaceWaterMonitoringQualityElement","DEBB","DEGB_DEBB_HAV_UH_4","1249","-9999",2021-06-25,"LfU, BB","5000","WFD_CHEMSTGW_DEBB.xml","18","10","1","N","2","4","3","Y","N",NA,NA
+"5","SurfaceWaterMonitoringQualityElement","DEBB","DEGB_DEBB_HAV_UH_4","1313","-9999",2021-06-25,"LfU, BB","5000","WFD_CHEMSTGW_DEBB.xml","18","10","1","N","1","2","2","Y","N",NA,NA
