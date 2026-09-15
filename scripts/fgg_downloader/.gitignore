@@ -1,0 +1,6 @@
+# Keep this folder source-only: never add runtime state, exports or cookies.
+*
+!/.gitignore
+!/*.py
+!/*.ps1
+!/*.md
