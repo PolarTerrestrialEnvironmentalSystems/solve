@@ -22,9 +22,10 @@ mit 30 Workern sind noch nicht live geprüft.
 - Ausreichend Platz für Originalexporte, SQLite und Protokolle. Es gibt keine
   automatische Löschung alter Daten.
 
-Mindestens diese vier Dateien zusammen in einen Serverordner kopieren:
-`parallel_download.py`, `downloader.py`, `portal.py`, `SERVER_LINUX.md`.
-Für Tests zusätzlich `test_downloader.py` und `test_parallel.py` übernehmen.
+Mindestens diese fünf Dateien zusammen in einen Serverordner kopieren:
+`parallel_download.py`, `parallel_recovery.py`, `downloader.py`, `portal.py`,
+`SERVER_LINUX.md`. Für Tests zusätzlich `test_downloader.py`, `test_parallel.py`
+und `test_parallel_recovery.py` übernehmen.
 Alternativ den veröffentlichten Branch aus GitHub klonen:
 
 ```bash
@@ -80,6 +81,8 @@ die bekannte Warteadresse in der ursprünglichen eigenen Sitzung. Ist diese
 nicht mehr verwendbar, stoppt er vor neuen Exporten zur manuellen Prüfung.
 Ein Serverumzug repariert keine abgelaufene Portalsitzung und wiederholt keinen
 ungeklärten Export automatisch.
+Für alte parallele Aufträge mit einer neu empfangenen, bekannten Fehlerseite
+gibt es den unten beschriebenen ausdrücklichen Wiederherstellungsmodus.
 
 Für einen **neuen** vollständigen Abruf ist keine Pfadumstellung nötig. Ein neuer
 Datenordner beginnt aber bei null und kann bereits lokal geladene Daten erneut
@@ -158,6 +161,78 @@ Auftrag mit der falschen Sitzung bearbeitet wird. Solche Problemkorrekturen
 benötigen dann eine sitzungsbezogene manuelle Prüfung. `progress`, `status`,
 `stop` und `verify` bleiben nutzbar; `verify` nur ohne laufenden Downloader.
 
+## Alte parallele Exporte mit Fehlerseite zurückstellen
+
+Wenn `resume` beim Abrufen einer alten Warteadresse eine Portal-Fehlerseite mit
+`java.lang.NullPointerException` oder `Sitzung verloren` erhält, hilft ein höheres
+Timeout nicht gegen diese konkrete Antwort. Eine NullPointerException beweist
+allerdings weder eine abgelaufene Sitzung noch den Abbruch der Serverberechnung.
+Der Standard bleibt daher: stoppen, nicht erneut beauftragen.
+
+Seit der Wiederherstellungserweiterung kann man **ausdrücklich erlauben**, solche
+Altaufträge zurückzustellen und die übrigen Aufträge in frischen Sitzungen
+weiterzuladen. Nur starten, wenn kein anderer Downloader denselben Datenordner
+benutzt. Im aktuellen Git-Checkout auf Branch `codex/fgg-downloader-server`:
+
+```bash
+git pull --ff-only
+python3 -m unittest -q
+python3 downloader.py verify --output /bioing/data/WaterPlace/data/fgg_elbe
+```
+
+Bei Fehlern erst die Meldung prüfen, nicht mit dem nächsten Befehl fortfahren.
+Dann im Ordner `scripts/fgg_downloader`:
+
+```bash
+python3 -u parallel_download.py resume \
+  --output /bioing/data/WaterPlace/data/fgg_elbe \
+  --accept-terms --workers 2 --export-timeout 10800 \
+  --defer-unavailable-exports
+```
+
+Der Schalter gilt nur für `resume` und verlangt eine bereits vorhandene
+`_state/jobs.sqlite`. Der Ablauf ist:
+
+1. Vor Portalzugriffen wird unter `_state/recovery_backups/<Zeitstempel>_<ID>/`
+   ein konsistenter SQLite-Snapshot einschließlich WAL-Inhalt und eine Kopie
+   aller downloader-eigenen Cookie-Dateien gesichert. Eine Prüfsummenliste
+   dokumentiert die Dateien. Das ist **keine Kopie aller Original-CSVs**.
+   Scheitert die Sicherung, wird nicht weitergemacht.
+2. Jeder gespeicherte parallele Auftrag wird zuerst über seine bisherige
+   Warteadresse und Sitzung abgefragt, auch Worker-Slots größer als 2.
+3. Nur bei einer **frisch empfangenen** der genannten Fehlerseiten, ohne
+   Ergebnislink und ohne Fortsetzungsadresse, kommt eine Zurückstellung infrage.
+   Der ursprüngliche Export muss mindestens eine Stunde alt sein; gespeicherte
+   Ergebnislinks, bereits geladene Zeilen und unklare Zeitstempel schließen sie
+   aus. HTTP-/Netzwerkfehler, normale Wartezeiten, unbekannte Fehlerseiten sowie
+   Fehler bei **neuen** Exporten werden nicht auf diese Weise übersprungen.
+4. Fehlerantwort (inklusive HTML), Auftragsdaten und Sitzungszuordnung werden
+   als `recovery_response_*.json` und `deferred_receipt_*.json` im Auftragsordner
+   gesichert. Die alte Cookie-Datei bleibt erhalten. Eine atomare SQLite-Änderung
+   setzt den Auftrag auf `deferred_uncertain` und wählt für den Worker eine neue,
+   eigene Cookie-Datei. Ein Absturz vor dem Freigeben des Slots ist wiederaufnehmbar.
+5. Erst nach der Behandlung der Altaufträge werden weitere Downloads verteilt.
+   Fertige Exporte bleiben unangetastet; zurückgestellte Exporte werden **nicht**
+   erneut angefordert. Der Versuchszähler bleibt unverändert.
+
+`fortschritt.txt` nennt Zahl und erwartete Messwerte der zurückgestellten Exporte.
+In `fortschritt.json` stehen sie unter `deferred_exports`,
+`deferred_expected_rows` und weiterhin einzeln in `problems`; auch
+`dateiuebersicht.csv` enthält die Aufträge. Sie erhöhen **nicht** den Fortschritt
+und verhindern weiterhin `all_complete: true`.
+
+Dieser Modus lädt also die **übrigen** Daten weiter, er schließt die offenen
+Lücken nicht automatisch. Deren spätere Prüfung oder erneute Beauftragung ist
+eine separate, ausdrückliche Entscheidung. Nicht per SQL auf `pending` setzen,
+nicht mit `retry-errors` umgehen und nicht `_state` oder Cookies löschen.
+Eine Zurückstellung storniert keine möglicherweise noch laufende Portalberechnung.
+
+Sicherungen und Belege können Sitzungsinformationen enthalten: privat aufbewahren,
+nicht in Git aufnehmen oder öffentlich teilen. Nach einer Sitzungsrotation nicht
+auf den alten Downloader zurückwechseln, der die neue Zuordnung noch nicht kennt.
+Ein normaler späterer `resume` verwendet mit dem aktualisierten Code die gespeicherte
+Zuordnung und lässt bereits zurückgestellte Aufträge als offene Lücken bestehen.
+
 ## Lastbegrenzung und Aufbau
 
 - Eine atomare SQLite-Transaktion reserviert einen Auftrag für genau einen Slot.
@@ -174,9 +249,10 @@ benötigen dann eine sitzungsbezogene manuelle Prüfung. `progress`, `status`,
 - Bei HTTP 429/503 gilt eine gemeinsame Pause von mindestens 60 Sekunden bzw.
   längerem `Retry-After` (Sekunden oder HTTP-Datum). Bereits laufende Serverexporte
   werden dadurch nicht storniert. Ein Export-POST wird nicht automatisch wiederholt.
-- Ungeklärte Exportantworten stoppen die weitere Verteilung; andere laufende
+- Ungeklärte Exportantworten stoppen standardmäßig die weitere Verteilung; andere laufende
   Worker erreichen zuerst sichere Haltepunkte. Drei aufeinanderfolgende als
   Netzwerkfehler abgeschlossene Aufträge stoppen ebenfalls den Pool.
+  Nur der ausdrücklich aktivierte Modus oben behandelt bestimmte Altaufträge anders.
 
 Die Portalbedingungen nennen keine konkrete erlaubte Zahl paralleler Exporte.
 30 ist eine technische Obergrenze dieser Implementierung, keine Zusicherung des
@@ -198,3 +274,8 @@ eindeutige SQLite-Reservierungen, getrennte Sitzungen, Wiederaufnahme ohne neuen
 Export, Stoppen, globale Drosselung und den Datenordner-Umzug. Sie kontaktieren
 weder das Portal noch andere Server. Ein echter 30-Worker-Lasttest wurde nicht
 durchgeführt.
+
+Die Wiederherstellungstests simulieren zusätzlich Fehlerseiten, alle 30 alten Slots
+mit zwei Workern, das Weiterladen in frischen Sitzungen, unveränderte CSVs,
+sichtbare Datenlücken, SQLite-Backups, Schreibfehler und Absturzzeitpunkte.
+Sie kontaktieren weder das Portal noch den Linux-Server.

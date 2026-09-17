@@ -18,6 +18,13 @@ Startbefehle für `downloader.py` bleiben sequenziell. Umzug, Linux-Start und
 Wiederaufnahme sind in [SERVER_LINUX.md](SERVER_LINUX.md) beschrieben.
 Es wurde kein Serverzugriff eingerichtet und kein paralleler Live-Abruf gestartet.
 
+Für alte parallele Exporte, deren Wiederaufnahme eine bekannte Portal-Fehlerseite
+liefert, gibt es außerdem `resume --defer-unavailable-exports`. Der Modus sichert
+Zustand und Sitzungen, dokumentiert betroffene Altaufträge als weiterhin offene
+Lücken und lässt übrige Downloads weiterlaufen. Er fordert diese Altaufträge
+nicht erneut an und meldet sie nicht als erledigt. Voraussetzungen und Grenzen:
+[Wiederherstellung auf Linux](SERVER_LINUX.md#alte-parallele-exporte-mit-fehlerseite-zurückstellen).
+
 ## Ziel und Datenstand
 
 Zielordner: C:\Users\jowals001\awi\solve\dummy_data\fgg_data.

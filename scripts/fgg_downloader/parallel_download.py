@@ -23,6 +23,9 @@ from pathlib import Path
 
 from downloader import Downloader, State, TOPIC_NAMES, canonical_path, now, worker_lock
 from portal import Portal, PortalError, write_json
+from parallel_recovery import (UnavailableSavedExport, backup_recovery_state,
+                               defer_saved_export, inspect_saved_page, require_recovery_state,
+                               session_path)
 
 LINUX_OUTPUT = Path("/bioing/data/WaterPlace/data/fgg_elbe")
 INFLIGHT = {"submitting", "waiting", "uncertain"}
@@ -90,7 +93,7 @@ def prepare_queue(state):
         # A crash after committing a result but before releasing its slot is safe.
         state.db.execute("""DELETE FROM parallel_claims WHERE job_id IN
             (SELECT id FROM jobs WHERE status IN
-             ('complete','complete_with_warnings','empty','split','needs_review','error'))""")
+             ('complete','complete_with_warnings','empty','split','needs_review','error','deferred_uncertain'))""")
     for row in state.db.execute("""SELECT c.*,j.status FROM parallel_claims c
                                   LEFT JOIN jobs j ON j.id=c.job_id"""):
         if row["status"] not in RECOVERABLE:
@@ -129,9 +132,7 @@ class WorkerState(State):
         self.db.row_factory = sqlite3.Row
 
     def cookie_path(self):
-        if not 1 <= self.slot <= 30:
-            raise ValueError("Invalid worker slot")
-        return self.directory / f"parallel_session_{self.slot:02d}.cookies"
+        return session_path(self, self.slot)
 
     def report(self, *, write=True):
         # Only the coordinator publishes the combined progress/index snapshot.
@@ -144,6 +145,7 @@ class WorkerDownloader(Downloader):
                          target=controller.target, delay=controller.gate.delay,
                          export_timeout=controller.export_timeout)
         self.controller = controller
+        self.recovering_saved_export = False
         self.portal = Portal(accept_terms=controller.accept_terms, delay=controller.gate.delay,
                              cookie_file=state.cookie_path(), export_request_timeout=controller.export_timeout,
                              request_gate=controller.gate.wait, error_hook=controller.gate.on_error)
@@ -153,6 +155,11 @@ class WorkerDownloader(Downloader):
             raise KeyboardInterrupt
         super().check_stop()
 
+    def inspect_export_page(self, job, page):
+        if self.recovering_saved_export and self.controller.defer_unavailable_exports:
+            self.check_stop()
+            inspect_saved_page(self, job, page)
+
     def log(self, message):
         # One whole log entry and activity update at a time, no interleaved lines.
         with self.controller.log_lock:
@@ -161,12 +168,13 @@ class WorkerDownloader(Downloader):
 
 class ParallelRun:
     def __init__(self, state, *, workers=1, accept_terms=False, target=8000,
-                 delay=1.5, export_timeout=3600):
+                 delay=1.5, export_timeout=3600, defer_unavailable_exports=False):
         if not 1 <= workers <= 30:
             raise ValueError("workers must be within 1..30")
         self.state, self.workers = state, workers
         self.accept_terms, self.target = accept_terms, target
         self.export_timeout = export_timeout
+        self.defer_unavailable_exports = defer_unavailable_exports
         self.stopped = threading.Event()
         self.gate = RequestGate(delay, self.stopped, stop_file=state.output / "STOP")
         self.log_lock = threading.Lock()
@@ -198,7 +206,17 @@ class ParallelRun:
             loader.check_stop()
             if job["status"] in INFLIGHT:
                 # The original guest context is used before any portal reset.
-                loader.recover_inflight([job])
+                loader.recovering_saved_export = True
+                try:
+                    loader.recover_inflight([job])
+                except UnavailableSavedExport as exc:
+                    if not self.defer_unavailable_exports:
+                        raise
+                    loader.check_stop()
+                    receipt = defer_saved_export(state, job_id, exc)
+                    loader.log(f"Altauftrag zurückgestellt (bleibt offen): {job_id} | Beleg: {receipt.name}")
+                finally:
+                    loader.recovering_saved_export = False
             elif job["status"] in {"pending", "planning", "ready"}:
                 if job["status"] != "ready":
                     loader.portal.enter()
@@ -257,6 +275,10 @@ class ParallelRun:
                     self.request_stop()
 
     def run(self):
+        self.check_stop()
+        if self.defer_unavailable_exports:
+            backup = backup_recovery_state(self.state)
+            self.legacy.log("Wiederherstellung: Zustands- und Sitzungssicherung erstellt: " + str(backup))
         prepare_queue(self.state)
         self.check_stop()
         # Resolve the old sequential session before creating any fresh requests.
@@ -276,7 +298,7 @@ class ParallelRun:
                                         JOIN jobs j ON j.id=c.job_id ORDER BY c.slot""").fetchall()
         with futures.ThreadPoolExecutor(max_workers=self.workers, thread_name_prefix="fgg") as pool:
             # Recover ALL saved slots even when resuming with fewer threads.
-            # No fresh work until every old in-flight export is resolved.
+            # No fresh work until saved exports are recovered or explicitly deferred.
             self.drain(pool, {}, recovery=[(r["slot"], r["job_id"]) for r in saved
                                           if r["status"] in INFLIGHT | {"ready"}])
             self.check_stop()
@@ -345,6 +367,8 @@ def main(argv=None):
     parser.add_argument("--delay", type=float, default=1.5, help="Global minimum request start spacing, seconds")
     parser.add_argument("--target", type=int, default=8000)
     parser.add_argument("--export-timeout", type=int, default=3600)
+    parser.add_argument("--defer-unavailable-exports", action="store_true",
+                        help="Resume only: back up state, then defer old saved exports returning a known error page; keep gaps, never resubmit")
     parser.add_argument("--relocate-state", action="store_true", help="Audit/rebase paths after copying the full stopped data folder")
     args = parser.parse_args(argv)
     if not 1 <= args.workers <= 30:
@@ -355,7 +379,16 @@ def main(argv=None):
         parser.error("--target must be 1..10000 and --export-timeout at least 60 seconds")
     if args.command != "relocate" and not args.accept_terms:
         parser.error("Explicit --accept-terms consent is required")
+    if args.defer_unavailable_exports and args.command != "resume":
+        parser.error("--defer-unavailable-exports requires resume")
+    if args.defer_unavailable_exports and args.relocate_state:
+        parser.error("Relocate the copied state separately before --defer-unavailable-exports")
     output = canonical_path(args.output)
+    if args.defer_unavailable_exports:
+        try:
+            require_recovery_state(output)
+        except PortalError as exc:
+            parser.error(str(exc))
     with worker_lock(output / "_state" / "worker.lock"):
         state = State(output)
         try:
@@ -367,7 +400,8 @@ def main(argv=None):
             if args.command == "resume":
                 (output / "STOP").unlink(missing_ok=True)
             controller = ParallelRun(state, workers=args.workers, accept_terms=args.accept_terms,
-                                     target=args.target, delay=args.delay, export_timeout=args.export_timeout)
+                                     target=args.target, delay=args.delay, export_timeout=args.export_timeout,
+                                     defer_unavailable_exports=args.defer_unavailable_exports)
             old_signals = {}
             for name in ("SIGINT", "SIGTERM"):
                 if hasattr(signal, name):
@@ -375,7 +409,8 @@ def main(argv=None):
                     old_signals[sig] = signal.signal(sig, lambda *_: controller.request_stop())
             record = {"pid": os.getpid(), "started_at": now(), "command": args.command,
                       "python": sys.executable, "script": str(Path(__file__).resolve()),
-                      "workers": args.workers, "mode": "parallel_threads"}
+                      "workers": args.workers, "mode": "parallel_threads",
+                      "defer_unavailable_exports": args.defer_unavailable_exports}
             write_json(state.directory / "worker.json", record)
             reason = "Lauf regulär beendet; siehe Vollständigkeitsprüfung"
             try:

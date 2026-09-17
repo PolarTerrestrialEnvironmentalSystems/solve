@@ -329,6 +329,9 @@ class State:
                                   and station_counts.get("complete", 0) == self.meta("station_count")
                                   and not station_counts.get("error", 0) and not station_counts.get("pending", 0)}
         result["expected_rows"] = sum(t["expected"] for t in by_topic)
+        deferred = self.db.execute("""SELECT count(*),coalesce(sum(expected),0) FROM jobs
+                                      WHERE status='deferred_uncertain'""").fetchone()
+        result["deferred_exports"], result["deferred_expected_rows"] = deferred
         result["percent"] = (100 * result["downloaded_rows"] / result["expected_rows"]) if result["expected_rows"] else 0.0
         result["active_jobs"] = [dict(r) for r in self.db.execute(
             "SELECT id,topic,expected,status,updated_at,details FROM jobs WHERE status IN ('planning','submitting','waiting','ready')")]
@@ -445,6 +448,9 @@ def format_progress(report):
     worker = report.get("worker") or {}
     if worker.get("mode") == "parallel_threads":
         lines += [f"Konfigurierte parallele I/O-Worker: {worker['workers']}", ""]
+    if report.get("deferred_exports"):
+        lines += [f"Zurückgestellte Exporte: {report['deferred_exports']} "
+                  f"({report['deferred_expected_rows']:,} erwartete Messwerte bleiben offen)", ""]
     if worker.get("stopped_at"):
         lines += ["Prozess beendet (UTC): " + worker["stopped_at"],
                   "Grund: " + worker.get("reason", "siehe Protokoll"), ""]
@@ -808,6 +814,9 @@ class Downloader:
                                         "gewaehltesTabellenformat": "csv", "gewaehlterTabellentyp": table[0].value}, export=True)
         self.await_export(job, page, previous_links=previous_links)
 
+    def inspect_export_page(self, job, page):
+        """Extension point for explicit parallel recovery; sequential behavior unchanged."""
+
     def await_export(self, job, page, *, previous_links=()):
         directory = self.job_directory(job)
         started = time.monotonic()
@@ -817,6 +826,7 @@ class Downloader:
         last_log = -60.0
         polls = 0
         while True:
+            self.inspect_export_page(job, page)
             if "Sitzung verloren" in page.text:
                 raise UncertainExport("Saved guest session expired; no duplicate export was submitted")
             links = list(dict.fromkeys((t, public_url(u)) for t, u in page.links()
