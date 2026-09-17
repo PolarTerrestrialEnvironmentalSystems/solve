@@ -169,6 +169,18 @@ Timeout nicht gegen diese konkrete Antwort. Eine NullPointerException beweist
 allerdings weder eine abgelaufene Sitzung noch den Abbruch der Serverberechnung.
 Der Standard bleibt daher: stoppen, nicht erneut beauftragen.
 
+Ein zweiter beobachteter Fall ist eine zurückgesetzte Auswahlseite statt des
+Exportergebnisses: Millionen Treffer, fehlende Pflichtauswahlen und die Meldung
+zur Grenze von 10.000 Messwerten. Der Modus erkennt dies nur bei einer eindeutigen
+bekannten Exportmaske, einer Trefferzahl über 10.000, mindestens zwei bekannten
+Pflichtfeldmeldungen und mindestens einem ursprünglichen Filter, dessen Feld
+nun ausdrücklich leer bzw. `keine Auswahl` ist. Ein nur fehlendes/umbenanntes
+Formularfeld, eine andere Filterauswahl oder eine geänderte Trefferzahl allein
+reichen nicht. Der ursprüngliche Auftrag muss höchstens 10.000 Werte erwarten.
+Ein solcher Befund erhält den Belegtyp `saved_selection_reset`; erwartete und
+aktuelle Trefferzahl sowie die verlorenen Filter werden mitgesichert.
+Auch daraus wird **kein neuer Export der ungefilterten Millionen Treffer** erzeugt.
+
 Seit der Wiederherstellungserweiterung kann man **ausdrücklich erlauben**, solche
 Altaufträge zurückzustellen und die übrigen Aufträge in frischen Sitzungen
 weiterzuladen. Nur starten, wenn kein anderer Downloader denselben Datenordner
@@ -200,7 +212,8 @@ Der Schalter gilt nur für `resume` und verlangt eine bereits vorhandene
    Scheitert die Sicherung, wird nicht weitergemacht.
 2. Jeder gespeicherte parallele Auftrag wird zuerst über seine bisherige
    Warteadresse und Sitzung abgefragt, auch Worker-Slots größer als 2.
-3. Nur bei einer **frisch empfangenen** der genannten Fehlerseiten, ohne
+3. Nur bei einer **frisch empfangenen** der genannten Fehlerseiten oder einer
+   wie oben abgesicherten zurückgesetzten Auswahlseite, ohne
    Ergebnislink und ohne Fortsetzungsadresse, kommt eine Zurückstellung infrage.
    Der ursprüngliche Export muss mindestens eine Stunde alt sein; gespeicherte
    Ergebnislinks, bereits geladene Zeilen und unklare Zeitstempel schließen sie
@@ -278,4 +291,7 @@ durchgeführt.
 Die Wiederherstellungstests simulieren zusätzlich Fehlerseiten, alle 30 alten Slots
 mit zwei Workern, das Weiterladen in frischen Sitzungen, unveränderte CSVs,
 sichtbare Datenlücken, SQLite-Backups, Schreibfehler und Absturzzeitpunkte.
+Zusätzlich prüfen sie zurückgesetzte Auswahlseiten gegen die ursprünglichen
+Filter, unveränderte bzw. lediglich andere Filter, unklare Formulare,
+abweichende Trefferzahlen und vorhandene Ergebnis-/Warteadressen.
 Sie kontaktieren weder das Portal noch den Linux-Server.

@@ -16,7 +16,7 @@ import uuid
 from pathlib import Path
 
 from downloader import canonical_path, now
-from portal import Page, PortalError, UncertainExport, public_url
+from portal import Page, PortalError, UncertainExport, clean_label, public_url
 
 MIN_EXPORT_AGE_SECONDS = 3600
 SAVED_STATES = {"submitting", "waiting", "uncertain"}
@@ -99,13 +99,65 @@ def backup_recovery_state(state):
     return directory
 
 
-def unavailable_marker(page):
+def reset_selection_details(page, job):
+    """Recognize an explicitly rejected, reset selection, not any missing CSV.
+
+    A changed count alone may be a source update. Require the known form,
+    multiple validation messages and a requested filter explicitly reset to
+    'keine Auswahl'/empty. Never infer a reset from absent or renamed fields.
+    """
+    if not 1 <= job["expected"] <= 10000:
+        return None
+    text = page.text
+    counts = re.findall(r"Die aktuelle Abfrage umfasst\s+([\d.]+)\s+Messwerte?\b", text)
+    if len(counts) != 1:
+        return None
+    try:
+        actual_count = int(counts[0].replace(".", ""))
+    except ValueError:
+        return None
+    if actual_count <= 10000 or not re.search(
+            r"Es können maximal 10[.\s]?000 Messwerte auf einmal ausgegeben werden", text):
+        return None
+    prompts = [message for message in (
+        "Bitte eine Messstelle oder einen Parameter auswählen!",
+        "Bitte eine Messwertart auswählen!", "Bitte ein Medium auswählen!",
+        "Bitte einen Messvorgang auswählen!", "Bitte ein Messjahr auswählen!",
+    ) if message in text]
+    if len(prompts) < 2:
+        return None
+    try:
+        form = page.form()
+        fields = page.fields(form)
+    except PortalError:
+        return None
+    buttons = [node for node in form.find_all("input")
+               if str(node.attrs.get("name", "")).endswith("_export_tabelle")]
+    if len(buttons) != 1 or not any(option.label == "Standardtabelle"
+                                   for option in page.selects().get("gewaehlterTabellentyp", [])):
+        return None
+    filters = json.loads(job["filters"])
+    empty = {"", "keine auswahl"}
+    lost = {key: {"expected": expected, "actual": fields[key]}
+            for key, expected in filters.items()
+            if key.startswith("gewaehlt") and key in fields and isinstance(expected, str)
+            and clean_label(expected).casefold() not in empty
+            and clean_label(fields[key]).casefold() in empty}
+    if not lost:
+        return None
+    return {"expected_count": job["expected"], "actual_count": actual_count,
+            "lost_filters": lost, "validation_messages": prompts}
+
+
+def unavailable_marker(page, job=None):
     # Keep any possible result or continuing computation on the normal path.
     if page.refresh() or any("/ausgabe/" in url for _, url in page.links()):
         return None
     for marker in ("Sitzung verloren", "java.lang.NullPointerException"):
         if marker in page.text:
             return marker
+    if job is not None and reset_selection_details(page, job) is not None:
+        return "saved_selection_reset"
     return None
 
 
@@ -133,8 +185,8 @@ class UnavailableSavedExport(UncertainExport):
 
 def inspect_saved_page(loader, job, page):
     """Called only during opted-in recovery, with a freshly received page."""
-    marker = unavailable_marker(page)
     current = loader.state.db.execute("SELECT * FROM jobs WHERE id=?", (job["id"],)).fetchone()
+    marker = unavailable_marker(page, current)
     if not marker or not eligible_saved_job(current):
         return
     cookie = loader.state.cookie_path()
@@ -145,6 +197,7 @@ def inspect_saved_page(loader, job, page):
     private_json(evidence, {
         "captured_at": now(), "kind": "saved_parallel_export_unavailable",
         "job_id": current["id"], "slot": loader.state.slot, "marker": marker,
+        "selection_reset": reset_selection_details(page, current) if marker == "saved_selection_reset" else None,
         "original_job": dict(current), "cookie_filename": cookie.name,
         "cookie_sha256": digest(cookie), "url": public_url(page.url),
         "html": page.html, "text": page.text,
@@ -171,9 +224,12 @@ def defer_saved_export(state, job_id, failure):
     page = Page(evidence["url"], evidence["html"])
     previous = evidence["original_job"]
     cookie = state.cookie_path()
+    marker = unavailable_marker(page, previous)
+    reset_details = reset_selection_details(page, previous) if marker == "saved_selection_reset" else None
     if (evidence.get("kind") != "saved_parallel_export_unavailable"
             or evidence.get("job_id") != job_id or evidence.get("slot") != state.slot
-            or not unavailable_marker(page) or not eligible_saved_job(previous)
+            or not marker or evidence.get("marker") != marker or not eligible_saved_job(previous)
+            or evidence.get("selection_reset") != reset_details
             or any(previous[k] != job[k] for k in
                    ("id", "topic", "filters", "expected", "attempts", "links", "rows", "details", "directory"))
             or evidence.get("cookie_filename") != cookie.name
@@ -186,6 +242,7 @@ def defer_saved_export(state, job_id, failure):
     private_json(receipt_path, {
         "created_at": now(), "reason": "Explicit --defer-unavailable-exports on resume",
         "original_job": dict(job), "slot": state.slot,
+        "marker": marker, "selection_reset": reset_details,
         "evidence": evidence_path.name, "evidence_sha256": failure.sha256,
         "previous_cookie_filename": cookie.name, "previous_cookie_sha256": digest(cookie),
         "next_cookie_filename": new_name,
@@ -196,7 +253,7 @@ def defer_saved_export(state, job_id, failure):
         state.db.execute("""UPDATE jobs SET status='deferred_uncertain',details=?,error=?,updated_at=?
                             WHERE id=?""",
                          (json.dumps({**context, "deferral_receipt": receipt_path.name}),
-                          "Saved export unavailable; explicitly deferred, NOT downloaded or resubmitted",
+                          f"Saved export unavailable ({marker}); explicitly deferred, NOT downloaded or resubmitted",
                           now(), job_id))
         state.db.execute("INSERT OR REPLACE INTO metadata VALUES (?,?)",
                          (session_key(state.slot), json.dumps(new_name)))

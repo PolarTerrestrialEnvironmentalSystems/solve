@@ -1,6 +1,7 @@
 """Offline recovery regressions. Unmocked portal requests are forbidden."""
 import datetime as dt
 import http.cookiejar
+import html
 import json
 import sqlite3
 import tempfile
@@ -19,6 +20,27 @@ from portal import Page, Portal, PortalError, UncertainExport
 
 ERROR_HTML = "<html><body>Es ist ein Fehler aufgetreten. java.lang.NullPointerException</body></html>"
 BASE = "https://www.elbe-datenportal.de"
+
+
+def reset_selection_html(count=3897749, station="keine Auswahl", validation=True):
+    """Synthetic portal form; field names match the saved portal inspection.
+
+    The validation text/count reproduce the reported reset-selection failure,
+    not a recorded private session or a real measurement export.
+    """
+    warnings = ("Bitte eine Messstelle oder einen Parameter auswählen! "
+                "Bitte eine Messwertart auswählen! Bitte ein Medium auswählen! "
+                "Bitte einen Messvorgang auswählen! Bitte ein Messjahr auswählen! "
+                "Es können maximal 10000 Messwerte auf einmal ausgegeben werden.") if validation else ""
+    formatted_count = f"{count:,}".replace(",", ".")
+    return (f'<form><select name="gewaehltMessstelle"><option value="{html.escape(station)}" selected>'
+            '--- Alle ---</option></select>'
+            '<select name="gewaehltMedium"><option value="keine Auswahl" selected>--- Alle ---</option></select>'
+            '<select name="gewaehltMessjahrVon"><option value="keine Auswahl" selected>--- Alle ---</option></select>'
+            '<select name="gewaehlterTabellentyp"><option value="0">Standardtabelle</option></select>'
+            '<input type="image" name="action:UntersuchungsbereichHydro_export_tabelle">'
+            f'<p>Die aktuelle Abfrage umfasst {formatted_count} Messwerte.</p>'
+            f'<p>{warnings}</p></form>')
 
 
 class RecoveryTests(unittest.TestCase):
@@ -121,6 +143,70 @@ class RecoveryTests(unittest.TestCase):
         job_id, _ = self.saved_job()
         self.run_error_recovery(self.controller(), "<p>Sitzung verloren</p>")
         self.assertEqual(self.record(job_id)["status"], "deferred_uncertain")
+
+    def test_reported_reset_selection_page_is_deferred_without_exporting_the_full_topic(self):
+        job_id, cookie = self.saved_job()
+        old_cookie = cookie.read_bytes()
+        self.run_error_recovery(self.controller(), reset_selection_html())
+        job = self.record(job_id)
+        self.assertEqual((job["status"], job["attempts"], job["expected"]), ("deferred_uncertain", 1, 1))
+        self.assertEqual(cookie.read_bytes(), old_cookie)
+        receipt = json.loads((Path(job["directory"]) / json.loads(job["details"])["deferral_receipt"]).read_text())
+        evidence = json.loads((Path(job["directory"]) / receipt["evidence"]).read_text())
+        self.assertEqual(evidence["marker"], "saved_selection_reset")
+        self.assertEqual(evidence["selection_reset"]["actual_count"], 3897749)
+        self.assertEqual(evidence["selection_reset"]["expected_count"], 1)
+        self.assertEqual(evidence["selection_reset"]["lost_filters"]["gewaehltMessstelle"],
+                         {"expected": "1", "actual": "keine Auswahl"})
+        self.assertFalse(receipt["resubmitted"])
+        self.assertEqual(self.state.report(write=False)["downloaded_rows"], 0)
+
+    def test_reset_selection_is_not_deferred_without_explicit_mode(self):
+        job_id, _ = self.saved_job()
+        with self.assertRaises(PortalError):
+            self.run_error_recovery(self.controller(enabled=False), reset_selection_html())
+        self.assertEqual(self.record(job_id)["status"], "uncertain")
+        self.assertIsNone(self.state.meta(session_key(1)))
+
+    def test_reset_selection_requires_large_count_known_form_and_lost_original_filter(self):
+        job_id, _ = self.saved_job()
+        cases = {
+            "count_within_export_limit": reset_selection_html(count=9000),
+            "same_count": reset_selection_html(count=1),
+            "filter_unchanged": reset_selection_html(station="1"),
+            "filter_changed_but_not_reset": reset_selection_html(station="another station"),
+            "no_validation_messages": reset_selection_html(validation=False),
+            "no_limit_message": reset_selection_html().replace("Es können maximal", "Ausgabe bis zu"),
+            "no_export_button": reset_selection_html().replace("_export_tabelle", "_other"),
+            "unknown_table": reset_selection_html().replace("Standardtabelle", "Unknown table"),
+            "multiple_forms": reset_selection_html() + "<form></form>",
+            "missing_requested_field": reset_selection_html().replace("gewaehltMessstelle", "unknown_field"),
+            "unknown_count": reset_selection_html().replace("3.897.749", "unknown"),
+            "ambiguous_count": reset_selection_html() + "Die aktuelle Abfrage umfasst 30.000 Messwerte.",
+            "text_only_not_a_form": "Die aktuelle Abfrage umfasst 3.897.749 Messwerte. Bitte ein Medium auswählen!",
+        }
+        for name, page_html in cases.items():
+            with self.subTest(name=name):
+                self.assertIsNone(unavailable_marker(Page(BASE, page_html), self.record(job_id)))
+
+    def test_reset_selection_does_not_override_export_age_or_expected_size_guards(self):
+        job_id, _ = self.saved_job()
+        for extra in ({"expected": 10001}, {"expected": 0},
+                      {"expected": 1, "details": json.dumps({"refresh_url": BASE + "/poll/1",
+                       "started_at": dt.datetime.now(dt.timezone.utc).isoformat()})}):
+            with self.subTest(extra=extra):
+                self.state.update(job_id, status="waiting", **extra)
+                with self.assertRaises(PortalError):
+                    self.run_error_recovery(self.controller(), reset_selection_html())
+                self.assertEqual(self.record(job_id)["status"], "uncertain")
+                self.assertIsNone(self.state.meta(session_key(1)))
+
+    def test_reset_selection_with_result_or_poll_link_is_never_deferred(self):
+        job_id, _ = self.saved_job()
+        for suffix in ('<a href="/FisFggElbe/ausgabe/data.csv">CSV</a>',
+                       '<meta http-equiv="refresh" content="5;url=/poll/1">'):
+            with self.subTest(suffix=suffix):
+                self.assertIsNone(unavailable_marker(Page(BASE, reset_selection_html() + suffix), self.record(job_id)))
 
     def test_ordinary_error_page_cannot_be_deferred(self):
         job_id, _ = self.saved_job()
