@@ -1,0 +1,407 @@
+{
+  "context": "Find and archive sources for each named waterbody or river segment. Prioritize dated historical context, especially before 2000, including recent retrospective reports. Publication year is not event year. Do not infer a site identity from a similar name. Keep river reaches, bays, ponds and area sites distinct. Read sources transiently for relevance and link discovery only; retain originals and provenance, never extracted fulltexts or scientific facts. No writes to the SOLVE databases. All 19 research themes apply.",
+  "waterbodies": [
+    {
+      "id": "selected_20d78bdf05456a8f",
+      "name": "Arendsee",
+      "region": "Sachsen-Anhalt",
+      "aliases": [
+        "Lake Arendsee"
+      ],
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf",
+        "https://www.ufz.de/index.php?de=40943"
+      ],
+      "preferred_domains": [
+        "ufz.de",
+        "lhw.sachsen-anhalt.de",
+        "lau.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "context": "Vom Nutzer ausgewähltes Gewässer. Orts- und Gewässeridentität anhand der Quellen prüfen; nicht mit ähnlich benannten Nachbargewässern gleichsetzen. Sachsen-Anhalt dient als regionaler Suchkontext, nicht als bestätigte administrative Zuordnung. Gemeint ist der See. Stadtgeschichte, Kommunalwahlen und Hauptsatzung sind allein kein Gewässerbeleg.",
+      "identity_requires_confirmation": false,
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026",
+      "ambiguous_place_name": true,
+      "retrieval_input_revision": "1.4",
+      "english_terms": [
+        "limnology",
+        "sediment"
+      ],
+      "seed_titles": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": "HYDREG 2010: hydrologisches Regime der Oberflächenwasserkörper in Sachsen-Anhalt; Gewässerliste mit Arendsee",
+        "https://www.ufz.de/index.php?de=40943": "UFZ-Publikationsliste: Phosphorus input by nordic geese to the eutrophic Lake Arendsee, Germany"
+      },
+      "seed_evidence": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        },
+        "https://www.ufz.de/index.php?de=40943": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        }
+      }
+    }
+  ],
+  "topics": [
+    {
+      "name": "Identität und Grunddaten",
+      "keywords": [
+        "Gewässerkennung",
+        "Gewässersteckbrief",
+        "historischer Name"
+      ]
+    },
+    {
+      "name": "Entstehung und Morphometrie",
+      "keywords": [
+        "Morphometrie",
+        "Seebecken",
+        "Tiefe"
+      ]
+    },
+    {
+      "name": "Wasserhaushalt",
+      "keywords": [
+        "Wasserstand",
+        "Grundwasser",
+        "Zuleitung"
+      ]
+    },
+    {
+      "name": "Gewässergüte und Nährstoffe",
+      "keywords": [
+        "Phosphor",
+        "Trophie",
+        "Eutrophierung",
+        "water quality"
+      ]
+    },
+    {
+      "name": "Biologische Entwicklung",
+      "keywords": [
+        "Makrophyten",
+        "Phytoplankton",
+        "Fische"
+      ]
+    },
+    {
+      "name": "Sedimente und Schadstoffe",
+      "keywords": [
+        "Sediment",
+        "Schadstoff",
+        "Schwermetall"
+      ]
+    },
+    {
+      "name": "Einzugsgebiet und Landnutzung",
+      "keywords": [
+        "Einzugsgebiet",
+        "Landnutzung",
+        "Entwässerung"
+      ]
+    },
+    {
+      "name": "Abwasser und Industrie",
+      "keywords": [
+        "Abwasser",
+        "Kläranlage",
+        "Industrie"
+      ]
+    },
+    {
+      "name": "Wasserbauliche Eingriffe",
+      "keywords": [
+        "Wasserbau",
+        "Kanal",
+        "Wehr",
+        "Ausbaggerung"
+      ]
+    },
+    {
+      "name": "Fischerei und sonstige Nutzung",
+      "keywords": [
+        "Fischerei",
+        "Badenutzung",
+        "Schifffahrt"
+      ]
+    },
+    {
+      "name": "Historische Gesamtentwicklung",
+      "keywords": [
+        "Geschichte",
+        "historisch",
+        "Chronik",
+        "1990"
+      ]
+    },
+    {
+      "name": "Sanierung und Restaurierung",
+      "keywords": [
+        "Sanierung",
+        "Restaurierung",
+        "Biomanipulation"
+      ]
+    },
+    {
+      "name": "Maßnahmen im Einzugsgebiet",
+      "keywords": [
+        "Nährstoffreduktion",
+        "Wiedervernässung"
+      ]
+    },
+    {
+      "name": "Umsetzung und Wirkung von Maßnahmen",
+      "keywords": [
+        "Erfolgskontrolle",
+        "Vorher-Nachher",
+        "Maßnahmen"
+      ]
+    },
+    {
+      "name": "Amtliche Bewertung und Planung",
+      "keywords": [
+        "WRRL",
+        "Bewirtschaftungsplan",
+        "Zustand"
+      ]
+    },
+    {
+      "name": "Naturschutz",
+      "keywords": [
+        "FFH",
+        "Managementplan",
+        "Naturschutzgebiet"
+      ]
+    },
+    {
+      "name": "Messreihen und Monitoring",
+      "keywords": [
+        "Monitoring",
+        "Messreihe",
+        "Langzeitdaten"
+      ]
+    },
+    {
+      "name": "Paläolimnologie und Sedimentarchive",
+      "keywords": [
+        "Paläolimnologie",
+        "Sedimentkern",
+        "palaeolimnology"
+      ]
+    },
+    {
+      "name": "Klima und Extremereignisse",
+      "keywords": [
+        "Dürre",
+        "Hochwasser",
+        "Fischsterben"
+      ]
+    }
+  ],
+  "search": {
+    "provider": "serper",
+    "count": 20,
+    "base_url": "https://google.serper.dev",
+    "language": "de",
+    "timeout_seconds": 45,
+    "delay_seconds": 2,
+    "strategy": "focused",
+    "adaptive_max_queries": 40,
+    "plateau_queries": 10,
+    "api_key_env": "SERPER_KEY",
+    "serper_simple_queries": true
+  },
+  "review": {
+    "mode": "api",
+    "base_url": "https://api.blablador.fz-juelich.de/v1",
+    "model": "alias-large",
+    "api_key_env": "BLABLADOR_KEY",
+    "max_calls_per_run": 80,
+    "max_input_chars": 16000,
+    "require_topic_evidence": true,
+    "required": true
+  },
+  "storage": {
+    "persist_extracted_text": false,
+    "shared_cache_dir": "download_cache"
+  },
+  "limits": {
+    "max_fetches_per_run": 120,
+    "max_searches_per_run": 80,
+    "max_tasks_per_run": 1000,
+    "max_queries_per_waterbody": 160,
+    "max_seconds_per_run": 3600,
+    "timeout_seconds": 25,
+    "delay_seconds": 0.5,
+    "parse_timeout_seconds": 75,
+    "max_pdf_pages": 180,
+    "max_download_mb": 30,
+    "max_urls_per_host_per_run": 20,
+    "max_ocr_pages": 8
+  },
+  "preflight": {
+    "enabled": true,
+    "base_url": "https://api.blablador.fz-juelich.de/v1",
+    "api_key_env": "BLABLADOR_KEY",
+    "model": "alias-fast",
+    "max_calls_per_run": 200,
+    "timeout_seconds": 60,
+    "defer_confidence": 0.85,
+    "rank_before_download": true,
+    "exploration_per_waterbody": 20
+  },
+  "retrieval": {
+    "enabled": true,
+    "engines": [
+      "google",
+      "default",
+      "brave"
+    ],
+    "max_health_calls_per_run": 12,
+    "health_ttl_seconds": 3600,
+    "cooldown_seconds": 1800,
+    "crossref_enabled": true,
+    "max_pages": 3,
+    "bibliography": true,
+    "wait_for_search_routes": true
+  },
+  "ocr": {
+    "enabled": true,
+    "language": "deu+eng"
+  },
+  "scientific_sources": [
+    {
+      "waterbody_id": "selected_20d78bdf05456a8f",
+      "portal": "IGB",
+      "url": "https://www.igb-berlin.de/publikationen-zum-arendsee-fachzeitschriften",
+      "title": "IGB: Publikationen zum Arendsee in Fachzeitschriften",
+      "search_domain": "igb-berlin.de",
+      "kind": "publication_list",
+      "checked": "2026-09-24",
+      "discovery_url": "https://www.igb-berlin.de/messstation-arendsee",
+      "note": "Recherchekandidat; Gewässer- und Themenbelege nach Abruf prüfen."
+    },
+    {
+      "waterbody_id": "selected_20d78bdf05456a8f",
+      "portal": "IGB",
+      "url": "https://www.igb-berlin.de/sites/default/files/media-files/download-files/IGB_Dossier_Naehrstoffbelastung_Arendsee.pdf",
+      "title": "IGB Dossier: Die Nährstoffbelastung des Arendsees. Wissensstand und Handlungsoptionen.",
+      "search_domain": "igb-berlin.de",
+      "kind": "research_report",
+      "checked": "2026-09-24",
+      "discovery_url": "https://www.igb-berlin.de/der-arendsee",
+      "note": "Recherchekandidat; Gewässer- und Themenbelege nach Abruf prüfen."
+    },
+    {
+      "waterbody_id": "selected_20d78bdf05456a8f",
+      "portal": "UFZ",
+      "url": "https://www.ufz.de/index.php?en=20939&pub_id=8622",
+      "title": "A paleolimnological study of eutrophied lake Arendsee (Germany) (1998) – UFZ Publication Index",
+      "search_domain": "ufz.de",
+      "kind": "publication_record",
+      "checked": "2026-09-24",
+      "discovery_url": "https://www.ufz.de/index.php?en=20939&pub_id=8622",
+      "note": "Recherchekandidat; Gewässer- und Themenbelege nach Abruf prüfen."
+    },
+    {
+      "waterbody_id": "selected_20d78bdf05456a8f",
+      "portal": "UFZ",
+      "url": "https://www.ufz.de/index.php?en=20939&pub_id=8971",
+      "title": "Eutrophication history of lake Arendsee (Germany) (1998) – UFZ Publication Index",
+      "search_domain": "ufz.de",
+      "kind": "publication_record",
+      "checked": "2026-09-24",
+      "discovery_url": "https://www.ufz.de/index.php?en=20939&pub_id=8971",
+      "note": "Recherchekandidat; Gewässer- und Themenbelege nach Abruf prüfen."
+    },
+    {
+      "waterbody_id": "selected_20d78bdf05456a8f",
+      "portal": "PANGAEA",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.894693",
+      "title": "Results of lake water analysis from Lake Arendsee in Saxony-Anhalt during the Inland Water Remote Sensing Validation Campaign 2017",
+      "search_domain": "pangaea.de",
+      "kind": "dataset_series",
+      "checked": "2026-09-24",
+      "discovery_url": "https://doi.pangaea.de/10.1594/PANGAEA.894693",
+      "note": "Recherchekandidat; Gewässer- und Themenbelege nach Abruf prüfen."
+    },
+    {
+      "waterbody_id": "selected_20d78bdf05456a8f",
+      "portal": "Springer Nature",
+      "url": "https://link.springer.com/article/10.1007/s11368-025-03986-z",
+      "title": "Vivianite as a phosphorus source in lake sediments: Importance of increased sulphate reduction on phosphorus mobilisation",
+      "search_domain": "link.springer.com",
+      "kind": "journal_article",
+      "checked": "2026-09-24",
+      "discovery_url": "https://link.springer.com/article/10.1007/s11368-025-03986-z",
+      "note": "Recherchekandidat; Gewässer- und Themenbelege nach Abruf prüfen."
+    },
+    {
+      "waterbody_id": "selected_20d78bdf05456a8f",
+      "portal": "Copernicus / HESS",
+      "url": "https://hess.copernicus.org/articles/23/1533/2019/",
+      "title": "Future projections of temperature and mixing regime of European temperate lakes",
+      "search_domain": "hess.copernicus.org",
+      "kind": "journal_article",
+      "checked": "2026-09-24",
+      "discovery_url": "https://www.igb-berlin.de/publikationen-zum-arendsee-fachzeitschriften",
+      "note": "Recherchekandidat; Gewässer- und Themenbelege nach Abruf prüfen."
+    },
+    {
+      "waterbody_id": "selected_20d78bdf05456a8f",
+      "portal": "PLOS One",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143737",
+      "title": "Sedimentary Sulphur:Iron Ratio Indicates Vivianite Occurrence: A Study from Two Contrasting Freshwater Systems",
+      "search_domain": "journals.plos.org",
+      "kind": "journal_article",
+      "checked": "2026-09-24",
+      "discovery_url": "https://www.igb-berlin.de/publikationen-zum-arendsee-fachzeitschriften",
+      "note": "Recherchekandidat; Gewässer- und Themenbelege nach Abruf prüfen."
+    }
+  ],
+  "scientific_discovery": {
+    "enabled": true,
+    "datacite_enabled": true,
+    "domains": [
+      "ufz.de",
+      "igb-berlin.de",
+      "pangaea.de",
+      "copernicus.org",
+      "link.springer.com",
+      "link.springernature.com",
+      "journals.plos.org",
+      "onlinelibrary.wiley.com",
+      "sciencedirect.com"
+    ],
+    "max_name_variants": 3
+  },
+  "credentials_env_file": "C:/Users/jowals001/awi/solve/scripts/graphrag/data/.env",
+  "start_links": {
+    "enabled": true,
+    "target": 20,
+    "batch_size": 20,
+    "min_importance": 60,
+    "max_searches": 20,
+    "max_pages": 3,
+    "initial_keywords": [
+      "Messdaten",
+      "Gewässermaßnahmen",
+      "Monitoring",
+      "Gewässergüte",
+      "Sanierung",
+      "Wasserqualität"
+    ]
+  }
+}

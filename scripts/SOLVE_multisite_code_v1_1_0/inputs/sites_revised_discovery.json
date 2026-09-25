@@ -1,0 +1,4789 @@
+{
+  "context": "Find and archive sources for each named waterbody or river segment. Prioritize dated historical context, especially before 2000, including recent retrospective reports. Publication year is not event year. Do not infer a site identity from a similar name. Keep river reaches, bays, ponds and area sites distinct. Read sources transiently for relevance and link discovery only; retain originals and provenance, never extracted fulltexts or scientific facts. No writes to the SOLVE databases. All 19 research themes apply.",
+  "waterbodies": [
+    {
+      "id": "site_001",
+      "register_number": 1,
+      "original_label": "B-Hundekehlsee",
+      "name": "Hundekehlesee",
+      "aliases": [
+        "Hundekehlsee"
+      ],
+      "region": "Berlin",
+      "keywords": [
+        "Berlin"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: B-Hundekehlsee. Identity caveat: Schreibvariante Hundekehlsee / Hundekehlesee. Suggested route: Berlin: Umweltatlas, Gewässeratlas, Senat/Bezirk, Parlament. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Berlin"
+      ],
+      "preferred_domains": [
+        "berlin.de",
+        "parlament-berlin.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Hundekehlesee\" (\"Wasserspiegel\" OR \"Grundwasser\" OR \"Zuleitung\")",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_002",
+      "register_number": 2,
+      "original_label": "B-Grunewaldsee",
+      "name": "Grunewaldsee",
+      "aliases": [],
+      "region": "Berlin",
+      "keywords": [
+        "Berlin"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: B-Grunewaldsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Berlin: Umweltatlas, Gewässeratlas, Senat/Bezirk, Parlament. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Berlin"
+      ],
+      "preferred_domains": [
+        "berlin.de",
+        "parlament-berlin.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:berlin.de \"Grunewaldsee\" Gewässer Sanierung",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_003",
+      "register_number": 3,
+      "original_label": "B-Schäfersee",
+      "name": "Schäfersee",
+      "aliases": [],
+      "region": "Berlin",
+      "keywords": [
+        "Berlin"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://pardok.parlament-berlin.de/starweb/adis/citat/VT/19/SchrAnfr/S19-22816.pdf"
+      ],
+      "context": "Original register entry: B-Schäfersee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Berlin: Umweltatlas, Gewässeratlas, Senat/Bezirk, Parlament. Register historical search lead (unverified here): 2025; vor 2000 hier nicht belegt. Parlamentsdokument als Start zu Verwaltungsvorgängen.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Berlin"
+      ],
+      "preferred_domains": [
+        "berlin.de",
+        "parlament-berlin.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:berlin.de \"Schäfersee\" Gewässer Sanierung",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_004",
+      "register_number": 4,
+      "original_label": "B-Müggelsee",
+      "name": "Müggelsee",
+      "aliases": [],
+      "region": "Berlin",
+      "keywords": [
+        "Berlin"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://fred.igb-berlin.de/data/package/12",
+        "https://fred.igb-berlin.de/Lakebase"
+      ],
+      "context": "Original register entry: B-Müggelsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Berlin: Umweltatlas, Gewässeratlas, Senat/Bezirk, Parlament. Register historical search lead (unverified here): Messreihe ab 1979. Messdaten und Maßnahmenchronik getrennt recherchieren.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Berlin"
+      ],
+      "preferred_domains": [
+        "berlin.de",
+        "parlament-berlin.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:berlin.de \"Müggelsee\" Gewässer Sanierung",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_005",
+      "register_number": 5,
+      "original_label": "B-Weißer See",
+      "name": "Weißer See",
+      "aliases": [],
+      "region": "Berlin",
+      "keywords": [
+        "Berlin"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: B-Weißer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Berlin: Umweltatlas, Gewässeratlas, Senat/Bezirk, Parlament. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Berlin"
+      ],
+      "preferred_domains": [
+        "berlin.de",
+        "parlament-berlin.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:berlin.de \"Weißer See\" Gewässer Sanierung",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_006",
+      "register_number": 6,
+      "original_label": "B-Schafe Lanke (Havel)",
+      "name": "Scharfe Lanke",
+      "aliases": [
+        "Schafe Lanke (Havel)"
+      ],
+      "region": "Berlin",
+      "keywords": [
+        "Berlin"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: B-Schafe Lanke (Havel). Identity caveat: Schafe Lanke vermutlich Scharfe Lanke; Berliner Havelbezug bestätigen. Suggested route: Berlin: Umweltatlas, Gewässeratlas, Senat/Bezirk, Parlament. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Berlin"
+      ],
+      "preferred_domains": [
+        "berlin.de",
+        "parlament-berlin.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Scharfe Lanke\" (\"Havel\" OR \"Wasserbau\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_007",
+      "register_number": 7,
+      "original_label": "B-Tegeler See",
+      "name": "Tegeler See",
+      "aliases": [],
+      "region": "Berlin",
+      "keywords": [
+        "Berlin"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://fred.igb-berlin.de/data/package/537",
+        "https://fred.igb-berlin.de/data/file_download/634",
+        "https://www.berlin.de/umweltatlas/wasser/gewaesserguete-chemie/1991/naehrstoffbelastung-der-oberflaechengewaesser-kartenbeschreibung/"
+      ],
+      "context": "Original register entry: B-Tegeler See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Berlin: Umweltatlas, Gewässeratlas, Senat/Bezirk, Parlament. Register historical search lead (unverified here): 1979; Daten 1984-2006. Metadaten-PDF führt zu technischen Eingriffen und älterer Literatur.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Berlin"
+      ],
+      "preferred_domains": [
+        "berlin.de",
+        "parlament-berlin.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:fred.igb-berlin.de \"Tegel\"",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_008",
+      "register_number": 8,
+      "original_label": "BB-BRB-Gördensee",
+      "name": "Gördensee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-BRB-Gördensee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Gördensee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_009",
+      "register_number": 9,
+      "original_label": "BB-BRB-Havel Quenzsee",
+      "name": "Havel Quenzsee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-BRB-Havel Quenzsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Havel Quenzsee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_010",
+      "register_number": 10,
+      "original_label": "BB-BRB-Heiliger See",
+      "name": "Heiliger See Brandenburg an der Havel",
+      "aliases": [
+        "Heiliger See"
+      ],
+      "region": "Brandenburg",
+      "keywords": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-BRB-Heiliger See. Identity caveat: Nicht automatisch dem Heiligen See in Potsdam zuordnen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Heiliger See\" filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_011",
+      "register_number": 11,
+      "original_label": "BB-BRB-Kleiner Beetzsee",
+      "name": "Kleiner Beetzsee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-BRB-Kleiner Beetzsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Kleiner Beetzsee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_012",
+      "register_number": 12,
+      "original_label": "BB-BRB-Plauer See",
+      "name": "Plauer See",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-BRB-Plauer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Brandenburg an der Havel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Plauer See\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_013",
+      "register_number": 13,
+      "original_label": "BB-HVL-Havel Premnitz",
+      "name": "Havel Premnitz",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Havelland",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.nabu.de/landingpages/havel.html"
+      ],
+      "context": "Original register entry: BB-HVL-Havel Premnitz. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Gebietschronik ab 1980er. Untere-Havel-Projekt: räumlichen Bezug bei Premnitz genauer zuordnen.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Havelland",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:nabu.de \"Havel\" \"Premnitz\"",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_014",
+      "register_number": 14,
+      "original_label": "BB-HVL-Göttinsee",
+      "name": "Göttinsee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Havelland",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-HVL-Göttinsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Havelland",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Göttinsee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_015",
+      "register_number": 15,
+      "original_label": "BB-HVL-Wolzensee",
+      "name": "Wolzensee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Havelland",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-HVL-Wolzensee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Havelland",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Wolzensee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_016",
+      "register_number": 16,
+      "original_label": "BB-HVL-Havel Kranepuhl",
+      "name": "Havel Kranepuhl",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Havelland",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-HVL-Havel Kranepuhl. Identity caveat: Mögliche Dublette zu Nr. 26; Landkreispräfix widersprüchlich. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Havelland",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Havel Kranepuhl\" filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_017",
+      "register_number": 17,
+      "original_label": "BB-OHV-Grabowsee",
+      "name": "Grabowsee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-OHV-Grabowsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Grabowsee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_018",
+      "register_number": 18,
+      "original_label": "BB-OHV-Lehnitzsee",
+      "name": "Lehnitzsee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-OHV-Lehnitzsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Lehnitzsee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_019",
+      "register_number": 19,
+      "original_label": "BB-OHV-Großer Stechlin",
+      "name": "Großer Stechlin",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://fred.igb-berlin.de/data/package/615",
+        "https://www.nature.com/articles/s41597-025-05319-8",
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/05_brandenburg.pdf"
+      ],
+      "context": "Original register entry: BB-OHV-Großer Stechlin. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): 1746-1750; 1966-1990; Daten 1970-2020. Großer Stechlinsee; historische Nutzung und Messreihe unterschiedlich aufgelöst.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Stechlin\" (\"1970\" OR \"1966\" OR \"canal\")",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_020",
+      "register_number": 20,
+      "original_label": "BB-OHV-Baalensee",
+      "name": "Baalensee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-OHV-Baalensee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Baalensee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_021",
+      "register_number": 21,
+      "original_label": "BB-OHV-Stolpsee",
+      "name": "Stolpsee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-OHV-Stolpsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Stolpsee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_022",
+      "register_number": 22,
+      "original_label": "BB-OHV-Döberstich",
+      "name": "Döberstich",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-OHV-Döberstich. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Oberhavel",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Döberstich\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_023",
+      "register_number": 23,
+      "original_label": "BB-P-Havel",
+      "name": "Havel",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Potsdam",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-P-Havel. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Potsdam",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Havel\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_024",
+      "register_number": 24,
+      "original_label": "BB-P-Neustädter Havelbucht",
+      "name": "Neustädter Havelbucht",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Potsdam",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-P-Neustädter Havelbucht. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Potsdam",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Neustädter Havelbucht\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_025",
+      "register_number": 25,
+      "original_label": "BB-PM-Glindower See",
+      "name": "Glindower See",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-PM-Glindower See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Glindower See\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_026",
+      "register_number": 26,
+      "original_label": "BB-PM-Havel Kranepuhl",
+      "name": "Havel Kranepuhl",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-PM-Havel Kranepuhl. Identity caveat: Mögliche Dublette zu Nr. 16; Flussabschnitt und Koordinaten erforderlich. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Havel Kranepuhl\" filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_027",
+      "register_number": 27,
+      "original_label": "BB-PM-Havelsee Bruderhof",
+      "name": "Havel",
+      "aliases": [
+        "Havelsee Bruderhof"
+      ],
+      "region": "Brandenburg",
+      "keywords": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-PM-Havelsee Bruderhof. Identity caveat: Orts- und Abschnittsname; nicht ohne Geometrie zuordnen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Havelsee Bruderhof\" filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_028",
+      "register_number": 28,
+      "original_label": "BB-PM-Lienewitzsee",
+      "name": "Lienewitzsee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-PM-Lienewitzsee. Identity caveat: Großer / Kleiner Lienewitzsee unterscheiden. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Lienewitzsee\" filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_029",
+      "register_number": 29,
+      "original_label": "BB-PM-Seddiner See",
+      "name": "Seddiner See",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/05_brandenburg.pdf"
+      ],
+      "context": "Original register entry: BB-PM-Seddiner See. Identity caveat: Großer oder Kleiner Seddiner See?. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): 1980er/1990er. Kapitel zum Großen Seddiner See; Zuordnung zum Listeneintrag bedingt.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Potsdam-Mittelmark",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Großer Seddiner See\" (\"Biomanipulation\" OR \"1993\")",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_030",
+      "register_number": 30,
+      "original_label": "BB-UM-Großer Parmensee",
+      "name": "Großer Parmensee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Uckermark",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-UM-Großer Parmensee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Uckermark",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Großer Parmensee\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_031",
+      "register_number": 31,
+      "original_label": "BB-UM-Suckower Haussee (eLTER)",
+      "name": "Suckower Haussee",
+      "aliases": [
+        "Suckower Haussee (eLTER)"
+      ],
+      "region": "Brandenburg",
+      "keywords": [
+        "Uckermark",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/natura-2000/managementplanung/ffh-suckower-haussee/",
+        "https://lfu.brandenburg.de/daten/n/natura2000/managementplanung/146/MP146.pdf"
+      ],
+      "context": "Original register entry: BB-UM-Suckower Haussee (eLTER). Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Historische Karte 1767-1787. FFH-Plan enthält Rückblick; eLTER-Daten gesondert suchen.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Uckermark",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Suckower Haussee\" \"Managementplan\"",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_032",
+      "register_number": 32,
+      "original_label": "BB-SPN-Pinnower See Ost",
+      "name": "Pinnower See Ost",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Spree-Neiße",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-SPN-Pinnower See Ost. Identity caveat: Ost als Messbereich behandeln; Identität mit Nr. 33 prüfen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Spree-Neiße",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Pinnower See Ost\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_033",
+      "register_number": 33,
+      "original_label": "BB-SPN-Pinnower See Mitte",
+      "name": "Pinnower See Mitte",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Spree-Neiße",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-SPN-Pinnower See Mitte. Identity caveat: Mitte als Messbereich behandeln; Identität mit Nr. 32 prüfen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Spree-Neiße",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Pinnower See Mitte\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_034",
+      "register_number": 34,
+      "original_label": "BB-LDS-Byhleguhrer See",
+      "name": "Byhleguhrer See",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Dahme-Spreewald",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-LDS-Byhleguhrer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Dahme-Spreewald",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Byhleguhrer See\" filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_035",
+      "register_number": 35,
+      "original_label": "BB-LOS-Teppelsee",
+      "name": "Teppelsee",
+      "aliases": [
+        "Treppelsee"
+      ],
+      "region": "Brandenburg",
+      "keywords": [
+        "Oder-Spree",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-LOS-Teppelsee. Identity caveat: Treppelsee nur Suchhypothese; keine automatische Korrektur. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Oder-Spree",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "(\"Teppelsee\" OR \"Treppelsee\") \"Oder-Spree\"",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_036",
+      "register_number": 36,
+      "original_label": "BB-MOL-Schermützelsee",
+      "name": "Schermützelsee",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Märkisch-Oderland",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.maerkische-schweiz-naturpark.de/fileadmin/user_upload/PDF/Maerkische-Schweiz/Vortraege/Schermuetzelsee/3_Naehrstoffhaushalt-IaG_J.Meisel.pdf"
+      ],
+      "context": "Original register entry: BB-MOL-Schermützelsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Messjahre 1995 und 1997. Vortrag 2019, PDF-Seite 9; kein Ausführungsnachweis einer Sanierung.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Märkisch-Oderland",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Schermützelsee\" \"Nährstoff\" filetype:pdf",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_037",
+      "register_number": 37,
+      "original_label": "BB-BAR-Grosser Stadtsee",
+      "name": "Großer Stadtsee Barnim",
+      "aliases": [
+        "Grosser Stadtsee"
+      ],
+      "region": "Brandenburg",
+      "keywords": [
+        "Barnim",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: BB-BAR-Grosser Stadtsee. Identity caveat: Häufiger Name; Gemeinde / Koordinaten nötig. Suggested route: LfU / Natura-2000-Pläne; UBA-Band; Gewässerentwicklungskonzept; BLHA. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Barnim",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:brandenburg.de \"Grosser Stadtsee\" filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_038",
+      "register_number": 38,
+      "original_label": "NI-LG-Der Haag",
+      "name": "Der Haag Lüneburg",
+      "aliases": [
+        "Der Haag"
+      ],
+      "region": "Niedersachsen",
+      "keywords": [
+        "Lüneburg",
+        "Niedersachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: NI-LG-Der Haag. Identity caveat: Lokaler Flurname; Gemeinde / Lage und Gewässertyp nötig. Suggested route: NLWKN / Biosphärenreservat Elbtalaue; Deichverbände; StALU bei Grenzprojekten. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Lüneburg",
+        "Niedersachsen"
+      ],
+      "preferred_domains": [
+        "nlwkn.niedersachsen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Der Haag\" (Deichrückverlegung OR Pflegeplan OR Wasserwirtschaft)",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_039",
+      "register_number": 39,
+      "original_label": "NI-LG-Radegaster Haken",
+      "name": "Radegaster Haken",
+      "aliases": [],
+      "region": "Niedersachsen",
+      "keywords": [
+        "Lüneburg",
+        "Niedersachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.stalu-mv.de/wm/Service/Presse_Bekanntmachungen/?id=15441&processor=processor.sa.pressemitteilung"
+      ],
+      "context": "Original register entry: NI-LG-Radegaster Haken. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: NLWKN / Biosphärenreservat Elbtalaue; Deichverbände; StALU bei Grenzprojekten. Register historical search lead (unverified here): 2009; vor 2000 hier nicht belegt. Länderübergreifendes Deichprojekt; räumlicher Bezug, kein Einzelgewässereingriff.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Lüneburg",
+        "Niedersachsen"
+      ],
+      "preferred_domains": [
+        "nlwkn.niedersachsen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Radegaster Haken\" \"Mahnkenwerder\"",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_040",
+      "register_number": 40,
+      "original_label": "ST-BÖ-Luttersee",
+      "name": "Luttersee",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Börde",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-BÖ-Luttersee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Börde",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Luttersee\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_041",
+      "register_number": 41,
+      "original_label": "ST-DAN-Laascher See",
+      "name": "Laascher See",
+      "aliases": [],
+      "region": "Niedersachsen",
+      "keywords": [
+        "Lüchow-Dannenberg",
+        "Niedersachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-DAN-Laascher See. Identity caveat: Präfix ST-DAN prüfen; DAN deutet auf niedersächsischen Raum. Suggested route: NLWKN / Biosphärenreservat Elbtalaue; Deichverbände; StALU bei Grenzprojekten. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Lüchow-Dannenberg",
+        "Niedersachsen"
+      ],
+      "preferred_domains": [
+        "nlwkn.niedersachsen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Laascher See\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_042",
+      "register_number": 42,
+      "original_label": "ST-DAN-Penkefitzer See",
+      "name": "Penkefitzer See",
+      "aliases": [],
+      "region": "Niedersachsen",
+      "keywords": [
+        "Lüchow-Dannenberg",
+        "Niedersachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-DAN-Penkefitzer See. Identity caveat: Präfix ST-DAN prüfen; DAN deutet auf niedersächsischen Raum. Suggested route: NLWKN / Biosphärenreservat Elbtalaue; Deichverbände; StALU bei Grenzprojekten. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Lüchow-Dannenberg",
+        "Niedersachsen"
+      ],
+      "preferred_domains": [
+        "nlwkn.niedersachsen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Penkefitzer See\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_043",
+      "register_number": 43,
+      "original_label": "ST-DAN-Taube Elbe",
+      "name": "Taube Elbe",
+      "aliases": [],
+      "region": "Niedersachsen",
+      "keywords": [
+        "Lüchow-Dannenberg",
+        "Niedersachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-DAN-Taube Elbe. Identity caveat: Präfix ST-DAN prüfen; örtlichen Altarm bestimmen. Suggested route: NLWKN / Biosphärenreservat Elbtalaue; Deichverbände; StALU bei Grenzprojekten. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Lüchow-Dannenberg",
+        "Niedersachsen"
+      ],
+      "preferred_domains": [
+        "nlwkn.niedersachsen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Taube Elbe\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_044",
+      "register_number": 44,
+      "original_label": "ST-HZ-Zillierbachtalsperre",
+      "name": "Zillierbachtalsperre",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Harz",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-HZ-Zillierbachtalsperre. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Harz",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Zillierbachtalsperre\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_045",
+      "register_number": 45,
+      "original_label": "ST-JL-Elbe Kehnert",
+      "name": "Elbe Kehnert",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Jerichower Land",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-JL-Elbe Kehnert. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Jerichower Land",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Elbe Kehnert\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_046",
+      "register_number": 46,
+      "original_label": "ST-JL-Herrenseegraben",
+      "name": "Herrenseegraben",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Jerichower Land",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-JL-Herrenseegraben. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Jerichower Land",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Herrenseegraben\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_047",
+      "register_number": 47,
+      "original_label": "ST-MD-Pechauer See",
+      "name": "Pechauer See",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Magdeburg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-MD-Pechauer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Magdeburg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Pechauer See\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_048",
+      "register_number": 48,
+      "original_label": "ST-MD-Prester See",
+      "name": "Prester See",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Magdeburg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-MD-Prester See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Magdeburg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Prester See\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_049",
+      "register_number": 49,
+      "original_label": "ST-HZ-Gräfengründer",
+      "name": "Gräfengründer Harz",
+      "aliases": [
+        "Gräfengründer"
+      ],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Harz",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-HZ-Gräfengründer. Identity caveat: Unvollständiger / lokaler Name; Ort und Gewässertyp nötig. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Harz",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Gräfengründer\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_050",
+      "register_number": 50,
+      "original_label": "ST-MSH-Süsser See",
+      "name": "Süßer See",
+      "aliases": [
+        "Süsser See"
+      ],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Mansfeld-Südharz",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/07_sachs_anh.pdf"
+      ],
+      "context": "Original register entry: ST-MSH-Süsser See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): ab 1977; 1992. Süßer See; Sanierungs- und Belastungsgeschichte im Sammelbericht.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Mansfeld-Südharz",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Süßer See\" (\"1977\" OR \"Wormsleben\")",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_052",
+      "register_number": 52,
+      "original_label": "ST-SDL-Elbe Altenzaun",
+      "name": "Elbe Altenzaun",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SDL-Elbe Altenzaun. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Elbe Altenzaun\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_053",
+      "register_number": 53,
+      "original_label": "ST-SDL-Fichtenwiel",
+      "name": "Fichtenwiel",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SDL-Fichtenwiel. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Fichtenwiel\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_054",
+      "register_number": 54,
+      "original_label": "ST-SDL-Haken",
+      "name": "Haken Stendal",
+      "aliases": [
+        "Haken"
+      ],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SDL-Haken. Identity caveat: Sehr unspezifischer Name; Koordinaten vor Volltextzuordnung. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Haken\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_055",
+      "register_number": 55,
+      "original_label": "ST-SDL-Schelldorfer See",
+      "name": "Schelldorfer See",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SDL-Schelldorfer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Schelldorfer See\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_056",
+      "register_number": 56,
+      "original_label": "ST-SDL-Trentsee",
+      "name": "Trentsee",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SDL-Trentsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Trentsee\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_057",
+      "register_number": 57,
+      "original_label": "ST-SDL-Vorderbrack",
+      "name": "Vorderbrack",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SDL-Vorderbrack. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Vorderbrack\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_058",
+      "register_number": 58,
+      "original_label": "ST-SDL-Wieler",
+      "name": "Wieler Stendal",
+      "aliases": [
+        "Wieler"
+      ],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SDL-Wieler. Identity caveat: Lokaler Name; Gemeinde / historischer Flurname nötig. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Stendal",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Wieler\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_059",
+      "register_number": 59,
+      "original_label": "ST-SLK-Elbeumflut",
+      "name": "Elbeumflut",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Salzlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://lhw.sachsen-anhalt.de/service/das-petziener-wehr-150-jahre-ingenieurbaukunst-an-der-elbe"
+      ],
+      "context": "Original register entry: ST-SLK-Elbeumflut. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Bau 1871-1875. Pretziener Wehr als zugeordnetes Bauwerk; Elbeumflut räumlich modellieren.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Salzlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:lhw.sachsen-anhalt.de \"Pretziener Wehr\"",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_060",
+      "register_number": 60,
+      "original_label": "ST-SLK-Pretzien Steinbruch",
+      "name": "Steinbruchsee Pretzien",
+      "aliases": [
+        "Pretzien Steinbruch"
+      ],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Salzlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SLK-Pretzien Steinbruch. Identity caveat: Mögliche Dublette zu Nr. 61; mehrere Abbaugewässer prüfen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Bergbau-/Abschlussbetriebsplan, Flutung, Nachsorge und Sanierungsträger. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Salzlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Pretzien Steinbruch\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_061",
+      "register_number": 61,
+      "original_label": "Pretzien Steinbruch See",
+      "name": "Steinbruchsee Pretzien",
+      "aliases": [
+        "Pretzien Steinbruch See"
+      ],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: Pretzien Steinbruch See. Identity caveat: Mögliche Dublette zu Nr. 60; Originaleintrag erhalten. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Bergbau-/Abschlussbetriebsplan, Flutung, Nachsorge und Sanierungsträger. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Pretzien Steinbruch See\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_062",
+      "register_number": 62,
+      "original_label": "ST-SLK-Krügersee",
+      "name": "Krügersee",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Salzlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SLK-Krügersee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Salzlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Krügersee\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_063",
+      "register_number": 63,
+      "original_label": "ST-SLK-Goldberger See",
+      "name": "Goldberger See Salzlandkreis",
+      "aliases": [
+        "Goldberger See"
+      ],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Salzlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-SLK-Goldberger See. Identity caveat: Hohe Verwechslungsgefahr mit anderen Goldberger Seen; Koordinaten zwingend. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Salzlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Goldberger See\" (\"Salzlandkreis\" OR \"Barby\" OR \"Lödderitz\")",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_064",
+      "register_number": 64,
+      "original_label": "ST-ABI-Gödnitzer See",
+      "name": "Gödnitzer See",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-ABI-Gödnitzer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Gödnitzer See\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_065",
+      "register_number": 65,
+      "original_label": "ST-ABI-Seebarschteich",
+      "name": "Seebarschteich",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-ABI-Seebarschteich. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Seebarschteich\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_066",
+      "register_number": 66,
+      "original_label": "ST-ABI-Pfaffensee",
+      "name": "Pfaffensee",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-ABI-Pfaffensee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Pfaffensee\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_067",
+      "register_number": 67,
+      "original_label": "ST-ABI-Hornhafen",
+      "name": "Hornhafen",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-ABI-Hornhafen. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Hornhafen\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_068",
+      "register_number": 68,
+      "original_label": "ST-ABI-Magdalenenteich",
+      "name": "Magdalenenteich",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-ABI-Magdalenenteich. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Magdalenenteich\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_069",
+      "register_number": 69,
+      "original_label": "ST-ABI-Muldenstausee",
+      "name": "Muldenstausee",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-ABI-Muldenstausee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Bergbau-/Abschlussbetriebsplan, Flutung, Nachsorge und Sanierungsträger. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Anhalt-Bitterfeld",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Muldenstausee\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_070",
+      "register_number": 70,
+      "original_label": "ST-DE-Kühnauer See",
+      "name": "Kühnauer See",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Dessau-Roßlau",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.mittelelbe.com/projekte/sanierung-des-kuehnauer-see/"
+      ],
+      "context": "Original register entry: ST-DE-Kühnauer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Sanierung 1993-2000. Projektseite des Biosphärenreservats; Folgeakten und Monitoring suchen.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Dessau-Roßlau",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Kühnauer See\" \"Sanierung\" \"1993\"",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_071",
+      "register_number": 71,
+      "original_label": "ST-DE-Kapengraben",
+      "name": "Kapengraben",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Dessau-Roßlau",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-DE-Kapengraben. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Dessau-Roßlau",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Kapengraben\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_072",
+      "register_number": 72,
+      "original_label": "ST-DE-Trockenhegersee",
+      "name": "Trockenhegersee",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Dessau-Roßlau",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-DE-Trockenhegersee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Dessau-Roßlau",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Trockenhegersee\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_073",
+      "register_number": 73,
+      "original_label": "ST-DE-Diepold",
+      "name": "Diepold",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Dessau-Roßlau",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-DE-Diepold. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Dessau-Roßlau",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Diepold\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_074",
+      "register_number": 74,
+      "original_label": "ST-WB-Schönitzer See",
+      "name": "Schönitzer See",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/07_sachs_anh.pdf"
+      ],
+      "context": "Original register entry: ST-WB-Schönitzer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Zustandsdaten 1996/1999. Gewässerkapitel vorhanden; keine vollständige Maßnahmenchronik abgeleitet.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Schönitzer See\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_075",
+      "register_number": 75,
+      "original_label": "ST-WB-Fleischwerder",
+      "name": "Fleischwerder",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Fleischwerder. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Fleischwerder\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_076",
+      "register_number": 76,
+      "original_label": "ST-WB-Zehn Ruten Kolk",
+      "name": "Zehn Ruten Kolk",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Zehn Ruten Kolk. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Zehn Ruten Kolk\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_077",
+      "register_number": 77,
+      "original_label": "ST-WB-Großer Steng",
+      "name": "Großer Steng",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Großer Steng. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Großer Steng\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_078",
+      "register_number": 78,
+      "original_label": "ST-WB-Alte Elbe Gallin",
+      "name": "Alte Elbe Gallin",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Alte Elbe Gallin. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Alte Elbe Gallin\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_079",
+      "register_number": 79,
+      "original_label": "ST-WB-Elbe Wittenberg",
+      "name": "Elbe Wittenberg",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.deutsche-digitale-bibliothek.de/item/YYV3YGKIXBNSVZ4FWAXOSGBHNE4WZAAC"
+      ],
+      "context": "Original register entry: ST-WB-Elbe Wittenberg. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Kartenwerk 1898. Katalogbeleg für Meißen-Wittenberg; historische Karte noch auszuwerten.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Elbstrom\" \"1898\" \"Wittenberg\"",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_080",
+      "register_number": 80,
+      "original_label": "ST-WB-Weinbergriß",
+      "name": "Weinbergriß",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Weinbergriß. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Weinbergriß\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_081",
+      "register_number": 81,
+      "original_label": "ST-WB-Piesteritz",
+      "name": "Piesteritz",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Piesteritz. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Piesteritz\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_082",
+      "register_number": 82,
+      "original_label": "ST-WB-Bergwitzsee",
+      "name": "Bergwitzsee",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Bergwitzsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Bergbau-/Abschlussbetriebsplan, Flutung, Nachsorge und Sanierungsträger. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Bergwitzsee\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_083",
+      "register_number": 83,
+      "original_label": "ST-WB-Piesitz",
+      "name": "Piesitz",
+      "aliases": [
+        "Priesitz"
+      ],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Piesitz. Identity caveat: Ortsname und Gewässertyp offen; keine automatische Korrektur. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Piesitz\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_084",
+      "register_number": 84,
+      "original_label": "ST-WB-Scharmühlenbach",
+      "name": "Scharmühlenbach",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Scharmühlenbach. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Scharmühlenbach\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_085",
+      "register_number": 85,
+      "original_label": "ST-WB-Prettin",
+      "name": "Prettin Elbe",
+      "aliases": [
+        "Prettin"
+      ],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Prettin. Identity caveat: Ortsname statt eindeutigem Gewässer; Flussabschnitt / Altarm / See bestimmen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Prettin\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_086",
+      "register_number": 86,
+      "original_label": "ST-BLK-Kretzschauer See",
+      "name": "Kretzschauer See",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Burgenlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-BLK-Kretzschauer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Bergbau-/Abschlussbetriebsplan, Flutung, Nachsorge und Sanierungsträger. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Burgenlandkreis",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Kretzschauer See\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_087",
+      "register_number": 87,
+      "original_label": "SN_BZ-Oberlausitzer Heide und Teichland.",
+      "name": "Oberlausitzer Heide- und Teichlandschaft",
+      "aliases": [
+        "Oberlausitzer Heide und Teichland."
+      ],
+      "region": "Sachsen",
+      "keywords": [
+        "Bautzen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_BZ-Oberlausitzer Heide und Teichland.. Identity caveat: Gebiet / Teichkomplex; keine einzelne Seefläche. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Bautzen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Oberlausitzer Heide und Teichland\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_088",
+      "register_number": 88,
+      "original_label": "SN_BZ-Langer Teich",
+      "name": "Langer Teich",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Bautzen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_BZ-Langer Teich. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Teichwirtschaft, Fischereibetrieb, Gut / Forst und Entschlammungsakten. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Bautzen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Langer Teich\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_089",
+      "register_number": 89,
+      "original_label": "SN_BZ-Olbasee",
+      "name": "Olbasee",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Bautzen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_BZ-Olbasee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Bautzen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Olbasee\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_090",
+      "register_number": 90,
+      "original_label": "SN_PIR-Biotop Gohrisch",
+      "name": "Biotop Gohrisch",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_PIR-Biotop Gohrisch. Identity caveat: Biotopbezeichnung; Flächenabgrenzung erforderlich. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Biotop Gohrisch\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_091",
+      "register_number": 91,
+      "original_label": "SN_PIR-Elbe Prossen",
+      "name": "Elbe Prossen",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_PIR-Elbe Prossen. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Elbe Prossen\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_092",
+      "register_number": 92,
+      "original_label": "SN_PIR-Talsperre Gottleuba",
+      "name": "Talsperre Gottleuba",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.wasserwirtschaft.sachsen.de/TS_Gottleuba.html"
+      ],
+      "context": "Original register entry: SN_PIR-Talsperre Gottleuba. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Bau 1964-1976; Betrieb 1974. Bauende und Inbetriebnahme nicht zu einem einzigen Datum zusammenziehen.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:wasserwirtschaft.sachsen.de \"Gottleuba\"",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_093",
+      "register_number": 93,
+      "original_label": "SN_PIR-Talsperre Malter",
+      "name": "Talsperre Malter",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_PIR-Talsperre Malter. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Talsperre Malter\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_094",
+      "register_number": 94,
+      "original_label": "SN_PIR-Becken Pirna",
+      "name": "Becken Pirna",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_PIR-Becken Pirna. Identity caveat: Beckenbezeichnung unspezifisch; technisches Becken / See unterscheiden. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Becken Pirna\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_095",
+      "register_number": 95,
+      "original_label": "SN_PIR-Gottleubamündung",
+      "name": "Gottleubamündung",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_PIR-Gottleubamündung. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Gottleubamündung\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_096",
+      "register_number": 96,
+      "original_label": "SN_PIR-Natursee Pirna",
+      "name": "Natursee Pirna",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_PIR-Natursee Pirna. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Sächsische Schweiz-Osterzgebirge",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Natursee Pirna\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_097",
+      "register_number": 97,
+      "original_label": "SN_DD-Stausee Niederwartha",
+      "name": "Stausee Niederwartha",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Dresden",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_DD-Stausee Niederwartha. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Dresden",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Stausee Niederwartha\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_098",
+      "register_number": 98,
+      "original_label": "SN_DD-Stausee Oberwartha",
+      "name": "Stausee Oberwartha",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Dresden",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_DD-Stausee Oberwartha. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Dresden",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Stausee Oberwartha\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_099",
+      "register_number": 99,
+      "original_label": "SN_MEI-Dippelsdorfer Badeteich",
+      "name": "Dippelsdorfer Badeteich",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_MEI-Dippelsdorfer Badeteich. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Teichwirtschaft, Fischereibetrieb, Gut / Forst und Entschlammungsakten. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Dippelsdorfer Badeteich\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_100",
+      "register_number": 100,
+      "original_label": "SN_MEI-Elbe Coswig",
+      "name": "Elbe Coswig",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_MEI-Elbe Coswig. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Elbe Coswig\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_101",
+      "register_number": 101,
+      "original_label": "SN_MEI-Haudelteich",
+      "name": "Haudelteich",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_MEI-Haudelteich. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Teichwirtschaft, Fischereibetrieb, Gut / Forst und Entschlammungsakten. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Haudelteich\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_102",
+      "register_number": 102,
+      "original_label": "SN_MEI-Ilschenteich",
+      "name": "Ilschenteich",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_MEI-Ilschenteich. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Teichwirtschaft, Fischereibetrieb, Gut / Forst und Entschlammungsakten. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Ilschenteich\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_103",
+      "register_number": 103,
+      "original_label": "SN_MEI-Mittelteich Moritzburg",
+      "name": "Mittelteich Moritzburg",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_MEI-Mittelteich Moritzburg. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Teichwirtschaft, Fischereibetrieb, Gut / Forst und Entschlammungsakten. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Mittelteich Moritzburg\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_104",
+      "register_number": 104,
+      "original_label": "SN-MEI-Eislache",
+      "name": "Eislache Meißen",
+      "aliases": [
+        "Eislache"
+      ],
+      "region": "Sachsen",
+      "keywords": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN-MEI-Eislache. Identity caveat: Lokaler Name; Gemeinde / Koordinaten erforderlich. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Eislache\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_105",
+      "register_number": 105,
+      "original_label": "SN_MEI-Paussnitz Elbe",
+      "name": "Paussnitz",
+      "aliases": [
+        "Paussnitz Elbe",
+        "Elbe"
+      ],
+      "region": "Sachsen",
+      "keywords": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_MEI-Paussnitz Elbe. Identity caveat: Bach / Flussbereich unterscheiden; Geometrie prüfen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Meißen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Paussnitz Elbe\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_106",
+      "register_number": 106,
+      "original_label": "SN_FG-Kriebstein Talsperre",
+      "name": "Kriebstein Talsperre",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Mittelsachsen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_FG-Kriebstein Talsperre. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Mittelsachsen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Kriebstein Talsperre\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_107",
+      "register_number": 107,
+      "original_label": "SN_EE-Alte Elbe bei Mühlberg",
+      "name": "Alte Elbe bei Mühlberg",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Elbe-Elster",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_EE-Alte Elbe bei Mühlberg. Identity caveat: SN_EE prüfen; Elbe-Elster / Mühlberg deutet auf Brandenburg. Suggested route: LfU Brandenburg / Elbe-Elster; Elbstromwerk; historische Karten und Landesarchive; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Elbe-Elster",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Alte Elbe bei Mühlberg\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_108",
+      "register_number": 108,
+      "original_label": "SN_EE-See Mühlberg",
+      "name": "See Mühlberg",
+      "aliases": [],
+      "region": "Brandenburg",
+      "keywords": [
+        "Elbe-Elster",
+        "Brandenburg"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_EE-See Mühlberg. Identity caveat: SN_EE prüfen; Gemeinde und Einzelgewässer bestimmen. Suggested route: LfU Brandenburg / Elbe-Elster; Elbstromwerk; historische Karten und Landesarchive. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Elbe-Elster",
+        "Brandenburg"
+      ],
+      "preferred_domains": [
+        "brandenburg.de",
+        "b-tu.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"See Mühlberg\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_109",
+      "register_number": 109,
+      "original_label": "SN_TDO-Presseler Teich",
+      "name": "Presseler Teich",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Nordsachsen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_TDO-Presseler Teich. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Teichwirtschaft, Fischereibetrieb, Gut / Forst und Entschlammungsakten. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Nordsachsen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Presseler Teich\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_110",
+      "register_number": 110,
+      "original_label": "SN_TDO-Alte Elbe Käthewitz",
+      "name": "Alte Elbe Käthewitz",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Nordsachsen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_TDO-Alte Elbe Käthewitz. Identity caveat: Schreibweise und Ortszuordnung prüfen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Fluss-km, Nebengewässer, Wehr / Deich und zuständiges Wasserbauamt mitsuchen. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Nordsachsen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Alte Elbe Käthewitz\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_111",
+      "register_number": 111,
+      "original_label": "SN_TDO-Alte Mulde",
+      "name": "Alte Mulde Torgau-Delitzsch",
+      "aliases": [
+        "Alte Mulde"
+      ],
+      "region": "Sachsen",
+      "keywords": [
+        "Nordsachsen",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_TDO-Alte Mulde. Identity caveat: Mehrere Altarme möglich; Koordinaten / Abschnitt nötig. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Nordsachsen",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Alte Mulde\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_112",
+      "register_number": 112,
+      "original_label": "SN_LLand-Kulkwitzer See",
+      "name": "Kulkwitzer See",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Leipziger Land",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.lmbv.de/wp-content/uploads/2021/04/doku-04_Boehlen-Zwenkau-Cospuden.pdf"
+      ],
+      "context": "Original register entry: SN_LLand-Kulkwitzer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Bergbau-/Abschlussbetriebsplan, Flutung, Nachsorge und Sanierungsträger. Register historical search lead (unverified here): 1970er, rückblickende Erwähnung. Kulkwitz in Cospuden-Chronik erwähnt; eigene Projektunterlagen nachrecherchieren.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Leipziger Land",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Kulkwitzer See\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_113",
+      "register_number": 113,
+      "original_label": "SN_LLand-Cospudener See",
+      "name": "Cospudener See",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Leipziger Land",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.lmbv.de/medium/04-boehlen-zwenkau-cospuden/",
+        "https://www.lmbv.de/wp-content/uploads/2021/04/doku-04_Boehlen-Zwenkau-Cospuden.pdf"
+      ],
+      "context": "Original register entry: SN_LLand-Cospudener See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv; Bergbau-/Abschlussbetriebsplan, Flutung, Nachsorge und Sanierungsträger. Register historical search lead (unverified here): 1994, 1998, 2000. Cospuden-Chronik: PDF-Seite 23 / Druckseite 21; Flutungsschritte.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Leipziger Land",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "site:lmbv.de \"Cospuden\" \"Flutung\"",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_114",
+      "register_number": 114,
+      "original_label": "SN_L-Auwald Leipzig",
+      "name": "Auwald Leipzig",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Leipzig",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_L-Auwald Leipzig. Identity caveat: Gebiet statt Einzelgewässer; Teilflächen / Gewässernetz nötig. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Leipzig",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Auwald Leipzig\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_115",
+      "register_number": 115,
+      "original_label": "SN_L-Hundewasser Lützschena",
+      "name": "Hundewasser Lützschena",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Leipzig",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_L-Hundewasser Lützschena. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landestalsperrenverwaltung / LfULG; FFH-Pläne; SLUB; Landesarchiv. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Leipzig",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Hundewasser Lützschena\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_116",
+      "register_number": 116,
+      "original_label": "SN_ERZ-Greifenbachstauweiher",
+      "name": "Greifenbachstauweiher",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Erzgebirgskreis",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_ERZ-Greifenbachstauweiher. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Erzgebirgskreis",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Greifenbachstauweiher\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_117",
+      "register_number": 117,
+      "original_label": "SN_ERZ-Filzteich",
+      "name": "Filzteich",
+      "aliases": [],
+      "region": "Sachsen",
+      "keywords": [
+        "Erzgebirgskreis",
+        "Sachsen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SN_ERZ-Filzteich. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Erzgebirgskreis",
+        "Sachsen"
+      ],
+      "preferred_domains": [
+        "sachsen.de",
+        "lmbv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Filzteich\" (\"Gewässer\" OR \"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_118",
+      "register_number": 118,
+      "original_label": "MV-LWL-Schaalsee",
+      "name": "Schaalsee",
+      "aliases": [],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Ludwigslust",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: MV-LWL-Schaalsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Ludwigslust",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Schaalsee\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_119",
+      "register_number": 119,
+      "original_label": "MV-LWL-Woseriner See",
+      "name": "Woseriner See",
+      "aliases": [],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Ludwigslust",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/02_meck_pom.pdf"
+      ],
+      "context": "Original register entry: MV-LWL-Woseriner See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): Historischer Rückblick, teils relativ datiert. Woseriner-See-Kapitel, Seiten 322-324; relative Zeitangaben nicht in Jahreszahlen umdeuten.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Ludwigslust",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Woseriner See\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_120",
+      "register_number": 120,
+      "original_label": "MV-MSE-Kummerower See",
+      "name": "Kummerower See",
+      "aliases": [],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/02_meck_pom.pdf"
+      ],
+      "context": "Original register entry: MV-MSE-Kummerower See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): 1860-1872; 1994. Kummerower-See-Kapitel, Seiten 164-168.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Kummerower See\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_121",
+      "register_number": 121,
+      "original_label": "MV-MSE-Zarnekow (eLTER, GFZ)",
+      "name": "Zarnekow",
+      "aliases": [
+        "Zarnekow (eLTER, GFZ)"
+      ],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: MV-MSE-Zarnekow (eLTER, GFZ). Identity caveat: Forschungsstandort / Polder / Moor; Objektart und eLTER-ID klären. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Zarnekow\" (\"TERENO\" OR \"eLTER\" OR \"rewetting\")",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_122",
+      "register_number": 122,
+      "original_label": "MV-MSE-Tollensesee",
+      "name": "Tollensesee",
+      "aliases": [],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/02_meck_pom.pdf"
+      ],
+      "context": "Original register entry: MV-MSE-Tollensesee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): Zustands- und Nutzungsgeschichte. Tollensesee-Kapitel ab Seite 292; Einzelereignisse weiter extrahieren.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Tollensesee\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_123",
+      "register_number": 123,
+      "original_label": "MV-MSE-Tiefwaren",
+      "name": "Tiefwarensee",
+      "aliases": [
+        "Tiefwaren"
+      ],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/02_meck_pom.pdf"
+      ],
+      "context": "Original register entry: MV-MSE-Tiefwaren. Identity caveat: Tiefwaren vermutlich Tiefwarensee; nicht automatisch ersetzen. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): bis Mitte der 1980er, rückblickend. Quellkapitel Tiefwarensee; Suchalias zuerst räumlich bestätigen.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "(\"Tiefwaren\" OR \"Tiefwarensee\") (\"Sanierung\" OR \"Abwasser\")",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_124",
+      "register_number": 124,
+      "original_label": "MV-MSE-Müritz",
+      "name": "Müritz",
+      "aliases": [],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/02_meck_pom.pdf"
+      ],
+      "context": "Original register entry: MV-MSE-Müritz. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): Historischer Rückblick bis 13. Jh.. Müritz-Kapitel ab Seite 191; sehr frühe Angaben benötigen Quellenrückverfolgung.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Müritz\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_125",
+      "register_number": 125,
+      "original_label": "MV-MSE-Müritz-Sietow Bucht",
+      "name": "Müritz-Sietow Bucht",
+      "aliases": [],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/02_meck_pom.pdf"
+      ],
+      "context": "Original register entry: MV-MSE-Müritz-Sietow Bucht. Identity caveat: Teilbereich der Müritz; eigener räumlicher Bezug nötig. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): Nur Gesamtsee-Hintergrund. Quelle bezieht sich auf die Müritz; kein eigener Sietow-Bucht-Nachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Müritz-Sietow Bucht\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_126",
+      "register_number": 126,
+      "original_label": "MV-MSE-Görtowsee",
+      "name": "Görtowsee",
+      "aliases": [],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: MV-MSE-Görtowsee. Identity caveat: Schreibvariante und Lage prüfen. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Görtowsee\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_127",
+      "register_number": 127,
+      "original_label": "MV-MSE-Krummer See",
+      "name": "Krummer See Mecklenburgische Seenplatte",
+      "aliases": [
+        "Krummer See"
+      ],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: MV-MSE-Krummer See. Identity caveat: Sehr häufiger Name; eindeutige Lage nötig. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Krummer See\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_128",
+      "register_number": 128,
+      "original_label": "MV-MSE-Fürstenseer See",
+      "name": "Fürstenseer See",
+      "aliases": [],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/02_meck_pom.pdf"
+      ],
+      "context": "Original register entry: MV-MSE-Fürstenseer See. Identity caveat: Großer Fürstenseer See / Teilgewässer abgleichen. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): Zustands- und Nutzungsgeschichte. Kapitel Großer Fürstenseer See, Seiten 110-112; örtliche Abgrenzung prüfen.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Fürstenseer See\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_129",
+      "register_number": 129,
+      "original_label": "MV-MSE-Breiter Luzin",
+      "name": "Breiter Luzin",
+      "aliases": [],
+      "region": "Mecklenburg-Vorpommern",
+      "keywords": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www-docs.b-tu.de/fg-gewaesserschutz/public/projekte/uba_2/02_meck_pom.pdf"
+      ],
+      "context": "Original register entry: MV-MSE-Breiter Luzin. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: UBA-Seenband; LUNG / StALU; Schutzgebietspläne; Geoportal. Register historical search lead (unverified here): u. a. Forschung der 1990er. Breiter-Luzin-Kapitel, Seiten 26-30; Forschungsvorhaben nicht als ausgeführte Maßnahme werten.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Mecklenburgische Seenplatte",
+        "Mecklenburg-Vorpommern"
+      ],
+      "preferred_domains": [
+        "lung.mv-regierung.de",
+        "stalu-mv.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Breiter Luzin\" (\"Sanierung\" OR \"Nutzung\" OR \"Managementplan\") filetype:pdf",
+      "register_priority": "A"
+    },
+    {
+      "id": "site_130",
+      "register_number": 130,
+      "original_label": "TH-SÖM-Talsperre Bachra",
+      "name": "Talsperre Bachra",
+      "aliases": [],
+      "region": "Thüringen",
+      "keywords": [
+        "Sömmerda",
+        "Thüringen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: TH-SÖM-Talsperre Bachra. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Betreiberchronik / Betriebsplan / Stauanlagenakten; Landesbehörde; ältere Talsperrenliteratur. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Sömmerda",
+        "Thüringen"
+      ],
+      "preferred_domains": [
+        "thueringen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Talsperre Bachra\" Thüringen (\"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_131",
+      "register_number": 131,
+      "original_label": "TH_SOK-Plothener Teiche",
+      "name": "Plothener Teiche",
+      "aliases": [],
+      "region": "Thüringen",
+      "keywords": [
+        "Saale-Orla-Kreis",
+        "Thüringen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.nabu.de/natur-und-landschaft/schutzgebiete/nabu-schutzgebiete/thueringen/05698.html"
+      ],
+      "context": "Original register entry: TH_SOK-Plothener Teiche. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: TLUBN; Naturpark / Gemeinde; Fachliteratur; Archive; Teichwirtschaft, Fischereibetrieb, Gut / Forst und Entschlammungsakten. Register historical search lead (unverified here): Historische Teichwirtschaft, ungenau datiert. Gebietsporträt als Literatur- und Akteursweg.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Saale-Orla-Kreis",
+        "Thüringen"
+      ],
+      "preferred_domains": [
+        "thueringen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Plothener Teiche\" Thüringen (\"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_132",
+      "register_number": 132,
+      "original_label": "TH-WAK-Hautsee",
+      "name": "Hautsee",
+      "aliases": [],
+      "region": "Thüringen",
+      "keywords": [
+        "Wartburgkreis",
+        "Thüringen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: TH-WAK-Hautsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: TLUBN; Naturpark / Gemeinde; Fachliteratur; Archive. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wartburgkreis",
+        "Thüringen"
+      ],
+      "preferred_domains": [
+        "thueringen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Hautsee\" Thüringen (\"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_133",
+      "register_number": 133,
+      "original_label": "TH-WAK-Burgsee",
+      "name": "Burgsee",
+      "aliases": [],
+      "region": "Thüringen",
+      "keywords": [
+        "Wartburgkreis",
+        "Thüringen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://www.studia.quaternaria.pan.pl/pdfs/sq21/s_63_71.pdf"
+      ],
+      "context": "Original register entry: TH-WAK-Burgsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: TLUBN; Naturpark / Gemeinde; Fachliteratur; Archive. Register historical search lead (unverified here): Nicht verifiziert. PDF-Abruf fehlgeschlagen; keine inhaltliche Bestätigung.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wartburgkreis",
+        "Thüringen"
+      ],
+      "preferred_domains": [
+        "thueringen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Burgsee\" \"Bad Salzungen\" (\"Sanierung\" OR \"Tiefenwasser\")",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_134",
+      "register_number": 134,
+      "original_label": "TH-WAK-Schönsee",
+      "name": "Schönsee Wartburgkreis",
+      "aliases": [
+        "Schönsee"
+      ],
+      "region": "Thüringen",
+      "keywords": [
+        "Wartburgkreis",
+        "Thüringen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: TH-WAK-Schönsee. Identity caveat: Nicht mit Schönitzer See oder anderen Schönseen gleichsetzen. Suggested route: TLUBN; Naturpark / Gemeinde; Fachliteratur; Archive. Register historical search lead (unverified here): Nicht ermittelt. Keine belastbare automatische Zuordnung; Originalbezeichnung bleibt erhalten.",
+      "identity_requires_confirmation": true,
+      "geography_terms": [
+        "Wartburgkreis",
+        "Thüringen"
+      ],
+      "preferred_domains": [
+        "thueringen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Schönsee\" Thüringen (\"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "K"
+    },
+    {
+      "id": "site_135",
+      "register_number": 135,
+      "original_label": "TH-WAK-Bernshäuser Kutte",
+      "name": "Bernshäuser Kutte",
+      "aliases": [],
+      "region": "Thüringen",
+      "keywords": [
+        "Wartburgkreis",
+        "Thüringen"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: TH-WAK-Bernshäuser Kutte. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: TLUBN; Naturpark / Gemeinde; Fachliteratur; Archive. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wartburgkreis",
+        "Thüringen"
+      ],
+      "preferred_domains": [
+        "thueringen.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Bernshäuser Kutte\" Thüringen (\"Sanierung\" OR \"Nutzungsgeschichte\") filetype:pdf",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_136",
+      "register_number": 136,
+      "original_label": "SH-PLÖ-Belauer See",
+      "name": "Belauer See",
+      "aliases": [],
+      "region": "Schleswig-Holstein",
+      "keywords": [
+        "Plön",
+        "Schleswig-Holstein"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://umweltanwendungen.schleswig-holstein.de/Seen/Berichte_Gutachten/Ufer_Unterwasservegetation/Bericht_Makrophyten_2021_WRRL_biota.pdf"
+      ],
+      "context": "Original register entry: SH-PLÖ-Belauer See. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: Landes-Seenberichte; FRED; limnologische Literatur / Sedimentarchive. Register historical search lead (unverified here): Vergleichsjahre ab 2002. Neuere Monitoringquelle; Vor-2000-Literatur und Sedimentdaten weiterhin suchen.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Plön",
+        "Schleswig-Holstein"
+      ],
+      "preferred_domains": [
+        "schleswig-holstein.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Belauer See\" (\"Sediment\" OR \"varves\" OR \"Paläolimnologie\")",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_137",
+      "register_number": 137,
+      "original_label": "SH-PLÖ-Plöner See",
+      "name": "Plöner See",
+      "aliases": [],
+      "region": "Schleswig-Holstein",
+      "keywords": [
+        "Plön",
+        "Schleswig-Holstein"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://fred.igb-berlin.de/data/package/764"
+      ],
+      "context": "Original register entry: SH-PLÖ-Plöner See. Identity caveat: Großer oder Kleiner Plöner See?. Suggested route: Landes-Seenberichte; FRED; limnologische Literatur / Sedimentarchive. Register historical search lead (unverified here): Historischer Zeitraum offen. Paket für Großen Plöner See; Datennutzung auf Anfrage.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Plön",
+        "Schleswig-Holstein"
+      ],
+      "preferred_domains": [
+        "schleswig-holstein.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Großer Plöner See\" site:fred.igb-berlin.de",
+      "register_priority": "B"
+    },
+    {
+      "id": "site_138",
+      "register_number": 138,
+      "original_label": "SH-PLÖ-Plusssee",
+      "name": "Plußsee",
+      "aliases": [
+        "Plusssee"
+      ],
+      "region": "Schleswig-Holstein",
+      "keywords": [
+        "Plön",
+        "Schleswig-Holstein"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: SH-PLÖ-Plusssee. Identity caveat: Umlaut-/ß-Varianten und englisches Lake Plusssee suchen. Suggested route: Landes-Seenberichte; FRED; limnologische Literatur / Sedimentarchive. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Plön",
+        "Schleswig-Holstein"
+      ],
+      "preferred_domains": [
+        "schleswig-holstein.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "(\"Plußsee\" OR \"Plusssee\" OR \"Lake Plusssee\") (\"1994\" OR \"sediment\" OR \"limnology\")",
+      "register_priority": "B"
+    }
+  ],
+  "topics": [
+    {
+      "name": "Identität und Grunddaten",
+      "keywords": [
+        "Gewässerkennung",
+        "Gewässersteckbrief",
+        "historischer Name"
+      ]
+    },
+    {
+      "name": "Entstehung und Morphometrie",
+      "keywords": [
+        "Morphometrie",
+        "Seebecken",
+        "Tiefe"
+      ]
+    },
+    {
+      "name": "Wasserhaushalt",
+      "keywords": [
+        "Wasserstand",
+        "Grundwasser",
+        "Zuleitung"
+      ]
+    },
+    {
+      "name": "Gewässergüte und Nährstoffe",
+      "keywords": [
+        "Phosphor",
+        "Trophie",
+        "Eutrophierung",
+        "water quality"
+      ]
+    },
+    {
+      "name": "Biologische Entwicklung",
+      "keywords": [
+        "Makrophyten",
+        "Phytoplankton",
+        "Fische"
+      ]
+    },
+    {
+      "name": "Sedimente und Schadstoffe",
+      "keywords": [
+        "Sediment",
+        "Schadstoff",
+        "Schwermetall"
+      ]
+    },
+    {
+      "name": "Einzugsgebiet und Landnutzung",
+      "keywords": [
+        "Einzugsgebiet",
+        "Landnutzung",
+        "Entwässerung"
+      ]
+    },
+    {
+      "name": "Abwasser und Industrie",
+      "keywords": [
+        "Abwasser",
+        "Kläranlage",
+        "Industrie"
+      ]
+    },
+    {
+      "name": "Wasserbauliche Eingriffe",
+      "keywords": [
+        "Wasserbau",
+        "Kanal",
+        "Wehr",
+        "Ausbaggerung"
+      ]
+    },
+    {
+      "name": "Fischerei und sonstige Nutzung",
+      "keywords": [
+        "Fischerei",
+        "Badenutzung",
+        "Schifffahrt"
+      ]
+    },
+    {
+      "name": "Historische Gesamtentwicklung",
+      "keywords": [
+        "Geschichte",
+        "historisch",
+        "Chronik",
+        "1990"
+      ]
+    },
+    {
+      "name": "Sanierung und Restaurierung",
+      "keywords": [
+        "Sanierung",
+        "Restaurierung",
+        "Biomanipulation"
+      ]
+    },
+    {
+      "name": "Maßnahmen im Einzugsgebiet",
+      "keywords": [
+        "Nährstoffreduktion",
+        "Wiedervernässung"
+      ]
+    },
+    {
+      "name": "Umsetzung und Wirkung von Maßnahmen",
+      "keywords": [
+        "Erfolgskontrolle",
+        "Vorher-Nachher",
+        "Maßnahmen"
+      ]
+    },
+    {
+      "name": "Amtliche Bewertung und Planung",
+      "keywords": [
+        "WRRL",
+        "Bewirtschaftungsplan",
+        "Zustand"
+      ]
+    },
+    {
+      "name": "Naturschutz",
+      "keywords": [
+        "FFH",
+        "Managementplan",
+        "Naturschutzgebiet"
+      ]
+    },
+    {
+      "name": "Messreihen und Monitoring",
+      "keywords": [
+        "Monitoring",
+        "Messreihe",
+        "Langzeitdaten"
+      ]
+    },
+    {
+      "name": "Paläolimnologie und Sedimentarchive",
+      "keywords": [
+        "Paläolimnologie",
+        "Sedimentkern",
+        "palaeolimnology"
+      ]
+    },
+    {
+      "name": "Klima und Extremereignisse",
+      "keywords": [
+        "Dürre",
+        "Hochwasser",
+        "Fischsterben"
+      ]
+    }
+  ],
+  "search": {
+    "provider": "external",
+    "count": 8
+  },
+  "review": {
+    "mode": "rules"
+  },
+  "storage": {
+    "persist_extracted_text": false
+  },
+  "limits": {
+    "max_fetches_per_run": 0,
+    "max_searches_per_run": 137,
+    "max_tasks_per_run": 600,
+    "max_queries_per_waterbody": 160,
+    "max_seconds_per_run": 180,
+    "timeout_seconds": 8,
+    "delay_seconds": 0.5
+  }
+}

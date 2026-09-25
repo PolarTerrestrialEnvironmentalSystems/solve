@@ -1,0 +1,12 @@
+quelle : https://www.elbe-datenportal.de/
+
+gewässer - link zu catchment
+wasserkörper -link zu waterbody
+messstelle -link zu monitoringstation - nutzt jedoch nicht den eu_cd code sondern hat einen Brandenburg spezifischen Code : https://undine.bafg.de/elbe/guetemessstellen/elbe_mst_potsdam_humboldtbr.html
+    bzw, lieber hier hin : https://www.elbe-datenportal.de/FisFggElbe/content/auswertung/MessstellenDetail_filter_messstelle
+    aber das wird schwierig zu scrapen, lieber hoffen das uns die datenbank zu gegeben wird
+
+Parameter , Messwert, Einheit - part von Parameter
+'Messwerttyp';'Medium';'Messwertart';'Messvorgang';'Datum';'Bezugsjahr';'Zeit';'Datum bis';'Zeit bis';'Status';'Analysemethode'; - Measurement
+
+import in datenbank in seperaten skript?

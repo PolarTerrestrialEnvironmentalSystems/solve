@@ -1,0 +1,32 @@
+completion_models:
+  default_completion_model:
+    type: litellm
+    model_provider: openai
+    model: alias-fast
+    api_base: https://api.blablador.fz-juelich.de/v1
+    api_key: ${BLABLADOR_KEY}
+    auth_method: api_key
+    retry:
+      type: exponential_backoff
+      max_retries: 3
+      base_delay: 5.0
+
+embedding_models:
+  default_embedding_model:
+    type: litellm
+    model_provider: openai
+    model: alias-embeddings
+    api_base: https://api.blablador.fz-juelich.de/v1
+    api_key: ${BLABLADOR_KEY}
+    auth_method: api_key
+    retry:
+      type: exponential_backoff
+      max_retries: 3
+      base_delay: 5.0
+
+input:
+  type: markitdown
+  storage:
+    type: file
+    base_dir: input
+  file_pattern: '.*\.pdf$'

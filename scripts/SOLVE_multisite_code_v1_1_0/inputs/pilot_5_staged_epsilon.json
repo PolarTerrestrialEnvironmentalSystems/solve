@@ -1,0 +1,327 @@
+{
+  "context": "Find and archive sources for each named waterbody or river segment. Prioritize dated historical context, especially before 2000, including recent retrospective reports. Publication year is not event year. Do not infer a site identity from a similar name. Keep river reaches, bays, ponds and area sites distinct. Read sources transiently for relevance and link discovery only; retain originals and provenance, never extracted fulltexts or scientific facts. No writes to the SOLVE databases. All 19 research themes apply.",
+  "waterbodies": [
+    {
+      "id": "selected_20d78bdf05456a8f",
+      "name": "Arendsee",
+      "region": "Sachsen-Anhalt",
+      "aliases": [],
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "context": "Vom Nutzer ausgewähltes Gewässer. Orts- und Gewässeridentität anhand der Quellen prüfen; nicht mit ähnlich benannten Nachbargewässern gleichsetzen. Sachsen-Anhalt dient als regionaler Suchkontext, nicht als bestätigte administrative Zuordnung.",
+      "identity_requires_confirmation": false,
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026",
+      "ambiguous_place_name": true
+    },
+    {
+      "id": "site_082",
+      "register_number": 82,
+      "original_label": "ST-WB-Bergwitzsee",
+      "name": "Bergwitzsee",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "context": "Original register entry: ST-WB-Bergwitzsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Bergbau-/Abschlussbetriebsplan, Flutung, Nachsorge und Sanierungsträger. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Bergwitzsee\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B",
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026"
+    },
+    {
+      "id": "selected_5e31987cd415e6d8",
+      "name": "Barleber See I",
+      "region": "Sachsen-Anhalt",
+      "aliases": [],
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "context": "Vom Nutzer ausgewähltes Gewässer. Orts- und Gewässeridentität anhand der Quellen prüfen; nicht mit ähnlich benannten Nachbargewässern gleichsetzen. Sachsen-Anhalt dient als regionaler Suchkontext, nicht als bestätigte administrative Zuordnung.",
+      "identity_requires_confirmation": false,
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026"
+    },
+    {
+      "id": "selected_3abd8f1d7cd18d1d",
+      "name": "Barleber See II",
+      "region": "Sachsen-Anhalt",
+      "aliases": [],
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "context": "Vom Nutzer ausgewähltes Gewässer. Orts- und Gewässeridentität anhand der Quellen prüfen; nicht mit ähnlich benannten Nachbargewässern gleichsetzen. Sachsen-Anhalt dient als regionaler Suchkontext, nicht als bestätigte administrative Zuordnung.",
+      "identity_requires_confirmation": false,
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026"
+    },
+    {
+      "id": "selected_9add427c367e763f",
+      "name": "Rappbodetalsperre/Vorsperre Hassel",
+      "region": "Sachsen-Anhalt",
+      "aliases": [
+        "Vorsperre Hassel"
+      ],
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [],
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "context": "Vom Nutzer ausgewähltes Gewässer. Orts- und Gewässeridentität anhand der Quellen prüfen; nicht mit ähnlich benannten Nachbargewässern gleichsetzen. Sachsen-Anhalt dient als regionaler Suchkontext, nicht als bestätigte administrative Zuordnung. Nur die bezeichnete Vorsperre; Haupttalsperre und andere Vorsperren getrennt halten.",
+      "identity_requires_confirmation": false,
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026",
+      "query_name": "Vorsperre Hassel"
+    }
+  ],
+  "topics": [
+    {
+      "name": "Identität und Grunddaten",
+      "keywords": [
+        "Gewässerkennung",
+        "Gewässersteckbrief",
+        "historischer Name"
+      ]
+    },
+    {
+      "name": "Entstehung und Morphometrie",
+      "keywords": [
+        "Morphometrie",
+        "Seebecken",
+        "Tiefe"
+      ]
+    },
+    {
+      "name": "Wasserhaushalt",
+      "keywords": [
+        "Wasserstand",
+        "Grundwasser",
+        "Zuleitung"
+      ]
+    },
+    {
+      "name": "Gewässergüte und Nährstoffe",
+      "keywords": [
+        "Phosphor",
+        "Trophie",
+        "Eutrophierung",
+        "water quality"
+      ]
+    },
+    {
+      "name": "Biologische Entwicklung",
+      "keywords": [
+        "Makrophyten",
+        "Phytoplankton",
+        "Fische"
+      ]
+    },
+    {
+      "name": "Sedimente und Schadstoffe",
+      "keywords": [
+        "Sediment",
+        "Schadstoff",
+        "Schwermetall"
+      ]
+    },
+    {
+      "name": "Einzugsgebiet und Landnutzung",
+      "keywords": [
+        "Einzugsgebiet",
+        "Landnutzung",
+        "Entwässerung"
+      ]
+    },
+    {
+      "name": "Abwasser und Industrie",
+      "keywords": [
+        "Abwasser",
+        "Kläranlage",
+        "Industrie"
+      ]
+    },
+    {
+      "name": "Wasserbauliche Eingriffe",
+      "keywords": [
+        "Wasserbau",
+        "Kanal",
+        "Wehr",
+        "Ausbaggerung"
+      ]
+    },
+    {
+      "name": "Fischerei und sonstige Nutzung",
+      "keywords": [
+        "Fischerei",
+        "Badenutzung",
+        "Schifffahrt"
+      ]
+    },
+    {
+      "name": "Historische Gesamtentwicklung",
+      "keywords": [
+        "Geschichte",
+        "historisch",
+        "Chronik",
+        "1990"
+      ]
+    },
+    {
+      "name": "Sanierung und Restaurierung",
+      "keywords": [
+        "Sanierung",
+        "Restaurierung",
+        "Biomanipulation"
+      ]
+    },
+    {
+      "name": "Maßnahmen im Einzugsgebiet",
+      "keywords": [
+        "Nährstoffreduktion",
+        "Wiedervernässung"
+      ]
+    },
+    {
+      "name": "Umsetzung und Wirkung von Maßnahmen",
+      "keywords": [
+        "Erfolgskontrolle",
+        "Vorher-Nachher",
+        "Maßnahmen"
+      ]
+    },
+    {
+      "name": "Amtliche Bewertung und Planung",
+      "keywords": [
+        "WRRL",
+        "Bewirtschaftungsplan",
+        "Zustand"
+      ]
+    },
+    {
+      "name": "Naturschutz",
+      "keywords": [
+        "FFH",
+        "Managementplan",
+        "Naturschutzgebiet"
+      ]
+    },
+    {
+      "name": "Messreihen und Monitoring",
+      "keywords": [
+        "Monitoring",
+        "Messreihe",
+        "Langzeitdaten"
+      ]
+    },
+    {
+      "name": "Paläolimnologie und Sedimentarchive",
+      "keywords": [
+        "Paläolimnologie",
+        "Sedimentkern",
+        "palaeolimnology"
+      ]
+    },
+    {
+      "name": "Klima und Extremereignisse",
+      "keywords": [
+        "Dürre",
+        "Hochwasser",
+        "Fischsterben"
+      ]
+    }
+  ],
+  "search": {
+    "provider": "searxng",
+    "count": 8,
+    "base_url": "https://search.blablador.fz-juelich.de",
+    "language": "de",
+    "timeout_seconds": 45,
+    "delay_seconds": 2,
+    "strategy": "staged_epsilon",
+    "epsilon": 0.2,
+    "adaptive_max_queries": 12,
+    "plateau_queries": 4
+  },
+  "review": {
+    "mode": "rules"
+  },
+  "storage": {
+    "persist_extracted_text": false
+  },
+  "limits": {
+    "max_fetches_per_run": 60,
+    "max_searches_per_run": 20,
+    "max_tasks_per_run": 60,
+    "max_queries_per_waterbody": 160,
+    "max_seconds_per_run": 1200,
+    "timeout_seconds": 8,
+    "delay_seconds": 0.5,
+    "parse_timeout_seconds": 15,
+    "max_pdf_pages": 100,
+    "max_download_mb": 30,
+    "max_urls_per_host_per_run": 12,
+    "max_depth": 2
+  }
+}

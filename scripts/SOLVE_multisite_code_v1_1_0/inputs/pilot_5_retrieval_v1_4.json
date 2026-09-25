@@ -1,0 +1,513 @@
+{
+  "context": "Find and archive sources for each named waterbody or river segment. Prioritize dated historical context, especially before 2000, including recent retrospective reports. Publication year is not event year. Do not infer a site identity from a similar name. Keep river reaches, bays, ponds and area sites distinct. Read sources transiently for relevance and link discovery only; retain originals and provenance, never extracted fulltexts or scientific facts. No writes to the SOLVE databases. All 19 research themes apply.",
+  "waterbodies": [
+    {
+      "id": "site_082",
+      "register_number": 82,
+      "original_label": "ST-WB-Bergwitzsee",
+      "name": "Bergwitzsee",
+      "aliases": [],
+      "region": "Sachsen-Anhalt",
+      "keywords": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf",
+        "https://lau.sachsen-anhalt.de/fachthemen/naturschutz/schutzgebiete-nach-landesrecht/landschaftsschutzgebiet-lsg/lsg35"
+      ],
+      "context": "Original register entry: ST-WB-Bergwitzsee. Identity caveat: Koordinaten / Gewässer-ID vor Import abgleichen. Suggested route: LHW / LAU; Biosphärenreservat Mittelelbe; FFH-Pläne; Landesarchiv; Bergbau-/Abschlussbetriebsplan, Flutung, Nachsorge und Sanierungsträger. Register historical search lead (unverified here): Nicht ermittelt. Keine vollständige Einzelrecherche; leere Belegspalte bedeutet keinen Negativnachweis.",
+      "identity_requires_confirmation": false,
+      "geography_terms": [
+        "Wittenberg",
+        "Sachsen-Anhalt"
+      ],
+      "preferred_domains": [
+        "lhw.sachsen-anhalt.de",
+        "lau.sachsen-anhalt.de",
+        "sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "seed_provenance": "Supplied register, not new discoveries in this run",
+      "suggested_query": "\"Bergwitzsee\" (\"Managementplan\" OR \"Gewässer\" OR \"Sanierung\") filetype:pdf",
+      "register_priority": "B",
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026",
+      "retrieval_input_revision": "1.4",
+      "english_terms": [
+        "limnology",
+        "sediment"
+      ],
+      "seed_titles": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": "HYDREG 2010: hydrologisches Regime der Oberflächenwasserkörper in Sachsen-Anhalt; Gewässerliste mit Bergwitzsee",
+        "https://lau.sachsen-anhalt.de/fachthemen/naturschutz/schutzgebiete-nach-landesrecht/landschaftsschutzgebiet-lsg/lsg35": "LAU: Landschaftsschutzgebiet Dübener Heide; Bergwitzsee, Lebensräume und Nutzung"
+      },
+      "seed_evidence": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        },
+        "https://lau.sachsen-anhalt.de/fachthemen/naturschutz/schutzgebiete-nach-landesrecht/landschaftsschutzgebiet-lsg/lsg35": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        }
+      }
+    },
+    {
+      "id": "selected_5e31987cd415e6d8",
+      "name": "Barleber See I",
+      "region": "Sachsen-Anhalt",
+      "aliases": [],
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [
+        "MEL03OW21-00"
+      ],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf",
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/MEL03_text_web.pdf"
+      ],
+      "preferred_domains": [
+        "lhw.sachsen-anhalt.de",
+        "lau.sachsen-anhalt.de",
+        "sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "context": "Vom Nutzer ausgewähltes Gewässer. Orts- und Gewässeridentität anhand der Quellen prüfen; nicht mit ähnlich benannten Nachbargewässern gleichsetzen. Sachsen-Anhalt dient als regionaler Suchkontext, nicht als bestätigte administrative Zuordnung. See I und See II getrennt bewerten; Sammelberichte können beide enthalten.",
+      "identity_requires_confirmation": false,
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026",
+      "retrieval_input_revision": "1.4",
+      "english_terms": [
+        "limnology",
+        "sediment"
+      ],
+      "seed_titles": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": "HYDREG 2010: hydrologisches Regime der Oberflächenwasserkörper in Sachsen-Anhalt; Gewässerliste mit Barleber See I",
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/MEL03_text_web.pdf": "Gewässerbericht 2005–2008, Betrachtungsraum Ohre: Barleber See I und Barleber See II"
+      },
+      "seed_evidence": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        },
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/MEL03_text_web.pdf": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        }
+      },
+      "identifier_provenance": {
+        "url": "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/MEL03_text_web.pdf",
+        "period": "2005–2008",
+        "note": "Historische Kennung aus Bericht; keine Behauptung unveränderter aktueller Kennung"
+      }
+    },
+    {
+      "id": "selected_3abd8f1d7cd18d1d",
+      "name": "Barleber See II",
+      "region": "Sachsen-Anhalt",
+      "aliases": [],
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [
+        "MEL03OW22-00"
+      ],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf",
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/MEL03_text_web.pdf"
+      ],
+      "preferred_domains": [
+        "lhw.sachsen-anhalt.de",
+        "lau.sachsen-anhalt.de",
+        "sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "context": "Vom Nutzer ausgewähltes Gewässer. Orts- und Gewässeridentität anhand der Quellen prüfen; nicht mit ähnlich benannten Nachbargewässern gleichsetzen. Sachsen-Anhalt dient als regionaler Suchkontext, nicht als bestätigte administrative Zuordnung. See I und See II getrennt bewerten; Sammelberichte können beide enthalten.",
+      "identity_requires_confirmation": false,
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026",
+      "retrieval_input_revision": "1.4",
+      "english_terms": [
+        "limnology",
+        "sediment"
+      ],
+      "seed_titles": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": "HYDREG 2010: hydrologisches Regime der Oberflächenwasserkörper in Sachsen-Anhalt; Gewässerliste mit Barleber See II",
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/MEL03_text_web.pdf": "Gewässerbericht 2005–2008, Betrachtungsraum Ohre: Barleber See I und Barleber See II"
+      },
+      "seed_evidence": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        },
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/MEL03_text_web.pdf": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        }
+      },
+      "identifier_provenance": {
+        "url": "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/MEL03_text_web.pdf",
+        "period": "2005–2008",
+        "note": "Historische Kennung aus Bericht; keine Behauptung unveränderter aktueller Kennung"
+      }
+    },
+    {
+      "id": "selected_20d78bdf05456a8f",
+      "name": "Arendsee",
+      "region": "Sachsen-Anhalt",
+      "aliases": [
+        "Lake Arendsee"
+      ],
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf",
+        "https://www.ufz.de/index.php?de=40943"
+      ],
+      "preferred_domains": [
+        "ufz.de",
+        "lhw.sachsen-anhalt.de",
+        "lau.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "context": "Vom Nutzer ausgewähltes Gewässer. Orts- und Gewässeridentität anhand der Quellen prüfen; nicht mit ähnlich benannten Nachbargewässern gleichsetzen. Sachsen-Anhalt dient als regionaler Suchkontext, nicht als bestätigte administrative Zuordnung. Gemeint ist der See. Stadtgeschichte, Kommunalwahlen und Hauptsatzung sind allein kein Gewässerbeleg.",
+      "identity_requires_confirmation": false,
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026",
+      "ambiguous_place_name": true,
+      "retrieval_input_revision": "1.4",
+      "english_terms": [
+        "limnology",
+        "sediment"
+      ],
+      "seed_titles": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": "HYDREG 2010: hydrologisches Regime der Oberflächenwasserkörper in Sachsen-Anhalt; Gewässerliste mit Arendsee",
+        "https://www.ufz.de/index.php?de=40943": "UFZ-Publikationsliste: Phosphorus input by nordic geese to the eutrophic Lake Arendsee, Germany"
+      },
+      "seed_evidence": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        },
+        "https://www.ufz.de/index.php?de=40943": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        }
+      }
+    },
+    {
+      "id": "selected_9add427c367e763f",
+      "name": "Rappbodetalsperre/Vorsperre Hassel",
+      "region": "Sachsen-Anhalt",
+      "aliases": [
+        "Vorsperre Hassel",
+        "Hassel-Vorsperre",
+        "Vorsperren Hassel"
+      ],
+      "keywords": [
+        "Sachsen-Anhalt"
+      ],
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": [
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf",
+        "https://www.ufz.de/index.php?de=39919",
+        "https://www.ufz.de/index.php?de=39920"
+      ],
+      "preferred_domains": [
+        "ufz.de",
+        "talsperrenbetrieb-lsa.de",
+        "lhw.sachsen-anhalt.de"
+      ],
+      "research_questions": [
+        "Gewässergüte und historische Entwicklung",
+        "Sanierung und Maßnahmen",
+        "Messreihen, Sedimente und Naturschutz"
+      ],
+      "context": "Vom Nutzer ausgewähltes Gewässer. Orts- und Gewässeridentität anhand der Quellen prüfen; nicht mit ähnlich benannten Nachbargewässern gleichsetzen. Sachsen-Anhalt dient als regionaler Suchkontext, nicht als bestätigte administrative Zuordnung. Nur die bezeichnete Vorsperre; Haupttalsperre und andere Vorsperren getrennt halten.",
+      "identity_requires_confirmation": false,
+      "input_provenance": "Explizite Gewässerauswahl des Nutzers vom 23.09.2026",
+      "query_name": "Vorsperre Hassel",
+      "retrieval_input_revision": "1.4",
+      "english_terms": [
+        "limnology",
+        "sediment"
+      ],
+      "seed_titles": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": "HYDREG 2010: hydrologisches Regime der Oberflächenwasserkörper in Sachsen-Anhalt; Gewässerliste mit Vorsperre Hassel",
+        "https://www.ufz.de/index.php?de=39919": "UFZ Talsperrenobservatorium: Monitoring an den Vorsperren Hassel und Rappbode",
+        "https://www.ufz.de/index.php?de=39920": "UFZ Wissenschaftliche Ziele: Messprogramme an der Hassel-Vorsperre"
+      },
+      "seed_evidence": {
+        "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/neu_PDF/5.0_GLD/Dokumente_GLD/Wasserhaushalt_Bio_Gew-Struktur/Endbericht_HYDREG_2010.pdf": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        },
+        "https://www.ufz.de/index.php?de=39919": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        },
+        "https://www.ufz.de/index.php?de=39920": {
+          "checked": "2026-09-23",
+          "kind": "publisher_metadata_or_document_name_listing",
+          "purpose": "Rechercheeinstieg; fachliche Bewertung nach Abruf erforderlich"
+        }
+      }
+    }
+  ],
+  "topics": [
+    {
+      "name": "Identität und Grunddaten",
+      "keywords": [
+        "Gewässerkennung",
+        "Gewässersteckbrief",
+        "historischer Name"
+      ]
+    },
+    {
+      "name": "Entstehung und Morphometrie",
+      "keywords": [
+        "Morphometrie",
+        "Seebecken",
+        "Tiefe"
+      ]
+    },
+    {
+      "name": "Wasserhaushalt",
+      "keywords": [
+        "Wasserstand",
+        "Grundwasser",
+        "Zuleitung"
+      ]
+    },
+    {
+      "name": "Gewässergüte und Nährstoffe",
+      "keywords": [
+        "Phosphor",
+        "Trophie",
+        "Eutrophierung",
+        "water quality"
+      ]
+    },
+    {
+      "name": "Biologische Entwicklung",
+      "keywords": [
+        "Makrophyten",
+        "Phytoplankton",
+        "Fische"
+      ]
+    },
+    {
+      "name": "Sedimente und Schadstoffe",
+      "keywords": [
+        "Sediment",
+        "Schadstoff",
+        "Schwermetall"
+      ]
+    },
+    {
+      "name": "Einzugsgebiet und Landnutzung",
+      "keywords": [
+        "Einzugsgebiet",
+        "Landnutzung",
+        "Entwässerung"
+      ]
+    },
+    {
+      "name": "Abwasser und Industrie",
+      "keywords": [
+        "Abwasser",
+        "Kläranlage",
+        "Industrie"
+      ]
+    },
+    {
+      "name": "Wasserbauliche Eingriffe",
+      "keywords": [
+        "Wasserbau",
+        "Kanal",
+        "Wehr",
+        "Ausbaggerung"
+      ]
+    },
+    {
+      "name": "Fischerei und sonstige Nutzung",
+      "keywords": [
+        "Fischerei",
+        "Badenutzung",
+        "Schifffahrt"
+      ]
+    },
+    {
+      "name": "Historische Gesamtentwicklung",
+      "keywords": [
+        "Geschichte",
+        "historisch",
+        "Chronik",
+        "1990"
+      ]
+    },
+    {
+      "name": "Sanierung und Restaurierung",
+      "keywords": [
+        "Sanierung",
+        "Restaurierung",
+        "Biomanipulation"
+      ]
+    },
+    {
+      "name": "Maßnahmen im Einzugsgebiet",
+      "keywords": [
+        "Nährstoffreduktion",
+        "Wiedervernässung"
+      ]
+    },
+    {
+      "name": "Umsetzung und Wirkung von Maßnahmen",
+      "keywords": [
+        "Erfolgskontrolle",
+        "Vorher-Nachher",
+        "Maßnahmen"
+      ]
+    },
+    {
+      "name": "Amtliche Bewertung und Planung",
+      "keywords": [
+        "WRRL",
+        "Bewirtschaftungsplan",
+        "Zustand"
+      ]
+    },
+    {
+      "name": "Naturschutz",
+      "keywords": [
+        "FFH",
+        "Managementplan",
+        "Naturschutzgebiet"
+      ]
+    },
+    {
+      "name": "Messreihen und Monitoring",
+      "keywords": [
+        "Monitoring",
+        "Messreihe",
+        "Langzeitdaten"
+      ]
+    },
+    {
+      "name": "Paläolimnologie und Sedimentarchive",
+      "keywords": [
+        "Paläolimnologie",
+        "Sedimentkern",
+        "palaeolimnology"
+      ]
+    },
+    {
+      "name": "Klima und Extremereignisse",
+      "keywords": [
+        "Dürre",
+        "Hochwasser",
+        "Fischsterben"
+      ]
+    }
+  ],
+  "search": {
+    "provider": "searxng",
+    "count": 8,
+    "base_url": "https://search.blablador.fz-juelich.de",
+    "language": "de",
+    "timeout_seconds": 45,
+    "delay_seconds": 2,
+    "strategy": "focused",
+    "adaptive_max_queries": 12,
+    "plateau_queries": 4
+  },
+  "review": {
+    "mode": "api",
+    "base_url": "https://api.blablador.fz-juelich.de/v1",
+    "model": "alias-large",
+    "api_key_env": "BLABLADOR_KEY",
+    "max_calls_per_run": 15,
+    "max_input_chars": 16000,
+    "require_topic_evidence": true,
+    "required": true
+  },
+  "storage": {
+    "persist_extracted_text": false,
+    "shared_cache_dir": "download_cache"
+  },
+  "limits": {
+    "max_fetches_per_run": 15,
+    "max_searches_per_run": 10,
+    "max_tasks_per_run": 100,
+    "max_queries_per_waterbody": 160,
+    "max_seconds_per_run": 420,
+    "timeout_seconds": 25,
+    "delay_seconds": 0.5,
+    "parse_timeout_seconds": 75,
+    "max_pdf_pages": 180,
+    "max_download_mb": 30,
+    "max_urls_per_host_per_run": 12,
+    "max_ocr_pages": 8
+  },
+  "preflight": {
+    "enabled": true,
+    "base_url": "https://api.blablador.fz-juelich.de/v1",
+    "api_key_env": "BLABLADOR_KEY",
+    "model": "alias-fast",
+    "max_calls_per_run": 25,
+    "timeout_seconds": 60,
+    "defer_confidence": 0.85,
+    "rank_before_download": true,
+    "exploration_per_waterbody": 2
+  },
+  "retrieval": {
+    "enabled": true,
+    "engines": [
+      "google",
+      "default",
+      "brave"
+    ],
+    "max_health_calls_per_run": 6,
+    "health_ttl_seconds": 3600,
+    "cooldown_seconds": 1800,
+    "crossref_enabled": true,
+    "max_pages": 2,
+    "bibliography": true
+  },
+  "ocr": {
+    "enabled": true,
+    "language": "deu+eng"
+  }
+}

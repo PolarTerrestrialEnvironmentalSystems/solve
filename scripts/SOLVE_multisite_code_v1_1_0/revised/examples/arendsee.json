@@ -1,0 +1,14 @@
+{
+  "context": "Quellen zu Gewässergüte, Sanierung und historischer Entwicklung sammeln. Originale speichern, Texte nur vorübergehend auf Relevanz und weiterführende Links prüfen. Historische Zeiträume vor 2000 haben hohe Priorität.",
+  "waterbodies": [
+    {
+      "name": "Arendsee",
+      "region": "Sachsen-Anhalt",
+      "aliases": ["Arend See"],
+      "keywords": ["Altmark", "Altmarkkreis Salzwedel", "Phosphor", "Sanierung", "Sedimente"],
+      "context": "Beispielkonfiguration; im Multisite-Test vom 22.09.2026 nicht als Ziel recherchiert.",
+      "preferred_domains": ["sachsen-anhalt.de", "igb-berlin.de"],
+      "research_questions": ["Sanierung Phosphor", "historische Messreihen", "Sedimentarchive"]
+    }
+  ]
+}

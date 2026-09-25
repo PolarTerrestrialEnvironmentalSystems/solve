@@ -1,0 +1,88 @@
+{
+    "WaterBodyV2": {
+        "key": "water_body_id",
+        "alias_properties": [
+            "name",
+            "water_body_id",
+            "segment_code",
+            "lawa_id"
+        ]
+    },
+    "GroundwaterBodyV2": {
+        "key": "groundwater_body_id",
+        "alias_properties": [
+            "name",
+            "groundwater_body_id"
+        ]
+    },
+    "CatchmentV2": {
+        "key": "catchment_id",
+        "alias_properties": [
+            "name",
+            "catchment_id",
+            "area_number"
+        ]
+    },
+    "MonitoringStationV2": {
+        "key": "station_key",
+        "alias_properties": [
+            "name",
+            "station_id",
+            "station_key",
+            "eu_station_code",
+            "identity_station_code"
+        ]
+    },
+    "ParameterV2": {
+        "key": "parameter_key",
+        "alias_properties": [
+            "name",
+            "parameter_id",
+            "parameter_key"
+        ]
+    },
+    "PollutantV2": {
+        "key": "pollutant_id",
+        "alias_properties": [
+            "pollutant_code",
+            "pollutant_other",
+            "pollutant_id"
+        ]
+    },
+    "ProtectedAreaV2": {
+        "key": "protected_area_key",
+        "alias_properties": [
+            "name",
+            "protected_area_id",
+            "protected_area_key"
+        ]
+    },
+    "PlanningUnitV2": {
+        "key": "planning_unit_code",
+        "alias_properties": [
+            "name",
+            "planning_unit_code",
+            "work_area_code"
+        ]
+    },
+    "CoreLocationV2": {
+        "key": "core_code",
+        "alias_properties": [
+            "core_code"
+        ]
+    },
+    "UnitV2": {
+        "key": "unit_id",
+        "alias_properties": [
+            "symbol",
+            "unit_id"
+        ]
+    },
+    "PaleoElementV2": {
+        "key": "element_id",
+        "alias_properties": [
+            "symbol",
+            "element_id"
+        ]
+    }
+}

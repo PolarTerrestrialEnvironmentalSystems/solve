@@ -1,0 +1,234 @@
+{
+  "search": {
+    "provider": "external",
+    "api_key_env": "BRAVE_API_KEY",
+    "count": 8,
+    "country": "DE",
+    "language": "de"
+  },
+  "review": {
+    "mode": "rules",
+    "base_url_env": "BLABLADOR_BASE_URL",
+    "api_key_env": "BLABLADOR_API_KEY",
+    "model_env": "BLABLADOR_MODEL",
+    "max_input_chars": 24000,
+    "max_calls_per_run": 25
+  },
+  "limits": {
+    "max_fetches_per_run": 50,
+    "max_searches_per_run": 12,
+    "max_tasks_per_run": 150,
+    "max_queries_per_waterbody": 80,
+    "max_candidates_per_waterbody": 2000,
+    "max_depth": 5,
+    "max_reference_depth": 3,
+    "max_links_per_document": 2000,
+    "max_download_mb": 30,
+    "timeout_seconds": 25,
+    "parse_timeout_seconds": 90,
+    "max_pdf_pages": 300,
+    "max_ocr_pages": 12,
+    "max_attempts": 3,
+    "delay_seconds": 1.0,
+    "max_seconds_per_run": 1800,
+    "max_urls_per_host_per_run": 20
+  },
+  "ocr": {
+    "enabled": false,
+    "language": "deu+eng"
+  },
+  "network": {
+    "trust_environment_proxy_dns": true
+  },
+  "storage": {
+    "persist_extracted_text": false
+  },
+  "user_agent": "SOLVEResearchBot/1.1",
+  "context": "Quellen zu Gewässergüte, Sanierung und historischer Entwicklung sammeln. Originale speichern, Texte nur vorübergehend auf Relevanz und weiterführende Links prüfen. Historische Zeiträume vor 2000 haben hohe Priorität.",
+  "waterbodies": [
+    {
+      "name": "Arendsee",
+      "region": "Sachsen-Anhalt",
+      "aliases": [
+        "Arend See"
+      ],
+      "keywords": [
+        "Altmark",
+        "Altmarkkreis Salzwedel",
+        "Phosphor",
+        "Sanierung",
+        "Sedimente"
+      ],
+      "context": "Beispielkonfiguration; im Multisite-Test vom 22.09.2026 nicht als Ziel recherchiert.",
+      "preferred_domains": [
+        "sachsen-anhalt.de",
+        "igb-berlin.de"
+      ],
+      "research_questions": [
+        "Sanierung Phosphor",
+        "historische Messreihen",
+        "Sedimentarchive"
+      ],
+      "id": "site_fbfe2f79dc0bdf64",
+      "identifiers": [],
+      "exclude_keywords": [],
+      "seed_urls": []
+    }
+  ],
+  "topics": [
+    {
+      "name": "Identität und Grunddaten",
+      "keywords": [
+        "Gewässerkennung",
+        "Gewässersteckbrief",
+        "historischer Name"
+      ]
+    },
+    {
+      "name": "Entstehung und Morphometrie",
+      "keywords": [
+        "Morphometrie",
+        "Seebecken",
+        "Tiefe"
+      ]
+    },
+    {
+      "name": "Wasserhaushalt",
+      "keywords": [
+        "Wasserstand",
+        "Grundwasser",
+        "Zuleitung"
+      ]
+    },
+    {
+      "name": "Gewässergüte und Nährstoffe",
+      "keywords": [
+        "Phosphor",
+        "Trophie",
+        "Eutrophierung",
+        "water quality"
+      ]
+    },
+    {
+      "name": "Biologische Entwicklung",
+      "keywords": [
+        "Makrophyten",
+        "Phytoplankton",
+        "Fische"
+      ]
+    },
+    {
+      "name": "Sedimente und Schadstoffe",
+      "keywords": [
+        "Sediment",
+        "Schadstoff",
+        "Schwermetall"
+      ]
+    },
+    {
+      "name": "Einzugsgebiet und Landnutzung",
+      "keywords": [
+        "Einzugsgebiet",
+        "Landnutzung",
+        "Entwässerung"
+      ]
+    },
+    {
+      "name": "Abwasser und Industrie",
+      "keywords": [
+        "Abwasser",
+        "Kläranlage",
+        "Industrie"
+      ]
+    },
+    {
+      "name": "Wasserbauliche Eingriffe",
+      "keywords": [
+        "Wasserbau",
+        "Kanal",
+        "Wehr",
+        "Ausbaggerung"
+      ]
+    },
+    {
+      "name": "Fischerei und sonstige Nutzung",
+      "keywords": [
+        "Fischerei",
+        "Badenutzung",
+        "Schifffahrt"
+      ]
+    },
+    {
+      "name": "Historische Gesamtentwicklung",
+      "keywords": [
+        "Geschichte",
+        "historisch",
+        "Chronik",
+        "1990"
+      ]
+    },
+    {
+      "name": "Sanierung und Restaurierung",
+      "keywords": [
+        "Sanierung",
+        "Restaurierung",
+        "Biomanipulation"
+      ]
+    },
+    {
+      "name": "Maßnahmen im Einzugsgebiet",
+      "keywords": [
+        "Nährstoffreduktion",
+        "Wiedervernässung"
+      ]
+    },
+    {
+      "name": "Umsetzung und Wirkung von Maßnahmen",
+      "keywords": [
+        "Erfolgskontrolle",
+        "Vorher-Nachher",
+        "Maßnahmen"
+      ]
+    },
+    {
+      "name": "Amtliche Bewertung und Planung",
+      "keywords": [
+        "WRRL",
+        "Bewirtschaftungsplan",
+        "Zustand"
+      ]
+    },
+    {
+      "name": "Naturschutz",
+      "keywords": [
+        "FFH",
+        "Managementplan",
+        "Naturschutzgebiet"
+      ]
+    },
+    {
+      "name": "Messreihen und Monitoring",
+      "keywords": [
+        "Monitoring",
+        "Messreihe",
+        "Langzeitdaten"
+      ]
+    },
+    {
+      "name": "Paläolimnologie und Sedimentarchive",
+      "keywords": [
+        "Paläolimnologie",
+        "Sedimentkern",
+        "palaeolimnology"
+      ]
+    },
+    {
+      "name": "Klima und Extremereignisse",
+      "keywords": [
+        "Dürre",
+        "Hochwasser",
+        "Fischsterben"
+      ]
+    }
+  ]
+}

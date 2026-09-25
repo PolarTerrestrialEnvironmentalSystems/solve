@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Identität und Grunddaten",
+    "keywords": [
+      "Gewässerkennung",
+      "Gewässersteckbrief",
+      "historischer Name"
+    ]
+  },
+  {
+    "name": "Entstehung und Morphometrie",
+    "keywords": [
+      "Morphometrie",
+      "Seebecken",
+      "Tiefe"
+    ]
+  },
+  {
+    "name": "Wasserhaushalt",
+    "keywords": [
+      "Wasserstand",
+      "Grundwasser",
+      "Zuleitung"
+    ]
+  },
+  {
+    "name": "Gewässergüte und Nährstoffe",
+    "keywords": [
+      "Phosphor",
+      "Trophie",
+      "Eutrophierung",
+      "water quality"
+    ]
+  },
+  {
+    "name": "Biologische Entwicklung",
+    "keywords": [
+      "Makrophyten",
+      "Phytoplankton",
+      "Fische"
+    ]
+  },
+  {
+    "name": "Sedimente und Schadstoffe",
+    "keywords": [
+      "Sediment",
+      "Schadstoff",
+      "Schwermetall"
+    ]
+  },
+  {
+    "name": "Einzugsgebiet und Landnutzung",
+    "keywords": [
+      "Einzugsgebiet",
+      "Landnutzung",
+      "Entwässerung"
+    ]
+  },
+  {
+    "name": "Abwasser und Industrie",
+    "keywords": [
+      "Abwasser",
+      "Kläranlage",
+      "Industrie"
+    ]
+  },
+  {
+    "name": "Wasserbauliche Eingriffe",
+    "keywords": [
+      "Wasserbau",
+      "Kanal",
+      "Wehr",
+      "Ausbaggerung"
+    ]
+  },
+  {
+    "name": "Fischerei und sonstige Nutzung",
+    "keywords": [
+      "Fischerei",
+      "Badenutzung",
+      "Schifffahrt"
+    ]
+  },
+  {
+    "name": "Historische Gesamtentwicklung",
+    "keywords": [
+      "Geschichte",
+      "historisch",
+      "Chronik",
+      "1990"
+    ]
+  },
+  {
+    "name": "Sanierung und Restaurierung",
+    "keywords": [
+      "Sanierung",
+      "Restaurierung",
+      "Biomanipulation"
+    ]
+  },
+  {
+    "name": "Maßnahmen im Einzugsgebiet",
+    "keywords": [
+      "Nährstoffreduktion",
+      "Wiedervernässung"
+    ]
+  },
+  {
+    "name": "Umsetzung und Wirkung von Maßnahmen",
+    "keywords": [
+      "Erfolgskontrolle",
+      "Vorher-Nachher",
+      "Maßnahmen"
+    ]
+  },
+  {
+    "name": "Amtliche Bewertung und Planung",
+    "keywords": [
+      "WRRL",
+      "Bewirtschaftungsplan",
+      "Zustand"
+    ]
+  },
+  {
+    "name": "Naturschutz",
+    "keywords": [
+      "FFH",
+      "Managementplan",
+      "Naturschutzgebiet"
+    ]
+  },
+  {
+    "name": "Messreihen und Monitoring",
+    "keywords": [
+      "Monitoring",
+      "Messreihe",
+      "Langzeitdaten"
+    ]
+  },
+  {
+    "name": "Paläolimnologie und Sedimentarchive",
+    "keywords": [
+      "Paläolimnologie",
+      "Sedimentkern",
+      "palaeolimnology"
+    ]
+  },
+  {
+    "name": "Klima und Extremereignisse",
+    "keywords": [
+      "Dürre",
+      "Hochwasser",
+      "Fischsterben"
+    ]
+  }
+]
