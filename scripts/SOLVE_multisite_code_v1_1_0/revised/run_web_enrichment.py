@@ -1883,7 +1883,10 @@ class Research:
             import start_links
             selected = sum(start_links.selected_count(self,p) for p in self.active)
             self.store.event('start_links_selection_skipped',dict(selected=selected))
-            print(f"Startlink-Auswahl übersprungen: {selected} gespeicherte ausgewählte Startlinks. Weiter mit Quellenprüfung und Crawl.", flush=True)
+            imported = sum(wb.get('seed_evidence', {}).get(url, {}).get('kind') == 'saved_start_link_review'
+                           for wb in self.bodies.values() for url in wb['seed_urls'])
+            extra = f"; zusätzlich {imported} übernommene Startlinks aus der Konfiguration" if imported else ""
+            print(f"Startlink-Auswahl übersprungen: {selected} gespeicherte ausgewählte Startlinks{extra}. Weiter mit Quellenprüfung und Crawl.", flush=True)
         self.store.db.execute("UPDATE tasks SET status='pending',reason='recovered_after_interrupt' WHERE status='in_progress'")
         self.run_id = uuid.uuid4().hex
         self.store.db.execute("INSERT INTO runs(id,started,configuration) VALUES(?,?,?)", (self.run_id, utc(), json.dumps(self.cfg, ensure_ascii=False)))
