@@ -1172,7 +1172,7 @@ def make_excerpt(parsed, wb, topics, cap):
 def validate_review(response, request):
     if not isinstance(response, dict) or response.get("decision") not in {"relevant", "supporting", "uncertain", "irrelevant"}:
         raise ValueError("Ungültige Bewertungsentscheidung")
-    for field in ("evidence_quotes", "topic_hits", "follow_link_ids", "queries", "references", "topic_evidence"):
+    for field in ("evidence_quotes", "topic_hits", "follow_link_ids", "references", "topic_evidence"):
         if field in response and not isinstance(response[field], list):
             raise ValueError(f"Bewertungsfeld {field} muss eine Liste sein")
     out = dict(decision=response["decision"], reason=str(response.get("reason", ""))[:1200],
@@ -1225,9 +1225,14 @@ def validate_review(response, request):
         if lid not in links:
             raise ValueError("Bewertung darf nur tatsächlich gefundene Link-IDs auswählen")
         out["follow_link_ids"].append(lid)
-    for q in response.get("queries", [])[:6]:
+    queries = response.get('queries', [])
+    if not isinstance(queries, list):
+        out.setdefault('validation_warnings', []).append('queries_discarded: Keine Liste')
+        queries = []
+    for q in queries[:6]:
         if not isinstance(q, str) or len(q) > 400 or not match_terms(q, names(request["waterbody"])):
-            raise ValueError("Neue freie Suchanfrage muss Gewässername, Alias oder Kennung enthalten")
+            out.setdefault('validation_warnings', []).append('query_discarded: Gewässerbezug fehlt oder Suchanfrage ungültig')
+            continue
         out["queries"].append(q)
     for ref in response.get("references", [])[:15]:
         try:
@@ -1279,6 +1284,18 @@ Fehlende Felder als leere Listen. Keine erfundenen URLs, Titel, Jahreszahlen ode
 
 
 def api_request(url, data=None, headers=None, timeout=45):
+    gate_root = os.getenv('SOLVE_LLM_GATE_DIR')
+    if gate_root and up.urlsplit(url).path.rstrip('/').endswith('/chat/completions'):
+        from llm_gate import Gate
+        gate = Gate(gate_root, sys.modules[__name__],
+                    slots=int(os.getenv('SOLVE_LLM_SLOTS', '2')),
+                    interval=float(os.getenv('SOLVE_LLM_INTERVAL', '2')),
+                    cooldown=float(os.getenv('SOLVE_LLM_COOLDOWN', '60')))
+        return gate.call(lambda: _api_request_unlimited(url, data, headers, timeout))
+    return _api_request_unlimited(url, data, headers, timeout)
+
+
+def _api_request_unlimited(url, data=None, headers=None, timeout=45):
     # Credentials only to the user-configured API, never to crawled pages or redirects.
     p = up.urlsplit(url)
     if p.scheme != "https" and not (p.scheme == "http" and p.hostname in {"localhost", "127.0.0.1", "::1"}):
@@ -1691,6 +1708,8 @@ class Research:
                     engine = os.getenv(self.cfg["review"]["model_env"], self.cfg["review"]["model"])
                     status = "complete"
                     self.store.event("api_usage", dict(review_id=key, model=engine, usage=usage))
+                    if response.get('validation_warnings'):
+                        self.store.event('review_validation_warnings', dict(review_id=key, warnings=response['validation_warnings']))
                 except ValueError as e:
                     self.consecutive_api_errors = 0
                     self.review_validation_errors += 1

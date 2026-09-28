@@ -68,6 +68,7 @@ cd ~/solve-crawler
 bash start-parallel-linux.sh run \
   --workspace ./dossier_33_seen_parallel \
   --workers 30 \
+  --llm-workers 2 \
   --env-file ~/.config/solve/keys.env
 ```
 
@@ -113,6 +114,32 @@ Das alte Windows-Dossier wird nicht mit den neuen Ergebnissen zurücksynchronisi
   dabei erhalten. API-Limits gelten auch bei 30 Workern weiterhin.
 - Bei Budgetänderungen die jeweilige `group-XX/config.json` im gestoppten Zustand
   anpassen; die alte Windows-Konfiguration steuert diese Gruppen danach nicht mehr.
+
+## Gemeinsame Blablador-Begrenzung und Fortsetzen nach HTTP 429
+
+Die Workerzahl ist unabhängig von der API-Parallelität. Standardmäßig laufen
+höchstens zwei Chat-Anfragen gleichzeitig (`--llm-workers 2`), mit mindestens zwei
+Sekunden Abstand zwischen Anfragestarts (`--llm-interval 2`). Diese Begrenzung gilt
+für Startlink-Auswahl, Download-Vorprüfung und Inhaltsbewertung gemeinsam.
+HTTP 429 setzt eine gemeinsame Pause von mindestens 60 Sekunden, die bei
+wiederholtem 429 exponentiell bis auf 900 Sekunden steigt. Ein längeres vom Dienst
+gemeldetes Retry-After wird ebenfalls eingehalten. Laufende Anfragen werden nicht
+abgebrochen; danach starten bis zum Ablauf der Pause keine weiteren.
+
+Slots und Wartezeit liegen unter `~/.cache/solve/llm-gate`. Aktualisierte Starter
+mit denselben Einstellungen auf demselben Server und unter demselben Benutzer
+teilen diese Begrenzung auch zwischen Dossiers. Alte Prozesse ohne diese Änderung
+müssen zuvor gestoppt werden. Andere Nutzer, Rechner oder Anwendungen mit demselben
+API-Schlüssel sind damit nicht abgedeckt. Die Einstellungen sind Startwerte und
+garantieren nicht, dass keine weiteren 429-Antworten auftreten.
+
+Zum Aktualisieren den Starter mit Strg+C beenden, die Worker einschließlich Export
+fertig werden lassen und den neuen Code kopieren. Danach dasselbe Dossier mit
+`run --workspace ... --workers 30 --llm-workers 2 --env-file ...` starten.
+**Nicht erneut prepare ausführen.** Die offenen Aufgaben werden wieder berücksichtigt;
+die Fehlerzähler gelten pro neuem Lauf. Ungültige optionale Suchvorschläge werden
+mit Warnung verworfen, ohne ansonsten gültige Quellenbewertungen zu verlieren.
+Gewässerzuordnung und Belegprüfung bleiben unverändert streng.
 
 Die Linux-Starter verwenden portable Python-Prozesse und POSIX-Dateisperren.
 Die Tests werden lokal ausgeführt; ein echter Lauf auf der Ziel-VM ist separat zu

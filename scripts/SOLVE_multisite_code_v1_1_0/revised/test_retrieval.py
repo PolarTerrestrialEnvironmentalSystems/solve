@@ -257,6 +257,22 @@ class EvidenceTests(unittest.TestCase):
         self.assertFalse(out['references'])
         self.assertTrue(out['validation_warnings'])
 
+    def test_bad_optional_query_does_not_discard_valid_evidence(self):
+        text='Der See Arendsee wurde im Jahr 1995 limnologisch untersucht.'
+        result=self.result(text)
+        result['queries']=['phosphorus monitoring', 'Arendsee Phosphor', None, 'Arendsee '+('x'*401)]
+        out=s.validate_review(result,self.request(text))
+        self.assertEqual(out['decision'],'relevant')
+        self.assertEqual(out['queries'],['Arendsee Phosphor'])
+        self.assertEqual(len(out['validation_warnings']),3)
+        result['queries']='invalid optional field'
+        out=s.validate_review(result,self.request(text))
+        self.assertEqual(out['decision'],'relevant')
+        self.assertEqual(out['queries'],[])
+        result['topic_evidence'][0]['locator']='invented page'
+        with self.assertRaises(ValueError):
+            s.validate_review(result,self.request(text))
+
     def test_passage_selection_finds_later_lake_mentions(self):
         import evidence_review
         text=('Navigation other topics. '*400)+'Der See Arendsee wurde 1995 untersucht.'

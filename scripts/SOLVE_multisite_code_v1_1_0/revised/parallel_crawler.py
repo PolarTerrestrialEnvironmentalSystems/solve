@@ -104,6 +104,8 @@ def worker(root, name, env_file):
     # Stop between tasks, never halfway through committing/exporting results.
     research = None
     stop_requested = False
+    import llm_gate
+    llm_gate.stop_requested = lambda: stop_requested
     def stop(signum, frame):
         nonlocal stop_requested
         stop_requested = True
@@ -125,9 +127,11 @@ def worker(root, name, env_file):
             research.close()
 
 
-def run(root, workers, env_file=None):
+def run(root, workers, env_file=None, llm_workers=2, llm_interval=2, llm_cooldown=60):
     if workers < 1:
         raise ValueError('--workers muss mindestens 1 sein')
+    if llm_workers < 1 or llm_interval < 0 or llm_cooldown < 1:
+        raise ValueError('LLM-Slots und Wartezeiten sind ungültig')
     manifest = json.loads((root / 'parallel.json').read_text(encoding='utf-8'))
     pending = list(manifest['groups'])
     # Check keys before spawning any workers; secrets remain in the environment.
@@ -168,6 +172,10 @@ def run(root, workers, env_file=None):
                             'creationflags': subprocess.CREATE_NEW_PROCESS_GROUP}
                         try:
                             environment = dict(os.environ, PYTHONIOENCODING='utf-8')
+                            environment.update(SOLVE_LLM_GATE_DIR=str(Path.home() / '.cache/solve/llm-gate'),
+                                               SOLVE_LLM_SLOTS=str(llm_workers),
+                                               SOLVE_LLM_INTERVAL=str(llm_interval),
+                                               SOLVE_LLM_COOLDOWN=str(llm_cooldown))
                             process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT,
                                                        env=environment, **options)
                         except BaseException:
@@ -219,6 +227,9 @@ def main(argv=None):
     parser.add_argument('--workers', type=int, default=30, help='Gleichzeitig laufende Gruppen (Standard: 30)')
     parser.add_argument('--env-file', default=os.getenv('SOLVE_ENV_FILE'))
     parser.add_argument('--group')
+    parser.add_argument('--llm-workers', type=int, default=2, help='Gleichzeitige LLM-Aufrufe aller Worker zusammen')
+    parser.add_argument('--llm-interval', type=float, default=2, help='Mindestabstand zwischen LLM-Anfragestarts in Sekunden')
+    parser.add_argument('--llm-cooldown', type=float, default=60, help='Mindestpause nach HTTP 429; steigt bei Wiederholung')
     args = parser.parse_args(argv)
     root = Path(args.workspace).resolve()
     if args.command == 'prepare':
@@ -226,7 +237,7 @@ def main(argv=None):
         return 0
     if args.command == '_worker':
         return worker(root, args.group, args.env_file)
-    return run(root, args.workers, args.env_file)
+    return run(root, args.workers, args.env_file, args.llm_workers, args.llm_interval, args.llm_cooldown)
 
 
 if __name__ == '__main__':
