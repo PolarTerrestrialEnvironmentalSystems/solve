@@ -101,6 +101,10 @@ def worker(root, name, env_file):
     cfg['credentials_env_file'] = str(Path(env_file).resolve()) if env_file else ''
     cfg['storage']['shared_cache_dir'] = str(root / 'download_cache')
     cfg['storage']['shared_cache_wait_seconds'] = 600
+    os.environ['SOLVE_BLABLADOR_CHAT_URLS'] = json.dumps(sorted({
+        os.getenv(cfg[section]['base_url_env'], cfg[section]['base_url']).rstrip('/') + '/chat/completions'
+        for section in ('preflight', 'review') if cfg[section]['api_key_env'] == 'BLABLADOR_KEY'
+    }))
     # Stop between tasks, never halfway through committing/exporting results.
     research = None
     stop_requested = False
@@ -149,6 +153,9 @@ def run(root, workers, env_file=None, llm_workers=2, llm_interval=2, llm_cooldow
         for key in needed:
             if not os.getenv(key):
                 raise ValueError('API-Schlüssel fehlt: ' + key + ' (mit --env-file laden)')
+    if os.getenv('BLABLADOR_KEY'):
+        key_count = len({os.getenv(name) for name in ('BLABLADOR_KEY', 'GRAPHRAG_API_KEY2') if os.getenv(name)})
+        print(f'Blablador: {key_count} Schlüssel geladen; maximal {llm_workers} gleichzeitige LLM-Aufrufe insgesamt.', flush=True)
     active, completed = {}, []
     stopping = False
     (root / 'logs').mkdir(exist_ok=True)

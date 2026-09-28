@@ -31,6 +31,15 @@ Die vorhandene `.env` mit `SERPER_KEY` und `BLABLADOR_KEY` separat z. B. nach
 schützen. Schlüssel werden nicht in die erzeugten Konfigurationen geschrieben.
 Der bisherige Windows-Pfad zur `.env` wird im Parallelmodus ersetzt.
 
+Optional kann dieselbe Datei `GRAPHRAG_API_KEY2` als zweiten Blablador-Schlüssel
+enthalten. Im Parallelmodus wechseln die Anfragen prozessübergreifend zwischen
+`BLABLADOR_KEY` und `GRAPHRAG_API_KEY2`. Ohne zweiten oder mit zweimal demselben
+Schlüssel bleibt es bei einem Schlüssel. Die gemeinsame Slotzahl, der Mindestabstand
+und die Pause bei HTTP 429 gelten weiterhin für beide zusammen. Es gibt keinen
+sofortigen Schlüsselwechsel als Wiederholungsversuch nach HTTP 429. Ein zusätzliches
+Kontingent wird nicht vorausgesetzt. Die Auswahl gilt nur für die konfigurierten
+Blablador-Chat-Endpunkte, nicht für Serper oder andere API-Zugänge.
+
 ## 2. Bestehenden Stand einmalig übernehmen
 
 Im Beispiel liegt das bisherige Dossier direkt im Projektordner:

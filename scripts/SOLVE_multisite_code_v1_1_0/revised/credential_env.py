@@ -12,6 +12,6 @@ def load(cfg):
     if not path.is_file():
         raise ValueError('Konfigurierte credentials_env_file wurde nicht gefunden')
     values = dotenv_values(path, encoding='utf-8-sig', interpolate=False)
-    for name in ('SERPER_KEY', 'BLABLADOR_KEY'):
+    for name in ('SERPER_KEY', 'BLABLADOR_KEY', 'GRAPHRAG_API_KEY2'):
         if not os.getenv(name) and values.get(name):
             os.environ[name] = values[name]

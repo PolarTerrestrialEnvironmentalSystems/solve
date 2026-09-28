@@ -1286,12 +1286,12 @@ Fehlende Felder als leere Listen. Keine erfundenen URLs, Titel, Jahreszahlen ode
 def api_request(url, data=None, headers=None, timeout=45):
     gate_root = os.getenv('SOLVE_LLM_GATE_DIR')
     if gate_root and up.urlsplit(url).path.rstrip('/').endswith('/chat/completions'):
-        from llm_gate import Gate
+        from llm_gate import Gate, request_headers
         gate = Gate(gate_root, sys.modules[__name__],
                     slots=int(os.getenv('SOLVE_LLM_SLOTS', '2')),
                     interval=float(os.getenv('SOLVE_LLM_INTERVAL', '2')),
                     cooldown=float(os.getenv('SOLVE_LLM_COOLDOWN', '60')))
-        return gate.call(lambda: _api_request_unlimited(url, data, headers, timeout))
+        return gate.call(lambda: _api_request_unlimited(url, data, request_headers(url, headers, gate), timeout))
     return _api_request_unlimited(url, data, headers, timeout)
 
 

@@ -8,6 +8,21 @@ from contextlib import contextmanager
 stop_requested = lambda: False
 
 
+def request_headers(url, headers, gate):
+    """Rotate only explicitly configured Blablador endpoints and primary headers."""
+    primary = os.getenv('BLABLADOR_KEY', '')
+    secondary = os.getenv('GRAPHRAG_API_KEY2', '')
+    allowed = json.loads(os.getenv('SOLVE_BLABLADOR_CHAT_URLS', '[]'))
+    if (not primary or not secondary or primary == secondary or url not in allowed
+            or (headers or {}).get('Authorization') != 'Bearer ' + primary):
+        return headers
+    with gate.state() as state:
+        index = state.get('key_rotation', 0) % 2
+        state['key_rotation'] = 1 - index
+    # Persist only the rotating index, never keys, headers or fingerprints.
+    return dict(headers, Authorization='Bearer ' + (primary, secondary)[index])
+
+
 class Gate:
     def __init__(self, root, core, slots=2, interval=2, cooldown=60):
         if slots < 1 or interval < 0 or cooldown < 1:

@@ -8,6 +8,7 @@ import unittest
 from unittest.mock import patch
 
 import llm_gate
+import credential_env
 import run_web_enrichment as core
 
 
@@ -42,6 +43,44 @@ class GateTests(unittest.TestCase):
             gate.call(lambda: (_ for _ in ()).throw(ValueError('bad JSON')))
         with core.WorkspaceLock(self.root/'slot-0'):
             pass
+
+    def test_two_keys_rotate_across_gate_instances_without_persisting_secrets(self):
+        url='https://example.org/v1/chat/completions'
+        headers={'Authorization':'Bearer test-primary', 'Accept':'application/json'}
+        environment={'BLABLADOR_KEY':'test-primary','GRAPHRAG_API_KEY2':'test-secondary',
+                     'SOLVE_BLABLADOR_CHAT_URLS':json.dumps([url])}
+        with patch.dict(core.os.environ,environment):
+            values=[llm_gate.request_headers(url,headers,llm_gate.Gate(self.root,core))['Authorization']
+                    for _ in range(4)]
+            self.assertEqual(values,['Bearer test-primary','Bearer test-secondary']*2)
+            self.assertEqual(headers['Authorization'],'Bearer test-primary')
+            self.assertEqual(llm_gate.request_headers('https://other.example/chat/completions',headers,
+                             llm_gate.Gate(self.root,core)),headers)
+            other={'Authorization':'Bearer unrelated-provider-key'}
+            self.assertEqual(llm_gate.request_headers(url,other,llm_gate.Gate(self.root,core)),other)
+        state=(self.root/'state.json').read_text()
+        self.assertNotIn('test-primary',state)
+        self.assertNotIn('test-secondary',state)
+
+    def test_optional_second_key_loaded_without_overriding_environment(self):
+        file=self.root/'keys.env'
+        file.write_text('BLABLADOR_KEY=fixture-primary\nGRAPHRAG_API_KEY2=fixture-secondary\nUNRELATED_SECRET=ignored\n')
+        with patch.dict(core.os.environ,{},clear=True):
+            credential_env.load({'credentials_env_file':str(file)})
+            self.assertEqual(core.os.getenv('GRAPHRAG_API_KEY2'),'fixture-secondary')
+            self.assertNotIn('UNRELATED_SECRET',core.os.environ)
+            core.os.environ['GRAPHRAG_API_KEY2']='existing'
+            credential_env.load({'credentials_env_file':str(file)})
+            self.assertEqual(core.os.getenv('GRAPHRAG_API_KEY2'),'existing')
+
+    def test_missing_or_duplicate_second_key_uses_primary(self):
+        url='https://example.org/chat/completions'
+        headers={'Authorization':'Bearer fixture'}
+        for secondary in ('', 'fixture'):
+            with patch.dict(core.os.environ,{'BLABLADOR_KEY':'fixture','GRAPHRAG_API_KEY2':secondary,
+                                            'SOLVE_BLABLADOR_CHAT_URLS':json.dumps([url])}):
+                self.assertEqual(llm_gate.request_headers(url,headers,llm_gate.Gate(self.root,core)),headers)
+        self.assertFalse((self.root/'state.json').exists())
 
     def test_api_wrapper_applies_only_to_chat_calls(self):
         with patch.dict(core.os.environ, {'SOLVE_LLM_GATE_DIR': str(self.root)}), \
