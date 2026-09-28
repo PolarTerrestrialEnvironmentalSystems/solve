@@ -62,6 +62,43 @@ class PreflightTests(unittest.TestCase):
             pf.screen(self.r,self.task,s)
         api.assert_not_called()
 
+    def test_isolated_and_start_link_errors_do_not_disable_download_screening(self):
+        self.r.preflight_errors=3
+        self.r.consecutive_preflight_errors=2
+        self.r.start_link_errors=10
+        self.r.cfg['limits']['max_fetches_per_run']=10
+        self.assertIsNotNone(self.r.next_task(set()))
+        with patch.object(s,'api_request',return_value=self.response()):
+            self.assertTrue(pf.screen(self.r,self.task,s))
+        self.assertEqual(self.r.preflight_errors,3)
+        self.assertEqual(self.r.consecutive_preflight_errors,0)
+
+    def test_persistent_preflight_outage_has_explicit_stop_reason(self):
+        self.r.preflight_errors=5
+        self.r.consecutive_preflight_errors=5
+        with patch.object(s,'api_request') as api:
+            result=self.r.run()
+        api.assert_not_called()
+        self.assertEqual(result['stop_reason'],'preflight_api_errors')
+        self.assertEqual(result['consecutive_preflight_errors'],5)
+        self.r.consecutive_preflight_errors=0
+        self.r.preflight_errors=30
+        self.assertTrue(self.r.preflight_error_limit_reached())
+
+    def test_temporary_preflight_pause_waits_and_resumes_eligible_task(self):
+        self.r.cfg['limits']['max_fetches_per_run']=10
+        clock=[1000.0]
+        self.r.preflight_next_try=1002.0
+        def process(task):
+            self.r.store.db.execute("UPDATE tasks SET status='done' WHERE id=?",(task['id'],))
+        with patch.object(s.time,'time',side_effect=lambda:clock[0]), \
+             patch.object(s.time,'sleep',side_effect=lambda seconds:clock.__setitem__(0,clock[0]+seconds)) as sleep, \
+             patch.object(self.r,'next_search',return_value=None), \
+             patch.object(self.r,'process',side_effect=process) as worker:
+            self.r.run()
+        sleep.assert_called_once_with(2.0)
+        worker.assert_called_once()
+
 
 class DownloadCacheTests(unittest.TestCase):
     def setUp(self):

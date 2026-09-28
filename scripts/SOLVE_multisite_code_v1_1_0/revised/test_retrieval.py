@@ -167,6 +167,36 @@ class RetrievalTests(unittest.TestCase):
         self.assertEqual(self.r.review_validation_errors,1)
         self.assertEqual(decision['decision'],'uncertain')
 
+    def test_review_errors_allow_recovery_but_bound_persistent_outages(self):
+        self.r.cfg['review'].update(mode='api', required=True, max_calls_per_run=50)
+        self.r.enqueue(self.profile,'https://example.org/report',priority=90)
+        task=self.r.store.one('SELECT * FROM tasks')
+        parsed=dict(title='Example Lake',text='Example Lake phosphorus.',
+                    fragments=[dict(locator='p1',text='Example Lake phosphorus.')],links=[],status='ok')
+        good=dict(decision='relevant',identity_status='confirmed',topic_hits=[],reason='fixture')
+        outcomes=[s.FetchProblem('api_network_error') for _ in range(3)]
+        outcomes += [(good, {})]
+        outcomes += [s.FetchProblem('api_network_error') for _ in range(5)]
+        with patch.object(s,'review_api',side_effect=outcomes) as api:
+            for i in range(9):
+                self.r.review(task,dict(url=task['url'],sha=str(i)),parsed)
+                if i==2:
+                    self.assertFalse(self.r.review_error_limit_reached())
+                if i==3:
+                    self.assertEqual(self.r.consecutive_api_errors,0)
+            self.assertTrue(self.r.review_error_limit_reached())
+            self.r.review(task,dict(url=task['url'],sha='after-limit'),parsed)
+            self.assertEqual(api.call_count,9)
+        self.assertEqual(self.r.api_errors,8)
+        self.r.consecutive_api_errors=0
+        self.r.api_errors=30
+        self.assertTrue(self.r.review_error_limit_reached())
+
+    def test_review_error_budget_rejects_invalid_configuration(self):
+        for value in [0, -1, True, 1.5]:
+            with self.assertRaises(ValueError):
+                config(self.tmp.name,review=dict(max_consecutive_api_errors=value))
+
     def test_unreviewed_lake_gets_first_content_check_before_extra_hits(self):
         other='other-profile';self.r.active.add(other)
         self.r.bodies[other]=dict(self.r.bodies[self.profile],id='other')

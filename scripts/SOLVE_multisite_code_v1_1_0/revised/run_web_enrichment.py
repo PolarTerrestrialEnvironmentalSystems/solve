@@ -34,7 +34,7 @@ import urllib.robotparser
 import uuid
 from scientific_discovery import DEFAULT_DOMAINS
 
-VERSION = "1.6.2"
+VERSION = "1.7.0"
 PARSER_VERSION = "solve-parser-3"
 REVIEW_VERSION = "solve-review-5"
 SCHEMA_VERSION = "1"
@@ -48,7 +48,7 @@ PHYSICAL = re.compile(r"(?:nur (?:im|vor Ort im) Lesesaal|nicht digitalisiert|"
 DOI = re.compile(r"\b10\.\d{4,9}/[^\s<>\"\[\]]+", re.I)
 URL_RE = re.compile(r"https?://[^\s<>\"\[\]]+", re.I)
 DEFAULTS = {
-    "start_links": {"enabled": False, "target": 20, "batch_size": 20,
+    "start_links": {"enabled": False, "skip_selection": False, "target": 20, "batch_size": 20,
                     "initial_keywords": [],
                     "min_importance": 60, "max_searches": 20, "max_pages": 3},
     "scientific_sources": [],
@@ -64,11 +64,13 @@ DEFAULTS = {
                   "base_url_env": "BLABLADOR_BASE_URL", "api_key_env": "BLABLADOR_KEY",
                   "model_env": "BLABLADOR_MODEL", "model": "alias-fast",
                   "max_calls_per_run": 50, "timeout_seconds": 60, "defer_confidence": 0.85,
-                  "rank_before_download": False, "exploration_per_waterbody": 2},
+                  "rank_before_download": False, "exploration_per_waterbody": 2,
+                  "max_errors_per_run": 30, "max_consecutive_errors": 5},
     "review": {"mode": "rules", "base_url_env": "BLABLADOR_BASE_URL",
                "api_key_env": "BLABLADOR_API_KEY", "model_env": "BLABLADOR_MODEL",
                "max_input_chars": 24000, "max_calls_per_run": 25, "base_url": "", "model": "",
                "require_topic_evidence": False, "required": False,
+               "max_api_errors_per_run": 30, "max_consecutive_api_errors": 5,
                "max_output_tokens": 6000, "reasoning_effort": "low", "timeout_seconds": 60},
     "retrieval": {"enabled": False, "engines": ["google", "default", "brave"],
                   "max_health_calls_per_run": 6, "health_ttl_seconds": 3600, "cooldown_seconds": 1800,
@@ -296,6 +298,8 @@ def load_config(path):
     sl=cfg['start_links']
     if not isinstance(sl,dict) or not isinstance(sl.get('enabled'),bool):
         raise ValueError('start_links benötigt enabled als booleschen Wert')
+    if type(sl['skip_selection']) is not bool:
+        raise ValueError('start_links.skip_selection muss boolesch sein')
     for field in ('target','batch_size','max_searches','max_pages'):
         if type(sl[field]) is not int or not 1<=sl[field]<=100:
             raise ValueError('start_links.'+field+' muss zwischen 1 und 100 liegen')
@@ -305,6 +309,12 @@ def load_config(path):
         raise ValueError('start_links.initial_keywords benötigt höchstens 20 kurze, nicht leere Suchbegriffe')
     if sl['enabled'] and (cfg['search']['provider']!='serper' or cfg['search']['strategy']!='focused' or not cfg['preflight']['enabled']):
         raise ValueError('start_links benötigt Serper, focused und aktivierte LLM-Vorprüfung')
+    for field in ('max_errors_per_run', 'max_consecutive_errors'):
+        if type(cfg['preflight'][field]) is not int or cfg['preflight'][field] < 1:
+            raise ValueError('preflight.' + field + ' muss positiv ganzzahlig sein')
+    for field in ('max_api_errors_per_run', 'max_consecutive_api_errors'):
+        if type(cfg['review'][field]) is not int or cfg['review'][field] < 1:
+            raise ValueError('review.' + field + ' muss positiv ganzzahlig sein')
     for field in ("enabled", "crossref_enabled", "bibliography", "wait_for_search_routes"):
         if not isinstance(cfg['retrieval'][field], bool):
             raise ValueError('retrieval.' + field + ' muss boolesch sein')
@@ -448,6 +458,9 @@ class Store:
         CREATE TABLE IF NOT EXISTS events(id INTEGER PRIMARY KEY, time TEXT, kind TEXT, detail TEXT);
         CREATE INDEX IF NOT EXISTS task_state ON tasks(profile, status);
         CREATE INDEX IF NOT EXISTS search_state ON searches(profile, status);
+        CREATE INDEX IF NOT EXISTS discovery_source ON discoveries(profile, url);
+        CREATE INDEX IF NOT EXISTS discovery_query ON discoveries(query_id, profile, url);
+        CREATE INDEX IF NOT EXISTS review_profile_status ON reviews(profile, status);
         """)
         version = self.one("SELECT value FROM meta WHERE key='schema'")
         if version and version["value"] != SCHEMA_VERSION:
@@ -668,13 +681,18 @@ class Fetcher:
             return self._fetch_local(url, refresh)
         # A cross-process cache lock prevents concurrent dossiers downloading the same URL.
         from shared_downloads import locked
-        with locked(self.shared.root, sys.modules[__name__]):
+        with locked(self.shared.root, sys.modules[__name__],
+                    wait_seconds=self.cfg['storage'].get('shared_cache_wait_seconds', 0)):
             cached = None if refresh else self.cached_source(url)
             if cached:
                 self.shared.publish(self, [cached])
                 self.store.event("download_cache_hit", dict(url=url, sha=cached["sha"], scope="shared_or_dossier"))
                 return cached
-            result = self._fetch_local(url, refresh)
+            self.shared.import_hosts(self.store)
+            try:
+                result = self._fetch_local(url, refresh)
+            finally:
+                self.shared.publish_hosts(self.store)
             rows = self.store.rows("SELECT * FROM urls WHERE url IN (?,?)", (url, result['final_url']))
             self.shared.publish(self, rows)
             return result
@@ -1387,6 +1405,8 @@ class Research:
             raise ValueError("LLM-Vorprüfung aktiviert, aber Umgebungsvariable fehlt: " + cfg["preflight"]["api_key_env"])
         self.preflight_used = 0
         self.preflight_errors = 0
+        self.consecutive_preflight_errors = 0
+        self.start_link_errors = 0
         self.preflight_next_try = 0
         self.store = Store(root)
         import quality_search
@@ -1411,6 +1431,7 @@ class Research:
         self.store.db.commit()
         self.active = set(self.bodies)
         self.search_used, self.api_used, self.api_errors = 0, 0, 0
+        self.consecutive_api_errors = 0
         self.processed = 0
         self.review_validation_errors = 0
         self.body_fetch_attempts = {}
@@ -1628,6 +1649,10 @@ class Research:
         return dict(recent_searches=negatives, topics_with_candidate_sources=sorted(hits),
                     missing_topics=[t["name"] for t in self.cfg["topics"] if t["name"] not in hits])
 
+    def review_error_limit_reached(self):
+        return (self.api_errors >= self.cfg['review']['max_api_errors_per_run'] or
+                self.consecutive_api_errors >= self.cfg['review']['max_consecutive_api_errors'])
+
     def review(self, task, source, parsed):
         wb = self.bodies[task["profile"]]
         rule = assess_rules(wb, self.cfg["topics"], parsed, task)
@@ -1658,18 +1683,21 @@ class Research:
             status = "waiting_external"
         if mode == "api":
             status = "needs_review"
-            if self.api_used < self.cfg["review"]["max_calls_per_run"] and self.api_errors < 3 and parsed["text"].strip():
+            if self.api_used < self.cfg["review"]["max_calls_per_run"] and not self.review_error_limit_reached() and parsed["text"].strip():
                 self.api_used += 1
                 try:
                     response, usage = review_api(self.cfg, request)
+                    self.consecutive_api_errors = 0
                     engine = os.getenv(self.cfg["review"]["model_env"], self.cfg["review"]["model"])
                     status = "complete"
                     self.store.event("api_usage", dict(review_id=key, model=engine, usage=usage))
                 except ValueError as e:
+                    self.consecutive_api_errors = 0
                     self.review_validation_errors += 1
                     self.store.event('review_validation_failed',dict(review_id=key,reason=str(e)[:250]))
                 except (KeyError, TypeError, AttributeError, FetchProblem) as e:
                     self.api_errors += 1
+                    self.consecutive_api_errors += 1
                     self.store.event("api_review_failed", dict(review_id=key, reason=str(e)[:250]))
         saved_request = request if keep_text(self.cfg) else private_review(request)
         saved_response = response if keep_text(self.cfg) or response is None else private_decision(response)
@@ -1753,6 +1781,10 @@ class Research:
                         self.add_search(task["profile"], f'"{wb["name"]}" {wb["region"]} {t["keywords"][0]}', "synonym", "Offenes Thema mit anderem Begriff", 78)
         self.store.db.commit()
 
+    def preflight_error_limit_reached(self):
+        return (self.preflight_errors >= self.cfg['preflight']['max_errors_per_run'] or
+                self.consecutive_preflight_errors >= self.cfg['preflight']['max_consecutive_errors'])
+
     def next_task(self, attempted):
         candidates = [r for r in self.store.rows("SELECT t.*,u.next_try,u.status url_status FROM tasks t LEFT JOIN urls u ON u.url=t.url WHERE t.status IN ('pending','retry')")
                       if r["profile"] in self.active and r["id"] not in attempted and
@@ -1761,10 +1793,11 @@ class Research:
                        self.fetcher.used < self.cfg["limits"]["max_fetches_per_run"] and
                        self.fetcher.host_uses.get(host_of(r["url"]), 0) < self.cfg["limits"]["max_urls_per_host_per_run"])]
         if self.cfg['preflight']['enabled'] and (self.preflight_used >= self.cfg['preflight']['max_calls_per_run'] or
-                self.preflight_errors >= 3 or time.time() < self.preflight_next_try):
-            candidates=[t for t in candidates if self.store.one('SELECT task_id FROM preflight_scores WHERE task_id=?',(t['id'],))]
+                self.preflight_error_limit_reached() or time.time() < self.preflight_next_try):
+            scored = {r['task_id'] for r in self.store.rows('SELECT task_id FROM preflight_scores')}
+            candidates=[t for t in candidates if t['id'] in scored]
         import start_links
-        candidates=[t for t in candidates if start_links.allowed(self,t)]
+        candidates=start_links.filter_allowed(self,candidates)
         if not candidates:
             return None
         old = self.store.rows("SELECT t.profile,t.url,t.branch FROM tasks t WHERE t.status IN ('done','blocked','retry')")
@@ -1829,6 +1862,7 @@ class Research:
             state = "pending" if str(e) in {"run_fetch_budget", "run_host_budget"} or str(e).startswith(("preflight_", "api_")) else "retry" if e.retry else "blocked"
             if str(e).startswith('api_') or str(e) == 'preflight_invalid_response':
                 self.preflight_errors += 1
+                self.consecutive_preflight_errors += 1
                 self.preflight_next_try = time.time() + e.delay
             self.store.db.execute("UPDATE tasks SET status=?,reason=? WHERE id=?", (state, str(e), task["id"]))
             if self.cfg["search"]["strategy"] == "baseline" and state == "blocked" and task["priority"] >= 45:
@@ -1845,6 +1879,11 @@ class Research:
 
     def run(self):
         self.plan()
+        if self.cfg['start_links']['enabled'] and self.cfg['start_links']['skip_selection']:
+            import start_links
+            selected = sum(start_links.selected_count(self,p) for p in self.active)
+            self.store.event('start_links_selection_skipped',dict(selected=selected))
+            print(f"Startlink-Auswahl übersprungen: {selected} gespeicherte ausgewählte Startlinks. Weiter mit Quellenprüfung und Crawl.", flush=True)
         self.store.db.execute("UPDATE tasks SET status='pending',reason='recovered_after_interrupt' WHERE status='in_progress'")
         self.run_id = uuid.uuid4().hex
         self.store.db.execute("INSERT INTO runs(id,started,configuration) VALUES(?,?,?)", (self.run_id, utc(), json.dumps(self.cfg, ensure_ascii=False)))
@@ -1856,7 +1895,13 @@ class Research:
         last_wakeup = None
         try:
             while self.processed < self.cfg["limits"]["max_tasks_per_run"]:
-                if self.cfg['review']['required'] and self.api_errors >= 3:
+                if getattr(self, 'parallel_stop_requested', False):
+                    stop = 'interrupted'
+                    break
+                if self.cfg['preflight']['enabled'] and self.preflight_error_limit_reached():
+                    stop = 'preflight_api_errors'
+                    break
+                if self.cfg['review']['required'] and self.review_error_limit_reached():
                     stop='review_api_errors'
                     break
                 if self.cfg['review']['required'] and self.api_used >= self.cfg['review']['max_calls_per_run']:
@@ -1884,13 +1929,22 @@ class Research:
                     else:
                         import quality_search
                         wakeup = quality_search.next_search_wakeup(self, sys.modules[__name__])
+                        # A temporary preflight pause must not finish the run while
+                        # eligible, unattempted sources still await their first score.
+                        if (self.cfg['preflight']['enabled'] and
+                                self.preflight_used < self.cfg['preflight']['max_calls_per_run'] and
+                                self.preflight_next_try > time.time()):
+                            waiting = self.store.rows("SELECT t.* FROM tasks t LEFT JOIN preflight_scores p ON p.task_id=t.id WHERE t.status IN ('pending','retry') AND p.task_id IS NULL")
+                            waiting = [t for t in waiting if t['profile'] in self.active and t['id'] not in attempted]
+                            if start_links.filter_allowed(self,waiting):
+                                wakeup = min(wakeup, self.preflight_next_try) if wakeup else self.preflight_next_try
                         remaining = self.cfg['limits']['max_seconds_per_run'] - (time.monotonic()-started)
                         if wakeup and remaining > 0:
                             if wakeup != last_wakeup:
                                 wait_seconds = max(0, wakeup-time.time())
                                 self.store.event('search_cooldown_wait', dict(retry_at=wakeup, wait_seconds=round(wait_seconds), remaining_seconds=round(remaining)))
                                 self.export()
-                                print(f"Suchdienst pausiert. Neuer Versuch in {wait_seconds:.0f} Sekunden, sofern das Laufbudget reicht. Strg+C beendet und speichert.", flush=True)
+                                print(f"Suchdienst oder LLM-Vorprüfung pausiert. Neuer Versuch in {wait_seconds:.0f} Sekunden, sofern das Laufbudget reicht. Strg+C beendet und speichert.", flush=True)
                                 last_wakeup = wakeup
                             time.sleep(min(30, max(0.1, wakeup-time.time()), remaining))
                             continue
@@ -1932,11 +1986,17 @@ class Research:
                            searches=self.search_used, search_http_calls=self.search_http_used, health_calls=self.health_used,
                            preflight_calls=self.preflight_used, review_calls=self.api_used,
                            review_validation_failures=self.review_validation_errors,
-                           api_calls=self.api_used+self.preflight_used, api_errors=self.api_errors+self.preflight_errors)
+                           consecutive_review_api_errors=self.consecutive_api_errors,
+                           preflight_errors=self.preflight_errors,
+                           consecutive_preflight_errors=self.consecutive_preflight_errors,
+                           start_link_errors=self.start_link_errors,
+                           api_calls=self.api_used+self.preflight_used,
+                           api_errors=self.api_errors+self.preflight_errors+self.start_link_errors)
             import start_links
             summary['start_links']=[{k:v for k,v in x.items() if k!='candidates'} for x in start_links.report(self)]
             self.store.db.execute("UPDATE runs SET ended=?,summary=? WHERE id=?", (utc(), json.dumps(summary), self.run_id))
             self.store.db.commit()
+            print('Recherchestand gespeichert. Ergebnisexport läuft; bitte bis zur Abschlussmeldung warten.', flush=True)
             self.export()
         return summary
 
@@ -2064,6 +2124,7 @@ class Research:
 
     def export(self):
         import human_review
+        export_started = time.monotonic()
         out = self.store.root / "results"
         out.mkdir(exist_ok=True)
         import start_links
@@ -2074,13 +2135,18 @@ class Research:
                     if not keep_text(self.cfg) else "Originale unter `archive/`; Textauszüge unter `extracted/`."),
                    "URLs sind Kandidaten. Nur original_bytes=true belegt eine archivierte Originaldatei; ein Suchtreffer ist kein Dokumentnachweis.", ""]
         all_rows, search_requests, review_requests = [], [], []
-        for profile, wb in self.bodies.items():
+        for body_index, (profile, wb) in enumerate(self.bodies.items(), 1):
             directory = out / wb["id"]
             directory.mkdir(exist_ok=True)
             buckets = {"01_pdfs": [], "02_seiteninhalte": [], "03_offene_hinweise": [], "03b_manuelle_pruefung": [], "04_physisches_material": []}
             coverage = {t["name"]: 0 for t in self.cfg["topics"]}
             coverage_seen=set()
             tasks = self.store.rows("SELECT * FROM tasks WHERE profile=? ORDER BY id", (profile,))
+            discoveries = self.store.rows('SELECT * FROM discoveries WHERE profile=?', (profile,))
+            routes_by_url = {}
+            for discovery in discoveries:
+                route = {k: discovery[k] for k in ('parent_url','parent_sha','locator','query_id','label','context')}
+                routes_by_url.setdefault(discovery['url'], []).append(route)
             for task in tasks:
                 source = self.store.one("SELECT * FROM urls WHERE url=?", (task["url"],)) or {}
                 review = self.store.one("SELECT * FROM reviews WHERE id=?", (task["review_id"],)) or {}
@@ -2089,7 +2155,7 @@ class Research:
                 decision = json.loads(review.get("response") or review.get("rule_response") or '{}')
                 if self.cfg['review']['required'] and review.get('status') != 'complete':
                     decision=dict(decision,decision='unreviewed',topic_hits=[],reason='Inhaltsprüfung noch offen')
-                routes = self.store.rows("SELECT parent_url,parent_sha,locator,query_id,label,context FROM discoveries WHERE profile=? AND url=?", (profile, task["url"]))
+                routes = routes_by_url.get(task['url'], [])
                 record = dict(waterbody_id=wb["id"], waterbody_name=wb["name"], profile_id=profile,
                               url=task["url"], final_url=source.get("final_url"), title=parsed.get("title") or task["source_hint"][:200],
                               task_status=task["status"], reason=task["reason"], fetched_at=source.get("fetched"), sha256=source.get("sha"),
@@ -2161,7 +2227,9 @@ class Research:
             for review in self.store.rows("SELECT * FROM reviews WHERE profile=? AND status IN ('waiting_external','needs_review')", (profile,)):
                 review_requests.append(dict(review_id=review["id"], **json.loads(review["request"])))
             jsonl(directory / "suchprotokoll.jsonl", searches)
-            jsonl(directory / "fundwege.jsonl", self.store.rows("SELECT * FROM discoveries WHERE profile=?", (profile,)))
+            jsonl(directory / "fundwege.jsonl", discoveries)
+            if len(self.bodies)>1:
+                print(f"Export {body_index}/{len(self.bodies)}: {wb['name']}", flush=True)
             summary.extend([f"## {wb['name']} ({wb['id']})", "", *(f"- {k}: {len(v)}" for k, v in buckets.items()),
                             f"- Suchanfragen geplant: {len(searches)}; abgeschlossen: {sum(s['status'] in {'done','no_results'} for s in searches)}; bestätigt ohne Treffer: {sum(s['status']=='no_results' for s in searches)}; Fehler/Wiederholung: {sum(s['status'] in {'error','retry'} for s in searches)}",
                             f"- Offene Aufgaben: {sum(t['status'] in {'pending','retry','deferred','in_progress'} for t in tasks)}", "",
@@ -2180,6 +2248,7 @@ class Research:
                         "Ein erneuter run-Aufruf nutzt gespeicherte Suchergebnisse und Dateien. Für ChatGPT zuerst die Aufträge in search_requests.jsonl bzw. review_requests.jsonl bearbeiten und importieren.",
                         "Offene Aufgaben können auf Budgets, Wartefristen, nicht lesbaren Inhalt oder fehlende Bewertungen zurückgehen. Nicht gefunden bedeutet nicht nicht vorhanden.", ""])
         (out / "RECHERCHEBERICHT.md").write_text("\n".join(summary), encoding="utf-8")
+        print(f"Ergebnisexport abgeschlossen ({time.monotonic()-export_started:.1f} Sekunden).", flush=True)
         return out
 
 
@@ -2225,8 +2294,16 @@ def main(argv=None):
     parser.add_argument("--responses", help="JSONL-Datei für einen Import")
     parser.add_argument("--days", type=float, default=30, help="Mindestalter für refresh")
     parser.add_argument("--output", help="ZIP-Pfad für pack; außerhalb des Dossierordners")
+    selection = parser.add_mutually_exclusive_group()
+    selection.add_argument('--skip-start-links', dest='skip_start_links', action='store_true',
+                           help='Gespeicherte Startlink-Auswahl verwenden, keine neue Auswahl')
+    selection.add_argument('--select-start-links', dest='skip_start_links', action='store_false',
+                           help='Startlink-Auswahl wieder aktivieren')
+    parser.set_defaults(skip_start_links=None)
     args = parser.parse_args(argv)
     cfg = load_config(args.config)
+    if args.skip_start_links is not None:
+        cfg['start_links']['skip_selection'] = args.skip_start_links
     if args.command in {"doctor", "models"}:
         print(json.dumps(doctor(cfg, args.command == "models"), ensure_ascii=False, indent=2))
         return 0

@@ -72,7 +72,7 @@ def screen(research, task, core):
     if existing:
         result=json.loads(existing['response'])
     else:
-        if getattr(research, 'preflight_errors', 0) >= 3 or time.time() < getattr(research, 'preflight_next_try', 0):
+        if research.preflight_error_limit_reached() or time.time() < getattr(research, 'preflight_next_try', 0):
             raise core.FetchProblem('preflight_api_cooldown',retry=True)
         if research.preflight_used >= c['max_calls_per_run']:
             raise core.FetchProblem('preflight_call_budget',retry=True)
@@ -92,6 +92,7 @@ def screen(research, task, core):
             result=validate(json.loads(content))
         except (KeyError,TypeError,AttributeError,ValueError,IndexError):
             raise core.FetchProblem('preflight_invalid_response',retry=True) from None
+        research.consecutive_preflight_errors = 0
         research.store.db.execute('INSERT OR REPLACE INTO preflight_reviews VALUES(?,?,?,?,?,?,?)',
             (key,task['profile'],task['url'],model,core.utc(),json.dumps(request,ensure_ascii=False),json.dumps(result,ensure_ascii=False)))
         research.store.db.commit()

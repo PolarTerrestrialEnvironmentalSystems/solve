@@ -82,6 +82,9 @@ def initialize(r, core):
     r.start_pool_finished = {}
     r.start_pool_policy = core.stable([SYSTEM, r.cfg['start_links']['target'],r.cfg['start_links']['min_importance'],
         os.getenv(r.cfg['preflight']['model_env'],r.cfg['preflight']['model'])])
+    if r.cfg['start_links']['skip_selection']:
+        r.start_pool_finished = {p: ('reused_saved_selection' if selected_count(r,p) else 'skipped_no_saved_selection')
+                                 for p in r.active}
 
 
 def rows(r, profile):
@@ -110,6 +113,25 @@ def allowed(r, task):
     row = r.store.one('SELECT selected FROM start_link_reviews WHERE profile=? AND url=? AND policy=?',
                      (task['profile'],task['url'],r.start_pool_policy))
     return bool(row and row['selected'])
+
+
+def filter_allowed(r, tasks):
+    """Apply exactly the single-task gate with two queries, not one per URL.
+
+    Rebuild on each scheduling pass so newly discovered origins and selection
+    decisions immediately apply. Keys include the profile for shared lake URLs.
+    """
+    if not tasks or not enabled(r):
+        return tasks
+    web_roots = {(d['profile'], d['url']) for d in r.store.rows('''
+        SELECT DISTINCT d.profile,d.url FROM discoveries d
+        JOIN searches s ON s.id=d.query_id
+        WHERE s.provider IN ('serper','searxng','brave')''')}
+    selected = {(d['profile'], d['url']) for d in r.store.rows(
+        'SELECT profile,url FROM start_link_reviews WHERE policy=? AND selected=1',
+        (r.start_pool_policy,))}
+    return [t for t in tasks if t['depth']>0 or
+            (t['profile'],t['url']) not in web_roots or (t['profile'],t['url']) in selected]
 
 
 def validate(payload, tasks):
@@ -230,6 +252,8 @@ def finish(r, profile, reason):
 
 def step(r, core):
     """One bounded search or LLM batch. True asks the run loop to check budgets again."""
+    if r.cfg['start_links']['skip_selection']:
+        return False
     if not enabled(r):
         return False
     import quality_search
@@ -255,7 +279,7 @@ def step(r, core):
             try:
                 assess(r,pending[:r.cfg['start_links']['batch_size']],core)
             except (core.FetchProblem,ValueError,KeyError,TypeError,IndexError,AttributeError) as exc:
-                r.preflight_errors+=1
+                r.start_link_errors+=1
                 details=error_details(exc)
                 r.store.event('start_links_review_error',dict(profile=profile,**details))
                 reason={'start_links_review_budget':'preflight_call_budget','start_links_time_budget':'run_time_budget'}.get(str(exc),'llm_review_error')

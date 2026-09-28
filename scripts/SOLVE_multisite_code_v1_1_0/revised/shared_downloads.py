@@ -3,19 +3,29 @@ import hashlib
 import json
 import shutil
 import sqlite3
+import time
 from contextlib import closing, contextmanager
 from pathlib import Path
 
 
 @contextmanager
-def locked(root, core):
+def locked(root, core, wait_seconds=0):
+    deadline = time.monotonic() + wait_seconds
+    lock = core.WorkspaceLock(root)
+    while True:
+        try:
+            lock.__enter__()
+            break
+        except RuntimeError as error:
+            if 'bereits bearbeitet' not in str(error):
+                raise
+            if time.monotonic() >= deadline:
+                raise core.FetchProblem('shared_cache_busy', retry=True, delay=2) from None
+            time.sleep(min(.2, max(0, deadline-time.monotonic())))
     try:
-        with core.WorkspaceLock(root):
-            yield
-    except RuntimeError as error:
-        if 'bereits bearbeitet' in str(error):
-            raise core.FetchProblem('shared_cache_busy', retry=True, delay=2) from None
-        raise
+        yield
+    finally:
+        lock.__exit__(None, None, None)
 
 
 def import_source(fetcher, row, source_root):
@@ -42,6 +52,21 @@ class SharedDownloads:
         self.root.mkdir(parents=True,exist_ok=True)
         with closing(sqlite3.connect(self.root/'downloads.sqlite')) as db, db:
             db.execute('CREATE TABLE IF NOT EXISTS sources(url TEXT PRIMARY KEY,payload TEXT NOT NULL)')
+            db.execute('CREATE TABLE IF NOT EXISTS hosts(host TEXT PRIMARY KEY,next_allowed REAL NOT NULL)')
+
+    def import_hosts(self, store):
+        # Caller holds the shared lock, including redirects and robots requests.
+        with closing(sqlite3.connect(self.root/'downloads.sqlite')) as db:
+            store.db.executemany('INSERT INTO hosts VALUES(?,?) ON CONFLICT(host) DO UPDATE '
+                                 'SET next_allowed=MAX(hosts.next_allowed,excluded.next_allowed)',
+                                 db.execute('SELECT host,next_allowed FROM hosts'))
+        store.db.commit()
+
+    def publish_hosts(self, store):
+        with closing(sqlite3.connect(self.root/'downloads.sqlite')) as db, db:
+            db.executemany('INSERT INTO hosts VALUES(?,?) ON CONFLICT(host) DO UPDATE '
+                           'SET next_allowed=MAX(hosts.next_allowed,excluded.next_allowed)',
+                           store.db.execute('SELECT host,next_allowed FROM hosts'))
 
     def lookup(self, fetcher, url):
         with closing(sqlite3.connect(self.root/'downloads.sqlite')) as db, db:

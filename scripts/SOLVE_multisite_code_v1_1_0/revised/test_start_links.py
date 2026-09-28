@@ -50,6 +50,56 @@ class StartLinksTests(unittest.TestCase):
         self.assertTrue(start_links.allowed(self.r,tasks[1]))
         self.assertFalse(start_links.allowed(self.r,tasks[2]))
 
+    def test_skip_reuses_selection_without_releasing_rejected_roots(self):
+        tasks=self.hits(3)
+        with self.api(['tourism','science','navigation']):
+            start_links.step(self.r,core)
+        before=start_links.rows(self.r,self.profile)
+        policy=self.r.start_pool_policy
+        self.r.cfg['start_links']['skip_selection']=True
+        start_links.initialize(self.r,core)
+        with patch.object(core,'api_request') as api,patch.object(self.r,'do_search') as search:
+            self.assertFalse(start_links.step(self.r,core))
+            self.assertIsNone(self.r.next_search())
+        api.assert_not_called();search.assert_not_called()
+        self.assertEqual(policy,self.r.start_pool_policy)
+        self.assertEqual(before,start_links.rows(self.r,self.profile))
+        self.assertTrue(start_links.allowed(self.r,tasks[1]))
+        self.assertFalse(start_links.allowed(self.r,tasks[0]))
+        self.assertFalse(start_links.allowed(self.r,tasks[2]))
+        self.assertTrue(start_links.allowed(self.r,dict(tasks[0],depth=1)))
+        self.assertEqual(start_links.report(self.r)[0]['status'],'reused_saved_selection')
+
+    def test_skip_without_saved_selection_does_not_accept_unreviewed_hits(self):
+        task=self.hits(1)[0]
+        self.r.cfg['start_links']['skip_selection']=True
+        start_links.initialize(self.r,core)
+        self.assertFalse(start_links.step(self.r,core))
+        self.assertFalse(start_links.allowed(self.r,task))
+        self.assertEqual(start_links.report(self.r)[0]['status'],'skipped_no_saved_selection')
+
+    def test_bulk_gate_matches_individual_gate_with_constant_query_count(self):
+        tasks=self.hits(3)
+        with self.api(['tourism','science','navigation']):
+            start_links.step(self.r,core)
+        self.r.enqueue(self.profile,'https://example.org/curated',priority=94)
+        curated=self.r.store.one("SELECT * FROM tasks WHERE url='https://example.org/curated'")
+        candidates=(tasks+[curated,dict(tasks[0],depth=1)])*200
+        expected=[t for t in candidates if start_links.allowed(self.r,t)]
+        queries=[]
+        self.r.store.db.set_trace_callback(queries.append)
+        try:
+            self.assertEqual(start_links.filter_allowed(self.r,candidates),expected)
+        finally:
+            self.r.store.db.set_trace_callback(None)
+        self.assertEqual(sum(q.lstrip().upper().startswith('SELECT') for q in queries),2)
+        # Previously curated URLs require selection once web-search provenance arrives.
+        self.r.search_result(self.task,[dict(url=curated['url'],title='New origin')])
+        # search_result ignores already completed searches, so add the provenance explicitly.
+        self.r.enqueue(self.profile,curated['url'],query_id=self.task['id'])
+        self.assertFalse(start_links.allowed(self.r,curated))
+        self.assertEqual(start_links.filter_allowed(self.r,[curated]),[])
+
     def test_unreviewed_or_rejected_root_cannot_download(self):
         tasks=self.hits(1)
         with patch.object(self.r.fetcher,'fetch') as fetch:

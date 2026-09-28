@@ -1526,8 +1526,8 @@
     "timeout_seconds": 45,
     "delay_seconds": 2,
     "strategy": "focused",
-    "adaptive_max_queries": 40,
-    "plateau_queries": 10,
+    "adaptive_max_queries": 80,
+    "plateau_queries": 20,
     "api_key_env": "SERPER_KEY",
     "serper_simple_queries": true
   },
@@ -1536,39 +1536,45 @@
     "base_url": "https://api.blablador.fz-juelich.de/v1",
     "model": "alias-large",
     "api_key_env": "BLABLADOR_KEY",
-    "max_calls_per_run": 2640,
+    "max_calls_per_run": 10000,
     "max_input_chars": 16000,
     "require_topic_evidence": true,
-    "required": true
+    "required": true,
+    "timeout_seconds": 120,
+    "max_api_errors_per_run": 30,
+    "max_consecutive_api_errors": 5
   },
   "storage": {
     "persist_extracted_text": false,
     "shared_cache_dir": "download_cache"
   },
   "limits": {
-    "max_fetches_per_run": 3960,
-    "max_searches_per_run": 2640,
-    "max_tasks_per_run": 33000,
-    "max_queries_per_waterbody": 160,
-    "max_seconds_per_run": 118800,
-    "timeout_seconds": 25,
+    "max_fetches_per_run": 12000,
+    "max_searches_per_run": 6000,
+    "max_tasks_per_run": 100000,
+    "max_queries_per_waterbody": 320,
+    "max_seconds_per_run": 259200,
+    "timeout_seconds": 60,
     "delay_seconds": 0.5,
-    "parse_timeout_seconds": 75,
-    "max_pdf_pages": 180,
-    "max_download_mb": 30,
-    "max_urls_per_host_per_run": 660,
-    "max_ocr_pages": 8
+    "parse_timeout_seconds": 180,
+    "max_pdf_pages": 400,
+    "max_download_mb": 80,
+    "max_urls_per_host_per_run": 1500,
+    "max_ocr_pages": 20,
+    "max_candidates_per_waterbody": 5000,
+    "max_depth": 7,
+    "max_reference_depth": 5
   },
   "preflight": {
     "enabled": true,
     "base_url": "https://api.blablador.fz-juelich.de/v1",
     "api_key_env": "BLABLADOR_KEY",
     "model": "alias-fast",
-    "max_calls_per_run": 6600,
-    "timeout_seconds": 60,
+    "max_calls_per_run": 12000,
+    "timeout_seconds": 120,
     "defer_confidence": 0.85,
     "rank_before_download": true,
-    "exploration_per_waterbody": 20
+    "exploration_per_waterbody": 60
   },
   "retrieval": {
     "enabled": true,
@@ -1581,7 +1587,7 @@
     "health_ttl_seconds": 3600,
     "cooldown_seconds": 1800,
     "crossref_enabled": true,
-    "max_pages": 3,
+    "max_pages": 5,
     "bibliography": true,
     "wait_for_search_routes": true
   },
@@ -1701,8 +1707,8 @@
     "target": 20,
     "batch_size": 20,
     "min_importance": 60,
-    "max_searches": 20,
-    "max_pages": 3,
+    "max_searches": 50,
+    "max_pages": 5,
     "initial_keywords": [
       "Messdaten",
       "Gewässermaßnahmen",
@@ -1710,6 +1716,7 @@
       "Gewässergüte",
       "Sanierung",
       "Wasserqualität"
-    ]
+    ],
+    "skip_selection": true
   }
 }
