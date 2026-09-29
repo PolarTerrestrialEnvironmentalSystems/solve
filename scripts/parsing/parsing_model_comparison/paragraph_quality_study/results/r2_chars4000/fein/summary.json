@@ -1,0 +1,106 @@
+{
+  "variant": "fein",
+  "events": 11,
+  "relationships": 1,
+  "causal_self_relationships_rejected": 2,
+  "causal_self_relationship_repairs": {
+    "rejected": 1
+  },
+  "complete_chunks": 2,
+  "failed_chunks": 0,
+  "event_types": {
+    "Prozess": 4,
+    "Messung": 1,
+    "Zustand": 6
+  },
+  "topics": {
+    "topic:hydrology": 9,
+    "topic:hydrology.level_flow": 9,
+    "topic:management": 3,
+    "topic:management.planning": 1,
+    "topic:chemistry": 1
+  },
+  "merged_event_duplicates": 0,
+  "merged_relationship_duplicates": 0,
+  "review_items": 19,
+  "review_kinds": {
+    "source_quality_repair": 1,
+    "causal_self_relationship_repair": 1,
+    "rejected_event": 3,
+    "rejected_relationship": 2,
+    "event_needs_review": 11,
+    "relationship_needs_review": 1
+  },
+  "event_fields_filled": {
+    "event_id": 11,
+    "record_type": 11,
+    "waterbody_references": 5,
+    "waterbody_name_original": 6,
+    "waterbody_identifiers": 0,
+    "waterbody_assignment": 0,
+    "statement": 11,
+    "ontology_concept": 11,
+    "participants": 1,
+    "spatial_scope": 11,
+    "system_scope": 0,
+    "values": 7,
+    "measurement_context": 0,
+    "time_original": 6,
+    "time_status": 11,
+    "time_normalized": 2,
+    "time_precision": 2,
+    "assertion_mode": 11,
+    "polarity": 11,
+    "implementation_status": 11,
+    "categories": 11,
+    "category_assessment": 0,
+    "source_document": 11,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 11,
+    "extraction_metadata": 11,
+    "quality_assessment": 11
+  },
+  "relationship_fields_filled": {
+    "relationship_id": 1,
+    "source_event_id": 1,
+    "target_event_id": 1,
+    "relationship_type": 1,
+    "statement": 1,
+    "relationship_scope": 1,
+    "waterbody_references": 0,
+    "spatial_scope": 1,
+    "assertion_mode": 1,
+    "polarity": 1,
+    "derivation_status": 1,
+    "evidence_basis": 0,
+    "mechanism": 0,
+    "conditions": 0,
+    "additional_factors": 0,
+    "effect_size": 0,
+    "valid_time": 0,
+    "response_time_definition": 0,
+    "response_time_anchors": 0,
+    "response_time_value": 0,
+    "response_time_origin": 1,
+    "response_time_evidence": 0,
+    "effect_duration": 0,
+    "categories": 1,
+    "source_document": 1,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 1,
+    "extraction_metadata": 1,
+    "quality_assessment": 1
+  },
+  "empty_chunks": [],
+  "model_notes": [
+    {
+      "chunk_id": "chunk_0001_69c9f584",
+      "notes": [
+        "Der Text auf Seite 11 (Block p0011_b0003) bricht am Ende ab ('infol-'), daher ist der konkrete Wert für die Änderung des QM364-Abflusses der Elbe am Pegel Děčín nicht vollständig im Quelldokument enthalten. Event e8 wurde als Prozess angelegt, aber ohne Werte.",
+        "Die Beziehung zwischen Talsperrenbewirtschaftung und Abflusserhöhung ist im Text explizit als 'infolge der Wirkung' formuliert. Diese kausalen Zusammenhänge wurden als Relationships extrahiert."
+      ]
+    }
+  ]
+}

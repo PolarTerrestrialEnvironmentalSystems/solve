@@ -1,0 +1,65 @@
+{
+  "method": "Gleiche 19 vorab festgelegte Prüfpunkte wie im Abschnittsgrößen-Pilot. F=vollständig in finalen Fachfeldern, P=teilweise, M=fehlend, E=wesentliche unbelegte Ergänzung. Informationen nur im Beleg zählen nicht als extrahiert. Nicht verblindete Prüfung durch den Assistenten; kein allgemeiner Precision-/Recall-Nachweis.",
+  "runs": {
+    "r1_chars4000": {
+      "ratings": [
+        "F",
+        "F",
+        "M",
+        "M",
+        "F",
+        "F",
+        "M",
+        "F",
+        "M",
+        "M",
+        "F",
+        "M",
+        "F",
+        "F",
+        "M",
+        "M",
+        "M",
+        "M",
+        "P"
+      ],
+      "notes": {
+        "1 und 8": "Beide Vergleichswerte mit separaten korrekten Zeiträumen in values[].time_original/time_normalized erhalten. Eger-Vergleich besteht jetzt auch die Belegprüfung.",
+        "19": "Prognosestatus und Sommerbezug vorhanden; die häufigere Unterschreitung gegenüber bisher wird in Fachfeldern nicht explizit übernommen.",
+        "Auslassungen": "Speicherdaten, Berounka-Anteil, Winter-/Sommer-Kausalketten, Flächenanteile und Bewirtschaftungskonflikt fehlen weiterhin.",
+        "Dubletten": "Die fortbestehende Grenzabflussvereinbarung wird in Events 9 und 13 wiederholt.",
+        "Semantische Grenzen": "fine:ConcentrationChange ist für die Abflussvergleiche fachlich unpassend, obwohl die ID zulässig ist. Die ersten beiden Beziehungen machen die jeweilige Mindestabgaberegel zur Ursache der historischen QM364-Erhöhung; die Quelle benennt allgemeiner die Talsperrenwirkung. Die Checklistenabdeckung bewertet die Sachverhalte, nicht eine Freigabe dieser Klassifikation/Kanten."
+      }
+    },
+    "r2_chars4000": {
+      "ratings": [
+        "F",
+        "F",
+        "M",
+        "M",
+        "F",
+        "F",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "F",
+        "F",
+        "M",
+        "M",
+        "M",
+        "M",
+        "P"
+      ],
+      "notes": {
+        "1 und 2": "Moldau-Vergleich und 36,9-Wert behalten ihre Zeiträume in values[].time_original; time_normalized bleibt hier leer, die Original-Zuordnung bleibt dennoch erhalten.",
+        "8 und 11": "Eger-Vergleich und Mindestabgabe werden wegen ungültiger Belege ausgesondert.",
+        "19": "Prognose und Sommerbezug erhalten, Zunahme der Häufigkeit nicht explizit in Fachfeldern.",
+        "Reparaturen": "Qualitäts- und Selbstbeziehungsreparatur ändern unerlaubt Metadaten und werden verworfen. Originale bleiben erhalten.",
+        "Sonstige Grenzen": "Event 6 behauptet eine Veränderung am Pegel Děčín, obwohl die bereitgestellte Passage vor der eigentlichen Aussage abbricht. Belegprüfung allein erkennt das semantisch nicht. Auch hier ist fine:ConcentrationChange für Abflusswerte unpassend. Weitere Speicher-, Flächen- und Kausalangaben fehlen."
+      }
+    }
+  }
+}

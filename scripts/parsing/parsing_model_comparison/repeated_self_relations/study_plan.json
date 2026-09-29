@@ -1,0 +1,117 @@
+{
+  "repetitions": 3,
+  "variants": [
+    "reference",
+    "compact"
+  ],
+  "cases": [
+    {
+      "chunk_id": "moldau_qm364",
+      "pages": [
+        10
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            42.5197,
+            81.7568,
+            524.4802000000008,
+            249.12610000000006
+          ],
+          "text": "Nach Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem Jahre 1994\nwurde der Abfluss der Moldau in Prag für 364 Überschreitungstage (QM364) infolge der Wirkung der\nTalsperren der Moldaukaskade von 20,0 m³/s (für die unbedeutend durch Talsperrenbewirtschaftung\nbeeinflusste Jahresreihe 1924-1953) auf 38,8 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste\nJahresreihe 1955-1993), d. h. um 18,8 m³/s, erhöht.",
+          "page": 10,
+          "printed_page": null,
+          "block_id": "p0010_b0002",
+          "section": "4. Auswirkungen der tschechischen Talsperren auf die Niedrigwasserabflüsse"
+        }
+      ],
+      "context_blocks": []
+    },
+    {
+      "chunk_id": "eger_elbe",
+      "pages": [
+        11
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            70.85560000000001,
+            471.3426,
+            552.8266000000009,
+            713.0526000000001
+          ],
+          "text": "Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem\nStauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merk-\nbaren Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung\nder Eger.",
+          "page": 11,
+          "printed_page": null,
+          "block_id": "p0011_b0003",
+          "section": "10 Manfred Simon und Jürgen Böhme"
+        }
+      ],
+      "context_blocks": []
+    },
+    {
+      "chunk_id": "seasonal_climate",
+      "pages": [
+        17
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            166.50059999999996,
+            552.8056000000005,
+            389.94060000000025
+          ],
+          "text": "Es wird auch zukünftig eine weitere Umverteilung des Niederschlages vom Sommerhalbjahr in das\nWinterhalbjahr erfolgen. Dabei erhöht sich im Winterhalbjahr der Anteil der Regenniederschläge und\nes werden Mehrabflüsse mit zunehmenden winterlichen Hochwassern auftreten. Durch die geringeren",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0003",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            166.50059999999996,
+            552.8056000000005,
+            389.94060000000025
+          ],
+          "text": "Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses und somit zur\nVerschärfung der Niedrigwasserproblematik im Sommer.",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0004",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        }
+      ],
+      "context_blocks": []
+    }
+  ],
+  "cover": [],
+  "document": {
+    "document_id": "doc_1bfed581c2f2d2d5047c5840",
+    "content_hash": "1bfed581c2f2d2d5047c584035c526a2eb9c75315447f09b9d482f053671f44d",
+    "local_file": "C:\\Users\\jowals001\\awi\\solve\\scripts\\SOLVE_multisite_code_v1_1_0\\dossier_33_seen_serper_v1_6_2_20260925\\archive\\pdf\\1bfed581c2f2d2d5047c584035c526a2eb9c75315447f09b9d482f053671f44d.pdf",
+    "filename": "1bfed581c2f2d2d5047c584035c526a2eb9c75315447f09b9d482f053671f44d.pdf",
+    "title": null,
+    "issuer": null,
+    "authors": null,
+    "url": null,
+    "publication_date": null,
+    "retrieved_at": null,
+    "pdf_metadata": {
+      "/CreationDate": "D:20120313154551+01'00'",
+      "/Creator": "Adobe Acrobat Pro 9.5.0",
+      "/ModDate": "D:20120320145953+01'00'",
+      "/Producer": "Adobe Acrobat Pro 9.5.0"
+    }
+  },
+  "pdf_sha256": null,
+  "selection": "Three explicit causal passages; selected before new model responses.",
+  "unit": "One passage x one repetition x one prompt; fresh response checkpoints per unit.",
+  "primary_metric": "Runs with at least one source_event_id == target_event_id in schema-valid packages and final exports.",
+  "secondary_metric": "Self edges / all edges; zero-edge runs and failed runs reported separately.",
+  "limitations": "Three passages from one document; repeated samples are not independent documents. Temperature zero is not a guarantee of identical responses."
+}

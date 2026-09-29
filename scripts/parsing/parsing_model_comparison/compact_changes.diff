@@ -1,0 +1,43 @@
+--- baseline/common.py
++++ compact/common.py
+@@ -11,8 +11,8 @@
+ from typing import Any
+ 
+ BASE_DIR = Path(__file__).resolve().parent
+-PARSER_VERSION = "fine-batch-1.0.0"
+-PROMPT_VERSION = "1.0.0"
++PARSER_VERSION = "fine-batch-1.0.1-compact-pilot"
++PROMPT_VERSION = "1.0.1-compact-pilot"
+ SCHEMA_VERSION = "1.0.0"
+ 
+ 
+--- baseline/extract_facts.py
++++ compact/extract_facts.py
+@@ -51,16 +51,23 @@
+ evidence.quote ist ein wörtlicher Ausschnitt aus evidence.block_id. evidence.page
+ ist dessen PDF-Seitenindex. field_names enthält alle dadurch gestützten Fachfelder.
+ Jedes ausgefüllte Fachfeld braucht einen Beleg. Keine Konfidenz-Wahrscheinlichkeiten
+-aus deinem Gefühl. Fehlende Angaben bleiben null oder definierter Unknown-Status.
+-source_document, retrieved_at, extraction_metadata werden von Python befüllt: null lassen.
+-publication_date in Event/Relationship null lassen. Dokumentdatum ausschließlich im
++aus deinem Gefühl. Nicht belegte optionale Angaben mit Schema-Default null weglassen.
++Explizite Unknown-Statuswerte bleiben erhalten; unbekannt ist nicht dasselbe wie nicht angegeben.
++source_document, retrieved_at, extraction_metadata werden von Python befüllt: weglassen.
++publication_date in Event/Relationship weglassen. Dokumentdatum ausschließlich im
+ document-Objekt anhand document_context erfassen, dort eigene Belege je Feld angeben.
+ Event-IDs lokal e1,e2,... vergeben. Vorhandene existing_events nur über ihre vorgegebenen
+ qualified_id referenzieren; nicht neu erfinden oder verändern.
+ Wenn für einen ausdrücklich erwähnten Bezug weitere Passagen fehlen, context_requests
+ mit spezifischen Suchbegriffen, Grund und lokalen/vorgegebenen Event-IDs angeben.
+ Wenn kein relevanter Fakt vorhanden ist: leere events/relationships und Begründung in notes.
+-Fülle alle vorgesehenen Felder aus, verwende null für nicht belegte optionale Angaben.
++Kompakte Ausgabe: Pflichtfelder und alle belegten Angaben vollständig ausgeben.
++Optionale Felder mit Default null ohne Inhalt weglassen, auch in verschachtelten Objekten.
++Ausnahme: ontology_concept=null bei fehlender Ontologieklasse wie oben angegeben beibehalten.
++Statusfelder (z.B. time_status, implementation_status, derivation_status) ausdrücklich ausgeben.
++0, false, Verneinungen und explizit unbekannte Angaben niemals als leer weglassen.
++Leere Listen und Objekte beibehalten; keine pauschale Entfernung anhand ihres Wahrheitswerts.
++Keine neuen Feldnamen. Aussagen, Belege, IDs und Beziehungen nicht verkürzen oder auslassen.
+ """
+ 
+ 

@@ -1,0 +1,3 @@
+minute_utc,scope,run_id,ontology,model,endpoint,requests,successful,failed,unfinished,retries,http_429,max_requests_last_60s,prompt_tokens,completion_tokens
+2026-09-29T10:15:00+00:00,detail,availability_probe,none,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,5,19,6
+2026-09-29T10:15:00+00:00,total,,,,,1,1,0,0,0,0,5,19,6

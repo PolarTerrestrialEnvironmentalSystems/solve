@@ -1,0 +1,21 @@
+{
+  ".env.example": "c982f0f34ffd3b4bdea38cbf8dc07b975bf83b9583b27ee26c0fdc39c302aa48",
+  ".gitignore": "28157256882746d39cdfbb54f68664b630179c9208384e22d296d88c27594939",
+  "blablador_client.py": "c8fd1cc7afc83cb30415a4666d50fa9603144f274282eaaa3234a7ad2751f8be",
+  "common.py": "d5cc2e36ee286a02ddf563f2794b2a5321e5e78eeceef61199ae1e5c323d5a2f",
+  "Event_headers.xlsx": "56966747b6798d2735f51279d724e3ec6cdf1e6ec27c2cccee66963e55f1ba1e",
+  "extract_facts.py": "bbb7df1c2d967cdd5330437f2b6743a36ada0e3bf777986eab4def9bddbc76ec",
+  "input/PDFs_HIER_ABLEGEN.txt": "207644d54740cc274e6a50d36c16bccf64fc2fcb9f34f43a5e416e4f2aba3504",
+  "ontologie_fein.json": "4b23a99e8de959124ece98c3dd920e3077e4860412bb109880d970df9c53c9b0",
+  "parse_directory.py": "96ee97eedb3b45cb05ac150f9e3e6e5dc52b7803a47edc6618f8ccb3a344670e",
+  "prepare_document.py": "312506be5a726061e11ea2c49a88c584a6386dc71b2927aea204e4319258e04e",
+  "README.md": "2acfd63cdf223ece08637d495121bf31fd36b17a720655a084a9efb244cd27ea",
+  "relationship_headers.xlsx": "b9dd8804318444b9db354a90ee9537df0c17935d36a40ac7724f618bc5dd27fc",
+  "requirements.lock.txt": "b27d368f1e1e41092d6850109d150508cd2871c1995b012dc832005fb5985cf4",
+  "run_parsing_tests.py": "d1ecd48175326937bb8c56ee22dbccc4d38d34e226b6c6ba12e7110c02c4adc2",
+  "schemas.py": "a73a331f385eed501feca7c4862e997a11494b9f0471ca95fdd094f804d88384",
+  "TEST_REPORT.json": "a9a4e4a4a654006dc161d7027d7bfa5ae6a0a022b4fb7145758283992aa749f7",
+  "tests/test_batch.py": "96a9bf6b876e5eed7cdf5b6dc26d45f9e41fc10d8bc771f592552ddf97f34e46",
+  "validate_export.py": "6ed99d8b1636b7518b414e1b2327fff40634155ba9913cc7d2084299cdedba9d",
+  "verify_release.py": "abf57c75580a390cda0c9571e98d8f4286de9604924f7a29f029950a05baa745"
+}

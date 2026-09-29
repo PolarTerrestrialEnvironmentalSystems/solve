@@ -1,0 +1,106 @@
+{
+  "r1_eger_elbe_compact": {
+    "quote_not_found:p0011_b0003": 4,
+    "unknown_topic": 5,
+    "unresolved_source_event_id": 2,
+    "unresolved_target_event_id": 2
+  },
+  "r1_eger_elbe_reference": {
+    "quote_not_found:p0011_b0003": 5,
+    "unknown_topic": 5,
+    "unresolved_source_event_id": 2,
+    "unresolved_target_event_id": 2
+  },
+  "r1_moldau_qm364_compact": {
+    "unknown_topic": 4,
+    "unresolved_source_event_id": 1,
+    "unresolved_target_event_id": 1
+  },
+  "r1_moldau_qm364_reference": {
+    "unknown_topic": 3,
+    "quote_not_found:p0010_b0002": 1,
+    "unresolved_source_event_id": 1,
+    "unresolved_target_event_id": 1
+  },
+  "r1_seasonal_climate_compact": {
+    "unknown_topic": 6,
+    "quote_not_found:p0017_b0004": 2,
+    "unresolved_source_event_id": 2,
+    "unresolved_target_event_id": 2
+  },
+  "r1_seasonal_climate_reference": {
+    "unknown_topic": 7,
+    "quote_not_found:p0017_b0004": 2,
+    "unresolved_source_event_id": 3,
+    "unresolved_target_event_id": 3
+  },
+  "r2_eger_elbe_compact": {
+    "quote_not_found:p0011_b0003": 5,
+    "unresolved_source_event_id": 2,
+    "unresolved_target_event_id": 2
+  },
+  "r2_eger_elbe_reference": {
+    "quote_not_found:p0011_b0003": 2,
+    "unknown_topic": 2,
+    "unresolved_source_event_id": 1,
+    "unresolved_target_event_id": 1
+  },
+  "r2_moldau_qm364_compact": {
+    "unknown_topic": 5,
+    "quote_not_found:p0010_b0002": 1,
+    "unresolved_source_event_id": 1,
+    "unresolved_target_event_id": 1
+  },
+  "r2_moldau_qm364_reference": {
+    "unknown_topic": 3,
+    "unresolved_source_event_id": 1,
+    "unresolved_target_event_id": 1
+  },
+  "r2_seasonal_climate_compact": {
+    "unknown_topic": 8,
+    "quote_not_found:p0017_b0004": 2,
+    "unresolved_source_event_id": 2,
+    "unresolved_target_event_id": 2
+  },
+  "r2_seasonal_climate_reference": {
+    "unknown_topic": 9,
+    "quote_not_found:p0017_b0004": 2,
+    "unresolved_source_event_id": 4,
+    "unresolved_target_event_id": 4
+  },
+  "r3_eger_elbe_compact": {
+    "quote_not_found:p0011_b0003": 4,
+    "unknown_topic": 5,
+    "unresolved_source_event_id": 2,
+    "unresolved_target_event_id": 2
+  },
+  "r3_eger_elbe_reference": {
+    "quote_not_found:p0011_b0003": 5,
+    "unknown_topic": 5,
+    "unresolved_source_event_id": 2,
+    "unresolved_target_event_id": 2
+  },
+  "r3_moldau_qm364_compact": {
+    "unknown_topic": 3,
+    "quote_not_found:p0010_b0002": 1,
+    "unresolved_source_event_id": 1,
+    "unresolved_target_event_id": 1
+  },
+  "r3_moldau_qm364_reference": {
+    "unknown_topic": 3,
+    "unresolved_source_event_id": 1,
+    "unresolved_target_event_id": 1
+  },
+  "r3_seasonal_climate_compact": {
+    "unknown_topic": 9,
+    "quote_not_found:p0017_b0004": 2,
+    "unresolved_source_event_id": 4,
+    "unresolved_target_event_id": 4
+  },
+  "r3_seasonal_climate_reference": {
+    "unknown_topic": 5,
+    "quote_not_found:p0017_b0004": 2,
+    "unresolved_source_event_id": 2,
+    "unresolved_target_event_id": 2
+  }
+}

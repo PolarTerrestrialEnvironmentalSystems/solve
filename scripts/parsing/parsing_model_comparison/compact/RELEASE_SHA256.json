@@ -1,0 +1,22 @@
+{
+  ".env.example": "c982f0f34ffd3b4bdea38cbf8dc07b975bf83b9583b27ee26c0fdc39c302aa48",
+  ".gitignore": "28157256882746d39cdfbb54f68664b630179c9208384e22d296d88c27594939",
+  "blablador_client.py": "c8fd1cc7afc83cb30415a4666d50fa9603144f274282eaaa3234a7ad2751f8be",
+  "common.py": "39d3af14d428689b2af3dea1afa9893197d01d6a297613d3ff4ae0790e512fcc",
+  "Event_headers.xlsx": "56966747b6798d2735f51279d724e3ec6cdf1e6ec27c2cccee66963e55f1ba1e",
+  "extract_facts.py": "46d341a5b91de9142f1959a76592a65fd736dec943c514d836e909926b85f576",
+  "input/PDFs_HIER_ABLEGEN.txt": "207644d54740cc274e6a50d36c16bccf64fc2fcb9f34f43a5e416e4f2aba3504",
+  "ontologie_fein.json": "4b23a99e8de959124ece98c3dd920e3077e4860412bb109880d970df9c53c9b0",
+  "parse_directory.py": "96ee97eedb3b45cb05ac150f9e3e6e5dc52b7803a47edc6618f8ccb3a344670e",
+  "prepare_document.py": "312506be5a726061e11ea2c49a88c584a6386dc71b2927aea204e4319258e04e",
+  "README.md": "2e1ae352cb0431601b3df1ee7cd63a85bd6133bbfa5b9e4d4efaf0dbf88f5dfb",
+  "relationship_headers.xlsx": "b9dd8804318444b9db354a90ee9537df0c17935d36a40ac7724f618bc5dd27fc",
+  "requirements.lock.txt": "b27d368f1e1e41092d6850109d150508cd2871c1995b012dc832005fb5985cf4",
+  "run_parsing_tests.py": "d1ecd48175326937bb8c56ee22dbccc4d38d34e226b6c6ba12e7110c02c4adc2",
+  "schemas.py": "a73a331f385eed501feca7c4862e997a11494b9f0471ca95fdd094f804d88384",
+  "TEST_REPORT.json": "dbbda4cca10c41ff68099b275b63fd465d3a06f048fe8be324ffd425a35b06ae",
+  "tests/test_batch.py": "96a9bf6b876e5eed7cdf5b6dc26d45f9e41fc10d8bc771f592552ddf97f34e46",
+  "validate_export.py": "6ed99d8b1636b7518b414e1b2327fff40634155ba9913cc7d2084299cdedba9d",
+  "verify_release.py": "abf57c75580a390cda0c9571e98d8f4286de9604924f7a29f029950a05baa745",
+  "tests/test_compact_contract.py": "9f6a4ff9bd931dd372c0bf17f13d0af809ad3938fa8c59cdfd4187be8451e4ec"
+}

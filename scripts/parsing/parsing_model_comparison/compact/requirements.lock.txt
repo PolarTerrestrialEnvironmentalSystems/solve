@@ -1,0 +1,16 @@
+annotated-types==0.8.0
+cffi==2.1.1
+charset-normalizer==3.5.1
+cryptography==50.0.1
+et_xmlfile==2.0.0
+openpyxl==3.1.5
+pdfminer.six==20260107
+pdfplumber==0.11.10
+pillow==12.3.0
+pycparser==3.0
+pydantic==2.13.5
+pydantic_core==2.46.5
+pypdf==6.19.0
+pypdfium2==5.13.0
+typing-inspection==0.4.4
+typing_extensions==4.16.0

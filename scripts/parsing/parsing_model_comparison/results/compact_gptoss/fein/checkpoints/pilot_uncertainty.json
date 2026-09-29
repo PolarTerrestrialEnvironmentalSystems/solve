@@ -1,0 +1,47 @@
+{
+  "cache_key": "525ce445b8813bfdef1028954bd22af3d54751529449b320da4a6399e8765680",
+  "status": "failed",
+  "packages": [
+    {
+      "status": "failed",
+      "chunk_id": "pilot_uncertainty",
+      "pages": [
+        3
+      ],
+      "error": "truncated_response",
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            62.04000075,
+            60.90126012500002,
+            322.6075599454099,
+            139.86162987500006
+          ],
+          "text": "Nr. des Indikators B10\nBezeichnung Zufluss zur Rappbodetalsperre\nThemenfeld Wasser\nRäumliche Gliederung Rappbodetalsperre\nBearbeitungsstand 08.07.2025",
+          "page": 1,
+          "printed_page": null,
+          "block_id": "p0001_b0001",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0003_t001",
+          "table_group": "p0003_t001",
+          "row": 1,
+          "bbox": [
+            56.880000375,
+            57.119995625,
+            535.4399872500001,
+            611.4000053750001
+          ],
+          "text": "Bei Betrachtung der Zeitreihe für das hydrologische Sommerhalbjahr sticht das\nJahr 2007 deutlich heraus. Auch wenn der Sommer 2007 an der Wetterstation\nHarzgerode zu den niederschlagsreicheren Sommern zählt (LAU 2020), ist die-\nses Extrem ohne eine detailliertere Analyse nicht zu erklären. Möglicherweise\nspielt eine Rolle, dass infolge des Orkans Kyrill im Januar 2007 im Harz sehr\nviele Bäume entwurzelt wurden und Kalamitätsflächen entstanden sind, auf de-\nnen der Niederschlag schneller abflusswirksam geworden sein. Dies könnte zu\nerhöhten Zuflüssen in die Rappbodetalsperre geführt haben.",
+          "page": 3,
+          "printed_page": null,
+          "block_id": "p0003_b0001",
+          "section": null
+        }
+      ]
+    }
+  ]
+}

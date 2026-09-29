@@ -1,0 +1,121 @@
+{
+  "variant": "fein",
+  "events": 42,
+  "relationships": 4,
+  "causal_self_relationships_rejected": 1,
+  "causal_self_relationship_repairs": {
+    "accepted": 1,
+    "rejected": 1
+  },
+  "complete_chunks": 5,
+  "failed_chunks": 0,
+  "event_types": {
+    "Prozess": 14,
+    "Messung": 2,
+    "Zustand": 16,
+    "Maßnahme": 6,
+    "Eigenschaft": 4
+  },
+  "topics": {
+    "topic:hydrology": 19,
+    "topic:management": 18,
+    "topic:monitoring": 2,
+    "topic:identity": 1,
+    "topic:hydrology.weather": 4,
+    "topic:hydrology.level_flow": 7,
+    "topic:identity.geometry": 4
+  },
+  "merged_event_duplicates": 0,
+  "merged_relationship_duplicates": 0,
+  "review_items": 68,
+  "review_kinds": {
+    "causal_self_relationship_repair": 2,
+    "rejected_event": 8,
+    "rejected_relationship": 6,
+    "event_needs_review": 42,
+    "possible_duplicate_or_conflict": 6,
+    "relationship_needs_review": 4
+  },
+  "event_fields_filled": {
+    "event_id": 42,
+    "record_type": 42,
+    "waterbody_references": 18,
+    "waterbody_name_original": 18,
+    "waterbody_identifiers": 0,
+    "waterbody_assignment": 18,
+    "statement": 42,
+    "ontology_concept": 42,
+    "participants": 7,
+    "spatial_scope": 41,
+    "system_scope": 0,
+    "values": 20,
+    "measurement_context": 3,
+    "time_original": 10,
+    "time_status": 42,
+    "time_normalized": 9,
+    "time_precision": 9,
+    "assertion_mode": 42,
+    "polarity": 42,
+    "implementation_status": 42,
+    "categories": 42,
+    "category_assessment": 0,
+    "source_document": 42,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 42,
+    "extraction_metadata": 42,
+    "quality_assessment": 42
+  },
+  "relationship_fields_filled": {
+    "relationship_id": 4,
+    "source_event_id": 4,
+    "target_event_id": 4,
+    "relationship_type": 4,
+    "statement": 4,
+    "relationship_scope": 4,
+    "waterbody_references": 0,
+    "spatial_scope": 3,
+    "assertion_mode": 4,
+    "polarity": 4,
+    "derivation_status": 4,
+    "evidence_basis": 0,
+    "mechanism": 0,
+    "conditions": 0,
+    "additional_factors": 0,
+    "effect_size": 0,
+    "valid_time": 0,
+    "response_time_definition": 0,
+    "response_time_anchors": 0,
+    "response_time_value": 0,
+    "response_time_origin": 4,
+    "response_time_evidence": 0,
+    "effect_duration": 0,
+    "categories": 4,
+    "source_document": 4,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 4,
+    "extraction_metadata": 4,
+    "quality_assessment": 4
+  },
+  "empty_chunks": [],
+  "model_notes": [
+    {
+      "chunk_id": "chunk_0003_434c9ee1",
+      "notes": [
+        "Die Aussage in p0011_b0005 über die Verbesserung der Abflüsse durch Niedrigwasseraufhöhung wird als Prozess (e3) erfasst. Eine explizite kausale Beziehung zwischen der Maßnahme (e1) und dem Prozess (e3) wird nicht als separate Relationship extrahiert, da e3 den Prozess der Aufhöhung selbst beschreibt, der durch e1 realisiert wird, und der Text 'führte zu' als Beschreibung des Prozesses interpretiert wird, der die Wirkung auf die Abflüsse einschließt. Alternativ könnte e1 als Ursache für e3 gesehen werden, aber e3 ist eher die Beschreibung des Zustands/Prozesses der Aufhöhung und ihrer direkten hydrologischen Konsequenz im selben Satz.",
+        "Die prognostizierten Klimawandelfolgen (e4-e8) sind getrennte Events, da sie unterschiedliche Parameter (Jahresabfluss, Moldau-Abfluss, Niederschlagsverteilung, Winterhochwasser, Sommer-Niedrigwasser) betreffen.",
+        "Keine expliziten kausalen Beziehungen zwischen den prognostizierten Klimawandelfolgen untereinander oder zur aktuellen Bewirtschaftung sind im Text als 'weil' oder 'führt zu' mit klarer Trennung von Ursache und Wirkung formuliert, die eine separate Relationship-Instanz erfordern würden, ohne dass die Events selbst schon die Kausalität in ihrer Definition tragen (z.B. 'führt zu' in e3).",
+        "Die Flächenangaben in e9 sind statische Eigenschaften des Einzugsgebiets."
+      ]
+    },
+    {
+      "chunk_id": "chunk_0004_94d38735",
+      "notes": [
+        "Die Beziehung zwischen Klimawandel und Abflussänderungen wird im Text explizit als Ursache-Wirkung dargestellt ('durch den zu erwartenden Klimawandel', 'infolge des zu erwartenden Klimawandels').",
+        "Die Kausalität zwischen geringeren Sommerniederschlägen und der Verschärfung der Niedrigwasserproblematik wird durch 'Durch die geringeren Sommerniederschläge kommt es zur...' und 'und somit zur...' belegt.",
+        "Der Widerspruch bei der Talsperrenbewirtschaftung wird als Zustand beschrieben, der durch die zukünftigen hydrologischen Veränderungen (Extremereignisse vs. Niedrigwasser) entsteht."
+      ]
+    }
+  ]
+}

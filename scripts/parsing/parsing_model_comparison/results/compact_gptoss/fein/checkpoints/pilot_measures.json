@@ -1,0 +1,426 @@
+{
+  "cache_key": "91a0be7c097f0fb3770f6b108194986521e1e904d8bcc07aea7ddd2c035bbec7",
+  "status": "complete",
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "pilot_measures",
+      "pages": [
+        2
+      ],
+      "result": {
+        "document": null,
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Maßnahme",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Talsperrenbewirtschaftung wurde in den Trockenjahren 2018–2022 angepasst.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "not_stated",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Die Bedeutung des Themas zeigt sich auch darin, dass der Talsperrenbetrieb insbesondere in den zurückliegenden fünf Trockenjahren (2018–2022) die Talsperrenbewirtschaftung bereits angepasst hat.",
+                "block_id": "p0002_b0001",
+                "page": 2,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e2",
+            "record_type": "Maßnahme",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Stauinhalt wurde bis zum Jahresende nicht unter 60 Mio. m³ gesenkt, um die Rohwasserversorgung sicherzustellen.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "not_stated",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Der Stauinhalt wurde bis zum Jahresende nicht unter 60 Mio. m³ gesenkt, um selbst bei geringen Winterzuflüssen die Rohwasserversorgung sicherzustellen.",
+                "block_id": "p0002_b0002",
+                "page": 2,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e3",
+            "record_type": "Maßnahme",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Wasserentnahme zur Energiegewinnung wurde ggf. eingeschränkt.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "not_stated",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Wasserentnahme etwa zur Energiegewinnung wurde ggf. eingeschränkt.",
+                "block_id": "p0002_b0002",
+                "page": 2,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e4",
+            "record_type": "Maßnahme",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Sommerstauziel wurde vorgezogen und bereits im März erreicht.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "not_stated",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Das Sommerstauziel (sonst 01. Mai) wurde vorgezogen, da die Monate März und April in den letzten Jahren zu trocken waren. Unter Berücksichtigung der Schneerücklage wurde das Sommerstauziel bereits im März erreicht.",
+                "block_id": "p0002_b0002",
+                "page": 2,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e5",
+            "record_type": "Zustand",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Minderung des Wasserdargebotes reduzierte die verfügbare Wassermenge für die Energiegewinnung.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "not_stated",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Die Minderung des Wasserdargebotes wirkte sich allerdings auf die verfügbare Wassermenge für die Energiegewinnung aus.",
+                "block_id": "p0002_b0001",
+                "page": 2,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "r1",
+            "source_event_id": "e2",
+            "target_event_id": "e5",
+            "relationship_type": "decreases",
+            "statement": "Die Reduktion des Stauinhalts verringert die verfügbare Wassermenge für die Energiegewinnung.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "Hydrologie"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Die Minderung des Wasserdargebotes wirkte sich allerdings auf die verfügbare Wassermenge für die Energiegewinnung aus.",
+                "block_id": "p0002_b0001",
+                "page": 2,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "relationship_id": "r2",
+            "source_event_id": "e3",
+            "target_event_id": "e5",
+            "relationship_type": "decreases",
+            "statement": "Die Einschränkung der Wasserentnahme zur Energiegewinnung reduziert die verfügbare Wassermenge für die Energiegewinnung.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "Hydrologie"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Wasserentnahme etwa zur Energiegewinnung wurde ggf. eingeschränkt.",
+                "block_id": "p0002_b0002",
+                "page": 2,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "context_requests": [],
+        "notes": []
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            62.04000075,
+            60.90126012500002,
+            322.6075599454099,
+            139.86162987500006
+          ],
+          "text": "Nr. des Indikators B10\nBezeichnung Zufluss zur Rappbodetalsperre\nThemenfeld Wasser\nRäumliche Gliederung Rappbodetalsperre\nBearbeitungsstand 08.07.2025",
+          "page": 1,
+          "printed_page": null,
+          "block_id": "p0001_b0001",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0002_t001",
+          "table_group": "p0002_t001",
+          "row": 1,
+          "bbox": [
+            56.880000375,
+            57.119995625,
+            535.4399872500001,
+            781.200023375
+          ],
+          "text": "Die Bedeutung des Themas zeigt sich auch darin, dass der Talsperrenbetrieb\ninsbesondere in den zurückliegenden fünf Trockenjahren (2018–2022) die Tal-\nsperrenbewirtschaftung bereits angepasst hat. Dabei galt grundsätzlich, dass\ndie Stauraumbewirtschaftung zur Sicherung der Rohwasserbereitstellung\noberste Priorität hat (Cöster 2021). Die Minderung des Wasserdargebotes\nwirkte sich allerdings auf die verfügbare Wassermenge für die Energiegewin-\nnung aus. Für die Rohwasserbereitstellung und Niedrigwasseraufhöhung der\nBode gab es bisher keine Einschränkungen (Cöster 2021). Unter anderem wur-\nden folgende Maßnahmen umgesetzt:\n Der Stauinhalt wurde bis zum Jahresende nicht unter 60 Mio. m³ ge-",
+          "page": 2,
+          "printed_page": null,
+          "block_id": "p0002_b0001",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0002_t001",
+          "table_group": "p0002_t001",
+          "row": 1,
+          "bbox": [
+            56.880000375,
+            57.119995625,
+            535.4399872500001,
+            781.200023375
+          ],
+          "text": "senkt, um selbst bei geringen Winterzuflüssen die Rohwasserversor-\ngung sicherzustellen. Wasserentnahme etwa zur Energiegewinnung\nwurde ggf. eingeschränkt.\n Das Sommerstauziel (sonst 01. Mai) wurde vorgezogen, da die Monate\nMärz und April in den letzten Jahren zu trocken waren. Unter Berück-\nsichtigung der Schneerücklage wurde das Sommerstauziel bereits im\nMärz erreicht.",
+          "page": 2,
+          "printed_page": null,
+          "block_id": "p0002_b0002",
+          "section": null
+        }
+      ],
+      "extracted_at": "2026-09-28T13:47:26.258199+00:00",
+      "response_model": "01 - GPT-OSS-120b - an open model released by OpenAI in August 2025",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\results\\compact_gptoss\\fein\\raw_responses\\pilot_measures_74368fa491d5.json",
+      "purpose": "extraction"
+    }
+  ]
+}

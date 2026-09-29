@@ -1,0 +1,65 @@
+{
+  "preparation_fingerprint": "05123ae57747f1c5b00100cf5ccda4227f348548de8ad6004db062b8469a459c",
+  "total_pages": 40,
+  "selected_pages": [
+    10,
+    11,
+    17
+  ],
+  "not_selected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    12,
+    13,
+    14,
+    15,
+    16,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "chunks": 2,
+  "empty_selected_pages": [],
+  "page_issues": {
+    "1": [
+      "complex_vector_content_not_interpreted",
+      "image_content_not_interpreted",
+      "little_or_no_text_ocr_not_performed"
+    ],
+    "10": [
+      "image_content_not_interpreted"
+    ],
+    "11": [
+      "image_content_not_interpreted"
+    ]
+  },
+  "ocr_performed": false,
+  "images_interpreted": false
+}

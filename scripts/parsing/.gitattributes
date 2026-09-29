@@ -1,0 +1,4 @@
+# Preserve release/checkpoint bytes and SHA-256 checksums across platforms.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Historical unified diffs contain meaningful blank context lines.
+*.diff -whitespace

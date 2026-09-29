@@ -1,0 +1,2207 @@
+{
+  "id": "solve:ontology-fine",
+  "version": "0.1.0",
+  "status": "discussion_draft",
+  "title": "Feine Beispielontologie für Crawling und Extraktion",
+  "format": "JSON-Anwendungsontologie mit Such- und Extraktionsprofil; keine ausführbare OWL-Ontologie und kein JSON-Schema-Validator.",
+  "scope": "Heterogene Informationen zu Oberflächen- und Grundwasserkörpern; Beispiele mit Schwerpunkt Seen.",
+  "design": "Fachliche Klassen, thematische Kategorien und operative Suchregeln sind getrennte Dimensionen. Keine automatische Wahrheits- oder Kausalitätsinferenz.",
+  "standards_orientation": [
+    {
+      "title": "W3C SOSA/SSN – Beobachtungen, Eigenschaften und Untersuchungsobjekte",
+      "url": "https://www.w3.org/TR/vocab-ssn/"
+    },
+    {
+      "title": "W3C PROV-O – Herkunft und Verarbeitung",
+      "url": "https://www.w3.org/TR/prov-o/"
+    },
+    {
+      "title": "W3C OWL-Time – Zeitpunkte, Intervalle und Dauern",
+      "url": "https://www.w3.org/TR/owl-time/"
+    },
+    {
+      "title": "W3C SKOS – Begriffe, Bezeichnungen und Begriffshierarchien",
+      "url": "https://www.w3.org/TR/skos-reference/"
+    }
+  ],
+  "classes": [
+    {
+      "id": "core:Entity",
+      "label_de": "Bezugsobjekt",
+      "parent_class": null,
+      "definition": "Identifizierbares fachliches Objekt, unabhängig von einer einzelnen Quellenerwähnung."
+    },
+    {
+      "id": "core:WaterBody",
+      "label_de": "Wasserkörper",
+      "parent_class": "core:Entity",
+      "definition": "Fachlich oder administrativ abgegrenzter Wasserkörper; Name, Geometrie und zeitliche Gültigkeit der Abgrenzung berücksichtigen."
+    },
+    {
+      "id": "core:SpatialUnit",
+      "label_de": "Raumeinheit",
+      "parent_class": "core:Entity",
+      "definition": "Beispielsweise Einzugsgebiet, Gemeinde, Teilbereich oder räumliche Abgrenzung."
+    },
+    {
+      "id": "core:MonitoringStation",
+      "label_de": "Messstelle",
+      "parent_class": "core:Entity",
+      "definition": "Identifizierbarer Ort von Beobachtungen; Zuordnung zu einem Wasserkörper ist gesondert belegt."
+    },
+    {
+      "id": "core:Facility",
+      "label_de": "Anlage oder Bauwerk",
+      "parent_class": "core:Entity",
+      "definition": "Beispielsweise Kläranlage, Wehr, Pumpwerk oder Einleitstelle."
+    },
+    {
+      "id": "core:Agent",
+      "label_de": "Akteur",
+      "parent_class": "core:Entity",
+      "definition": "Organisation oder Person mit einer dokumentierten Rolle."
+    },
+    {
+      "id": "core:Parameter",
+      "label_de": "Parameter",
+      "parent_class": "core:Entity",
+      "definition": "Definierte beobachtete Eigenschaft; eine Einheit gehört zum Ergebnis und bestimmt nicht allein die Parameteridentität."
+    },
+    {
+      "id": "core:Substance",
+      "label_de": "Stoff oder Stoffgruppe",
+      "parent_class": "core:Entity",
+      "definition": "Benannter Stoff oder benannte Stoffgruppe; unspezifische Bezeichnungen bleiben unspezifisch."
+    },
+    {
+      "id": "core:Taxon",
+      "label_de": "Taxon oder Organismengruppe",
+      "parent_class": "core:Entity",
+      "definition": "Biologisches Bezugsobjekt mit der von der Quelle unterstützten Bestimmungsgenauigkeit."
+    },
+    {
+      "id": "core:Finding",
+      "label_de": "Sachverhalt",
+      "parent_class": null,
+      "definition": "Ereignis, Zustand, Prozess, Beobachtung oder Bewertung mit Herkunft und fachlichen Einschränkungen."
+    },
+    {
+      "id": "core:Event",
+      "label_de": "Ereignis",
+      "parent_class": "core:Finding",
+      "definition": "Zeitlich lokalisierte Begebenheit, etwa Stilllegung, Hochwasser oder Fischsterben."
+    },
+    {
+      "id": "core:Intervention",
+      "label_de": "Maßnahme",
+      "parent_class": "core:Event",
+      "definition": "Absichtsvoll vorgeschlagene, geplante oder ausgeführte Handlung; Umsetzungsstatus ausdrücklich erfassen."
+    },
+    {
+      "id": "core:State",
+      "label_de": "Zustand",
+      "parent_class": "core:Finding",
+      "definition": "Beschriebene Eigenschaft oder Situation während eines Zeitraums."
+    },
+    {
+      "id": "core:Process",
+      "label_de": "Prozess",
+      "parent_class": "core:Finding",
+      "definition": "Über eine Dauer ablaufender Vorgang oder eine Veränderung."
+    },
+    {
+      "id": "core:Observation",
+      "label_de": "Beobachtung oder Messung",
+      "parent_class": "core:Finding",
+      "definition": "Ergebnis einer Beobachtung eines Parameters an einem Untersuchungsobjekt mit Messkontext, soweit verfügbar."
+    },
+    {
+      "id": "core:Assessment",
+      "label_de": "Bewertung",
+      "parent_class": "core:Finding",
+      "definition": "Einordnung nach einem benannten oder noch unbekannten Bewertungsverfahren; getrennt von einer Rohmessung."
+    },
+    {
+      "id": "core:Relation",
+      "label_de": "Fachlicher Zusammenhang",
+      "parent_class": null,
+      "definition": "Beziehung mit definierten Beteiligten, Geltungsbereich und Herkunft."
+    },
+    {
+      "id": "core:CausalRelation",
+      "label_de": "Wirkungszusammenhang",
+      "parent_class": "core:Relation",
+      "definition": "Quellenseitig beschriebener kausaler Zusammenhang; Existenz des Eintrags bedeutet keinen Kausalitätsnachweis."
+    },
+    {
+      "id": "core:Document",
+      "label_de": "Dokumentfassung",
+      "parent_class": null,
+      "definition": "Konkrete archivierte Fassung einer Datei, Webseite oder eines strukturierten Quellexports."
+    },
+    {
+      "id": "core:Evidence",
+      "label_de": "Beleg",
+      "parent_class": null,
+      "definition": "Fundstelle mit Originalinhalt; kann als Metadatenstruktur in der Datenbank verbleiben und muss kein Graphknoten werden."
+    },
+    {
+      "id": "fine:Lake",
+      "label_de": "See",
+      "parent_class": "core:WaterBody",
+      "definition": "Als See identifizierter Wasserkörper; die Quelle bestimmt den fachlichen Abgrenzungsbezug."
+    },
+    {
+      "id": "fine:RiverWaterBody",
+      "label_de": "Fließgewässer-Wasserkörper",
+      "parent_class": "core:WaterBody",
+      "definition": "Abgegrenzter Fließgewässerabschnitt; nicht automatisch identisch mit dem gesamten Fluss."
+    },
+    {
+      "id": "fine:GroundwaterBody",
+      "label_de": "Grundwasserkörper",
+      "parent_class": "core:WaterBody",
+      "definition": "Abgegrenzter Grundwasserkörper; getrennt von Oberflächenwasserkörpern identifizieren."
+    },
+    {
+      "id": "fine:Catchment",
+      "label_de": "Einzugsgebiet",
+      "parent_class": "core:SpatialUnit",
+      "definition": "Nach einer dokumentierten hydrologischen oder administrativen Methode abgegrenztes Einzugsgebiet."
+    },
+    {
+      "id": "fine:WastewaterTreatmentPlant",
+      "label_de": "Kläranlage",
+      "parent_class": "core:Facility",
+      "definition": "Identifizierte Anlage zur Abwasserbehandlung."
+    },
+    {
+      "id": "fine:NutrientInput",
+      "label_de": "Nährstoffeintrag",
+      "parent_class": "core:Process",
+      "definition": "Beschriebener Eintrag eines Nährstoffs mit Quelle, Pfad und Empfänger, soweit bekannt."
+    },
+    {
+      "id": "fine:InternalNutrientRelease",
+      "label_de": "Interne Nährstofffreisetzung",
+      "parent_class": "core:Process",
+      "definition": "Quellenseitig beschriebene Freisetzung aus einem gewässerinternen Speicher."
+    },
+    {
+      "id": "fine:WaterAbstraction",
+      "label_de": "Wasserentnahme",
+      "parent_class": "core:Process",
+      "definition": "Tatsächlicher oder geplanter Entnahmevorgang; Status und Mengenbezug erhalten."
+    },
+    {
+      "id": "fine:FertilizerUseReduction",
+      "label_de": "Verringerung der Düngung",
+      "parent_class": "core:Process",
+      "definition": "Beschriebene Verringerung einer Düngung; daraus folgt noch keine quantifizierte Verringerung des Gewässereintrags."
+    },
+    {
+      "id": "fine:ConcentrationChange",
+      "label_de": "Konzentrationsänderung",
+      "parent_class": "core:Process",
+      "definition": "Beschriebene Zunahme oder Abnahme eines benannten Parameters; quantitative Änderung nur bei Quellenangabe."
+    },
+    {
+      "id": "fine:StratificationState",
+      "label_de": "Schichtungszustand",
+      "parent_class": "core:State",
+      "definition": "Zeitlich und räumlich bezogene Beschreibung einer Schichtung."
+    },
+    {
+      "id": "fine:OxygenDeficit",
+      "label_de": "Sauerstoffdefizit",
+      "parent_class": "core:State",
+      "definition": "Als solcher berichteter oder nach expliziter Regel abgeleiteter Sauerstoffmangel; Schwelle nicht frei ergänzen."
+    },
+    {
+      "id": "fine:AlgalBloom",
+      "label_de": "Algenblüte",
+      "parent_class": "core:Event",
+      "definition": "Als Algenblüte berichtetes Ereignis; Organismengruppe gegebenenfalls zusätzlich bestimmen."
+    },
+    {
+      "id": "fine:FishMortality",
+      "label_de": "Fischsterben",
+      "parent_class": "core:Event",
+      "definition": "Als Fischsterben berichtetes Ereignis ohne vorweggenommene Ursachenzuordnung."
+    },
+    {
+      "id": "fine:LandUseChange",
+      "label_de": "Landnutzungsänderung",
+      "parent_class": "core:Event",
+      "definition": "Dokumentierter Wechsel einer Nutzung mit Raum- und Zeitbezug."
+    },
+    {
+      "id": "fine:FacilityUpgrade",
+      "label_de": "Anlagenerweiterung",
+      "parent_class": "core:Intervention",
+      "definition": "Ausbau oder technische Erweiterung einer Anlage; Verfahren und Status getrennt erfassen."
+    },
+    {
+      "id": "fine:ShoreRestoration",
+      "label_de": "Uferwiederherstellung",
+      "parent_class": "core:Intervention",
+      "definition": "Dokumentierte Maßnahme an einem Uferabschnitt."
+    },
+    {
+      "id": "fine:SedimentRemoval",
+      "label_de": "Sedimententnahme",
+      "parent_class": "core:Intervention",
+      "definition": "Geplante oder ausgeführte Entnahme von Sediment; Verfahren und Umfang soweit angegeben."
+    },
+    {
+      "id": "fine:WaterChemistryObservation",
+      "label_de": "Wasserchemische Beobachtung",
+      "parent_class": "core:Observation",
+      "definition": "Beobachtung eines chemischen Parameters mit Medium, Stoffform und Messkontext."
+    },
+    {
+      "id": "fine:BiologicalObservation",
+      "label_de": "Biologische Beobachtung",
+      "parent_class": "core:Observation",
+      "definition": "Beobachtung eines biologischen Merkmals oder einer Organismengruppe."
+    },
+    {
+      "id": "fine:WaterBodyAssessment",
+      "label_de": "Wasserkörperbewertung",
+      "parent_class": "core:Assessment",
+      "definition": "Bewertung eines Wasserkörpers nach einem bestimmten Verfahren und Bezugszeitraum."
+    }
+  ],
+  "relations": [
+    {
+      "id": "core:concerns",
+      "label_de": "betrifft",
+      "domain_any_of": [
+        "core:Finding",
+        "core:Relation"
+      ],
+      "range_any_of": [
+        "core:Entity"
+      ],
+      "definition": "Bezieht einen Sachverhalt auf das betroffene Objekt.",
+      "qualifiers": [
+        "assignment_status",
+        "spatial_scope",
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "core:located_in",
+      "label_de": "liegt in",
+      "domain_any_of": [
+        "core:Entity"
+      ],
+      "range_any_of": [
+        "core:WaterBody",
+        "core:SpatialUnit"
+      ],
+      "definition": "Dokumentierte oder berechnete räumliche Zuordnung; keine kausale Beziehung.",
+      "qualifiers": [
+        "method",
+        "valid_time",
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "core:has_parameter",
+      "label_de": "hat Parameter",
+      "domain_any_of": [
+        "core:Observation",
+        "core:Assessment",
+        "core:Process",
+        "core:State"
+      ],
+      "range_any_of": [
+        "core:Parameter"
+      ],
+      "definition": "Ordnet den fachlichen Parameter zu; nur so spezifisch wie belegt.",
+      "qualifiers": [
+        "assignment_status",
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "core:involves",
+      "label_de": "hat Beteiligten",
+      "domain_any_of": [
+        "core:Finding"
+      ],
+      "range_any_of": [
+        "core:Entity"
+      ],
+      "definition": "Verknüpft Anlage, Akteur, Stoff oder Taxon mit seiner Rolle.",
+      "qualifiers": [
+        "role",
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "core:precedes",
+      "label_de": "geht zeitlich voraus",
+      "domain_any_of": [
+        "core:Finding"
+      ],
+      "range_any_of": [
+        "core:Finding"
+      ],
+      "definition": "Zeitliche Reihenfolge; keine automatische kausale Interpretation.",
+      "qualifiers": [
+        "valid_time",
+        "derivation_method",
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "core:associated_with",
+      "label_de": "steht in Zusammenhang mit",
+      "domain_any_of": [
+        "core:Finding"
+      ],
+      "range_any_of": [
+        "core:Finding"
+      ],
+      "definition": "Nichtkausale berichtete oder berechnete Assoziation.",
+      "qualifiers": [
+        "association_type",
+        "assertion_mode",
+        "method",
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "core:has_cause",
+      "label_de": "hat genannte Ursache",
+      "domain_any_of": [
+        "core:CausalRelation"
+      ],
+      "range_any_of": [
+        "core:Finding"
+      ],
+      "definition": "Ursachenbeteiligung innerhalb eines qualifizierten Wirkungszusammenhangs.",
+      "qualifiers": [
+        "necessity",
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "core:has_effect",
+      "label_de": "hat genannte Wirkung",
+      "domain_any_of": [
+        "core:CausalRelation"
+      ],
+      "range_any_of": [
+        "core:Finding"
+      ],
+      "definition": "Wirkungsbeteiligung innerhalb desselben Zusammenhangs.",
+      "qualifiers": [
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "core:has_condition",
+      "label_de": "gilt unter Bedingung",
+      "domain_any_of": [
+        "core:CausalRelation"
+      ],
+      "range_any_of": [
+        "core:Finding"
+      ],
+      "definition": "Explizit genannte Bedingung; nicht automatisch als Ursache behandeln.",
+      "qualifiers": [
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "core:supported_by",
+      "label_de": "ist belegt durch",
+      "domain_any_of": [
+        "core:Entity",
+        "core:Finding",
+        "core:Relation"
+      ],
+      "range_any_of": [
+        "core:Evidence"
+      ],
+      "definition": "Belegzuordnung möglichst pro Eigenschaft; belegt die Quellenaussage, nicht zwingend deren Wahrheit.",
+      "qualifiers": [
+        "field_name",
+        "source_value",
+        "extraction_status"
+      ]
+    },
+    {
+      "id": "core:from_document",
+      "label_de": "stammt aus Dokumentfassung",
+      "domain_any_of": [
+        "core:Evidence"
+      ],
+      "range_any_of": [
+        "core:Document"
+      ],
+      "definition": "Referenz auf eine konkrete, archivierte Fassung.",
+      "qualifiers": [
+        "locator"
+      ]
+    },
+    {
+      "id": "fine:flows_into",
+      "label_de": "fließt in",
+      "domain_any_of": [
+        "core:WaterBody"
+      ],
+      "range_any_of": [
+        "core:WaterBody"
+      ],
+      "definition": "Belegte hydrologische Verbindung mit Flussrichtung; räumliche Überlappung reicht nicht aus.",
+      "qualifiers": [
+        "valid_time",
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "fine:monitors",
+      "label_de": "untersucht",
+      "domain_any_of": [
+        "core:MonitoringStation"
+      ],
+      "range_any_of": [
+        "core:WaterBody"
+      ],
+      "definition": "Dokumentierte Zuordnung einer Messstelle zum untersuchten Wasserkörper.",
+      "qualifiers": [
+        "valid_time",
+        "evidence_ids"
+      ]
+    },
+    {
+      "id": "fine:targets",
+      "label_de": "hat Maßnahmenziel",
+      "domain_any_of": [
+        "core:Intervention"
+      ],
+      "range_any_of": [
+        "core:Parameter",
+        "core:Substance",
+        "core:Taxon"
+      ],
+      "definition": "Beabsichtigtes Ziel; keine Aussage über einen eingetretenen Effekt.",
+      "qualifiers": [
+        "evidence_ids"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "topic:identity",
+      "label_de": "Identität, Raum und Geschichte",
+      "definition": "Kennungen, Lage, Abgrenzung und historische Entwicklung.",
+      "broader_topic": null,
+      "search_terms": [
+        "Gewässername",
+        "Wasserkörper",
+        "Gewässergeschichte",
+        "Einzugsgebiet",
+        "historisch"
+      ],
+      "source_hints": [
+        "Wasserkörpersteckbrief",
+        "Kartenmetadaten",
+        "Ortschronik"
+      ],
+      "suggested_record_classes": [
+        "core:WaterBody",
+        "core:SpatialUnit",
+        "core:Event"
+      ],
+      "extraction_focus": "Namen und Kennungen mit System und Zeitbezug; Herkunft und Art einer Abgrenzung."
+    },
+    {
+      "id": "topic:hydrology",
+      "label_de": "Hydrologie und physikalische Bedingungen",
+      "definition": "Wasserhaushalt, Abfluss, Wasserstand und physikalische Verhältnisse.",
+      "broader_topic": null,
+      "search_terms": [
+        "Wasserstand",
+        "Pegel",
+        "Abfluss",
+        "Grundwasser",
+        "Temperatur",
+        "Dürre"
+      ],
+      "source_hints": [
+        "Pegelbericht",
+        "Gewässerbericht",
+        "hydrologische Studie"
+      ],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:State",
+        "core:Process",
+        "core:Event"
+      ],
+      "extraction_focus": "Parameter, Raum- und Zeitbezug; beobachtete Verhältnisse von Klimaprojektionen trennen."
+    },
+    {
+      "id": "topic:morphology",
+      "label_de": "Morphologie und Sedimente",
+      "definition": "Ufer, Sohle, Durchgängigkeit und Sedimentverhältnisse.",
+      "broader_topic": null,
+      "search_terms": [
+        "Ufer",
+        "Gewässerstruktur",
+        "Sediment",
+        "Wehr",
+        "Verlandung"
+      ],
+      "source_hints": [
+        "Strukturkartierung",
+        "Sedimentgutachten",
+        "Planungsunterlagen"
+      ],
+      "suggested_record_classes": [
+        "core:State",
+        "core:Process",
+        "core:Event",
+        "core:Observation"
+      ],
+      "extraction_focus": "Betroffener Gewässerabschnitt oder Sedimentbereich; Prozess und Zustand getrennt benennen."
+    },
+    {
+      "id": "topic:chemistry",
+      "label_de": "Stoffe und Wasserbeschaffenheit",
+      "definition": "Stoffkonzentrationen, chemische Eigenschaften und stoffliche Prozesse.",
+      "broader_topic": null,
+      "search_terms": [
+        "Wasserqualität",
+        "Nährstoffe",
+        "Phosphor",
+        "Nitrat",
+        "Sauerstoff",
+        "Schadstoffe"
+      ],
+      "source_hints": [
+        "Messbericht",
+        "Laborbericht",
+        "Gewässergütebericht"
+      ],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:State",
+        "core:Process",
+        "core:Assessment"
+      ],
+      "extraction_focus": "Parameter, Stoffform, Medium, Wert, Einheit und Bewertungsverfahren, soweit belegt."
+    },
+    {
+      "id": "topic:ecology",
+      "label_de": "Ökologie und Lebensgemeinschaften",
+      "definition": "Organismen, Lebensgemeinschaften, Habitate und biologische Veränderungen.",
+      "broader_topic": null,
+      "search_terms": [
+        "Algenblüte",
+        "Fischsterben",
+        "Wasserpflanzen",
+        "Arten",
+        "Biodiversität"
+      ],
+      "source_hints": [
+        "Biomonitoring",
+        "ökologische Studie",
+        "Fischereibericht"
+      ],
+      "suggested_record_classes": [
+        "core:Event",
+        "core:State",
+        "core:Process",
+        "core:Observation",
+        "core:Assessment"
+      ],
+      "extraction_focus": "Taxon oder Organismengruppe, Befund und Erhebungsmethode; Art nur bei ausreichender Identifikation."
+    },
+    {
+      "id": "topic:use",
+      "label_de": "Nutzungen und Belastungsquellen",
+      "definition": "Nutzung des Gewässers und seines Umfelds sowie beschriebene Eintrags- oder Eingriffspfade.",
+      "broader_topic": null,
+      "search_terms": [
+        "Landwirtschaft",
+        "Abwasser",
+        "Industrie",
+        "Wasserentnahme",
+        "Freizeit",
+        "Fischerei"
+      ],
+      "source_hints": [
+        "Nutzungsplan",
+        "Einleiterkataster",
+        "Genehmigungsunterlagen"
+      ],
+      "suggested_record_classes": [
+        "core:Process",
+        "core:Event",
+        "core:State",
+        "core:Facility",
+        "core:Agent"
+      ],
+      "extraction_focus": "Nutzung, Akteur, Anlage und Eintragspfad; Quelle einer Belastung nur bei eigenem Beleg zuordnen."
+    },
+    {
+      "id": "topic:management",
+      "label_de": "Maßnahmen und Bewirtschaftung",
+      "definition": "Technische, ökologische und organisatorische Maßnahmen sowie Bewirtschaftungsentscheidungen.",
+      "broader_topic": null,
+      "search_terms": [
+        "Sanierung",
+        "Renaturierung",
+        "Maßnahme",
+        "Bewirtschaftungsplan",
+        "Schutzgebiet"
+      ],
+      "source_hints": [
+        "Maßnahmenprogramm",
+        "Projektbericht",
+        "Genehmigung"
+      ],
+      "suggested_record_classes": [
+        "core:Intervention",
+        "core:Event",
+        "core:Assessment"
+      ],
+      "extraction_focus": "Art, Ziel, Zeitpunkt, Ort und Umsetzungsstatus; beabsichtigte Wirkung von beobachteter Wirkung trennen."
+    },
+    {
+      "id": "topic:monitoring",
+      "label_de": "Untersuchung und Bewertung",
+      "definition": "Monitoring, Untersuchungsverfahren, Zustandsbewertungen und Rekonstruktionen.",
+      "broader_topic": null,
+      "search_terms": [
+        "Monitoring",
+        "Messstelle",
+        "Bewertung",
+        "ökologischer Zustand",
+        "Sedimentkern"
+      ],
+      "source_hints": [
+        "Monitoringbericht",
+        "Methodenbericht",
+        "wissenschaftliche Veröffentlichung"
+      ],
+      "suggested_record_classes": [
+        "core:MonitoringStation",
+        "core:Observation",
+        "core:Assessment"
+      ],
+      "extraction_focus": "Untersuchungsobjekt, Verfahren, Bezugszeitraum und Bewertungsregel; Metadaten zum Messwert erhalten."
+    },
+    {
+      "id": "topic:identity.identifiers",
+      "label_de": "Kennungen und Namensvarianten",
+      "definition": "Kennungen und Namensvarianten im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:identity",
+      "search_terms": [
+        "EU_CD",
+        "DE_ID",
+        "LAWA-ID",
+        "Gewässerkennzahl",
+        "historischer Name"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:WaterBody"
+      ],
+      "extraction_focus": "Kennungssystem, ausgebende Quelle und Gültigkeit erfassen; LAWA-Typ nicht mit individueller Kennung verwechseln."
+    },
+    {
+      "id": "topic:identity.history",
+      "label_de": "Entstehung und Gewässergeschichte",
+      "definition": "Entstehung und Gewässergeschichte im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:identity",
+      "search_terms": [
+        "Seegeschichte",
+        "Tagebausee",
+        "Flutung",
+        "Umbenennung",
+        "historische Karte"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Event",
+        "core:State"
+      ],
+      "extraction_focus": "Historisches Ereignis, Zeitraum und Beleg; Berichtsjahr nicht als Ereignisjahr übernehmen."
+    },
+    {
+      "id": "topic:identity.geometry",
+      "label_de": "Lage, Abgrenzung und Morphometrie",
+      "definition": "Lage, Abgrenzung und Morphometrie im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:identity",
+      "search_terms": [
+        "Seefläche",
+        "Tiefe",
+        "Volumen",
+        "Gewässerabschnitt",
+        "Koordinaten"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:WaterBody",
+        "core:Observation"
+      ],
+      "extraction_focus": "Abgrenzung und Bezugsstand erhalten; Fläche bei unterschiedlichem Wasserstand nicht als unveränderliche Größe behandeln."
+    },
+    {
+      "id": "topic:identity.catchment",
+      "label_de": "Einzugsgebiet und räumlicher Kontext",
+      "definition": "Einzugsgebiet und räumlicher Kontext im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:identity",
+      "search_terms": [
+        "Einzugsgebiet",
+        "Zufluss",
+        "Gemeinde",
+        "Landkreis",
+        "Grundwasserkörper"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:SpatialUnit",
+        "core:WaterBody"
+      ],
+      "extraction_focus": "Räumliche Beziehungen und ihre Methode erfassen; räumliche Nähe allein begründet keine Gewässeridentität."
+    },
+    {
+      "id": "topic:hydrology.level_flow",
+      "label_de": "Wasserstand und Abfluss",
+      "definition": "Wasserstand und Abfluss im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:hydrology",
+      "search_terms": [
+        "Pegelstand",
+        "Durchfluss",
+        "Niedrigwasser",
+        "Hochwasser",
+        "Abfluss"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:Event",
+        "core:State"
+      ],
+      "extraction_focus": "Messstelle, Zeit, Einheit und Referenzniveau; Wasserstand und Wassertiefe getrennt halten."
+    },
+    {
+      "id": "topic:hydrology.balance_groundwater",
+      "label_de": "Wasserbilanz und Grundwasser",
+      "definition": "Wasserbilanz und Grundwasser im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:hydrology",
+      "search_terms": [
+        "Grundwasserstand",
+        "Neubildung",
+        "Infiltration",
+        "Verdunstung",
+        "Wasserbilanz"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:Process",
+        "core:State"
+      ],
+      "extraction_focus": "Bilanzraum, Zeitraum und Modell- oder Messstatus; Grundwasserstand ist keine Seespiegelmessung."
+    },
+    {
+      "id": "topic:hydrology.exchange",
+      "label_de": "Wasseraustausch und Verweilzeit",
+      "definition": "Wasseraustausch und Verweilzeit im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:hydrology",
+      "search_terms": [
+        "Wasseraustausch",
+        "Verweilzeit",
+        "Aufenthaltszeit",
+        "Zufluss",
+        "Abfluss"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Process",
+        "core:Observation"
+      ],
+      "extraction_focus": "Flussrichtung, beteiligte Wasserkörper, Berechnung und Zeitbezug; Verweilzeit nicht mit Wirkungsverzögerung gleichsetzen."
+    },
+    {
+      "id": "topic:hydrology.temperature",
+      "label_de": "Temperatur, Schichtung und Durchmischung",
+      "definition": "Temperatur, Schichtung und Durchmischung im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:hydrology",
+      "search_terms": [
+        "Wassertemperatur",
+        "thermische Schichtung",
+        "Zirkulation",
+        "Durchmischung"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:State",
+        "core:Process"
+      ],
+      "extraction_focus": "Tiefe, Zeitraum und Messkontext; eine Einzelmessung belegt keine anhaltende Warmphase."
+    },
+    {
+      "id": "topic:hydrology.weather",
+      "label_de": "Wetter, Klima und Extremereignisse",
+      "definition": "Wetter, Klima und Extremereignisse im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:hydrology",
+      "search_terms": [
+        "Hitzeperiode",
+        "Dürre",
+        "Starkregen",
+        "Niederschlag",
+        "Klimaszenario"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Event",
+        "core:Observation",
+        "core:Process"
+      ],
+      "extraction_focus": "Beobachtung, Rückblick und Projektion unterscheiden; Wirkung auf das Gewässer gesondert belegen."
+    },
+    {
+      "id": "topic:morphology.shore_bed",
+      "label_de": "Ufer, Sohle und Habitatstruktur",
+      "definition": "Ufer, Sohle und Habitatstruktur im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:morphology",
+      "search_terms": [
+        "Uferverbau",
+        "Sohlstruktur",
+        "Flachwasserzone",
+        "Litoral",
+        "Habitat"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:State",
+        "core:Observation",
+        "core:Assessment"
+      ],
+      "extraction_focus": "Abschnitt, Strukturmerkmal und Bewertungsskala; lokale Befunde nicht ungeprüft auf den ganzen Wasserkörper ausdehnen."
+    },
+    {
+      "id": "topic:morphology.connectivity",
+      "label_de": "Durchgängigkeit und Querbauwerke",
+      "definition": "Durchgängigkeit und Querbauwerke im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:morphology",
+      "search_terms": [
+        "Wehr",
+        "Staustufe",
+        "Durchgängigkeit",
+        "Fischaufstieg",
+        "Querbauwerk"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Facility",
+        "core:State",
+        "core:Assessment"
+      ],
+      "extraction_focus": "Bauwerk, betroffener Abschnitt und untersuchte Art oder Funktion; Vorhandensein eines Bauwerks ist noch kein nachgewiesener Effekt."
+    },
+    {
+      "id": "topic:morphology.sediment",
+      "label_de": "Sedimenttransport und Ablagerung",
+      "definition": "Sedimenttransport und Ablagerung im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:morphology",
+      "search_terms": [
+        "Sedimentation",
+        "Erosion",
+        "Resuspension",
+        "Verlandung",
+        "Sedimenttransport"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Process",
+        "core:Observation"
+      ],
+      "extraction_focus": "Material, Ort, Zeitraum und Größenordnung; stoffliche Freisetzung zusätzlich unter chemischen Prozessen erfassen."
+    },
+    {
+      "id": "topic:chemistry.nutrients",
+      "label_de": "Nährstoffe und Nährstofffraktionen",
+      "definition": "Nährstoffe und Nährstofffraktionen im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:chemistry",
+      "search_terms": [
+        "Gesamtphosphor",
+        "Gesamt-P",
+        "Orthophosphat",
+        "Nitrat",
+        "Ammonium",
+        "Gesamtstickstoff"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:State",
+        "core:Process"
+      ],
+      "extraction_focus": "Stoffform und Bezugsbasis erhalten; unspezifisches Phosphor nicht automatisch Gesamtphosphor zuordnen."
+    },
+    {
+      "id": "topic:chemistry.oxygen",
+      "label_de": "Sauerstoff und Redoxbedingungen",
+      "definition": "Sauerstoff und Redoxbedingungen im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:chemistry",
+      "search_terms": [
+        "Sauerstoffgehalt",
+        "Sauerstoffsättigung",
+        "Anoxie",
+        "Hypoxie",
+        "Redoxpotential"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:State"
+      ],
+      "extraction_focus": "Parameter, Tiefe, Einheit und Zeit; Konzentration und Sättigung sind verschiedene Größen."
+    },
+    {
+      "id": "topic:chemistry.pollutants",
+      "label_de": "Schadstoffe",
+      "definition": "Schadstoffe im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:chemistry",
+      "search_terms": [
+        "Pestizide",
+        "Metalle",
+        "PFAS",
+        "Arzneimittel",
+        "Schadstoff"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:State",
+        "core:Assessment"
+      ],
+      "extraction_focus": "Einzelstoff oder definierte Summe, Medium und Nachweisgrenze; Stoffgruppen nicht stillschweigend gleichsetzen."
+    },
+    {
+      "id": "topic:chemistry.basic",
+      "label_de": "Salze, pH und Leitfähigkeit",
+      "definition": "Salze, pH und Leitfähigkeit im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:chemistry",
+      "search_terms": [
+        "Salinität",
+        "Chlorid",
+        "Sulfat",
+        "pH-Wert",
+        "Leitfähigkeit"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:State"
+      ],
+      "extraction_focus": "Messparameter, Einheit und Referenzbedingungen; Leitfähigkeit ist kein direkt gleichwertiger Salzgehalt."
+    },
+    {
+      "id": "topic:chemistry.processes",
+      "label_de": "Stoffliche Umsetzungen und interne Freisetzung",
+      "definition": "Stoffliche Umsetzungen und interne Freisetzung im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:chemistry",
+      "search_terms": [
+        "interne Belastung",
+        "Phosphorrücklösung",
+        "Sedimentfreisetzung",
+        "Denitrifikation"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Process"
+      ],
+      "extraction_focus": "Beschriebenen Prozess, Stoff, Medium und Bedingungen erhalten; Mechanismus nicht aus allgemeinem Wissen ergänzen."
+    },
+    {
+      "id": "topic:ecology.algae",
+      "label_de": "Algen und Cyanobakterien",
+      "definition": "Algen und Cyanobakterien im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:ecology",
+      "search_terms": [
+        "Algenblüte",
+        "Cyanobakterien",
+        "Blaualgen",
+        "Chlorophyll-a",
+        "Phytoplankton"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Event",
+        "core:Observation",
+        "core:State"
+      ],
+      "extraction_focus": "Organismengruppe, Parameter und Befund; Chlorophyll-a allein identifiziert keine Cyanobakterienart."
+    },
+    {
+      "id": "topic:ecology.plants",
+      "label_de": "Wasserpflanzen",
+      "definition": "Wasserpflanzen im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:ecology",
+      "search_terms": [
+        "Makrophyten",
+        "Wasserpflanzen",
+        "Röhricht",
+        "Unterwasservegetation"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:State",
+        "core:Process"
+      ],
+      "extraction_focus": "Taxon, Bestandsmerkmal, Erhebung und Raumbezug; Bestandsrückgang und mögliche Ursache getrennt extrahieren."
+    },
+    {
+      "id": "topic:ecology.fauna",
+      "label_de": "Fische und weitere aquatische Fauna",
+      "definition": "Fische und weitere aquatische Fauna im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:ecology",
+      "search_terms": [
+        "Fischbestand",
+        "Fischsterben",
+        "Makrozoobenthos",
+        "Muscheln",
+        "Wirbellose"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:Event",
+        "core:State"
+      ],
+      "extraction_focus": "Taxon, Abundanz oder Ereignis und Methode; Fischsterben belegt ohne weitere Angaben keine bestimmte Ursache."
+    },
+    {
+      "id": "topic:ecology.biodiversity",
+      "label_de": "Artenvielfalt und invasive Arten",
+      "definition": "Artenvielfalt und invasive Arten im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:ecology",
+      "search_terms": [
+        "Artenvielfalt",
+        "Biodiversität",
+        "Neobiota",
+        "invasive Art",
+        "Artenschutz"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:Assessment",
+        "core:Process"
+      ],
+      "extraction_focus": "Taxonomische Genauigkeit, Nachweisstatus und Bewertungsgrundlage; fehlende Erwähnung bedeutet keine Abwesenheit."
+    },
+    {
+      "id": "topic:use.agriculture",
+      "label_de": "Landwirtschaft und Landnutzungsänderung",
+      "definition": "Landwirtschaft und Landnutzungsänderung im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:use",
+      "search_terms": [
+        "Düngung",
+        "Ackerbau",
+        "Drainage",
+        "Landnutzungsänderung",
+        "Nährstoffeintrag"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Process",
+        "core:Event",
+        "core:Agent"
+      ],
+      "extraction_focus": "Nutzung, Tätigkeit und Eintragspfad unterscheiden; erhöhte Nährstoffwerte allein belegen keine landwirtschaftliche Herkunft."
+    },
+    {
+      "id": "topic:use.wastewater",
+      "label_de": "Abwasser und Siedlungsentwässerung",
+      "definition": "Abwasser und Siedlungsentwässerung im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:use",
+      "search_terms": [
+        "Kläranlage",
+        "Einleitung",
+        "Mischwasser",
+        "Regenüberlauf",
+        "Abwasser"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Facility",
+        "core:Process",
+        "core:Event"
+      ],
+      "extraction_focus": "Anlage, Einleitpunkt, Stoff und Zeit; Einleitergenehmigung und tatsächlich erfolgte Einleitung unterscheiden."
+    },
+    {
+      "id": "topic:use.industry",
+      "label_de": "Industrie und Bergbau",
+      "definition": "Industrie und Bergbau im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:use",
+      "search_terms": [
+        "Industrieeinleitung",
+        "Tagebau",
+        "Bergbau",
+        "Grubenwasser",
+        "Altlast"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Facility",
+        "core:Process",
+        "core:Event"
+      ],
+      "extraction_focus": "Standort, Tätigkeit, Stoff und Zeitraum; historische Nutzung nicht automatisch als aktuelle Belastung darstellen."
+    },
+    {
+      "id": "topic:use.abstraction",
+      "label_de": "Wasserentnahme und Regulierung",
+      "definition": "Wasserentnahme und Regulierung im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:use",
+      "search_terms": [
+        "Wasserentnahme",
+        "Entnahmebrunnen",
+        "Stauhaltung",
+        "Wasserüberleitung",
+        "Pumpwerk"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Facility",
+        "core:Process",
+        "core:Event"
+      ],
+      "extraction_focus": "Menge, Entnahmeort, Zweck und Zeitraum; genehmigte Höchstmenge von beobachteter Entnahme trennen."
+    },
+    {
+      "id": "topic:use.recreation",
+      "label_de": "Freizeit, Fischerei und Schifffahrt",
+      "definition": "Freizeit, Fischerei und Schifffahrt im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:use",
+      "search_terms": [
+        "Badenutzung",
+        "Angelfischerei",
+        "Fischbesatz",
+        "Bootsverkehr",
+        "Schifffahrt"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Process",
+        "core:Event",
+        "core:Agent"
+      ],
+      "extraction_focus": "Nutzungsart, Intensität und Zeitraum; Nutzung ist ohne eigene Evidenz keine belegte ökologische Ursache."
+    },
+    {
+      "id": "topic:management.input_reduction",
+      "label_de": "Verringerung externer Einträge",
+      "definition": "Verringerung externer Einträge im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:management",
+      "search_terms": [
+        "Phosphorelimination",
+        "Kläranlagenausbau",
+        "Gewässerrandstreifen",
+        "Eintragsminderung"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Intervention"
+      ],
+      "extraction_focus": "Maßnahmenart, Zielstoff, Status und Beginn oder Abschluss; Ziel und beobachtete Wirkung unterscheiden."
+    },
+    {
+      "id": "topic:management.restoration",
+      "label_de": "Hydromorphologische Wiederherstellung",
+      "definition": "Hydromorphologische Wiederherstellung im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:management",
+      "search_terms": [
+        "Renaturierung",
+        "Uferentsiegelung",
+        "Wehrrückbau",
+        "Wiederanbindung",
+        "Auenentwicklung"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Intervention"
+      ],
+      "extraction_focus": "Konkrete Änderung, betroffener Abschnitt, Umsetzung und Datum; keine Erfolgsaussage aus dem Maßnahmenamen ableiten."
+    },
+    {
+      "id": "topic:management.sediment_treatment",
+      "label_de": "Sedimentbezogene Maßnahmen",
+      "definition": "Sedimentbezogene Maßnahmen im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:management",
+      "search_terms": [
+        "Entschlammung",
+        "Sedimententnahme",
+        "Sedimentabdeckung",
+        "Phosphorfällung"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Intervention"
+      ],
+      "extraction_focus": "Verfahren, behandelter Bereich, Stoffe und Status; Behandlungstypen als unterschiedliche Verfahren erhalten."
+    },
+    {
+      "id": "topic:management.biomanipulation",
+      "label_de": "Biologische Bewirtschaftungsmaßnahmen",
+      "definition": "Biologische Bewirtschaftungsmaßnahmen im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:management",
+      "search_terms": [
+        "Biomanipulation",
+        "Fischentnahme",
+        "Fischbesatz",
+        "Bestandsmanagement"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Intervention"
+      ],
+      "extraction_focus": "Behandeltes Taxon, Eingriff, Ziel und beobachtetes Ergebnis getrennt erfassen."
+    },
+    {
+      "id": "topic:management.planning",
+      "label_de": "Planung, Schutz und Regelungen",
+      "definition": "Planung, Schutz und Regelungen im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:management",
+      "search_terms": [
+        "Bewirtschaftungsplan",
+        "Maßnahmenprogramm",
+        "Schutzgebietsausweisung",
+        "Nutzungsbeschränkung"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Intervention",
+        "core:Event"
+      ],
+      "extraction_focus": "Beschluss, räumlicher Geltungsbereich und Umsetzungsstatus; ein Beschluss bedeutet keine abgeschlossene bauliche Maßnahme."
+    },
+    {
+      "id": "topic:monitoring.methods",
+      "label_de": "Messstellen und Untersuchungsmethoden",
+      "definition": "Messstellen und Untersuchungsmethoden im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:monitoring",
+      "search_terms": [
+        "Probenahme",
+        "Messnetz",
+        "Messmethode",
+        "Nachweisgrenze",
+        "Bestimmungsgrenze"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:MonitoringStation",
+        "core:Observation"
+      ],
+      "extraction_focus": "Methode, Station, Tiefe, Probenahme und Qualitätskennzeichen; methodische Änderungen dokumentieren."
+    },
+    {
+      "id": "topic:monitoring.series",
+      "label_de": "Messreihen und Aggregationen",
+      "definition": "Messreihen und Aggregationen im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:monitoring",
+      "search_terms": [
+        "Zeitreihe",
+        "Jahresmittel",
+        "Einzelmessung",
+        "Trend",
+        "Median"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:Process"
+      ],
+      "extraction_focus": "Aggregationsart, Zeitraum, Anzahl und Datenabdeckung; Trendbewertung nur bei entsprechendem Beleg."
+    },
+    {
+      "id": "topic:monitoring.assessment",
+      "label_de": "Ökologische und chemische Bewertungen",
+      "definition": "Ökologische und chemische Bewertungen im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:monitoring",
+      "search_terms": [
+        "ökologischer Zustand",
+        "ökologisches Potenzial",
+        "chemischer Zustand",
+        "Qualitätskomponente"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Assessment"
+      ],
+      "extraction_focus": "Verfahren, Version, Klasse und Berichtszyklus; Status, Potenzial und einzelne Qualitätskomponenten unterscheiden."
+    },
+    {
+      "id": "topic:monitoring.reconstruction",
+      "label_de": "Historische und paläolimnologische Rekonstruktion",
+      "definition": "Historische und paläolimnologische Rekonstruktion im dokumentierten Gewässerkontext.",
+      "broader_topic": "topic:monitoring",
+      "search_terms": [
+        "Sedimentkern",
+        "Datierung",
+        "Pollen",
+        "Diatomeen",
+        "Jahre BP"
+      ],
+      "source_hints": [],
+      "suggested_record_classes": [
+        "core:Observation",
+        "core:Assessment",
+        "core:Process"
+      ],
+      "extraction_focus": "Rekonstruktionsmethode, Altersmodell und Unsicherheit; Tiefe und Alter sowie Kalenderjahre und BP nicht gleichsetzen."
+    }
+  ],
+  "field_profiles": {
+    "entities": [
+      "id",
+      "class_id",
+      "name_original",
+      "name_normalized",
+      "identifiers[{scheme,value,issuer,valid_time}]",
+      "assignment_status",
+      "evidence_ids"
+    ],
+    "findings": [
+      "id",
+      "class_id",
+      "topic_ids[]",
+      "waterbody_refs[]",
+      "description",
+      "participants[{entity_id,role}]",
+      "time",
+      "spatial_scope",
+      "system_boundary",
+      "assertion_mode",
+      "polarity",
+      "implementation_status",
+      "evidence_ids",
+      "field_evidence",
+      "review_status"
+    ],
+    "observation_or_quantitative_fields": [
+      "parameter_id",
+      "value_original",
+      "value_normalized",
+      "unit_original",
+      "unit_normalized",
+      "comparison_operator",
+      "medium",
+      "depth",
+      "method",
+      "aggregation",
+      "normalization_rule_id"
+    ],
+    "causal_relations": [
+      "id",
+      "class_id",
+      "relation_kind",
+      "causes[]",
+      "effects[]",
+      "conditions[]",
+      "combination",
+      "necessity",
+      "sufficiency",
+      "cause_set_completeness",
+      "assertion_mode",
+      "polarity",
+      "valid_time",
+      "spatial_scope",
+      "response_time",
+      "effect_duration",
+      "alternative_group_id",
+      "evidence_ids",
+      "field_evidence",
+      "review_status"
+    ],
+    "time_object": [
+      "original",
+      "status",
+      "start",
+      "end",
+      "precision",
+      "recurrence"
+    ],
+    "response_time_object": [
+      "definition",
+      "start_anchor",
+      "end_anchor",
+      "value_or_range",
+      "unit",
+      "precision",
+      "origin",
+      "evidence_ids"
+    ],
+    "evidence": [
+      "id",
+      "document_id",
+      "quote",
+      "locator",
+      "raw_or_ocr",
+      "field_name",
+      "source_value"
+    ],
+    "document": [
+      "id",
+      "url",
+      "title",
+      "issuer",
+      "publication_date",
+      "retrieved_at",
+      "local_file",
+      "content_hash",
+      "language"
+    ],
+    "run_metadata": [
+      "run_id",
+      "parser_version",
+      "model_id",
+      "prompt_version",
+      "ontology_id",
+      "ontology_version",
+      "schema_version",
+      "extracted_at"
+    ],
+    "specific_detail_fields": [
+      "procedure_original",
+      "change_direction",
+      "input_origin",
+      "input_pathway",
+      "substance_form",
+      "assessment_scheme",
+      "assessment_version"
+    ]
+  },
+  "controlled_values": {
+    "assignment_status": [
+      "resolved",
+      "probable",
+      "ambiguous",
+      "unresolved"
+    ],
+    "assertion_mode": [
+      "reported",
+      "observed",
+      "suspected",
+      "predicted",
+      "hypothetical"
+    ],
+    "polarity": [
+      "affirmed",
+      "negated"
+    ],
+    "implementation_status": [
+      "proposed",
+      "planned",
+      "approved",
+      "started",
+      "completed",
+      "cancelled",
+      "unknown",
+      "not_applicable"
+    ],
+    "time_status": [
+      "explicit",
+      "resolved_from_context",
+      "unknown_in_source",
+      "not_stated",
+      "no_specific_time"
+    ],
+    "combination": [
+      "single",
+      "joint_contribution",
+      "unspecified"
+    ],
+    "necessity": [
+      "explicitly_required",
+      "explicitly_not_required",
+      "unspecified"
+    ],
+    "sufficiency": [
+      "explicitly_sufficient",
+      "explicitly_not_sufficient",
+      "unspecified"
+    ],
+    "cause_set_completeness": [
+      "explicitly_complete",
+      "explicitly_partial",
+      "unspecified"
+    ],
+    "relation_kind": [
+      "causes",
+      "contributes_to",
+      "affects",
+      "increases",
+      "decreases",
+      "prevents"
+    ],
+    "review_status": [
+      "extracted",
+      "needs_review",
+      "checked",
+      "rejected"
+    ],
+    "relevance_scope": [
+      "direct",
+      "catchment_or_connected_water",
+      "general_background",
+      "unresolved"
+    ]
+  },
+  "crawling_profile": {
+    "waterbody_search_profile": [
+      "internal_id",
+      "current_names",
+      "historic_names",
+      "identifiers_with_schemes_and_validity",
+      "municipalities",
+      "region",
+      "geometry_or_location",
+      "catchment_names",
+      "connected_waterbodies"
+    ],
+    "query_templates": [
+      "\"{waterbody_name_or_alias}\" \"{locality_or_region}\" {topic_search_term}",
+      "\"{waterbody_identifier}\" {topic_search_term}",
+      "\"{waterbody_name_or_alias}\" {document_type_hint}",
+      "\"{catchment_name}\" {topic_search_term}",
+      "\"{waterbody_name_or_alias}\" \"{locality_or_region}\""
+    ],
+    "query_policy": "Geeignete Varianten einzeln kombinieren; nicht alle IDs, Synonyme und Fachbegriffe in eine einzige Suchanfrage setzen. Klammerausdrücke sind Platzhalter.",
+    "search_terms_are": "Suchhinweise; keine Liste semantisch austauschbarer Synonyme und kein Beweis für Relevanz oder Klassifikation.",
+    "source_families": [
+      "Behörden und Fachportale",
+      "Kommunen und Wasserverbände",
+      "wissenschaftliche Veröffentlichungen",
+      "Projekt- und Maßnahmenberichte",
+      "historische Archive",
+      "lokale Berichte und Sekundärquellen"
+    ],
+    "discovery_policy": "Gezielte Themensuche mit offener Gewässersuche, Linkverfolgung und Literaturverweisen kombinieren. Strukturierte Datenangebote ebenfalls erfassen.",
+    "relevance_output": [
+      "document_id_or_url",
+      "candidate_waterbody_ids",
+      "relevance_scope",
+      "topic_ids",
+      "supporting_passage",
+      "reason",
+      "decision",
+      "review_status"
+    ],
+    "decisions": [
+      "retain",
+      "review",
+      "exclude_with_reason"
+    ],
+    "relevance_policy": "Titel und Vorschau vorsortieren; bei unklaren Kandidaten Inhalt prüfen. Fachliche Relevanz, räumliche Zuordnung und Quellenqualität separat beurteilen.",
+    "retention_policy": "Dokumentfassung einmal archivieren und mehreren Wasserkörpern zuordnen; URL, Abrufzeit, Hash und Suchherkunft erhalten.",
+    "coverage_policy": "Pro Wasserkörper abgearbeitete Themen, Quellenfamilien, Suchvarianten und offene Kandidaten protokollieren; eine Suche beweist keine Vollständigkeit.",
+    "fine_search_policy": "Grobe und offene Suchläufe beibehalten; zusätzliche Suchläufe aus passenden Unterthemen erzeugen. Spezifische Treffer sind kein Grund, unklassifizierte Dokumente zu verwerfen."
+  },
+  "parsing_profile": {
+    "steps": [
+      "Strukturgetreues technisches Parsing und gegebenenfalls OCR",
+      "Abschnitte mit Überschriften und Nachbarkontext bilden",
+      "Entitäten und Sachverhalte mit Belegen extrahieren",
+      "Explizite Beziehungen samt Beteiligten und Modalität extrahieren",
+      "Referenzen, Werte, Zitate und semantische Zuordnung prüfen",
+      "Dokumentweit Duplikate, Widersprüche und ungeklärte Bezüge bearbeiten"
+    ],
+    "record_policy": "Ereignisse, Zustände, Prozesse und Messungen sind fachliche Objekte. Quellenbelege bleiben zugeordnet; keine separate Aussageklasse für jeden Satz erforderlich.",
+    "coverage_policy": "Relevante Dokumente systematisch abschnittsweise verarbeiten. Retrieval darf fehlenden Kontext nachladen; eine Top-k-Suche allein ist kein Vollständigkeitsnachweis.",
+    "mandatory_envelope": [
+      "id",
+      "class_id",
+      "description_or_relation_kind",
+      "evidence_ids",
+      "assertion_mode",
+      "polarity",
+      "review_status"
+    ],
+    "missing_policy": "Nicht belegte Fachwerte bleiben null oder erhalten einen definierten Unknown-Status. Keine Quellenkonfidenz aus dem Modellgefühl als Wahrscheinlichkeit ausgeben.",
+    "rules": [
+      "Originaldokument, extrahierten Originaltext und genaue Fundstelle erhalten. Parsing, fachliche Extraktion und Normalisierung sind getrennte Schritte.",
+      "Jede nichtleere inhaltliche Angabe benötigt eine Beleg- oder Ableitungsreferenz. Technische IDs und ausdrücklich leere Angaben brauchen kein Quellzitat.",
+      "Zitate, Referenzen und Werteformate automatisch prüfen. Ein passendes Zitat oder schemafähiges JSON allein garantiert keine semantisch korrekte Extraktion.",
+      "Gewässeridentität aus Kennungen, Namen, Raum und Zeit prüfen. Historische Teilungen oder Zusammenlegungen nicht als bloßen Aliaswechsel behandeln.",
+      "Zeitpunkt des Sachverhalts, Publikationszeit und Abrufzeit getrennt halten. Fehlende Zeitangaben nicht aus dem Berichtsjahr füllen.",
+      "Verneinung, Vermutung, Planung und Prognose erhalten. Quellenqualität, Extraktionssicherheit und fachliche Unsicherheit getrennt behandeln.",
+      "Keine Ereignisse, Mechanismen, Ursachen oder Werte aus allgemeinem Modellwissen ergänzen. Ontologieeinträge sind keine Belege für konkrete Sachverhalte.",
+      "Keinen Kausalzusammenhang allein aus zeitlicher Folge, gemeinsamer Erwähnung, räumlicher Nähe oder Korrelation erzeugen.",
+      "Ein Wirkungszusammenhang benötigt mindestens eine Ursache und eine Wirkung. joint_contribution benötigt mindestens zwei Ursachen und eine explizite Textgrundlage für das Zusammenwirken.",
+      "Gemeinsamer Beitrag impliziert weder Notwendigkeit noch Hinreichendheit, Synergie oder Vollständigkeit der Ursachenmenge. Solche Qualifikationen nur explizit übernehmen.",
+      "Alternative Erklärungen als getrennte Wirkungszusammenhänge mit optional gemeinsamer alternative_group_id halten; unabhängige Wirkungen ebenfalls separat erfassen.",
+      "Reaktionszeit, Wirkungsdauer und Abstand dokumentierter Jahresangaben unterscheiden. Berechnete Abstände nur mit Methode und Zeitankern ausgeben.",
+      "Themen sind Mehrfachlabels; ihre Zuordnungen sind keine sich zu 100 Prozent ergänzenden Anteile. record class und topic sind verschiedene Dimensionen.",
+      "Pro Sachverhalt die spezifischste belegte Klasse verwenden; andernfalls auf die passende Kernklasse zurückfallen. Keine erfundene Feinzuordnung.",
+      "Inhaltliche Duplikate nur bei belegter Identität zusammenführen; Belege und widersprüchliche Angaben erhalten. Chunk-Überlappungen dürfen keine zusätzlichen Ereignisse erzeugen.",
+      "Relevantes außerhalb der Kategorien mit needs_ontology_extension markieren und Originaltext behalten. Nicht allein wegen fehlender Ontologieklasse verwerfen.",
+      "Unvollständig geparste Seiten, nicht ausgewertete Karten und übersprungene Abschnitte protokollieren. Abdeckung und Extraktionsqualität getrennt bewerten."
+    ]
+  },
+  "example": {
+    "is_fictional": true,
+    "documents": [
+      {
+        "id": "D1",
+        "title": "Fiktiver Beispielbericht",
+        "url": null,
+        "issuer": null,
+        "publication_date": null,
+        "retrieved_at": null,
+        "local_file": null,
+        "content_hash": null,
+        "language": "de",
+        "text": "Die Kläranlage am Beispielsee wurde 2018 um eine Phosphorelimination erweitert. Die Erweiterung und die seit 2019 verringerte Düngung im Einzugsgebiet trugen vermutlich gemeinsam zum Rückgang der Gesamtphosphorkonzentration ab 2020 bei."
+      }
+    ],
+    "evidence": [
+      {
+        "id": "B1",
+        "document_id": "D1",
+        "quote": "Die Kläranlage am Beispielsee wurde 2018 um eine Phosphorelimination erweitert.",
+        "locator": {
+          "paragraph": 1,
+          "sentence": 1
+        },
+        "raw_or_ocr": "raw"
+      },
+      {
+        "id": "B2",
+        "document_id": "D1",
+        "quote": "Die Erweiterung und die seit 2019 verringerte Düngung im Einzugsgebiet trugen vermutlich gemeinsam zum Rückgang der Gesamtphosphorkonzentration ab 2020 bei.",
+        "locator": {
+          "paragraph": 1,
+          "sentence": 2
+        },
+        "raw_or_ocr": "raw"
+      }
+    ],
+    "entities": [
+      {
+        "id": "W1",
+        "class_id": "fine:Lake",
+        "name_original": "Beispielsee",
+        "identifiers": [],
+        "assignment_status": "unresolved",
+        "evidence_ids": [
+          "B1"
+        ]
+      },
+      {
+        "id": "A1",
+        "class_id": "fine:WastewaterTreatmentPlant",
+        "name_original": "Kläranlage am Beispielsee",
+        "identifiers": [],
+        "assignment_status": "unresolved",
+        "evidence_ids": [
+          "B1"
+        ]
+      },
+      {
+        "id": "P1",
+        "class_id": "core:Parameter",
+        "name_original": "Gesamtphosphorkonzentration",
+        "name_normalized": "Gesamtphosphorkonzentration",
+        "identifiers": [],
+        "assignment_status": "unresolved",
+        "evidence_ids": [
+          "B2"
+        ]
+      }
+    ],
+    "findings": [
+      {
+        "id": "E1",
+        "class_id": "fine:FacilityUpgrade",
+        "topic_ids": [
+          "topic:management.input_reduction",
+          "topic:use.wastewater"
+        ],
+        "description": "Kläranlage wurde 2018 um eine Phosphorelimination erweitert.",
+        "waterbody_refs": [
+          "W1"
+        ],
+        "participants": [
+          {
+            "entity_id": "A1",
+            "role": "modified_facility"
+          }
+        ],
+        "time": {
+          "original": "2018",
+          "status": "explicit",
+          "start": "2018",
+          "end": "2018",
+          "precision": "year",
+          "recurrence": null
+        },
+        "assertion_mode": "reported",
+        "polarity": "affirmed",
+        "implementation_status": "completed",
+        "evidence_ids": [
+          "B1"
+        ],
+        "field_evidence": {
+          "class_id": [
+            "B1"
+          ],
+          "description": [
+            "B1"
+          ],
+          "time": [
+            "B1"
+          ],
+          "implementation_status": [
+            "B1"
+          ],
+          "procedure_original": [
+            "B1"
+          ]
+        },
+        "review_status": "extracted",
+        "procedure_original": "Phosphorelimination"
+      },
+      {
+        "id": "E2",
+        "class_id": "fine:FertilizerUseReduction",
+        "topic_ids": [
+          "topic:use.agriculture"
+        ],
+        "description": "Verringerte Düngung im Einzugsgebiet seit 2019.",
+        "waterbody_refs": [
+          "W1"
+        ],
+        "spatial_scope": "Einzugsgebiet des Beispielsees; genaue Grenze nicht angegeben",
+        "time": {
+          "original": "seit 2019",
+          "status": "explicit",
+          "start": "2019",
+          "end": null,
+          "precision": "year",
+          "recurrence": null
+        },
+        "assertion_mode": "reported",
+        "polarity": "affirmed",
+        "evidence_ids": [
+          "B2"
+        ],
+        "field_evidence": {
+          "class_id": [
+            "B2"
+          ],
+          "description": [
+            "B2"
+          ],
+          "time": [
+            "B2"
+          ],
+          "spatial_scope": [
+            "B2"
+          ]
+        },
+        "review_status": "extracted"
+      },
+      {
+        "id": "E3",
+        "class_id": "fine:ConcentrationChange",
+        "topic_ids": [
+          "topic:chemistry.nutrients"
+        ],
+        "description": "Rückgang der Gesamtphosphorkonzentration ab 2020.",
+        "waterbody_refs": [
+          "W1"
+        ],
+        "parameter_id": "P1",
+        "time": {
+          "original": "ab 2020",
+          "status": "explicit",
+          "start": "2020",
+          "end": null,
+          "precision": "year",
+          "recurrence": null
+        },
+        "assertion_mode": "reported",
+        "polarity": "affirmed",
+        "value_normalized": null,
+        "unit_normalized": null,
+        "evidence_ids": [
+          "B2"
+        ],
+        "field_evidence": {
+          "class_id": [
+            "B2"
+          ],
+          "description": [
+            "B2"
+          ],
+          "parameter_id": [
+            "B2"
+          ],
+          "time": [
+            "B2"
+          ],
+          "change_direction": [
+            "B2"
+          ]
+        },
+        "review_status": "extracted",
+        "change_direction": "decrease"
+      }
+    ],
+    "causal_relations": [
+      {
+        "id": "R1",
+        "class_id": "core:CausalRelation",
+        "relation_kind": "contributes_to",
+        "causes": [
+          "E1",
+          "E2"
+        ],
+        "effects": [
+          "E3"
+        ],
+        "conditions": [],
+        "combination": "joint_contribution",
+        "necessity": "unspecified",
+        "sufficiency": "unspecified",
+        "cause_set_completeness": "unspecified",
+        "assertion_mode": "suspected",
+        "polarity": "affirmed",
+        "waterbody_refs": [
+          "W1"
+        ],
+        "valid_time": {
+          "original": null,
+          "status": "not_stated",
+          "start": null,
+          "end": null,
+          "precision": null,
+          "recurrence": null
+        },
+        "response_time": null,
+        "effect_duration": null,
+        "evidence_ids": [
+          "B2"
+        ],
+        "field_evidence": {
+          "relation_kind": [
+            "B2"
+          ],
+          "causes": [
+            "B2"
+          ],
+          "effects": [
+            "B2"
+          ],
+          "combination": [
+            "B2"
+          ],
+          "assertion_mode": [
+            "B2"
+          ]
+        },
+        "review_status": "extracted"
+      }
+    ],
+    "notes": [
+      "W1 und A1 sind lokale Beispiel-IDs. Zuordnung zu realen Registern ist ungeklärt; der Textkontext verknüpft die lokalen Erwähnungen.",
+      "2018 mit Jahresgenauigkeit bedeutet ein Ereignis im Jahr, nicht eine über das gesamte Jahr dauernde Bauphase.",
+      "Die Einheit und Größe des Konzentrationsrückgangs fehlen. Es wird keine Messung erzeugt.",
+      "Keine Reaktionszeit aus 2018, 2019 und 2020 erfinden: zwei Ursachen, ungenaue Zeitpunkte und keine explizite Verzögerungsangabe.",
+      "Feine Klassen ersetzen die jeweilige Kernklasse; die Oberklassen bleiben über die Klassenhierarchie erreichbar."
+    ]
+  },
+  "extends": {
+    "ontology_id": "solve:ontology-coarse",
+    "version": "0.1.0",
+    "standalone_core_included": true
+  },
+  "detail_field_definitions": {
+    "procedure_original": "Verfahren im Wortlaut; nur aufnehmen, wenn angegeben.",
+    "change_direction": "increase/decrease/unchanged; nur bei entsprechendem Beleg.",
+    "input_origin": "Belegte Herkunft eines Eintrags, keine aus der Umgebung vermutete Herkunft.",
+    "input_pathway": "Belegter Eintragspfad, zum Beispiel Zufluss oder direkte Einleitung.",
+    "substance_form": "Stofffraktion und analytische Bezugsbasis, soweit angegeben.",
+    "assessment_scheme": "Originalbezeichnung des Bewertungsverfahrens.",
+    "assessment_version": "Version oder Berichtszyklus des Verfahrens, soweit angegeben."
+  },
+  "coarse_mapping": {
+    "classes": [
+      {
+        "fine_id": "fine:Lake",
+        "coarse_id": "core:WaterBody"
+      },
+      {
+        "fine_id": "fine:RiverWaterBody",
+        "coarse_id": "core:WaterBody"
+      },
+      {
+        "fine_id": "fine:GroundwaterBody",
+        "coarse_id": "core:WaterBody"
+      },
+      {
+        "fine_id": "fine:Catchment",
+        "coarse_id": "core:SpatialUnit"
+      },
+      {
+        "fine_id": "fine:WastewaterTreatmentPlant",
+        "coarse_id": "core:Facility"
+      },
+      {
+        "fine_id": "fine:NutrientInput",
+        "coarse_id": "core:Process"
+      },
+      {
+        "fine_id": "fine:InternalNutrientRelease",
+        "coarse_id": "core:Process"
+      },
+      {
+        "fine_id": "fine:WaterAbstraction",
+        "coarse_id": "core:Process"
+      },
+      {
+        "fine_id": "fine:FertilizerUseReduction",
+        "coarse_id": "core:Process"
+      },
+      {
+        "fine_id": "fine:ConcentrationChange",
+        "coarse_id": "core:Process"
+      },
+      {
+        "fine_id": "fine:StratificationState",
+        "coarse_id": "core:State"
+      },
+      {
+        "fine_id": "fine:OxygenDeficit",
+        "coarse_id": "core:State"
+      },
+      {
+        "fine_id": "fine:AlgalBloom",
+        "coarse_id": "core:Event"
+      },
+      {
+        "fine_id": "fine:FishMortality",
+        "coarse_id": "core:Event"
+      },
+      {
+        "fine_id": "fine:LandUseChange",
+        "coarse_id": "core:Event"
+      },
+      {
+        "fine_id": "fine:FacilityUpgrade",
+        "coarse_id": "core:Intervention"
+      },
+      {
+        "fine_id": "fine:ShoreRestoration",
+        "coarse_id": "core:Intervention"
+      },
+      {
+        "fine_id": "fine:SedimentRemoval",
+        "coarse_id": "core:Intervention"
+      },
+      {
+        "fine_id": "fine:WaterChemistryObservation",
+        "coarse_id": "core:Observation"
+      },
+      {
+        "fine_id": "fine:BiologicalObservation",
+        "coarse_id": "core:Observation"
+      },
+      {
+        "fine_id": "fine:WaterBodyAssessment",
+        "coarse_id": "core:Assessment"
+      }
+    ],
+    "topics": [
+      {
+        "fine_id": "topic:identity.identifiers",
+        "coarse_id": "topic:identity"
+      },
+      {
+        "fine_id": "topic:identity.history",
+        "coarse_id": "topic:identity"
+      },
+      {
+        "fine_id": "topic:identity.geometry",
+        "coarse_id": "topic:identity"
+      },
+      {
+        "fine_id": "topic:identity.catchment",
+        "coarse_id": "topic:identity"
+      },
+      {
+        "fine_id": "topic:hydrology.level_flow",
+        "coarse_id": "topic:hydrology"
+      },
+      {
+        "fine_id": "topic:hydrology.balance_groundwater",
+        "coarse_id": "topic:hydrology"
+      },
+      {
+        "fine_id": "topic:hydrology.exchange",
+        "coarse_id": "topic:hydrology"
+      },
+      {
+        "fine_id": "topic:hydrology.temperature",
+        "coarse_id": "topic:hydrology"
+      },
+      {
+        "fine_id": "topic:hydrology.weather",
+        "coarse_id": "topic:hydrology"
+      },
+      {
+        "fine_id": "topic:morphology.shore_bed",
+        "coarse_id": "topic:morphology"
+      },
+      {
+        "fine_id": "topic:morphology.connectivity",
+        "coarse_id": "topic:morphology"
+      },
+      {
+        "fine_id": "topic:morphology.sediment",
+        "coarse_id": "topic:morphology"
+      },
+      {
+        "fine_id": "topic:chemistry.nutrients",
+        "coarse_id": "topic:chemistry"
+      },
+      {
+        "fine_id": "topic:chemistry.oxygen",
+        "coarse_id": "topic:chemistry"
+      },
+      {
+        "fine_id": "topic:chemistry.pollutants",
+        "coarse_id": "topic:chemistry"
+      },
+      {
+        "fine_id": "topic:chemistry.basic",
+        "coarse_id": "topic:chemistry"
+      },
+      {
+        "fine_id": "topic:chemistry.processes",
+        "coarse_id": "topic:chemistry"
+      },
+      {
+        "fine_id": "topic:ecology.algae",
+        "coarse_id": "topic:ecology"
+      },
+      {
+        "fine_id": "topic:ecology.plants",
+        "coarse_id": "topic:ecology"
+      },
+      {
+        "fine_id": "topic:ecology.fauna",
+        "coarse_id": "topic:ecology"
+      },
+      {
+        "fine_id": "topic:ecology.biodiversity",
+        "coarse_id": "topic:ecology"
+      },
+      {
+        "fine_id": "topic:use.agriculture",
+        "coarse_id": "topic:use"
+      },
+      {
+        "fine_id": "topic:use.wastewater",
+        "coarse_id": "topic:use"
+      },
+      {
+        "fine_id": "topic:use.industry",
+        "coarse_id": "topic:use"
+      },
+      {
+        "fine_id": "topic:use.abstraction",
+        "coarse_id": "topic:use"
+      },
+      {
+        "fine_id": "topic:use.recreation",
+        "coarse_id": "topic:use"
+      },
+      {
+        "fine_id": "topic:management.input_reduction",
+        "coarse_id": "topic:management"
+      },
+      {
+        "fine_id": "topic:management.restoration",
+        "coarse_id": "topic:management"
+      },
+      {
+        "fine_id": "topic:management.sediment_treatment",
+        "coarse_id": "topic:management"
+      },
+      {
+        "fine_id": "topic:management.biomanipulation",
+        "coarse_id": "topic:management"
+      },
+      {
+        "fine_id": "topic:management.planning",
+        "coarse_id": "topic:management"
+      },
+      {
+        "fine_id": "topic:monitoring.methods",
+        "coarse_id": "topic:monitoring"
+      },
+      {
+        "fine_id": "topic:monitoring.series",
+        "coarse_id": "topic:monitoring"
+      },
+      {
+        "fine_id": "topic:monitoring.assessment",
+        "coarse_id": "topic:monitoring"
+      },
+      {
+        "fine_id": "topic:monitoring.reconstruction",
+        "coarse_id": "topic:monitoring"
+      }
+    ],
+    "relations": [
+      {
+        "fine_id": "fine:flows_into",
+        "coarse_id": null,
+        "reason": "Keine exakt gleichbedeutende Kernrelation; als zusätzliche Detailrelation erhalten."
+      },
+      {
+        "fine_id": "fine:monitors",
+        "coarse_id": null,
+        "reason": "Keine exakt gleichbedeutende Kernrelation; als zusätzliche Detailrelation erhalten."
+      },
+      {
+        "fine_id": "fine:targets",
+        "coarse_id": null,
+        "reason": "Keine exakt gleichbedeutende Kernrelation; als zusätzliche Detailrelation erhalten."
+      }
+    ],
+    "relation_kinds": [
+      {
+        "fine_value": "increases",
+        "coarse_value": "affects"
+      },
+      {
+        "fine_value": "decreases",
+        "coarse_value": "affects"
+      },
+      {
+        "fine_value": "prevents",
+        "coarse_value": "affects"
+      }
+    ],
+    "mapping_policy": "Aufrollen zur gröberen Sicht nur als abgeleitete Darstellung. Feine Originalklasse, Relation, Qualifikationen und Belege erhalten. Ohne Feinbeleg bleibt die grobe Klasse zulässig."
+  }
+}

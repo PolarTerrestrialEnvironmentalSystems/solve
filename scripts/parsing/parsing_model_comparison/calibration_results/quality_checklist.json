@@ -1,0 +1,25 @@
+{
+  "scope": "Vorab festgelegte Stichprobenkriterien; keine vollstaendige Goldannotation der PDF.",
+  "narrative_checks": [
+    "Keine Einschraenkungen der Rohwasserbereitstellung und Niedrigwasseraufhoehung der Bode; Verneinung erhalten.",
+    "Stauinhalt bis Jahresende nicht unter 60 Mio. m3; Zweck Rohwasserversorgung auch bei geringen Winterzufluessen.",
+    "Sommerstauziel von Mai auf Maerz vorgezogen; Schneeruecklage als Bedingung erhalten.",
+    "Sinkender Wasserspiegel kann Naehrstoffe und Plankton konzentrieren; Moeglichkeit statt gesicherter Einzelfall.",
+    "Ueberstauung aufgewachsener Vegetation kann Zersetzung, Sauerstoffverbrauch und Naehrstofffreisetzung verursachen.",
+    "Kyrill als moegliche Erklaerung des Sommerzuflusses 2007, nicht als bewiesene Ursache.",
+    "Geringer Niederschlag im Winter 1995/1996 moeglicherweise als Schnee gespeichert; Vermutung erhalten.",
+    "Winterzufluss seit fruehen 2000ern signifikant fallend; zuvor in 1970er bis 1990er Jahren steigend.",
+    "Sommerzufluss ueber gesamte Zeitreihe signifikant fallend.",
+    "2011 bis 2024: neun von 14 Sommern unter 10 Mio. m3; 1971 bis 2024 insgesamt 16 Sommer.",
+    "Winterreferenz 1971-2000: 76 Mio. m3; seit 2009 nicht ueberschritten, 2018 Ausnahme vom Unterschreiten.",
+    "Jahresreferenz 1971-2000: 97 Mio. m3; seit 2009 in allen Jahren unterschritten."
+  ],
+  "table_page": 5,
+  "table_years": [2016,2017,2018,2019,2020,2021,2022,2023,2024],
+  "winter_Mio_m3": [69,49,76,68,63,58,60,74,78],
+  "summer_Mio_m3": [6,26,1,5,6,9,1,14,12],
+  "annual_Mio_m3": [75,75,77,72,69,67,61,88,91],
+  "empty_years": [2025,2026,2027,2028,2029,2030],
+  "empty_year_rule": "Keine Messwerte erfinden; leere Zellen sind keine Nullen.",
+  "release_criterion": "Keine Modellfreigabe allein aufgrund dieser kleinen Stichprobe. Kritische Verneinungen, Unsicherheiten, Referenzen und Tabellenwerte muessen erhalten bleiben."
+}
