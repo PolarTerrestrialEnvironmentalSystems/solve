@@ -1,0 +1,18 @@
+{
+  "matched_inputs": true,
+  "checks": {
+    "reference": {
+      "three_cases_recorded": true,
+      "xlsx_jsonl_consistent": true
+    },
+    "compact_qwen": {
+      "three_cases_recorded": true,
+      "xlsx_jsonl_consistent": true
+    },
+    "compact_gptoss": {
+      "three_cases_recorded": true,
+      "xlsx_jsonl_consistent": true
+    }
+  },
+  "secret_scan_passed": true
+}

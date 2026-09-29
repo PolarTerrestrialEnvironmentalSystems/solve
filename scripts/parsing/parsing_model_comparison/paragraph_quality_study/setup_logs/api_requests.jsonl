@@ -1,0 +1,4 @@
+{"at":"2026-09-29T11:01:28.925424+00:00","event":"session_started","run_id":"setup","session_id":"37ef3c57dc0d468fa4be4c2ae1c916bc"}
+{"attempt":1,"chunk_id":"","endpoint":"models","event":"request_started","model":"alias-large","ontology":"setup","purpose":"model_list","request_id":"d777e847417646069d8aa27880e56eec","requested_model":null,"requests_last_60s":1,"run_id":"setup","session_id":"37ef3c57dc0d468fa4be4c2ae1c916bc","started_at_utc":"2026-09-29T11:01:28.937011+00:00"}
+{"at":"2026-09-29T11:01:29.082100+00:00","duration_ms":145,"error_type":null,"event":"request_finished","http_status":200,"provider_error":null,"request_id":"d777e847417646069d8aa27880e56eec","response_model":null,"retry_wait_s":0,"run_id":"setup","session_id":"37ef3c57dc0d468fa4be4c2ae1c916bc","usage":{}}
+{"at":"2026-09-29T11:01:29.093990+00:00","event":"session_finished","run_id":"setup","session_id":"37ef3c57dc0d468fa4be4c2ae1c916bc"}

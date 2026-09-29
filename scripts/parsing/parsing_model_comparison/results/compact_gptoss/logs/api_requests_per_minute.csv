@@ -1,0 +1,11 @@
+minute_utc,scope,run_id,ontology,model,endpoint,requests,successful,failed,unfinished,retries,http_429,max_requests_last_60s,prompt_tokens,completion_tokens
+2026-09-28T13:47:00+00:00,detail,compact_gptoss,fein,01 - GPT-OSS-120b - an open model released by OpenAI in August 2025,chat/completions,1,1,0,0,0,0,1,14525,3151
+2026-09-28T13:47:00+00:00,total,,,,,1,1,0,0,0,0,1,14525,3151
+2026-09-28T13:48:00+00:00,detail,compact_gptoss,fein,01 - GPT-OSS-120b - an open model released by OpenAI in August 2025,chat/completions,1,1,0,0,0,0,2,14324,16000
+2026-09-28T13:48:00+00:00,total,,,,,1,1,0,0,0,0,2,14324,16000
+2026-09-28T13:49:00+00:00,detail,compact_gptoss,fein,01 - GPT-OSS-120b - an open model released by OpenAI in August 2025,chat/completions,0,0,0,0,0,0,0,,
+2026-09-28T13:49:00+00:00,total,,,,,0,0,0,0,0,0,0,,
+2026-09-28T13:50:00+00:00,detail,compact_gptoss,fein,01 - GPT-OSS-120b - an open model released by OpenAI in August 2025,chat/completions,0,0,0,0,0,0,0,,
+2026-09-28T13:50:00+00:00,total,,,,,0,0,0,0,0,0,0,,
+2026-09-28T13:51:00+00:00,detail,compact_gptoss,fein,01 - GPT-OSS-120b - an open model released by OpenAI in August 2025,chat/completions,1,1,0,0,0,0,2,14516,5542
+2026-09-28T13:51:00+00:00,total,,,,,1,1,0,0,0,0,2,14516,5542

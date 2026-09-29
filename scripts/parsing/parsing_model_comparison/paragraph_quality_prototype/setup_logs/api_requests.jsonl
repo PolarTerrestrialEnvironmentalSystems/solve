@@ -1,0 +1,4 @@
+{"at":"2026-09-29T10:55:32.605693+00:00","event":"session_started","run_id":"setup","session_id":"a861b434a2c547efa2e3bbcd214f0377"}
+{"attempt":1,"chunk_id":"","endpoint":"models","event":"request_started","model":"alias-large","ontology":"setup","purpose":"model_list","request_id":"cf9a13f09ec34b3780df0a6d02a0af6f","requested_model":null,"requests_last_60s":1,"run_id":"setup","session_id":"a861b434a2c547efa2e3bbcd214f0377","started_at_utc":"2026-09-29T10:55:32.618275+00:00"}
+{"at":"2026-09-29T10:55:32.790446+00:00","duration_ms":172,"error_type":null,"event":"request_finished","http_status":200,"provider_error":null,"request_id":"cf9a13f09ec34b3780df0a6d02a0af6f","response_model":null,"retry_wait_s":0,"run_id":"setup","session_id":"a861b434a2c547efa2e3bbcd214f0377","usage":{}}
+{"at":"2026-09-29T10:55:32.805669+00:00","event":"session_finished","run_id":"setup","session_id":"a861b434a2c547efa2e3bbcd214f0377"}

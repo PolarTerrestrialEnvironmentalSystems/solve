@@ -1,0 +1,23 @@
+test_changed_pdf_rejected_on_resume (test_batch.BatchTests.test_changed_pdf_rejected_on_resume) ... ok
+test_dependency_mismatch_rejected_before_network (test_batch.BatchTests.test_dependency_mismatch_rejected_before_network) ... ok
+test_dry_run_no_key_no_network (test_batch.BatchTests.test_dry_run_no_key_no_network) ... ok
+test_empty_input_has_actionable_error (test_batch.BatchTests.test_empty_input_has_actionable_error) ... ok
+test_fine_only_cli_rejects_other_ontology (test_batch.BatchTests.test_fine_only_cli_rejects_other_ontology) ... ok
+test_four_concurrent_calls_and_shared_thirty_rpm (test_batch.BatchTests.test_four_concurrent_calls_and_shared_thirty_rpm) ... ok
+test_interrupted_second_pdf_resumes_without_repeating_first (test_batch.BatchTests.test_interrupted_second_pdf_resumes_without_repeating_first) ... ok
+test_inventory_change_rejected_on_resume (test_batch.BatchTests.test_inventory_change_rejected_on_resume) ... ok
+test_model_change_between_pdfs_stops_before_second_post (test_batch.BatchTests.test_model_change_between_pdfs_stops_before_second_post) ... ok
+test_modified_export_rejected_on_resume (test_batch.BatchTests.test_modified_export_rejected_on_resume) ... ok
+test_recursive_duplicate_filenames_have_distinct_keys (test_batch.BatchTests.test_recursive_duplicate_filenames_have_distinct_keys) ... ok
+test_settings_change_rejected_on_resume (test_batch.BatchTests.test_settings_change_rejected_on_resume) ... ok
+test_two_pdfs_fine_only_outputs_and_idempotent_resume (test_batch.BatchTests.test_two_pdfs_fine_only_outputs_and_idempotent_resume) ... ok
+test_export_contract_unchanged (test_compact_contract.CompactContractTests.test_export_contract_unchanged) ... ok
+test_null_omission_preserves_normalized_meaning (test_compact_contract.CompactContractTests.test_null_omission_preserves_normalized_meaning) ... ok
+test_relationship_references_and_evidence_required (test_compact_contract.CompactContractTests.test_relationship_references_and_evidence_required) ... ok
+test_required_fields_remain_required (test_compact_contract.CompactContractTests.test_required_fields_remain_required) ... ok
+test_unknown_fields_rejected (test_compact_contract.CompactContractTests.test_unknown_fields_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 8.081s
+
+OK

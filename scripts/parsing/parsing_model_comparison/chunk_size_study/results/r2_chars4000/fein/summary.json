@@ -1,0 +1,105 @@
+{
+  "variant": "fein",
+  "events": 17,
+  "relationships": 0,
+  "causal_self_relationships_rejected": 2,
+  "causal_self_relationship_repairs": {
+    "rejected": 1
+  },
+  "complete_chunks": 2,
+  "failed_chunks": 0,
+  "event_types": {
+    "Prozess": 7,
+    "Messung": 1,
+    "Zustand": 7,
+    "Maßnahme": 2
+  },
+  "topics": {
+    "topic:hydrology": 14,
+    "topic:management": 9,
+    "topic:monitoring": 1
+  },
+  "merged_event_duplicates": 0,
+  "merged_relationship_duplicates": 0,
+  "review_items": 32,
+  "review_kinds": {
+    "causal_self_relationship_repair": 1,
+    "rejected_event": 9,
+    "rejected_relationship": 4,
+    "event_needs_review": 17,
+    "possible_duplicate_or_conflict": 1
+  },
+  "event_fields_filled": {
+    "event_id": 17,
+    "record_type": 17,
+    "waterbody_references": 16,
+    "waterbody_name_original": 16,
+    "waterbody_identifiers": 0,
+    "waterbody_assignment": 16,
+    "statement": 17,
+    "ontology_concept": 17,
+    "participants": 3,
+    "spatial_scope": 16,
+    "system_scope": 0,
+    "values": 9,
+    "measurement_context": 0,
+    "time_original": 5,
+    "time_status": 17,
+    "time_normalized": 5,
+    "time_precision": 5,
+    "assertion_mode": 17,
+    "polarity": 17,
+    "implementation_status": 17,
+    "categories": 17,
+    "category_assessment": 0,
+    "source_document": 17,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 17,
+    "extraction_metadata": 17,
+    "quality_assessment": 17
+  },
+  "relationship_fields_filled": {
+    "relationship_id": 0,
+    "source_event_id": 0,
+    "target_event_id": 0,
+    "relationship_type": 0,
+    "statement": 0,
+    "relationship_scope": 0,
+    "waterbody_references": 0,
+    "spatial_scope": 0,
+    "assertion_mode": 0,
+    "polarity": 0,
+    "derivation_status": 0,
+    "evidence_basis": 0,
+    "mechanism": 0,
+    "conditions": 0,
+    "additional_factors": 0,
+    "effect_size": 0,
+    "valid_time": 0,
+    "response_time_definition": 0,
+    "response_time_anchors": 0,
+    "response_time_value": 0,
+    "response_time_origin": 0,
+    "response_time_evidence": 0,
+    "effect_duration": 0,
+    "categories": 0,
+    "source_document": 0,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 0,
+    "extraction_metadata": 0,
+    "quality_assessment": 0
+  },
+  "empty_chunks": [],
+  "model_notes": [
+    {
+      "chunk_id": "chunk_0002_1f07366d",
+      "notes": [
+        "Die Beziehung zwischen Klimawandel und Abflussänderungen wird als Prognose ('rechnet mit', 'gehen davon aus') dargestellt.",
+        "Die Unterscheidung der Abflüsse (e15) wird als Folge des Klimawandels (e3, e6, e8) prognostiziert.",
+        "Keine expliziten kausalen Beziehungen zwischen den einzelnen prognostizierten Prozessen (z.B. Niederschlagsverteilung -> Abfluss) als separate Events mit 'causes' extrahiert, da der Text diese als zusammenhängende Prognoseketten ('Es ist davon auszugehen, dass...') darstellt. Die Events wurden getrennt, aber die kausale Verknüpfung ist im Statement der jeweiligen Events enthalten oder als implizite Kette im Textfluss erkennbar. Eine explizite 'causes'-Beziehung zwischen e6 und e8 ist im Text durch 'Dabei...' und 'Durch die geringeren...' gegeben, aber da beide Prognosen sind und der Text sie als Teil einer allgemeinen Klimawandel-Folge darstellt, wurde auf die Erstellung von Relationship-Objekten verzichtet, um keine falsche Präzision vorzutäuschen, wenn die Quelle sie als einen zusammenhängenden Szenario-Block ('Es ist davon auszugehen...') präsentiert. Alternativ könnten e6->e8 und e8->e15 als 'contributes_to' modelliert werden, aber die Quelle formuliert es als eine einzige komplexe Einschätzung."
+      ]
+    }
+  ]
+}

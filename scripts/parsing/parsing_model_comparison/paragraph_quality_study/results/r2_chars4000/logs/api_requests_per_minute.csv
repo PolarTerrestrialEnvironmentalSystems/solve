@@ -1,0 +1,9 @@
+minute_utc,scope,run_id,ontology,model,endpoint,requests,successful,failed,unfinished,retries,http_429,max_requests_last_60s,prompt_tokens,completion_tokens
+2026-09-29T11:02:00+00:00,detail,r2_chars4000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,2,17602,4390
+2026-09-29T11:02:00+00:00,total,,,,,1,1,0,0,0,0,2,17602,4390
+2026-09-29T11:03:00+00:00,detail,r2_chars4000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,2,20860,4373
+2026-09-29T11:03:00+00:00,total,,,,,1,1,0,0,0,0,2,20860,4373
+2026-09-29T11:04:00+00:00,detail,r2_chars4000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,2,20797,4868
+2026-09-29T11:04:00+00:00,total,,,,,1,1,0,0,0,0,2,20797,4868
+2026-09-29T11:05:00+00:00,detail,r2_chars4000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,2,16627,2380
+2026-09-29T11:05:00+00:00,total,,,,,1,1,0,0,0,0,2,16627,2380

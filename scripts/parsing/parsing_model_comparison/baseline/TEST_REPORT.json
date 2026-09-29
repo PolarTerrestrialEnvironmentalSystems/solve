@@ -1,0 +1,21 @@
+{
+  "release": "1.0.0",
+  "parser_version": "fine-batch-1.0.0",
+  "python_tested": "3.14.7",
+  "platform_tested": "Windows",
+  "offline_tests_passed": 13,
+  "live_api_calls_for_release_tests": 0,
+  "test_command": "python -m unittest discover -s tests -v",
+  "scope": [
+    "multiple PDFs",
+    "fine ontology only",
+    "distinct event and relationship IDs across documents",
+    "checkpoint resume",
+    "identical rerun does not call API",
+    "global 30 RPM with four concurrent workers",
+    "model identity across PDFs",
+    "dependency pins",
+    "changed PDF inventory/settings/export detection"
+  ],
+  "external_llm_bitwise_reproducibility_guaranteed": false
+}

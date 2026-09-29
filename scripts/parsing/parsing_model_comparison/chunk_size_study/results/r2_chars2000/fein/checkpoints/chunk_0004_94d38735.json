@@ -1,0 +1,1595 @@
+{
+  "cache_key": "77956ff79fb76a9012b50db0da7db91a6143848f25f94d8003d8f3c7d08d15f4",
+  "status": "complete",
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "chunk_0004_94d38735",
+      "pages": [
+        17
+      ],
+      "result": {
+        "document": null,
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Erwartete deutliche Veränderungen im Niederschlags- und Abflussverhalten durch den Klimawandel.",
+            "ontology_concept": "core:Process",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.weather",
+              "topic:hydrology.level_flow"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Es ist davon auszugehen, dass durch den zu erwartenden Klimawandel in Zukunft deutliche Veränderungen im Niederschlags- und Abflussverhalten eintreten werden.",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "assertion_mode",
+                  "time_status"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e2",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Reduzierung des mittleren Jahresabflusses im tschechischen Einzugsgebiet der Elbe um 10 %.",
+            "ontology_concept": "fine:ConcentrationChange",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Tschechisches Einzugsgebiet der Elbe"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Mittlerer Jahresabfluss",
+                "value_original": "10",
+                "value_normalized": null,
+                "unit_original": "%",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": "Vergleich der Jahresreihen 2009-2053 gegenüber 1961-2005",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2009",
+              "end": "2053",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.level_flow"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Die tschechische Seite rechnet mit einer Reduzierung des mittleren Jahresabflusses im tschechischen Einzugsgebiet der Elbe um 10 % beim Vergleich der Jahresreihen 2009-2053 gegenüber 1961-2005",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_normalized",
+                  "time_original",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e3",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Merkbare Reduzierung des QM355-Abflusswertes.",
+            "ontology_concept": "fine:ConcentrationChange",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Tschechisches Einzugsgebiet der Elbe"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "QM355-Abflusswert",
+                "value_original": "merkbare Reduzierung",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.level_flow"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "und mit einer merkbaren Reduzierung des QM355-Abflusswertes",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e4",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Sinken der mittleren Abflüsse im Einzugsgebiet der Moldau um 10-15 %.",
+            "ontology_concept": "fine:ConcentrationChange",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Mittlerer Abfluss",
+                "value_original": "10-15",
+                "value_normalized": null,
+                "unit_original": "%",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.level_flow"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Untersuchungen des Forschungsinstitutes für Wasserwirtschaft in Prag gehen davon aus, dass im Einzugsgebiet der Moldau die mittleren Abflüsse sogar um 10-15 % sinken werden.",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e5",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Umverteilung des Niederschlages vom Sommerhalbjahr in das Winterhalbjahr.",
+            "ontology_concept": "core:Process",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.weather"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Es wird auch zukünftig eine weitere Umverteilung des Niederschlages vom Sommerhalbjahr in das Winterhalbjahr erfolgen.",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "assertion_mode"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e6",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Erhöhung des Anteils der Regenniederschläge im Winterhalbjahr.",
+            "ontology_concept": "core:Process",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.weather"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Dabei erhöht sich im Winterhalbjahr der Anteil der Regenniederschläge",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e7",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Auftreten von Mehrabflüssen mit zunehmenden winterlichen Hochwassern.",
+            "ontology_concept": "core:Process",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.level_flow"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "und es werden Mehrabflüsse mit zunehmenden winterlichen Hochwassern auftreten.",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e8",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Reduzierung des ober- und unterirdischen Abflusses durch geringere Sommerniederschläge.",
+            "ontology_concept": "core:Process",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.level_flow"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Durch die geringeren Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e9",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Verschärfung der Niedrigwasserproblematik im Sommer.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.level_flow"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "und somit zur Verschärfung der Niedrigwasserproblematik im Sommer.",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e10",
+            "record_type": "Eigenschaft",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Das Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna beträgt 51.394 km².",
+            "ontology_concept": "fine:Catchment",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Fläche Einzugsgebiet",
+                "value_original": "51 394",
+                "value_normalized": null,
+                "unit_original": "km²",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:identity.geometry"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Von dem Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna von 51 394 km²",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e11",
+            "record_type": "Eigenschaft",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "17.782 km² des Einzugsgebiets liegen oberhalb der Talsperre Vrané.",
+            "ontology_concept": "fine:Catchment",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet oberhalb der Talsperre Vrané"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Fläche Einzugsgebiet",
+                "value_original": "17 782",
+                "value_normalized": null,
+                "unit_original": "km²",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:identity.geometry"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "liegen 17 782 km² oberhalb der Talsperre Vrané, der untersten Talsperre der Moldaukaskade",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e12",
+            "record_type": "Eigenschaft",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "3.590 km² des Einzugsgebiets liegen oberhalb der Talsperre Nechranice.",
+            "ontology_concept": "fine:Catchment",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet oberhalb der Talsperre Nechranice"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Fläche Einzugsgebiet",
+                "value_original": "3 590",
+                "value_normalized": null,
+                "unit_original": "km²",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:identity.geometry"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "und 3 590 km² oberhalb der Talsperre Nechranice",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e13",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Nur in 41,6 % des Einzugsgebiets ist eine Wasserrückhaltung durch große Talsperren möglich.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Anteil Einzugsgebiet mit Wasserrückhaltung",
+                "value_original": "41,6",
+                "value_normalized": null,
+                "unit_original": "%",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:identity.geometry"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Das bedeutet, dass nur in 41,6 % des Einzugsgebiets des Grenzprofils eine Wasserrückhaltung durch große Talsperren möglich ist.",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e14",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Kleinere Talsperren im übrigen Einzugsgebiet bewirken eine örtliche Abflusserhöhung.",
+            "ontology_concept": "core:Process",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Übriges Einzugsgebiet der Elbe"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.level_flow"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Sicherlich bringt auch die Vielzahl von kleineren Talsperren im übrigen Einzugsgebiet der Elbe eine gewisse Abflusserhöhung, die aber mehr örtlichen Charakter hat.",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e15",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Mittlere Niederschläge in den genannten Einzugsgebieten liegen unter 550 mm/a.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiete der unteren Moldau/Vltava ab Mündung der Berounka, der mittleren und unteren Berounka, der Elbe von unterhalb der Mündung der Jizera bis Ústí n. L. und der Eger/Ohře ab oberhalb der Talsperre Nechranice"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Mittlerer Niederschlag",
+                "value_original": "550",
+                "value_normalized": null,
+                "unit_original": "mm/a",
+                "unit_normalized": null,
+                "comparison_operator": "<",
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.weather"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Da die Einzugsgebiete der unteren Moldau/Vltava ab Mündung der Berounka, der mittleren und unteren Berounka, der Elbe von unterhalb der Mündung der Jizera bis Ústí n. L. und der Eger/Ohře ab oberhalb der Talsperre Nechranice (Abb. 1) in Gebieten mit mittleren Niederschlägen unter 550 mm/a liegen",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e16",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Auswirkungen des Klimawandels sind in den Sommermonaten in den genannten Gebieten besonders bemerkbar.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiete der unteren Moldau/Vltava ab Mündung der Berounka, der mittleren und unteren Berounka, der Elbe von unterhalb der Mündung der Jizera bis Ústí n. L. und der Eger/Ohře ab oberhalb der Talsperre Nechranice"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.weather"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "werden die Auswirkungen des Klimawandels in den Sommermonaten hier besonders bemerkbar sein.",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e17",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Zukünftiger Widerspruch bei der Bewirtschaftung der Talsperren.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Talsperren im Einzugsgebiet der Elbe"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Bei der Bewirtschaftung der Talsperren wird sich zukünftig ein Widerspruch einstellen.",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e18",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Erforderlicher zusätzlicher Hochwasserrückhalteraum für häufiger zu erwartende Extremereignisse.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Talsperren im Einzugsgebiet der Elbe"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Einerseits wird zusätzlicher Hochwasserrückhalteraum für häufiger zu erwartende Extremereignisse erforderlich sein",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e19",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Notwendiges verstärktes Zurückhalten von Wasser zur Erhöhung der Niedrigwasserabgabe.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Talsperren im Einzugsgebiet der Elbe"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "während andererseits ein verstärktes Zurückhalten von Wasser für die Erhöhung der Niedrigwasserabgabe bei geringeren sommerlichen Niederschlags- und Abflussverhältnissen notwendig sein wird.",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e20",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Der Widerspruch ist nur bedingt durch Veränderung der Talsperrenbewirtschaftung lösbar.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Talsperren im Einzugsgebiet der Elbe"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Dieser Widerspruch kann nur bedingt durch Veränderung der Talsperrenbewirtschaftung gelöst werden.",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e21",
+            "record_type": "Maßnahme",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Erhöhung des Speichervolumens durch technische Maßnahmen an bestehenden Talsperren und Errichtung neuer Talsperren.",
+            "ontology_concept": "core:Intervention",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Talsperren im Einzugsgebiet der Elbe"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "proposed",
+            "categories": [
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Einen größeren Effekt würden aber eine Erhöhung des Speichervolumens durch technische Maßnahmen an bestehenden Talsperren und die Errichtung neuer Talsperren haben.",
+                "block_id": "p0017_b0006",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e22",
+            "record_type": "Maßnahme",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Errichtung mehrerer kleiner Talsperren im Einzugsgebiet der Berounka anstelle eines geplanten Großspeichers.",
+            "ontology_concept": "core:Intervention",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Berounka"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "proposed",
+            "categories": [
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "So könnten z. B. im Einzugsgebiet der Berounka mehrere kleine Talsperren anstelle eines ursprünglich geplanten Großspeichers errichtet werden.",
+                "block_id": "p0017_b0006",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e23",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Unterschreitung der vereinbarten minimalen mittleren Monatsabflüsse im Grenzprofil bei Hřensko/Schöna infolge des Klimawandels, insbesondere in den Sommermonaten.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology.level_flow",
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Es ist einzuschätzen, dass die im Grenzprofil bei Hřensko/Schöna vereinbarten minimalen mittleren Monatsabflüsse infolge des zu erwartenden Klimawandels in Zukunft wahrscheinlich des Öfteren, insbesondere in den Sommermonaten, unterschritten werden.",
+                "block_id": "p0017_b0006",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e24",
+            "record_type": "Maßnahme",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Tschechische Seite führt genauere Untersuchungen in einem Forschungsprojekt durch.",
+            "ontology_concept": "core:Intervention",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Tschechische Seite"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": "Laufzeit von 2007 bis 2012",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2007",
+              "end": "2012",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "started",
+            "categories": [
+              "topic:monitoring"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Genauere Untersuchungen dazu führt aber die tschechische Seite in einem Forschungsprojekt durch, das eine Laufzeit von 2007 bis 2012 hat.",
+                "block_id": "p0017_b0006",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "time_normalized",
+                  "time_original",
+                  "participants"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "r1",
+            "source_event_id": "e5",
+            "target_event_id": "e8",
+            "relationship_type": "causes",
+            "statement": "Die Umverteilung des Niederschlags (und damit geringere Sommerniederschläge) führt zur Reduzierung des ober- und unterirdischen Abflusses.",
+            "relationship_scope": "general_relationship",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology.level_flow"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Durch die geringeren Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "relationship_id": "r2",
+            "source_event_id": "e8",
+            "target_event_id": "e9",
+            "relationship_type": "causes",
+            "statement": "Die Reduzierung des ober- und unterirdischen Abflusses führt zur Verschärfung der Niedrigwasserproblematik im Sommer.",
+            "relationship_scope": "general_relationship",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna"
+            },
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology.level_flow"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "und somit zur Verschärfung der Niedrigwasserproblematik im Sommer.",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "relationship_id": "r3",
+            "source_event_id": "e1",
+            "target_event_id": "e23",
+            "relationship_type": "causes",
+            "statement": "Der zu erwartende Klimawandel führt zur Unterschreitung der vereinbarten minimalen mittleren Monatsabflüsse.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "description": "Grenzprofil bei Hřensko/Schöna"
+            },
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology.level_flow",
+              "topic:management"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "infolge des zu erwartenden Klimawandels",
+                "block_id": "p0017_b0006",
+                "page": 17,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "relationship_id": "r4",
+            "source_event_id": "e1",
+            "target_event_id": "e16",
+            "relationship_type": "affects",
+            "statement": "Der Klimawandel wirkt sich in den genannten Einzugsgebieten in den Sommermonaten besonders aus.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiete der unteren Moldau/Vltava ab Mündung der Berounka, der mittleren und unteren Berounka, der Elbe von unterhalb der Mündung der Jizera bis Ústí n. L. und der Eger/Ohře ab oberhalb der Talsperre Nechranice"
+            },
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology.weather"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "werden die Auswirkungen des Klimawandels in den Sommermonaten hier besonders bemerkbar sein.",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "relationship_id": "r5",
+            "source_event_id": "e1",
+            "target_event_id": "e17",
+            "relationship_type": "causes",
+            "statement": "Der Klimawandel führt zu einem Widerspruch in der Talsperrenbewirtschaftung (Hochwasserschutz vs. Niedrigwasserabgabe).",
+            "relationship_scope": "general_relationship",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "description": "Talsperren im Einzugsgebiet der Elbe"
+            },
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "derivation_status": "reconstructed_from_passages",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:management"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Bei der Bewirtschaftung der Talsperren wird sich zukünftig ein Widerspruch einstellen. Einerseits wird zusätzlicher Hochwasserrückhalteraum für häufiger zu erwartende Extremereignisse erforderlich sein, während andererseits ein verstärktes Zurückhalten von Wasser für die Erhöhung der Niedrigwasserabgabe bei geringeren sommerlichen Niederschlags- und Abflussverhältnissen notwendig sein wird.",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "context_requests": [],
+        "notes": [
+          "Die Aussage 'Durch die geringeren Sommerniederschläge kommt es zur Reduzierung...' (e8) und 'somit zur Verschärfung...' (e9) impliziert eine Kette, aber die explizite kausale Verknüpfung zwischen Klimawandel (e1) und den spezifischen hydrologischen Folgen wird im Text als 'davon auszugehen' bzw. 'rechnet mit' formuliert. Die Beziehung e1 -> e2/e3/e4/e5/e6/e7/e8/e9 ist als 'contributes_to' oder 'affects' modellierbar, aber da e1 sehr allgemein ist und die spezifischen Werte (e2, e4) von verschiedenen Quellen (tschechische Seite, Forschungsinstitut) stammen, werden die spezifischen Ereignisse als eigenständige Prognosen erfasst. Eine direkte kausale Kette e1->e2->e9 ist im Text nicht als strikte logische Ableitung, sondern als parallele Prognosen dargestellt.",
+          "Die Beziehung zwischen 'geringeren Sommerniederschlägen' (implizit Teil von e5/e6 oder e1) und 'Reduzierung des Abflusses' (e8) ist im Text explizit mit 'Durch... kommt es zu...' formuliert. Da 'geringere Sommerniederschläge' nicht als eigenständiges Event mit eigenem Beleg isoliert wurde (sondern Teil der Umverteilung e5 ist), wird hier keine separate kausale Beziehung zwischen e5 und e8 erstellt, um keine ungenauen Zuordnungen zu riskieren, es sei denn, e5 wird als Ursache für e8 interpretiert. Der Text sagt: 'Dabei erhöht sich... und es werden Mehrabflüsse... auftreten. Durch die geringeren Sommerniederschläge...'. Dies deutet auf eine Kette hin. Ich habe e5 (Umverteilung) und e8 (Reduzierung Abfluss) als separate Events erfasst. Eine Beziehung e5 -> e8 ist textlich gestützt ('Durch die geringeren Sommerniederschläge' bezieht sich auf den Kontext der Umverteilung).",
+          "Beziehung e8 -> e9 ist explizit im Text ('und somit zur Verschärfung').",
+          "Beziehung e1 -> e23 ist implizit ('infolge des zu erwartenden Klimawandels').",
+          "Beziehung e1 -> e16 ist implizit ('Auswirkungen des Klimawandels').",
+          "Beziehung e1 -> e18/e19 ist implizit ('häufiger zu erwartende Extremereignisse', 'geringeren sommerlichen Niederschlags- und Abflussverhältnissen').",
+          "Die spezifischen kausalen Beziehungen werden unten als Relationships ausgegeben, wo der Text explizite Konnektoren wie 'infolge', 'durch', 'somit' verwendet."
+        ]
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            166.50059999999996,
+            552.8056000000005,
+            389.94060000000025
+          ],
+          "text": "Es ist davon auszugehen, dass durch den zu erwartenden Klimawandel in Zukunft deutliche Verände-\nrungen im Niederschlags- und Abflussverhalten eintreten werden. Die tschechische Seite rechnet mit ei-\nner Reduzierung des mittleren Jahresabflusses im tschechischen Einzugsgebiet der Elbe um 10 % beim\nVergleich der Jahresreihen 2009-2053 gegenüber 1961-2005 und mit einer merkbaren Reduzierung\ndes QM355-Abflusswertes (Kulasová auf dem Magdeburger Gewässerschutzseminar im Oktober 2008 in\nMagdeburg). Untersuchungen des Forschungsinstitutes für Wasserwirtschaft in Prag gehen davon aus, dass\nim Einzugsgebiet der Moldau die mittleren Abflüsse sogar um 10-15 % sinken werden.\nEs wird auch zukünftig eine weitere Umverteilung des Niederschlages vom Sommerhalbjahr in das\nWinterhalbjahr erfolgen. Dabei erhöht sich im Winterhalbjahr der Anteil der Regenniederschläge und\nes werden Mehrabflüsse mit zunehmenden winterlichen Hochwassern auftreten. Durch die geringeren",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0003",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.86610000000002,
+            392.04060000000027,
+            552.8371000000006,
+            621.1506000000004
+          ],
+          "text": "ren Effekt würden aber eine Erhöhung des Speichervolumens durch technische Maßnahmen an bestehen-\nden Talsperren und die Errichtung neuer Talsperren haben. So könnten z. B. im Einzugsgebiet der Berounka\nmehrere kleine Talsperren anstelle eines ursprünglich geplanten Großspeichers errichtet werden.\nEs ist einzuschätzen, dass die im Grenzprofil bei Hřensko/Schöna vereinbarten minimalen mittleren Mo-\nnatsabflüsse infolge des zu erwartenden Klimawandels in Zukunft wahrscheinlich des Öfteren, insbe-\nsondere in den Sommermonaten, unterschritten werden. Genauere Untersuchungen dazu führt aber die\ntschechische Seite in einem Forschungsprojekt durch, das eine Laufzeit von 2007 bis 2012 hat.",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0006",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            166.50059999999996,
+            552.8056000000005,
+            389.94060000000025
+          ],
+          "text": "Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses und somit zur\nVerschärfung der Niedrigwasserproblematik im Sommer.\nVon dem Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna von 51 394 km² liegen 17 782 km²\noberhalb der Talsperre Vrané, der untersten Talsperre der Moldaukaskade (Abb. 2) und 3 590 km² ober-\nhalb der Talsperre Nechranice (Abb. 1), d. h. in der Summe 21 372 km². Das bedeutet, dass nur in 41,6 %\ndes Einzugsgebiets des Grenzprofils eine Wasserrückhaltung durch große Talsperren möglich ist. Sicherlich\nbringt auch die Vielzahl von kleineren Talsperren im übrigen Einzugsgebiet der Elbe eine gewisse Abfluss-",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0004",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.86610000000002,
+            392.04060000000027,
+            552.8371000000006,
+            621.1506000000004
+          ],
+          "text": "erhöhung, die aber mehr örtlichen Charakter hat.\nDa die Einzugsgebiete der unteren Moldau/Vltava ab Mündung der Berounka, der mittleren und unteren\nBerounka, der Elbe von unterhalb der Mündung der Jizera bis Ústí n. L. und der Eger/Ohře ab oberhalb der\nTalsperre Nechranice (Abb. 1) in Gebieten mit mittleren Niederschlägen unter 550 mm/a liegen, werden die\nAuswirkungen des Klimawandels in den Sommermonaten hier besonders bemerkbar sein.\nBei der Bewirtschaftung der Talsperren wird sich zukünftig ein Widerspruch einstellen. Einerseits wird zu-\nsätzlicher Hochwasserrückhalteraum für häufiger zu erwartende Extremereignisse erforderlich sein, wäh-\nrend andererseits ein verstärktes Zurückhalten von Wasser für die Erhöhung der Niedrigwasserabgabe bei\ngeringeren sommerlichen Niederschlags- und Abflussverhältnissen notwendig sein wird. Dieser Wider-\nspruch kann nur bedingt durch Veränderung der Talsperrenbewirtschaftung gelöst werden. Einen größe-",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0005",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        }
+      ],
+      "extracted_at": "2026-09-29T10:40:42.982513+00:00",
+      "response_model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\chunk_size_study\\results\\r2_chars2000\\fein\\raw_responses\\chunk_0004_94d38735_a3924f3f78a5.json",
+      "purpose": "extraction",
+      "relationship_review": []
+    }
+  ]
+}

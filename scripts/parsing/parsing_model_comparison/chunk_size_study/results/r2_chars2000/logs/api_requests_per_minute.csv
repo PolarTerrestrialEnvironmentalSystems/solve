@@ -1,0 +1,17 @@
+minute_utc,scope,run_id,ontology,model,endpoint,requests,successful,failed,unfinished,retries,http_429,max_requests_last_60s,prompt_tokens,completion_tokens
+2026-09-29T10:34:00+00:00,detail,r2_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,1,15658,3815
+2026-09-29T10:34:00+00:00,total,,,,,1,1,0,0,0,0,1,15658,3815
+2026-09-29T10:35:00+00:00,detail,r2_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,2,18294,4449
+2026-09-29T10:35:00+00:00,total,,,,,1,1,0,0,0,0,2,18294,4449
+2026-09-29T10:36:00+00:00,detail,r2_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,2,15028,4293
+2026-09-29T10:36:00+00:00,total,,,,,1,1,0,0,0,0,2,15028,4293
+2026-09-29T10:37:00+00:00,detail,r2_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,2,2,0,0,0,0,2,33685,10629
+2026-09-29T10:37:00+00:00,total,,,,,2,2,0,0,0,0,2,33685,10629
+2026-09-29T10:38:00+00:00,detail,r2_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,1,15312,9009
+2026-09-29T10:38:00+00:00,total,,,,,1,1,0,0,0,0,1,15312,9009
+2026-09-29T10:39:00+00:00,detail,r2_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,0,0,0,0,0,0,0,,
+2026-09-29T10:39:00+00:00,total,,,,,0,0,0,0,0,0,0,,
+2026-09-29T10:40:00+00:00,detail,r2_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,1,14706,2062
+2026-09-29T10:40:00+00:00,total,,,,,1,1,0,0,0,0,1,14706,2062
+2026-09-29T10:41:00+00:00,detail,r2_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,0,0,0,0,0,0,0,,
+2026-09-29T10:41:00+00:00,total,,,,,0,0,0,0,0,0,0,,

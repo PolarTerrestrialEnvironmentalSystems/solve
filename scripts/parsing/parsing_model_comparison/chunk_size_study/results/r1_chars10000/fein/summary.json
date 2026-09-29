@@ -1,0 +1,102 @@
+{
+  "variant": "fein",
+  "events": 6,
+  "relationships": 1,
+  "causal_self_relationships_rejected": 0,
+  "causal_self_relationship_repairs": {},
+  "complete_chunks": 1,
+  "failed_chunks": 0,
+  "event_types": {
+    "Prozess": 2,
+    "Messung": 1,
+    "Maßnahme": 1,
+    "Zustand": 2
+  },
+  "topics": {
+    "topic:hydrology.level_flow": 4,
+    "topic:management": 3,
+    "topic:hydrology.balance_groundwater": 1
+  },
+  "merged_event_duplicates": 0,
+  "merged_relationship_duplicates": 0,
+  "review_items": 13,
+  "review_kinds": {
+    "rejected_event": 4,
+    "rejected_relationship": 2,
+    "event_needs_review": 6,
+    "relationship_needs_review": 1
+  },
+  "event_fields_filled": {
+    "event_id": 6,
+    "record_type": 6,
+    "waterbody_references": 6,
+    "waterbody_name_original": 6,
+    "waterbody_identifiers": 0,
+    "waterbody_assignment": 6,
+    "statement": 6,
+    "ontology_concept": 6,
+    "participants": 1,
+    "spatial_scope": 6,
+    "system_scope": 0,
+    "values": 6,
+    "measurement_context": 2,
+    "time_original": 2,
+    "time_status": 6,
+    "time_normalized": 2,
+    "time_precision": 2,
+    "assertion_mode": 6,
+    "polarity": 6,
+    "implementation_status": 6,
+    "categories": 6,
+    "category_assessment": 0,
+    "source_document": 6,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 6,
+    "extraction_metadata": 6,
+    "quality_assessment": 6
+  },
+  "relationship_fields_filled": {
+    "relationship_id": 1,
+    "source_event_id": 1,
+    "target_event_id": 1,
+    "relationship_type": 1,
+    "statement": 1,
+    "relationship_scope": 1,
+    "waterbody_references": 0,
+    "spatial_scope": 1,
+    "assertion_mode": 1,
+    "polarity": 1,
+    "derivation_status": 1,
+    "evidence_basis": 0,
+    "mechanism": 0,
+    "conditions": 0,
+    "additional_factors": 0,
+    "effect_size": 0,
+    "valid_time": 0,
+    "response_time_definition": 0,
+    "response_time_anchors": 0,
+    "response_time_value": 0,
+    "response_time_origin": 1,
+    "response_time_evidence": 0,
+    "effect_duration": 0,
+    "categories": 1,
+    "source_document": 1,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 1,
+    "extraction_metadata": 1,
+    "quality_assessment": 1
+  },
+  "empty_chunks": [],
+  "model_notes": [
+    {
+      "chunk_id": "chunk_0001_8bb08218",
+      "notes": [
+        "Die Beziehung zwischen Talsperrenbewirtschaftung und Abflusserhöhung ist im Text explizit als 'infolge der Wirkung' formuliert.",
+        "Prognosen zum Klimawandel sind als 'predicted' gekennzeichnet.",
+        "Keine expliziten kausalen Beziehungen zwischen Klimawandel und spezifischen Talsperrenmaßnahmen im Text, daher keine Relationship zwischen e8/e9 und e1/e5."
+      ]
+    }
+  ]
+}

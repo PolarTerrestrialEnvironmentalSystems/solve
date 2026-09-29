@@ -1,0 +1,5 @@
+minute_utc,scope,run_id,ontology,model,endpoint,requests,successful,failed,unfinished,retries,http_429,max_requests_last_60s,prompt_tokens,completion_tokens
+2026-09-28T14:13:00+00:00,detail,r3_seasonal_climate_reference,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,2,13966,2821
+2026-09-28T14:13:00+00:00,total,,,,,1,1,0,0,0,0,2,13966,2821
+2026-09-28T14:14:00+00:00,detail,r3_seasonal_climate_reference,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,0,0,0,0,0,0,0,,
+2026-09-28T14:14:00+00:00,total,,,,,0,0,0,0,0,0,0,,

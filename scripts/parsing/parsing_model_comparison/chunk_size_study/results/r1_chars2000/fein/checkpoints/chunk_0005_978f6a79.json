@@ -1,0 +1,336 @@
+{
+  "cache_key": "7a7196a5a0fda524ce169a9f160646ce18b25b9917ecbb3062e1446de2bc4f1e",
+  "status": "complete",
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "chunk_0005_978f6a79",
+      "pages": [
+        17
+      ],
+      "result": {
+        "document": null,
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Zukünftiger Widerspruch in der Talsperrenbewirtschaftung zwischen Hochwasserrückhalt und Niedrigwasseranreicherung.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Talsperrenbewirtschaftung im Einzugsgebiet der unteren Moldau/Vltava, Berounka, Elbe und Eger/Ohře"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Bei der Bewirtschaftung der Talsperren wird sich zukünftig ein Widerspruch einstellen. Einerseits wird zusätzlicher Hochwasserrückhalteraum für häufiger zu erwartende Extremereignisse erforderlich sein, während andererseits ein verstärktes Zurückhalten von Wasser für die Erhöhung der Niedrigwasserabgabe bei geringeren sommerlichen Niederschlags- und Abflussverhältnissen notwendig sein wird.",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope",
+                  "time_status"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e2",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Auswirkungen des Klimawandels werden in den Sommermonaten in Gebieten mit mittleren Niederschlägen unter 550 mm/a besonders bemerkbar sein.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Einzugsgebiete der unteren Moldau/Vltava, mittleren/unteren Berounka, Elbe (unterhalb Jizera bis Ústí n. L.) und Eger/Ohře (oberhalb Talsperre Nechranice)"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "mittlere Niederschläge",
+                "value_original": "550",
+                "value_normalized": null,
+                "unit_original": "mm/a",
+                "unit_normalized": null,
+                "comparison_operator": "<",
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Da die Einzugsgebiete der unteren Moldau/Vltava ab Mündung der Berounka, der mittleren und unteren Berounka, der Elbe von unterhalb der Mündung der Jizera bis Ústí n. L. und der Eger/Ohře ab oberhalb der Talsperre Nechranice (Abb. 1) in Gebieten mit mittleren Niederschlägen unter 550 mm/a liegen, werden die Auswirkungen des Klimawandels in den Sommermonaten hier besonders bemerkbar sein.",
+                "block_id": "p0017_b0005",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope",
+                  "values"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e3",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Vereinbarte minimale mittlere Monatsabflüsse im Grenzprofil bei Hřensko/Schöna werden infolge des Klimawandels wahrscheinlich häufiger, insbesondere im Sommer, unterschritten.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Grenzprofil bei Hřensko/Schöna"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Es ist einzuschätzen, dass die im Grenzprofil bei Hřensko/Schöna vereinbarten minimalen mittleren Monatsabflüsse infolge des zu erwartenden Klimawandels in Zukunft wahrscheinlich des Öfteren, insbesondere in den Sommermonaten, unterschritten werden.",
+                "block_id": "p0017_b0006",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope",
+                  "time_status"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e4",
+            "record_type": "Maßnahme",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Tschechische Seite führt genauere Untersuchungen zu den Mindestabflüssen im Grenzprofil in einem Forschungsprojekt durch.",
+            "ontology_concept": "core:Intervention",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Tschechische Seite"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": "Laufzeit von 2007 bis 2012",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2007",
+              "end": "2012",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "started",
+            "categories": [
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Genauere Untersuchungen dazu führt aber die tschechische Seite in einem Forschungsprojekt durch, das eine Laufzeit von 2007 bis 2012 hat.",
+                "block_id": "p0017_b0006",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "spatial_scope",
+                  "time_normalized",
+                  "time_original"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "r1",
+            "source_event_id": "e2",
+            "target_event_id": "e3",
+            "relationship_type": "causes",
+            "statement": "Die Auswirkungen des Klimawandels in den niederschlagsarmen Einzugsgebieten führen zur Unterschreitung der vereinbarten Mindestabflüsse im Grenzprofil.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "description": "Grenzprofil bei Hřensko/Schöna"
+            },
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Es ist einzuschätzen, dass die im Grenzprofil bei Hřensko/Schöna vereinbarten minimalen mittleren Monatsabflüsse infolge des zu erwartenden Klimawandels in Zukunft wahrscheinlich des Öfteren, insbesondere in den Sommermonaten, unterschritten werden.",
+                "block_id": "p0017_b0006",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "source_event_id",
+                  "target_event_id"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "context_requests": [],
+        "notes": []
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            70.86610000000002,
+            392.04060000000027,
+            552.8371000000006,
+            621.1506000000004
+          ],
+          "text": "erhöhung, die aber mehr örtlichen Charakter hat.\nDa die Einzugsgebiete der unteren Moldau/Vltava ab Mündung der Berounka, der mittleren und unteren\nBerounka, der Elbe von unterhalb der Mündung der Jizera bis Ústí n. L. und der Eger/Ohře ab oberhalb der\nTalsperre Nechranice (Abb. 1) in Gebieten mit mittleren Niederschlägen unter 550 mm/a liegen, werden die\nAuswirkungen des Klimawandels in den Sommermonaten hier besonders bemerkbar sein.\nBei der Bewirtschaftung der Talsperren wird sich zukünftig ein Widerspruch einstellen. Einerseits wird zu-\nsätzlicher Hochwasserrückhalteraum für häufiger zu erwartende Extremereignisse erforderlich sein, wäh-\nrend andererseits ein verstärktes Zurückhalten von Wasser für die Erhöhung der Niedrigwasserabgabe bei\ngeringeren sommerlichen Niederschlags- und Abflussverhältnissen notwendig sein wird. Dieser Wider-\nspruch kann nur bedingt durch Veränderung der Talsperrenbewirtschaftung gelöst werden. Einen größe-",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0005",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.86610000000002,
+            392.04060000000027,
+            552.8371000000006,
+            621.1506000000004
+          ],
+          "text": "ren Effekt würden aber eine Erhöhung des Speichervolumens durch technische Maßnahmen an bestehen-\nden Talsperren und die Errichtung neuer Talsperren haben. So könnten z. B. im Einzugsgebiet der Berounka\nmehrere kleine Talsperren anstelle eines ursprünglich geplanten Großspeichers errichtet werden.\nEs ist einzuschätzen, dass die im Grenzprofil bei Hřensko/Schöna vereinbarten minimalen mittleren Mo-\nnatsabflüsse infolge des zu erwartenden Klimawandels in Zukunft wahrscheinlich des Öfteren, insbe-\nsondere in den Sommermonaten, unterschritten werden. Genauere Untersuchungen dazu führt aber die\ntschechische Seite in einem Forschungsprojekt durch, das eine Laufzeit von 2007 bis 2012 hat.",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0006",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            88.5808,
+            811.9437,
+            551.3067999999998,
+            820.9437
+          ],
+          "text": "Vereinbarte minimale mittlere Monatsabflüsse der Elbe im Grenzprofil ČSSR/DDR bei Hřensko/Schöna 17",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0007",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        }
+      ],
+      "extracted_at": "2026-09-29T10:24:13.855358+00:00",
+      "response_model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\chunk_size_study\\results\\r1_chars2000\\fein\\raw_responses\\chunk_0005_978f6a79_bd2d65c0d042.json",
+      "purpose": "extraction",
+      "relationship_review": []
+    }
+  ]
+}

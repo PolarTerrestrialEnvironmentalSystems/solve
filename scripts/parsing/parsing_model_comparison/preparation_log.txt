@@ -1,0 +1,59 @@
+PDF aufbereitet: Seite 1/6
+PDF aufbereitet: Seite 2/6
+PDF aufbereitet: Seite 3/6
+PDF aufbereitet: Seite 4/6
+PDF aufbereitet: Seite 5/6
+PDF aufbereitet: Seite 6/6
+chunk_0001_07792b16 [1]
+  p0001_b0001 150 'Nr. des Indikators B10\nBezeichnung Zufluss zur Rappbodetalsperre\nThemenfeld Wasser\nR�umliche Gliederung Rappbodetalsperre\nBearbeitungsstand 08.07.2025'
+  p0001_b0002 1295 'Definition und Berech-\nnungsvorschrift | Dargestellt werden die Zuflussmenge zur Rappbodetalsperre im hydrologischen\nWinterhalbjahr sowie im hydrologischen Somm'
+  p0001_b0003 1360 'Spalten: Definition und Berech-\nnungsvorschrift | Dargestellt werden die Zuflussmenge zur Rappbodetalsperre im hydrologischen\nWinterhalbjahr sowie im hydrologis'
+chunk_0002_296eec71 [1]
+  p0001_b0004 1969 'Spalten: Definition und Berech-\nnungsvorschrift | Dargestellt werden die Zuflussmenge zur Rappbodetalsperre im hydrologischen\nWinterhalbjahr sowie im hydrologis'
+  p0001_b0005 1104 'Stromerzeugung und der Fischerei. Insgesamt hat sie einen Stauraum von 113\nMio. m� (TSB 2023).\nDas Einzugsgebiet der Rappbodetalsperre ist insgesamt 274 km� gro'
+  p0001_b0006 9 'Seite 1/6'
+chunk_0003_2e4d413d [2]
+  p0002_b0001 1947 ' | der Talsperre und die Wasserqualit�t ist es von Bedeutung, dass die Talsperre\nhinreichend mit Frischwasser versorgt wird, insbesondere �ber ihre Zufl�sse.\nSi'
+  p0002_b0002 905 'senkt, um selbst bei geringen Winterzufl�ssen die Rohwasserversor-\ngung sicherzustellen. Wasserentnahme etwa zur Energiegewinnung\nwurde ggf. eingeschr�nkt.\n\uf0b7 Da'
+chunk_0004_215fde9b [2]
+  p0002_b0003 1956 'Spalten:  | der Talsperre und die Wasserqualit�t ist es von Bedeutung, dass die Talsperre\nhinreichend mit Frischwasser versorgt wird, insbesondere �ber ihre Zuf'
+  p0002_b0004 951 'senkt, um selbst bei geringen Winterzufl�ssen die Rohwasserversor-\ngung sicherzustellen. Wasserentnahme etwa zur Energiegewinnung\nwurde ggf. eingeschr�nkt.\n\uf0b7 Da'
+chunk_0005_33a023d3 [2]
+  p0002_b0005 1956 'Spalten:  | der Talsperre und die Wasserqualit�t ist es von Bedeutung, dass die Talsperre\nhinreichend mit Frischwasser versorgt wird, insbesondere �ber ihre Zuf'
+  p0002_b0006 931 'senkt, um selbst bei geringen Winterzufl�ssen die Rohwasserversor-\ngung sicherzustellen. Wasserentnahme etwa zur Energiegewinnung\nwurde ggf. eingeschr�nkt.\n\uf0b7 Da'
+chunk_0006_950bbea3 [2]
+  p0002_b0007 1956 'Spalten:  | der Talsperre und die Wasserqualit�t ist es von Bedeutung, dass die Talsperre\nhinreichend mit Frischwasser versorgt wird, insbesondere �ber ihre Zuf'
+  p0002_b0008 1907 'senkt, um selbst bei geringen Winterzufl�ssen die Rohwasserversor-\ngung sicherzustellen. Wasserentnahme etwa zur Energiegewinnung\nwurde ggf. eingeschr�nkt.\n\uf0b7 Da'
+  p0002_b0009 9 'Seite 2/6'
+chunk_0007_ce76af19 [3]
+  p0003_b0001 1993 ' | 3,2 �C (errechnet aus LAU 2022). Im Winter 1995/1996 lag hingegen das Tem-\nperaturmittel der Wintermonate in Harzgerode bei nur 1,8 �C (LAU 2022). Es\nkann da'
+  p0003_b0002 971 'sinkt, w�hrend sie in den 1970er-, 1980er- und 1990er-Jahren noch anstieg. F�r\ndas Sommerhalbjahr zeigt sich �ber die gesamte Zeitreihe ein statistisch signifi-'
+chunk_0008_e528cbc4 [3, 4]
+  p0003_b0003 1922 'Spalten:  | 3,2 �C (errechnet aus LAU 2022). Im Winter 1995/1996 lag hingegen das Tem-\nperaturmittel der Wintermonate in Harzgerode bei nur 1,8 �C (LAU 2022). E'
+  p0003_b0004 1072 'flusses im Winterhalbjahr seit den fr�hen 2000er Jahren statistisch signifikant\nsinkt, w�hrend sie in den 1970er-, 1980er- und 1990er-Jahren noch anstieg. F�r\nd'
+  p0003_b0005 9 'Seite 3/6'
+  p0004_b0001 90 'Bezeichnung f�r\nZufluss zur Rappbodetalspe\nDiagramm | rre in den hydrologischen Halbjahren'
+  p0004_b0002 483 'Spalten: Bezeichnung f�r\nZufluss zur Rappbodetalspe\nDiagramm | rre in den hydrologischen Halbjahren\n140 �m\nhydrologisches Winterhalbjahr(Nov. bis Apr.)\n120 .oiM'
+  p0004_b0003 180 'Spalten: Bezeichnung f�r\nZufluss zur Rappbodetalspe\nDiagramm | rre in den hydrologischen Halbjahren\nBezeichnung f�r\nZufluss zur Rappbodetalspe\nDiagramm | rre im'
+chunk_0009_5a9d3d3e [4, 5, 6]
+  p0004_b0004 351 'Spalten: Bezeichnung f�r\nZufluss zur Rappbodetalspe\nDiagramm | rre in den hydrologischen Halbjahren\n200\n�m\n180 .oiM\n160 ni\nrhaJ\n140\nnehcsigolordyh\n120\n100\n80\n60'
+  p0004_b0005 88 'Messstelle 1971 1972 1973 1974 1975 1976 19 | 77 1978 1979 1980 1981 1982 1983 1984 1985'
+  p0004_b0006 178 'Spalten: Messstelle 1971 1972 1973 1974 1975 1976 19 | 77 1978 1979 1980 1981 1982 1983 1984 1985\nZufluss gesamt -\n61 35 59 70 82 71 6\nWinterhalbjahr | 9 60 75 '
+  p0004_b0007 176 'Spalten: Messstelle 1971 1972 1973 1974 1975 1976 19 | 77 1978 1979 1980 1981 1982 1983 1984 1985\nZufluss gesamt -\n13 43 24 26 19 5 3\nSommerhalbjahr | 9 27 15 3'
+  p0004_b0008 180 'Spalten: Messstelle 1971 1972 1973 1974 1975 1976 19 | 77 1978 1979 1980 1981 1982 1983 1984 1985\nZufluss gesamt -\n74 78 83 96 101 76 1\nJahressumme | 08 87 90 1'
+  p0004_b0009 9 'Seite 4/6'
+  p0005_b0001 115 'Messstelle | 1986 | 1987 | 1988 | 1989 | 1990 | 1991 | 1992 | 1993 | 1994 | 1995 | 1996 | 1997 | 1998 | 1999 | 2000'
+  p0005_b0002 233 'Spalten: Messstelle | 1986 | 1987 | 1988 | 1989 | 1990 | 1991 | 1992 | 1993 | 1994 | 1995 | 1996 | 1997 | 1998 | 1999 | 2000\nZufluss gesamt -\nWinterhalbjahr | 8'
+  p0005_b0003 227 'Spalten: Messstelle | 1986 | 1987 | 1988 | 1989 | 1990 | 1991 | 1992 | 1993 | 1994 | 1995 | 1996 | 1997 | 1998 | 1999 | 2000\nZufluss gesamt -\nSommerhalbjahr | 3'
+  p0005_b0004 234 'Spalten: Messstelle | 1986 | 1987 | 1988 | 1989 | 1990 | 1991 | 1992 | 1993 | 1994 | 1995 | 1996 | 1997 | 1998 | 1999 | 2000\nZufluss gesamt -\nJahressumme | 115 '
+  p0005_b0005 115 'Messstelle | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015'
+  p0005_b0006 233 'Spalten: Messstelle | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015\nZufluss gesamt -\nWinterhalbjahr | 7'
+  p0005_b0007 226 'Spalten: Messstelle | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015\nZufluss gesamt -\nSommerhalbjahr | 3'
+  p0005_b0008 234 'Spalten: Messstelle | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015\nZufluss gesamt -\nJahressumme | 109 '
+  p0005_b0009 115 'Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030'
+  p0005_b0010 219 'Spalten: Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030\nZufluss gesamt -\nWinterhalbjahr | 6'
+  p0005_b0011 213 'Spalten: Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030\nZufluss gesamt -\nSommerhalbjahr | 6'
+  p0005_b0012 216 'Spalten: Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030\nZufluss gesamt -\nJahressumme | 75 |'
+  p0005_b0013 9 'Seite 5/6'
+  p0006_b0001 7 'Anhang:'
+  p0006_b0002 9 'Seite 6/6'

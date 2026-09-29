@@ -1,0 +1,454 @@
+{
+  "name": "r2_seasonal_climate_compact",
+  "variant": "compact",
+  "repeat": 2,
+  "case": "seasonal_climate",
+  "elapsed_seconds": 22.99906769998779,
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "seasonal_climate",
+      "pages": [
+        17
+      ],
+      "result": {
+        "document": null,
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Zukünftige Umverteilung des Niederschlags vom Sommerhalbjahr in das Winterhalbjahr.",
+            "ontology_concept": "core:Process",
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie",
+              "Klima"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Es wird auch zukünftig eine weitere Umverteilung des Niederschlages vom Sommerhalbjahr in das Winterhalbjahr erfolgen.",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "time_status",
+                  "assertion_mode"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e2",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Erhöhung des Anteils der Regenniederschläge im Winterhalbjahr.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie",
+              "Klima"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Dabei erhöht sich im Winterhalbjahr der Anteil der Regenniederschläge",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "time_status",
+                  "assertion_mode"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e3",
+            "record_type": "Ereignis",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Auftreten von Mehrabflüssen mit zunehmenden winterlichen Hochwassern.",
+            "ontology_concept": "core:Event",
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie",
+              "Klima"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "und es werden Mehrabflüsse mit zunehmenden winterlichen Hochwassern auftreten.",
+                "block_id": "p0017_b0003",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "time_status",
+                  "assertion_mode"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e4",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Geringere Sommerniederschläge.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie",
+              "Klima"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Durch die geringeren Sommerniederschläge",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "time_status",
+                  "assertion_mode"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e5",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Reduzierung des ober- und unterirdischen Abflusses.",
+            "ontology_concept": "core:Process",
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "kommt es zur Reduzierung des ober- und unterirdischen Abflusses",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "time_status",
+                  "assertion_mode"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e6",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Verschärfung der Niedrigwasserproblematik im Sommer.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "und somit zur Verschärfung der Niedrigwasserproblematik im Sommer.",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "time_status",
+                  "assertion_mode"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "r1",
+            "source_event_id": "e4",
+            "target_event_id": "e5",
+            "relationship_type": "causes",
+            "statement": "Geringere Sommerniederschläge führen zu einer Reduzierung des ober- und unterirdischen Abflusses.",
+            "relationship_scope": "general_relationship",
+            "waterbody_references": null,
+            "spatial_scope": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "Hydrologie"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Durch die geringeren Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "assertion_mode"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "relationship_id": "r2",
+            "source_event_id": "e5",
+            "target_event_id": "e6",
+            "relationship_type": "causes",
+            "statement": "Die Reduzierung des ober- und unterirdischen Abflusses führt zur Verschärfung der Niedrigwasserproblematik im Sommer.",
+            "relationship_scope": "general_relationship",
+            "waterbody_references": null,
+            "spatial_scope": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "Hydrologie"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Reduzierung des ober- und unterirdischen Abflusses und somit zur Verschärfung der Niedrigwasserproblematik im Sommer.",
+                "block_id": "p0017_b0004",
+                "page": 17,
+                "field_names": [
+                  "statement",
+                  "assertion_mode"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "context_requests": [],
+        "notes": []
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            166.50059999999996,
+            552.8056000000005,
+            389.94060000000025
+          ],
+          "text": "Es wird auch zukünftig eine weitere Umverteilung des Niederschlages vom Sommerhalbjahr in das\nWinterhalbjahr erfolgen. Dabei erhöht sich im Winterhalbjahr der Anteil der Regenniederschläge und\nes werden Mehrabflüsse mit zunehmenden winterlichen Hochwassern auftreten. Durch die geringeren",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0003",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            166.50059999999996,
+            552.8056000000005,
+            389.94060000000025
+          ],
+          "text": "Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses und somit zur\nVerschärfung der Niedrigwasserproblematik im Sommer.",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0004",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        }
+      ],
+      "extracted_at": "2026-09-28T14:10:20.470280+00:00",
+      "response_model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\repeated_self_relations\\results\\r2_seasonal_climate_compact\\fein\\raw_responses\\seasonal_climate_3f3b439ca23b.json",
+      "purpose": "extraction"
+    }
+  ],
+  "all_packages_complete": true,
+  "raw_events": 6,
+  "raw_relationships": 2,
+  "raw_self_relationships": 0,
+  "raw_self_examples": [],
+  "exported_events": 0,
+  "exported_relationships": 0,
+  "exported_self_relationships": 0,
+  "exported_self_examples": [],
+  "http_attempts": 1,
+  "completion_tokens": 1756,
+  "finished": "2026-09-28T14:10:20.566171+00:00"
+}

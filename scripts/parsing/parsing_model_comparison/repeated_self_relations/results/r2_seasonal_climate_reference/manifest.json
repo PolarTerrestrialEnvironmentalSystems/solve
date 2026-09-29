@@ -1,0 +1,80 @@
+{
+  "signature": "eea087c84b17677a806bd16e62693777fe928af5c45e9aa1f6b88149e7447c10",
+  "started": "2026-09-28T14:10:22.168969+00:00",
+  "config": {
+    "variant": "reference",
+    "repeat": 2,
+    "case_index": 2,
+    "case": {
+      "chunk_id": "seasonal_climate",
+      "pages": [
+        17
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            166.50059999999996,
+            552.8056000000005,
+            389.94060000000025
+          ],
+          "text": "Es wird auch zukünftig eine weitere Umverteilung des Niederschlages vom Sommerhalbjahr in das\nWinterhalbjahr erfolgen. Dabei erhöht sich im Winterhalbjahr der Anteil der Regenniederschläge und\nes werden Mehrabflüsse mit zunehmenden winterlichen Hochwassern auftreten. Durch die geringeren",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0003",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            166.50059999999996,
+            552.8056000000005,
+            389.94060000000025
+          ],
+          "text": "Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses und somit zur\nVerschärfung der Niedrigwasserproblematik im Sommer.",
+          "page": 17,
+          "printed_page": null,
+          "block_id": "p0017_b0004",
+          "section": "6. Zukünftige Bewertung der Mindestabflüsse im Grenzprofil bei Hřensko/Schöna"
+        }
+      ],
+      "context_blocks": []
+    },
+    "cover": [],
+    "model_identity": {
+      "id": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "root": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "max_model_len": 262144
+    },
+    "settings": {
+      "base_url": "https://api.blablador.fz-juelich.de/v1/",
+      "model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "rpm": 30,
+      "timeout": 300,
+      "max_retries": 1,
+      "max_output_tokens": 16000,
+      "context_tokens": 65536,
+      "temperature": 0,
+      "json_mode": "auto",
+      "thinking_mode": "off"
+    },
+    "code_hashes": {
+      "blablador_client.py": "c8fd1cc7afc83cb30415a4666d50fa9603144f274282eaaa3234a7ad2751f8be",
+      "common.py": "d5cc2e36ee286a02ddf563f2794b2a5321e5e78eeceef61199ae1e5c323d5a2f",
+      "extract_facts.py": "bbb7df1c2d967cdd5330437f2b6743a36ada0e3bf777986eab4def9bddbc76ec",
+      "parse_directory.py": "96ee97eedb3b45cb05ac150f9e3e6e5dc52b7803a47edc6618f8ccb3a344670e",
+      "prepare_document.py": "312506be5a726061e11ea2c49a88c584a6386dc71b2927aea204e4319258e04e",
+      "run_parsing_tests.py": "d1ecd48175326937bb8c56ee22dbccc4d38d34e226b6c6ba12e7110c02c4adc2",
+      "schemas.py": "a73a331f385eed501feca7c4862e997a11494b9f0471ca95fdd094f804d88384",
+      "validate_export.py": "6ed99d8b1636b7518b414e1b2327fff40634155ba9913cc7d2084299cdedba9d",
+      "verify_release.py": "abf57c75580a390cda0c9571e98d8f4286de9604924f7a29f029950a05baa745"
+    },
+    "prompt_hash": "1f1d9329bb15ffebc1bfebe7839ff76b5f1775e8e2ce319d3dd479cb4819fe02",
+    "schema_hash": "1b7c253f21930e4fc454db5bcf2287ba271ba24ec72a587f525f4cc7f3b8d1b6",
+    "ontology_hash": "4b23a99e8de959124ece98c3dd920e3077e4860412bb109880d970df9c53c9b0",
+    "plan_hash": "95d85c61d2e59ff651961057eaf65b8460420dcb61975a7661f296533cac509c",
+    "controller_hash": "687e0682ccd9b681cb73ad48dc91d1fb1741a8224856242ab262c90747d4e947"
+  }
+}
