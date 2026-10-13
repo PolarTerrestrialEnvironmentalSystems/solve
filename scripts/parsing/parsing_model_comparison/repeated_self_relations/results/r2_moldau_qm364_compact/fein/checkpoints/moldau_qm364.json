@@ -1,0 +1,379 @@
+{
+  "cache_key": "650da6dd7103726b7b79581c34404b5a53e3271249071d76dfdebd8085bad623",
+  "status": "complete",
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "moldau_qm364",
+      "pages": [
+        10
+      ],
+      "result": {
+        "document": null,
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Der Abfluss der Moldau in Prag (QM364) wurde infolge der Wirkung der Talsperren der Moldaukaskade von 20,0 m³/s auf 38,8 m³/s erhöht.",
+            "ontology_concept": "fine:ConcentrationChange",
+            "participants": null,
+            "spatial_scope": {
+              "location": "Prag",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "QM364",
+                "value_original": "20,0",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              },
+              {
+                "parameter": "QM364",
+                "value_original": "38,8",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              },
+              {
+                "parameter": "QM364",
+                "value_original": "18,8",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "aggregation": "QM364 (Abfluss für 364 Überschreitungstage)",
+              "procedure_original": "Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem Jahre 1994"
+            },
+            "time_original": "Jahresreihe 1955-1993",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1955",
+              "end": "1993",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie",
+              "Maßnahmen und Bewirtschaftung"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "wurde der Abfluss der Moldau in Prag für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren der Moldaukaskade von 20,0 m³/s (für die unbedeutend durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1924-1953) auf 38,8 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1955-1993), d. h. um 18,8 m³/s, erhöht.",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_original",
+                  "time_normalized",
+                  "spatial_scope",
+                  "waterbody_name_original"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e2",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Referenzwert für den Abfluss der Moldau in Prag (QM364) in der unbedeutend durch Talsperrenbewirtschaftung beeinflussten Jahresreihe.",
+            "ontology_concept": "fine:ConcentrationChange",
+            "participants": null,
+            "spatial_scope": {
+              "location": "Prag",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "QM364",
+                "value_original": "20,0",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "aggregation": "QM364 (Abfluss für 364 Überschreitungstage)",
+              "procedure_original": "Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem Jahre 1994"
+            },
+            "time_original": "Jahresreihe 1924-1953",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1924",
+              "end": "1953",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie",
+              "Maßnahmen und Bewirtschaftung"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "von 20,0 m³/s (für die unbedeutend durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1924-1953)",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_original",
+                  "time_normalized",
+                  "spatial_scope",
+                  "waterbody_name_original"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e3",
+            "record_type": "Prozess",
+            "waterbody_references": null,
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Wert für den Abfluss der Moldau in Prag (QM364) in der durch Talsperrenbewirtschaftung beeinflussten Jahresreihe.",
+            "ontology_concept": "fine:ConcentrationChange",
+            "participants": null,
+            "spatial_scope": {
+              "location": "Prag",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "QM364",
+                "value_original": "38,8",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "aggregation": "QM364 (Abfluss für 364 Überschreitungstage)",
+              "procedure_original": "Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem Jahre 1994"
+            },
+            "time_original": "Jahresreihe 1955-1993",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1955",
+              "end": "1993",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie",
+              "Maßnahmen und Bewirtschaftung"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "auf 38,8 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1955-1993)",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_original",
+                  "time_normalized",
+                  "spatial_scope",
+                  "waterbody_name_original"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e4",
+            "record_type": "Zustand",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": null,
+            "statement": "Wirkung der Talsperren der Moldaukaskade auf die Niedrigwasserabflüsse.",
+            "ontology_concept": null,
+            "participants": [
+              {
+                "name_original": "Talsperren der Moldaukaskade",
+                "role": "cause",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": null,
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Maßnahmen und Bewirtschaftung"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "infolge der Wirkung der Talsperren der Moldaukaskade",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "participants"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "r1",
+            "source_event_id": "e4",
+            "target_event_id": "e1",
+            "relationship_type": "increases",
+            "statement": "Die Wirkung der Talsperren der Moldaukaskade erhöht den Abfluss der Moldau in Prag (QM364).",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "Hydrologie",
+              "Maßnahmen und Bewirtschaftung"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "wurde der Abfluss der Moldau in Prag für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren der Moldaukaskade von 20,0 m³/s ... auf 38,8 m³/s ... erhöht.",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "source_event_id",
+                  "target_event_id"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "context_requests": [],
+        "notes": []
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            42.5197,
+            81.7568,
+            524.4802000000008,
+            249.12610000000006
+          ],
+          "text": "Nach Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem Jahre 1994\nwurde der Abfluss der Moldau in Prag für 364 Überschreitungstage (QM364) infolge der Wirkung der\nTalsperren der Moldaukaskade von 20,0 m³/s (für die unbedeutend durch Talsperrenbewirtschaftung\nbeeinflusste Jahresreihe 1924-1953) auf 38,8 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste\nJahresreihe 1955-1993), d. h. um 18,8 m³/s, erhöht.",
+          "page": 10,
+          "printed_page": null,
+          "block_id": "p0010_b0002",
+          "section": "4. Auswirkungen der tschechischen Talsperren auf die Niedrigwasserabflüsse"
+        }
+      ],
+      "extracted_at": "2026-09-28T14:08:37.554321+00:00",
+      "response_model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\repeated_self_relations\\results\\r2_moldau_qm364_compact\\fein\\raw_responses\\moldau_qm364_03089e19a7a0.json",
+      "purpose": "extraction"
+    }
+  ]
+}

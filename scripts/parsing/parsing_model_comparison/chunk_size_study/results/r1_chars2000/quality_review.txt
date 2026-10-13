@@ -1,0 +1,362 @@
+# r1_chars2000
+IDs below are scoped to their package; OK means automated validation passed, not a semantic quality judgment.
+
+## chunk_0001_30e816b5
+
+e1 [reported] Der QM364-Abfluss der Moldau in Prag wurde infolge der Talsperrenbewirtschaftung von 20,0 m³/s auf 38,8 m³/s erhöht.
+VALUES [{"parameter": "QM364 Abfluss", "value_original": "20,0", "value_normalized": null, "unit_original": "m³/s", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}, {"parameter": "QM364 Abfluss", "value_original": "38,8", "value_normalized": null, "unit_original": "m³/s", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}, {"parameter": "QM364 Abfluss Änderung", "value_original": "18,8", "value_normalized": null, "unit_original": "m³/s", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME ["Jahresreihe 1955-1993", {"start": "1955", "end": "1993", "recurrence": null}]
+VALIDATION OK
+EVIDENCE [{"quote": "wurde der Abfluss der Moldau in Prag für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren der Moldaukaskade von 20,0 m³/s (für die unbedeutend durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1924-1953) auf 38,8 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1955-1993), d. h. um 18,8 m³/s, erhöht.", "block_id": "p0010_b0002", "page": 10, "field_names": ["statement", "values", "time_original", "spatial_scope", "participants"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e2 [reported] Der QM364-Abfluss der Moldau in Prag betrug nach IKSE-Ermittlungen 36,9 m³/s für die Jahresreihe 1961-2005.
+VALUES [{"parameter": "QM364 Abfluss", "value_original": "36,9", "value_normalized": null, "unit_original": "m³/s", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME ["Jahresreihe 1961-2005", {"start": "1961", "end": "2005", "recurrence": null}]
+VALIDATION OK
+EVIDENCE [{"quote": "Dieser Wert liegt nach Ermittlungen der IKSE aus dem Jahre 2008 bei 36,9 m³/s für die Jahresreihe 1961-2005.", "block_id": "p0010_b0002", "page": 10, "field_names": ["statement", "values", "time_original", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e3 [reported] Aus der Talsperre Vrané wird ein Mindestabfluss von 40,0 m³/s in die Moldau gesichert.
+VALUES [{"parameter": "Mindestabfluss", "value_original": "40,0", "value_normalized": null, "unit_original": "m³/s", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "aus der Talsperre Vrané, oberhalb der Mündung der Berounka in die Moldau, ein Mindestabfluss von 40,0 m³/s gesichert.", "block_id": "p0010_b0003", "page": 10, "field_names": ["statement", "values", "spatial_scope", "participants"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e4 [reported] Vor Errichtung der Talsperren traten in Prag häufig Abflüsse von 12,0 bis 15,0 m³/s auf.
+VALUES [{"parameter": "Abfluss", "value_original": "12,0 bis 15,0", "value_normalized": null, "unit_original": "m³/s", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME ["Vor Errichtung der Talsperren", null]
+VALIDATION OK
+EVIDENCE [{"quote": "Vor Errichtung der Talsperren kam es in Prag öfter zu Abflüssen von nur 12,0 bis15,0 m³/s.", "block_id": "p0010_b0003", "page": 10, "field_names": ["statement", "values", "time_original", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e5 [reported] Der QM364-Abfluss der Eger am Pegel Louny wurde infolge der Talsperrenwirkung von 2,7 m³/s erhöht (Wert für nachfolgende Periode im Text abgeschnitten).
+VALUES [{"parameter": "QM364 Abfluss", "value_original": "2,7", "value_normalized": null, "unit_original": "m³/s", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "wurde der Abfluss der Eger am Pegel Louny unterhalb der Talsperre Nechranice für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s (für die unbedeu-", "block_id": "p0011_b0003", "page": 11, "field_names": ["statement", "values", "spatial_scope", "participants"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e6 [reported] Die Niedrigwasseraufhöhung durch die Moldau-Talsperren beeinflusst merkbar die Abflüsse der Elbe unterhalb der Moldaumündung.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren Moldau, sondern auch der Elbe unterhalb der Mündung der Moldau in die Elbe bei Mělník.", "block_id": "p0011_b0003", "page": 11, "field_names": ["statement", "spatial_scope", "participants"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e7 [reported] Die Talsperren im Eger-Einzugsgebiet, insbesondere Nechranice, beeinflussen die Niedrigwasseraufhöhung der Eger und damit die Elbe nach der Egermündung.
+VALUES null
+TIME [null, null]
+VALIDATION quote_not_found:p0011_b0003
+EVIDENCE [{"quote": "Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice ... ebenfalls einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung der Eger.", "block_id": "p0011_b0003", "page": 11, "field_names": ["statement", "spatial_scope", "participants"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e8 [reported] Wirkung der Talsperren der Moldaukaskade auf die Abflüsse.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "infolge der Wirkung der Talsperren der Moldaukaskade", "block_id": "p0010_b0002", "page": 10, "field_names": ["statement", "participants"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r1 [reported] Die Wirkung der Talsperren der Moldaukaskade verursacht die Erhöhung des QM364-Abflusses der Moldau in Prag.
+EDGE e8 causes e1
+VALIDATION OK
+EVIDENCE [{"quote": "infolge der Wirkung der Talsperren der Moldaukaskade", "block_id": "p0010_b0002", "page": 10, "field_names": ["statement"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r2 [reported] Die durch die Moldau-Talsperren verursachte Niedrigwasseraufhöhung beeinflusst die Abflüsse der Elbe.
+EDGE e1 affects e6
+VALIDATION OK
+EVIDENCE [{"quote": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren Moldau, sondern auch der Elbe", "block_id": "p0011_b0003", "page": 11, "field_names": ["statement"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r3 [reported] Die durch die Eger-Talsperren verursachte Niedrigwasseraufhöhung der Eger beeinflusst die Elbe.
+EDGE e5 affects e7
+VALIDATION quote_not_found:p0011_b0003
+EVIDENCE [{"quote": "Talsperren im Einzugsgebiet der Eger haben ... einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe", "block_id": "p0011_b0003", "page": 11, "field_names": ["statement"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+## chunk_0002_0dd86fc4
+
+e1 [reported] Die Talsperre Nechranice (und weitere Talsperren im Einzugsgebiet der Eger) haben einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger.
+VALUES null
+TIME ["ab 1966", {"start": "1966", "end": null, "recurrence": null}]
+VALIDATION quote_not_found:p0011_b0003
+EVIDENCE [{"quote": "Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem Stauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merk-baren Einfluss auf die Niedrigwasseraufhöhung der Eger", "block_id": "p0011_b0003", "page": 11, "field_names": ["statement", "spatial_scope", "participants", "time_normalized", "time_original", "time_precision", "time_status"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e2 [observed] Der Abfluss der Eger am Pegel Louny (QM364) betrug in der unbeeinflussten Jahresreihe 1922-1965 2,7 m³/s.
+VALUES [{"parameter": "Abfluss (QM364)", "value_original": "2,7", "value_normalized": 2.7, "unit_original": "m³/s", "unit_normalized": "m³/s", "comparison_operator": null, "normalization_rule": null}]
+TIME ["Jahresreihe 1922-1965", {"start": "1922", "end": "1965", "recurrence": null}]
+VALIDATION quote_not_found:p0011_b0003
+EVIDENCE [{"quote": "wurde der Abfluss der Eger am Pegel Louny unterhalb der Talsperre Nechranice für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s (für die unbedeu-tend durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1922-1965)", "block_id": "p0011_b0003", "page": 11, "field_names": ["statement", "values", "measurement_context", "time_normalized", "time_original", "time_precision", "time_status"], "printed_page": null, "table_id": null, "row": null, "column": null}, {"quote": "auf 8,0 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1966-1993) erhöht.", "block_id": "p0011_b0004", "page": 11, "field_names": ["values"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e3 [observed] Der Abfluss der Eger am Pegel Louny (QM364) betrug in der durch Talsperrenbewirtschaftung beeinflussten Jahresreihe 1966-1993 8,0 m³/s.
+VALUES [{"parameter": "Abfluss (QM364)", "value_original": "8,0", "value_normalized": 8.0, "unit_original": "m³/s", "unit_normalized": "m³/s", "comparison_operator": null, "normalization_rule": null}]
+TIME ["Jahresreihe 1966-1993", {"start": "1966", "end": "1993", "recurrence": null}]
+VALIDATION quote_not_found:p0011_b0003
+EVIDENCE [{"quote": "wurde der Abfluss der Eger am Pegel Louny unterhalb der Talsperre Nechranice für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s ... auf 8,0 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1966-1993) erhöht.", "block_id": "p0011_b0003", "page": 11, "field_names": ["statement", "values", "measurement_context", "time_normalized", "time_original", "time_precision", "time_status"], "printed_page": null, "table_id": null, "row": null, "column": null}, {"quote": "auf 8,0 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1966-1993) erhöht.", "block_id": "p0011_b0004", "page": 11, "field_names": ["values"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e4 [reported] Die Talsperre Nechranice wird im Zusammenwirken mit den Talsperren Jesenice/Odrava und Skalka/Eger so gesteuert, dass ein Mindestabfluss von 8,0 m³/s gesichert ist.
+VALUES [{"parameter": "Mindestabfluss", "value_original": "8,0", "value_normalized": 8.0, "unit_original": "m³/s", "unit_normalized": "m³/s", "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION quote_not_found:p0011_b0004
+EVIDENCE [{"quote": "wird die Tal-sperre Nechranice gemäß Talsperrenbetriebsplan so gesteuert, dass unterhalb der Talsperre Nechranice ein Mindestabfluss von 8,0 m³/s gesichert ist.", "block_id": "p0011_b0004", "page": 11, "field_names": ["statement", "participants", "values", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e5 [reported] Vor Errichtung der Talsperren traten in längeren Niedrigwasserperioden öfter Abflüsse von 1,5 bis 2,0 m³/s auf.
+VALUES [{"parameter": "Abfluss", "value_original": "1,5 bis 2,0", "value_normalized": "1,5-2,0", "unit_original": "m³/s", "unit_normalized": "m³/s", "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "In längeren Niedrigwasserperioden vor Errichtung der Talsperren sind öfter Abflüsse von 1,5 bis 2,0 m³/ aufgetreten.", "block_id": "p0011_b0004", "page": 11, "field_names": ["statement", "values", "time_status", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r1 [reported] Die Talsperrenbewirtschaftung (Talsperre Nechranice u.a.) führt zu einer Erhöhung des Abflusses (QM364) der Eger am Pegel Louny von 2,7 m³/s auf 8,0 m³/s.
+EDGE e1 increases e3
+VALIDATION quote_not_found:p0011_b0003
+EVIDENCE [{"quote": "wurde der Abfluss der Eger am Pegel Louny ... infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s ... auf 8,0 m³/s ... erhöht.", "block_id": "p0011_b0003", "page": 11, "field_names": ["statement", "source_event_id", "target_event_id"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r2 [reported] Die gesteuerte Mindestabfluss-Sicherung verhindert, dass Abflüsse unter 8,0 m³/s fallen (im Vergleich zu historischen Werten von 1,5-2,0 m³/s).
+EDGE e4 prevents e5
+VALIDATION quote_not_found:p0011_b0004
+EVIDENCE [{"quote": "wird die Tal-sperre Nechranice gemäß Talsperrenbetriebsplan so gesteuert, dass unterhalb der Talsperre Nechranice ein Mindestabfluss von 8,0 m³/s gesichert ist.", "block_id": "p0011_b0004", "page": 11, "field_names": ["statement", "source_event_id", "target_event_id"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+## chunk_0003_434c9ee1
+
+e1 [reported] Die Talsperre Nechranice wird im Zusammenwirken mit den Talsperren Jesenice/Odrava und Skalka/Eger so gesteuert, dass unterhalb der Talsperre Nechranice ein Mindestabfluss von 8,0 m³/s gesichert ist.
+VALUES [{"parameter": "Mindestabfluss", "value_original": "8,0", "value_normalized": 8.0, "unit_original": "m³/s", "unit_normalized": "m³/s", "comparison_operator": null, "normalization_rule": null}]
+TIME ["ab Inbetriebnahme der letzten genannten Talsperre (1964)", {"start": "1964", "end": null, "recurrence": null}]
+VALIDATION OK
+EVIDENCE [{"quote": "Im Zusammenwirken mit den im oberen Einzugsgebiet der Eger liegenden Talsperren Jesenice/Odrava (52,75 Mio. m³ – Inbetriebnahme 1961) und Skalka/Eger (15,92 Mio. m³ – Inbetriebnahme 1964) wird die Talsperre Nechranice gemäß Talsperrenbetriebsplan so gesteuert, dass unterhalb der Talsperre Nechranice ein Mindestabfluss von 8,0 m³/s gesichert ist.", "block_id": "p0011_b0004", "page": 11, "field_names": ["statement", "values", "time_normalized", "spatial_scope", "participants"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e2 [reported] In längeren Niedrigwasserperioden vor Errichtung der Talsperren traten auf der Eger Abflüsse von 1,5 bis 2,0 m³/s auf.
+VALUES [{"parameter": "Abfluss", "value_original": "1,5 bis 2,0", "value_normalized": "1,5-2,0", "unit_original": "m³/", "unit_normalized": "m³/s", "comparison_operator": null, "normalization_rule": null}]
+TIME ["vor Errichtung der Talsperren", {"start": null, "end": "1961", "recurrence": null}]
+VALIDATION OK
+EVIDENCE [{"quote": "In längeren Niedrigwasserperioden vor Errichtung der Talsperren sind öfter Abflüsse von 1,5 bis 2,0 m³/ aufgetreten.", "block_id": "p0011_b0004", "page": 11, "field_names": ["statement", "values", "time_normalized", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e3 [reported] Die Niedrigwasseraufhöhung der Eger führte zur Verbesserung der Abflüsse der Eger von der Talsperre Nechranice bis zur Mündung in die Elbe bei Litoměřice sowie der Elbe unterhalb der Mündung der Eger.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Die Niedrigwasseraufhöhung der Eger führte nicht nur zur Verbesserung der Abflüsse der 103,4 km langen Eger von der Talsperre Nechranice bis zur Mündung in die Elbe bei Litoměřice, sondern auch der Elbe unterhalb der Mündung der Eger.", "block_id": "p0011_b0005", "page": 11, "field_names": ["statement", "spatial_scope", "participants"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e4 [predicted] Es wird eine Reduzierung des mittleren Jahresabflusses im tschechischen Einzugsgebiet der Elbe um 10 % für die Jahresreihe 2009-2053 gegenüber 1961-2005 prognostiziert.
+VALUES [{"parameter": "Reduzierung des mittleren Jahresabflusses", "value_original": "10", "value_normalized": 10.0, "unit_original": "%", "unit_normalized": "%", "comparison_operator": null, "normalization_rule": null}]
+TIME ["2009-2053", {"start": "2009", "end": "2053", "recurrence": null}]
+VALIDATION OK
+EVIDENCE [{"quote": "Die tschechische Seite rechnet mit einer Reduzierung des mittleren Jahresabflusses im tschechischen Einzugsgebiet der Elbe um 10 % beim Vergleich der Jahresreihen 2009-2053 gegenüber 1961-2005", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "values", "time_normalized", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e5 [predicted] Im Einzugsgebiet der Moldau wird ein Sinken der mittleren Abflüsse um 10-15 % prognostiziert.
+VALUES [{"parameter": "Sinken der mittleren Abflüsse", "value_original": "10-15", "value_normalized": "10-15", "unit_original": "%", "unit_normalized": "%", "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Untersuchungen des Forschungsinstitutes für Wasserwirtschaft in Prag gehen davon aus, dass im Einzugsgebiet der Moldau die mittleren Abflüsse sogar um 10-15 % sinken werden.", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "values", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e6 [predicted] Eine weitere Umverteilung des Niederschlages vom Sommerhalbjahr in das Winterhalbjahr wird prognostiziert.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Es wird auch zukünftig eine weitere Umverteilung des Niederschlages vom Sommerhalbjahr in das Winterhalbjahr erfolgen.", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e7 [predicted] Im Winterhalbjahr wird eine Erhöhung des Anteils der Regenniederschläge sowie das Auftreten von Mehrabflüssen mit zunehmenden winterlichen Hochwassern prognostiziert.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Dabei erhöht sich im Winterhalbjahr der Anteil der Regenniederschläge und es werden Mehrabflüsse mit zunehmenden winterlichen Hochwassern auftreten.", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e8 [predicted] Durch geringere Sommerniederschläge kommt es zu einer Reduzierung des ober- und unterirdischen Abflusses und zur Verschärfung der Niedrigwasserproblematik im Sommer.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses und somit zur Verschärfung der Niedrigwasserproblematik im Sommer.", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e9 [reported] Das Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna umfasst 51.394 km², wovon 17.782 km² oberhalb der Talsperre Vrané und 3.590 km² oberhalb der Talsperre Nechranice liegen.
+VALUES [{"parameter": "Einzugsgebietsfläche Gesamt", "value_original": "51 394", "value_normalized": 51394.0, "unit_original": "km²", "unit_normalized": "km²", "comparison_operator": null, "normalization_rule": null}, {"parameter": "Einzugsgebietsfläche oberhalb Talsperre Vrané", "value_original": "17 782", "value_normalized": 17782.0, "unit_original": "km²", "unit_normalized": "km²", "comparison_operator": null, "normalization_rule": null}, {"parameter": "Einzugsgebietsfläche oberhalb Talsperre Nechranice", "value_original": "3 590", "value_normalized": 3590.0, "unit_original": "km²", "unit_normalized": "km²", "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Von dem Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna von 51 394 km² liegen 17 782 km² oberhalb der Talsperre Vrané, der untersten Talsperre der Moldaukaskade (Abb. 2) und 3 590 km² oberhalb der Talsperre Nechranice (Abb. 1), d. h. in der Summe 21 372 km².", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement", "values", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e10 [reported] Die minimalen mittleren Monatsabflüsse der Elbe im Grenzprofil Hřensko/Schöna aus der Koordinierungsvereinbarung vom Mai 1988 gelten für den Zeithorizont 2000 weiterhin.
+VALUES null
+TIME ["Mai 1988", {"start": "1988-05", "end": null, "recurrence": null}]
+VALIDATION OK
+EVIDENCE [{"quote": "Somit gelten die mengenmäßig abgestimmten minimalen mittleren Monatsabflüsse der Elbe im Grenzprofil Hřensko/Schöna aus der Koordinierungsvereinbarung vom Mai 1988 für den Zeithorizont 2000 nach wie vor.", "block_id": "p0017_b0001", "page": 17, "field_names": ["statement", "time_normalized", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+## chunk_0004_94d38735
+
+e1 [predicted] Erwartete deutliche Veränderungen im Niederschlags- und Abflussverhalten durch den Klimawandel.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Es ist davon auszugehen, dass durch den zu erwartenden Klimawandel in Zukunft deutliche Veränderungen im Niederschlags- und Abflussverhalten eintreten werden.", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "assertion_mode", "time_status"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e2 [predicted] Reduzierung des mittleren Jahresabflusses im tschechischen Einzugsgebiet der Elbe um 10 %.
+VALUES [{"parameter": "Mittlerer Jahresabfluss", "value_original": "-10", "value_normalized": null, "unit_original": "%", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME ["Vergleich der Jahresreihen 2009-2053 gegenüber 1961-2005", {"start": "2009", "end": "2053", "recurrence": null}]
+VALIDATION OK
+EVIDENCE [{"quote": "Die tschechische Seite rechnet mit einer Reduzierung des mittleren Jahresabflusses im tschechischen Einzugsgebiet der Elbe um 10 % beim Vergleich der Jahresreihen 2009-2053 gegenüber 1961-2005", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "values", "time_original", "time_normalized", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e3 [predicted] Merkbare Reduzierung des QM355-Abflusswertes.
+VALUES [{"parameter": "QM355-Abflusswert", "value_original": "merkbare Reduzierung", "value_normalized": null, "unit_original": null, "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "und mit einer merkbaren Reduzierung des QM355-Abflusswertes", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "values", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e4 [predicted] Sinken der mittleren Abflüsse im Einzugsgebiet der Moldau um 10-15 %.
+VALUES [{"parameter": "Mittlerer Abfluss", "value_original": "-10 bis -15", "value_normalized": null, "unit_original": "%", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Untersuchungen des Forschungsinstitutes für Wasserwirtschaft in Prag gehen davon aus, dass im Einzugsgebiet der Moldau die mittleren Abflüsse sogar um 10-15 % sinken werden.", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "values", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e5 [predicted] Umverteilung des Niederschlages vom Sommerhalbjahr in das Winterhalbjahr.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Es wird auch zukünftig eine weitere Umverteilung des Niederschlages vom Sommerhalbjahr in das Winterhalbjahr erfolgen.", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e6 [predicted] Erhöhung des Anteils der Regenniederschläge im Winterhalbjahr.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Dabei erhöht sich im Winterhalbjahr der Anteil der Regenniederschläge", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e7 [predicted] Auftreten von Mehrabflüssen mit zunehmenden winterlichen Hochwassern.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "und es werden Mehrabflüsse mit zunehmenden winterlichen Hochwassern auftreten.", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e8 [predicted] Reduzierung des ober- und unterirdischen Abflusses durch geringere Sommerniederschläge.
+VALUES null
+TIME [null, null]
+VALIDATION quote_not_found:p0017_b0004
+EVIDENCE [{"quote": "Durch die geringeren Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e9 [predicted] Verschärfung der Niedrigwasserproblematik im Sommer.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "und somit zur Verschärfung der Niedrigwasserproblematik im Sommer.", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e10 [reported] Das Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna beträgt 51.394 km².
+VALUES [{"parameter": "Fläche Einzugsgebiet", "value_original": "51 394", "value_normalized": null, "unit_original": "km²", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Von dem Einzugsgebiet der Elbe im Grenzprofil bei Hřensko/Schöna von 51 394 km²", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement", "values", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e11 [reported] 17.782 km² des Einzugsgebiets liegen oberhalb der Talsperre Vrané.
+VALUES [{"parameter": "Fläche Einzugsgebiet", "value_original": "17 782", "value_normalized": null, "unit_original": "km²", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "liegen 17 782 km² oberhalb der Talsperre Vrané, der untersten Talsperre der Moldaukaskade", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement", "values", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e12 [reported] 3.590 km² des Einzugsgebiets liegen oberhalb der Talsperre Nechranice.
+VALUES [{"parameter": "Fläche Einzugsgebiet", "value_original": "3 590", "value_normalized": null, "unit_original": "km²", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "und 3 590 km² oberhalb der Talsperre Nechranice", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement", "values", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e13 [reported] Nur in 41,6 % des Einzugsgebiets ist eine Wasserrückhaltung durch große Talsperren möglich.
+VALUES [{"parameter": "Anteil Einzugsgebiet mit Wasserrückhaltung", "value_original": "41,6", "value_normalized": null, "unit_original": "%", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Das bedeutet, dass nur in 41,6 % des Einzugsgebiets des Grenzprofils eine Wasserrückhaltung durch große Talsperren möglich ist.", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement", "values", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e14 [reported] Kleinere Talsperren im übrigen Einzugsgebiet bewirken eine örtliche Abflusserhöhung.
+VALUES null
+TIME [null, null]
+VALIDATION quote_not_found:p0017_b0004
+EVIDENCE [{"quote": "Sicherlich bringt auch die Vielzahl von kleineren Talsperren im übrigen Einzugsgebiet der Elbe eine gewisse Abflusserhöhung, die aber mehr örtlichen Charakter hat.", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e15 [predicted] Besonders bemerkbare Auswirkungen des Klimawandels in den Sommermonaten in Gebieten mit mittleren Niederschlägen unter 550 mm/a.
+VALUES [{"parameter": "Mittlerer Niederschlag", "value_original": "< 550", "value_normalized": null, "unit_original": "mm/a", "unit_normalized": null, "comparison_operator": null, "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Da die Einzugsgebiete der unteren Moldau/Vltava ab Mündung der Berounka, der mittleren und unteren Berounka, der Elbe von unterhalb der Mündung der Jizera bis Ústí n. L. und der Eger/Ohře ab oberhalb der Talsperre Nechranice (Abb. 1) in Gebieten mit mittleren Niederschlägen unter 550 mm/a liegen, werden die Auswirkungen des Klimawandels in den Sommermonaten hier besonders bemerkbar sein.", "block_id": "p0017_b0005", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e16 [predicted] Zukünftiger Widerspruch bei der Bewirtschaftung der Talsperren.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Bei der Bewirtschaftung der Talsperren wird sich zukünftig ein Widerspruch einstellen.", "block_id": "p0017_b0005", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e17 [predicted] Erforderlicher zusätzlicher Hochwasserrückhalteraum für häufiger zu erwartende Extremereignisse.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Einerseits wird zusätzlicher Hochwasserrückhalteraum für häufiger zu erwartende Extremereignisse erforderlich sein", "block_id": "p0017_b0005", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e18 [predicted] Notwendiges verstärktes Zurückhalten von Wasser zur Erhöhung der Niedrigwasserabgabe.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "während andererseits ein verstärktes Zurückhalten von Wasser für die Erhöhung der Niedrigwasserabgabe bei geringeren sommerlichen Niederschlags- und Abflussverhältnissen notwendig sein wird.", "block_id": "p0017_b0005", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e19 [predicted] Lösung des Widerspruchs nur bedingt durch Veränderung der Talsperrenbewirtschaftung möglich.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Dieser Widerspruch kann nur bedingt durch Veränderung der Talsperrenbewirtschaftung gelöst werden.", "block_id": "p0017_b0005", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e20 [predicted] Größerer Effekt durch Erhöhung des Speichervolumens an bestehenden Talsperren und Errichtung neuer Talsperren.
+VALUES null
+TIME [null, null]
+VALIDATION quote_not_found:p0017_b0006
+EVIDENCE [{"quote": "Einen größeren Effekt würden aber eine Erhöhung des Speichervolumens durch technische Maßnahmen an bestehenden Talsperren und die Errichtung neuer Talsperren haben.", "block_id": "p0017_b0006", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e21 [predicted] Möglichkeit der Errichtung mehrerer kleiner Talsperren anstelle eines geplanten Großspeichers im Einzugsgebiet der Berounka.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "So könnten z. B. im Einzugsgebiet der Berounka mehrere kleine Talsperren anstelle eines ursprünglich geplanten Großspeichers errichtet werden.", "block_id": "p0017_b0006", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e22 [predicted] Wahrscheinliche Unterschreitung der vereinbarten minimalen mittleren Monatsabflüsse im Grenzprofil Hřensko/Schöna, insbesondere in den Sommermonaten.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Es ist einzuschätzen, dass die im Grenzprofil bei Hřensko/Schöna vereinbarten minimalen mittleren Monatsabflüsse infolge des zu erwartenden Klimawandels in Zukunft wahrscheinlich des Öfteren, insbesondere in den Sommermonaten, unterschritten werden.", "block_id": "p0017_b0006", "page": 17, "field_names": ["statement", "spatial_scope"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e23 [reported] Tschechische Seite führt genauere Untersuchungen in einem Forschungsprojekt durch.
+VALUES null
+TIME ["Laufzeit von 2007 bis 2012", {"start": "2007", "end": "2012", "recurrence": null}]
+VALIDATION OK
+EVIDENCE [{"quote": "Genauere Untersuchungen dazu führt aber die tschechische Seite in einem Forschungsprojekt durch, das eine Laufzeit von 2007 bis 2012 hat.", "block_id": "p0017_b0006", "page": 17, "field_names": ["statement", "time_original", "time_normalized", "participants"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r1 [predicted] Der Klimawandel verursacht Veränderungen im Niederschlags- und Abflussverhalten.
+EDGE e1 causes e1
+VALIDATION OK
+EVIDENCE [{"quote": "Es ist davon auszugehen, dass durch den zu erwartenden Klimawandel in Zukunft deutliche Veränderungen im Niederschlags- und Abflussverhalten eintreten werden.", "block_id": "p0017_b0003", "page": 17, "field_names": ["statement"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r2 [predicted] Geringere Sommerniederschläge führen zur Reduzierung des ober- und unterirdischen Abflusses.
+EDGE e5 causes e8
+VALIDATION quote_not_found:p0017_b0004
+EVIDENCE [{"quote": "Durch die geringeren Sommerniederschläge kommt es zur Reduzierung des ober- und unterirdischen Abflusses", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r3 [predicted] Die Reduzierung des Abflusses führt zur Verschärfung der Niedrigwasserproblematik im Sommer.
+EDGE e8 causes e9
+VALIDATION OK
+EVIDENCE [{"quote": "und somit zur Verschärfung der Niedrigwasserproblematik im Sommer.", "block_id": "p0017_b0004", "page": 17, "field_names": ["statement"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r4 [predicted] Der Klimawandel führt zur Unterschreitung der vereinbarten minimalen mittleren Monatsabflüsse im Grenzprofil Hřensko/Schöna.
+EDGE e1 causes e22
+VALIDATION OK
+EVIDENCE [{"quote": "Es ist einzuschätzen, dass die im Grenzprofil bei Hřensko/Schöna vereinbarten minimalen mittleren Monatsabflüsse infolge des zu erwartenden Klimawandels in Zukunft wahrscheinlich des Öfteren, insbesondere in den Sommermonaten, unterschritten werden.", "block_id": "p0017_b0006", "page": 17, "field_names": ["statement"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+## chunk_0005_978f6a79
+
+e1 [predicted] Zukünftiger Widerspruch in der Talsperrenbewirtschaftung zwischen Hochwasserrückhalt und Niedrigwasseranreicherung.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Bei der Bewirtschaftung der Talsperren wird sich zukünftig ein Widerspruch einstellen. Einerseits wird zusätzlicher Hochwasserrückhalteraum für häufiger zu erwartende Extremereignisse erforderlich sein, während andererseits ein verstärktes Zurückhalten von Wasser für die Erhöhung der Niedrigwasserabgabe bei geringeren sommerlichen Niederschlags- und Abflussverhältnissen notwendig sein wird.", "block_id": "p0017_b0005", "page": 17, "field_names": ["statement", "spatial_scope", "time_status"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e2 [predicted] Auswirkungen des Klimawandels werden in den Sommermonaten in Gebieten mit mittleren Niederschlägen unter 550 mm/a besonders bemerkbar sein.
+VALUES [{"parameter": "mittlere Niederschläge", "value_original": "550", "value_normalized": null, "unit_original": "mm/a", "unit_normalized": null, "comparison_operator": "<", "normalization_rule": null}]
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Da die Einzugsgebiete der unteren Moldau/Vltava ab Mündung der Berounka, der mittleren und unteren Berounka, der Elbe von unterhalb der Mündung der Jizera bis Ústí n. L. und der Eger/Ohře ab oberhalb der Talsperre Nechranice (Abb. 1) in Gebieten mit mittleren Niederschlägen unter 550 mm/a liegen, werden die Auswirkungen des Klimawandels in den Sommermonaten hier besonders bemerkbar sein.", "block_id": "p0017_b0005", "page": 17, "field_names": ["statement", "spatial_scope", "values"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e3 [predicted] Vereinbarte minimale mittlere Monatsabflüsse im Grenzprofil bei Hřensko/Schöna werden infolge des Klimawandels wahrscheinlich häufiger, insbesondere im Sommer, unterschritten.
+VALUES null
+TIME [null, null]
+VALIDATION OK
+EVIDENCE [{"quote": "Es ist einzuschätzen, dass die im Grenzprofil bei Hřensko/Schöna vereinbarten minimalen mittleren Monatsabflüsse infolge des zu erwartenden Klimawandels in Zukunft wahrscheinlich des Öfteren, insbesondere in den Sommermonaten, unterschritten werden.", "block_id": "p0017_b0006", "page": 17, "field_names": ["statement", "spatial_scope", "time_status"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+e4 [reported] Tschechische Seite führt genauere Untersuchungen zu den Mindestabflüssen im Grenzprofil in einem Forschungsprojekt durch.
+VALUES null
+TIME ["Laufzeit von 2007 bis 2012", {"start": "2007", "end": "2012", "recurrence": null}]
+VALIDATION OK
+EVIDENCE [{"quote": "Genauere Untersuchungen dazu führt aber die tschechische Seite in einem Forschungsprojekt durch, das eine Laufzeit von 2007 bis 2012 hat.", "block_id": "p0017_b0006", "page": 17, "field_names": ["statement", "spatial_scope", "time_normalized", "time_original"], "printed_page": null, "table_id": null, "row": null, "column": null}]
+
+r1 [predicted] Die Auswirkungen des Klimawandels in den niederschlagsarmen Einzugsgebieten führen zur Unterschreitung der vereinbarten Mindestabflüsse im Grenzprofil.
+EDGE e2 causes e3
+VALIDATION OK
+EVIDENCE [{"quote": "Es ist einzuschätzen, dass die im Grenzprofil bei Hřensko/Schöna vereinbarten minimalen mittleren Monatsabflüsse infolge des zu erwartenden Klimawandels in Zukunft wahrscheinlich des Öfteren, insbesondere in den Sommermonaten, unterschritten werden.", "block_id": "p0017_b0006", "page": 17, "field_names": ["statement", "source_event_id", "target_event_id"], "printed_page": null, "table_id": null, "row": null, "column": null}]

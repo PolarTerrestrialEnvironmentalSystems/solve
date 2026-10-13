@@ -1,0 +1,4 @@
+{"at":"2026-09-28T13:34:15.457263+00:00","event":"session_started","run_id":"catalog","session_id":"cd1b6f577df649d3ada853e823b19123"}
+{"attempt":1,"chunk_id":"","endpoint":"models","event":"request_started","model":"alias-large","ontology":"setup","purpose":"model_list","request_id":"68fa827f8a5f462aaf3b38c286d8464c","requested_model":null,"requests_last_60s":1,"run_id":"catalog","session_id":"cd1b6f577df649d3ada853e823b19123","started_at_utc":"2026-09-28T13:34:15.476536+00:00"}
+{"at":"2026-09-28T13:34:15.668599+00:00","duration_ms":188,"error_type":null,"event":"request_finished","http_status":200,"provider_error":null,"request_id":"68fa827f8a5f462aaf3b38c286d8464c","response_model":null,"retry_wait_s":0,"run_id":"catalog","session_id":"cd1b6f577df649d3ada853e823b19123","usage":{}}
+{"at":"2026-09-28T13:34:15.686001+00:00","event":"session_finished","run_id":"catalog","session_id":"cd1b6f577df649d3ada853e823b19123"}

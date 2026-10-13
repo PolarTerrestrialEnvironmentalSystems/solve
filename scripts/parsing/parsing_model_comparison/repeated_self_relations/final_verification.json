@@ -1,0 +1,9 @@
+{
+  "all_18_runs_present": true,
+  "identical_settings_schema_and_inputs": true,
+  "unchanged_prompts_within_variants": true,
+  "recomputed_self_edge_counts": true,
+  "valid_export_references": true,
+  "excel_jsonl_consistency": true,
+  "secret_scan_passed": true
+}

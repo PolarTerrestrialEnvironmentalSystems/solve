@@ -1,0 +1,124 @@
+{
+  "variant": "fein",
+  "events": 44,
+  "relationships": 5,
+  "causal_self_relationships_rejected": 2,
+  "causal_self_relationship_repairs": {
+    "rejected": 1,
+    "accepted": 1
+  },
+  "complete_chunks": 5,
+  "failed_chunks": 0,
+  "event_types": {
+    "Prozess": 15,
+    "Messung": 4,
+    "Zustand": 17,
+    "Maßnahme": 5,
+    "Eigenschaft": 3
+  },
+  "topics": {
+    "topic:hydrology": 20,
+    "topic:management": 14,
+    "topic:monitoring": 4,
+    "topic:identity": 1,
+    "topic:hydrology.weather": 5,
+    "topic:hydrology.level_flow": 7,
+    "topic:identity.geometry": 4
+  },
+  "merged_event_duplicates": 0,
+  "merged_relationship_duplicates": 0,
+  "review_items": 69,
+  "review_kinds": {
+    "causal_self_relationship_repair": 2,
+    "rejected_event": 8,
+    "rejected_relationship": 5,
+    "event_needs_review": 44,
+    "possible_duplicate_or_conflict": 5,
+    "relationship_needs_review": 5
+  },
+  "event_fields_filled": {
+    "event_id": 44,
+    "record_type": 44,
+    "waterbody_references": 19,
+    "waterbody_name_original": 19,
+    "waterbody_identifiers": 0,
+    "waterbody_assignment": 19,
+    "statement": 44,
+    "ontology_concept": 44,
+    "participants": 6,
+    "spatial_scope": 43,
+    "system_scope": 1,
+    "values": 22,
+    "measurement_context": 3,
+    "time_original": 13,
+    "time_status": 44,
+    "time_normalized": 11,
+    "time_precision": 11,
+    "assertion_mode": 44,
+    "polarity": 44,
+    "implementation_status": 44,
+    "categories": 44,
+    "category_assessment": 0,
+    "source_document": 44,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 44,
+    "extraction_metadata": 44,
+    "quality_assessment": 44
+  },
+  "relationship_fields_filled": {
+    "relationship_id": 5,
+    "source_event_id": 5,
+    "target_event_id": 5,
+    "relationship_type": 5,
+    "statement": 5,
+    "relationship_scope": 5,
+    "waterbody_references": 0,
+    "spatial_scope": 5,
+    "assertion_mode": 5,
+    "polarity": 5,
+    "derivation_status": 5,
+    "evidence_basis": 0,
+    "mechanism": 1,
+    "conditions": 0,
+    "additional_factors": 0,
+    "effect_size": 0,
+    "valid_time": 0,
+    "response_time_definition": 0,
+    "response_time_anchors": 0,
+    "response_time_value": 0,
+    "response_time_origin": 5,
+    "response_time_evidence": 0,
+    "effect_duration": 0,
+    "categories": 5,
+    "source_document": 5,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 5,
+    "extraction_metadata": 5,
+    "quality_assessment": 5
+  },
+  "empty_chunks": [],
+  "model_notes": [
+    {
+      "chunk_id": "chunk_0003_434c9ee1",
+      "notes": [
+        "Die Aussage in p0011_b0005 über die Verbesserung der Abflüsse durch Niedrigwasseraufhöhung ist kausal formuliert ('führte zu'), aber die spezifische Maßnahme (Steuerung der Talsperren) ist in e1 beschrieben. Eine explizite Beziehung zwischen e1 und e3 wird nicht erstellt, da der Text 'Niedrigwasseraufhöhung' als allgemeinen Prozess beschreibt, der aus der Kombination der Talsperren resultiert, ohne eine direkte 1:1-Kausalität zwischen der spezifischen Steuerungsmaßnahme e1 und dem Ergebnis e3 im selben Satz zu isolieren, die über die allgemeine Beschreibung hinausgeht. Allerdings ist e1 die operative Umsetzung der Niedrigwasseraufhöhung. Da der Text 'Die Niedrigwasseraufhöhung... führte...' sagt, und e1 die Sicherung des Mindestabflusses beschreibt, könnte man e1 als Teil der Niedrigwasseraufhöhung sehen. Um keine Kausalität zu erfinden, die nicht explizit als 'Maßnahme X führt zu Y' formuliert ist, sondern als 'Phänomen Z führt zu Y', wird keine Beziehung erstellt, es sei denn, 'Niedrigwasseraufhöhung' wird als Synonym für die Maßnahme e1 interpretiert. Da dies eine Interpretation ist, wird auf die Beziehung verzichtet, um strikt bei belegten Kausalitäten zu bleiben.",
+        "In p0017_b0003 wird der Klimawandel als Ursache für die Abflussreduzierung genannt ('durch den zu erwartenden Klimawandel...'). Da 'Klimawandel' kein spezifisches Event im Schema ist, sondern ein Zustand/Prozess, und die Wirkung (Abflussreduzierung) in e6/e7/e8/e9 beschrieben wird, könnte eine Beziehung hergestellt werden. Da 'Klimawandel' aber nicht als eigenständiges Event mit Beleg extrahiert wurde (es wird als 'zu erwartender Klimawandel' im Kontext der Prognose genannt), wird keine Beziehung erstellt, um keine unvollständige Event-Referenz zu erzeugen.",
+        "In p0017_b0004 wird 'geringere Sommerniederschläge' als Ursache für 'Reduzierung des Abflusses' und 'Verschärfung der Niedrigwasserproblematik' genannt. Dies ist eine kausale Kette. Event e9 beschreibt die Wirkung. Die Ursache (geringere Sommerniederschläge) ist Teil des prognostizierten Zustands in e8/e9. Da e9 die gesamte Kette als einen prognostizierten Prozess beschreibt ('kommt es zur...'), wird keine separate Ursache-Wirkungs-Beziehung zwischen zwei Events erstellt, da die Ursache nicht als eigenständiges, isoliertes Event extrahiert wurde, sondern als Teil der Beschreibung des Prozesses in e9."
+      ]
+    },
+    {
+      "chunk_id": "chunk_0004_94d38735",
+      "notes": [
+        "Die Aussage 'Durch die geringeren Sommerniederschläge kommt es zur Reduzierung...' (e8) und 'somit zur Verschärfung...' (e9) impliziert eine Kette, aber die explizite kausale Verknüpfung zwischen Klimawandel (e1) und den spezifischen hydrologischen Folgen wird im Text als 'davon auszugehen' bzw. 'rechnet mit' formuliert. Die Beziehung e1 -> e2/e3/e4/e5/e6/e7/e8/e9 ist als 'contributes_to' oder 'affects' modellierbar, aber da e1 sehr allgemein ist und die spezifischen Werte (e2, e4) von verschiedenen Quellen (tschechische Seite, Forschungsinstitut) stammen, werden die spezifischen Ereignisse als eigenständige Prognosen erfasst. Eine direkte kausale Kette e1->e2->e9 ist im Text nicht als strikte logische Ableitung, sondern als parallele Prognosen dargestellt.",
+        "Die Beziehung zwischen 'geringeren Sommerniederschlägen' (implizit Teil von e5/e6 oder e1) und 'Reduzierung des Abflusses' (e8) ist im Text explizit mit 'Durch... kommt es zu...' formuliert. Da 'geringere Sommerniederschläge' nicht als eigenständiges Event mit eigenem Beleg isoliert wurde (sondern Teil der Umverteilung e5 ist), wird hier keine separate kausale Beziehung zwischen e5 und e8 erstellt, um keine ungenauen Zuordnungen zu riskieren, es sei denn, e5 wird als Ursache für e8 interpretiert. Der Text sagt: 'Dabei erhöht sich... und es werden Mehrabflüsse... auftreten. Durch die geringeren Sommerniederschläge...'. Dies deutet auf eine Kette hin. Ich habe e5 (Umverteilung) und e8 (Reduzierung Abfluss) als separate Events erfasst. Eine Beziehung e5 -> e8 ist textlich gestützt ('Durch die geringeren Sommerniederschläge' bezieht sich auf den Kontext der Umverteilung).",
+        "Beziehung e8 -> e9 ist explizit im Text ('und somit zur Verschärfung').",
+        "Beziehung e1 -> e23 ist implizit ('infolge des zu erwartenden Klimawandels').",
+        "Beziehung e1 -> e16 ist implizit ('Auswirkungen des Klimawandels').",
+        "Beziehung e1 -> e18/e19 ist implizit ('häufiger zu erwartende Extremereignisse', 'geringeren sommerlichen Niederschlags- und Abflussverhältnissen').",
+        "Die spezifischen kausalen Beziehungen werden unten als Relationships ausgegeben, wo der Text explizite Konnektoren wie 'infolge', 'durch', 'somit' verwendet."
+      ]
+    }
+  ]
+}

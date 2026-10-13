@@ -1,0 +1,86 @@
+{
+  "reference": {
+    "runs_recorded": 9,
+    "successful_runs": 9,
+    "runs_with_raw_self": 4,
+    "runs_with_exported_self": 0,
+    "raw_self_edges": 4,
+    "raw_edges": 17,
+    "exported_self_edges": 0,
+    "exported_edges": 0,
+    "zero_raw_edge_runs": 0,
+    "zero_exported_edge_runs": 9,
+    "http_attempts": 9,
+    "elapsed_seconds": 336.12471110001206,
+    "median_run_seconds": 39.95044040000357,
+    "completion_tokens": 24090,
+    "cases": {
+      "eger_elbe": {
+        "runs": 3,
+        "raw_self_runs": 1,
+        "exported_self_runs": 0,
+        "raw_edges": 5,
+        "exported_edges": 0,
+        "unique_normalized_answers": 3
+      },
+      "moldau_qm364": {
+        "runs": 3,
+        "raw_self_runs": 3,
+        "exported_self_runs": 0,
+        "raw_edges": 3,
+        "exported_edges": 0,
+        "unique_normalized_answers": 3
+      },
+      "seasonal_climate": {
+        "runs": 3,
+        "raw_self_runs": 0,
+        "exported_self_runs": 0,
+        "raw_edges": 9,
+        "exported_edges": 0,
+        "unique_normalized_answers": 3
+      }
+    }
+  },
+  "compact": {
+    "runs_recorded": 9,
+    "successful_runs": 9,
+    "runs_with_raw_self": 1,
+    "runs_with_exported_self": 0,
+    "raw_self_edges": 1,
+    "raw_edges": 17,
+    "exported_self_edges": 0,
+    "exported_edges": 0,
+    "zero_raw_edge_runs": 0,
+    "zero_exported_edge_runs": 9,
+    "http_attempts": 9,
+    "elapsed_seconds": 257.5319646999851,
+    "median_run_seconds": 28.35327690000122,
+    "completion_tokens": 18252,
+    "cases": {
+      "eger_elbe": {
+        "runs": 3,
+        "raw_self_runs": 0,
+        "exported_self_runs": 0,
+        "raw_edges": 6,
+        "exported_edges": 0,
+        "unique_normalized_answers": 3
+      },
+      "moldau_qm364": {
+        "runs": 3,
+        "raw_self_runs": 1,
+        "exported_self_runs": 0,
+        "raw_edges": 3,
+        "exported_edges": 0,
+        "unique_normalized_answers": 3
+      },
+      "seasonal_climate": {
+        "runs": 3,
+        "raw_self_runs": 0,
+        "exported_self_runs": 0,
+        "raw_edges": 8,
+        "exported_edges": 0,
+        "unique_normalized_answers": 3
+      }
+    }
+  }
+}

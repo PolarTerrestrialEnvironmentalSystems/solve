@@ -1,0 +1,183 @@
+{
+  "method": "Assistant review of final exported statements and structured fields against the 19 predeclared source facts. Evidence quotations alone do not count as extraction. F=fully represented for this checklist item, P=partially represented, M=missing, E=present with a material unsupported addition. This is a limited, non-blinded factual checklist, not a general precision/recall score or an independent expert review. Ontology fit and relationships require separate assessment.",
+  "runs": {
+    "r1_chars2000": {
+      "ratings": [
+        "P",
+        "F",
+        "M",
+        "M",
+        "F",
+        "F",
+        "M",
+        "P",
+        "M",
+        "M",
+        "E",
+        "F",
+        "F",
+        "F",
+        "P",
+        "F",
+        "P",
+        "F",
+        "F"
+      ],
+      "notes": {
+        "1": "Event 1 retains before/after values but only the after-period 1955-1993 in the extracted fields; baseline 1924-1953 only in quotation. Ontology fine:ConcentrationChange is also semantically inappropriate for discharge.",
+        "8": "Event 5 retains only 2.7 and explicitly says the next value is cut off; no exported complete comparison.",
+        "11": "Event 9 invents a start in 1964 by borrowing Skalka commissioning; source does not date the operating rule this way. Event 10 also invents a before-1961 cutoff for historical low flows.",
+        "17": "51394 and 41.6% retained, but total 21372 is missing from extracted fields.",
+        "duplicates": "Examples: Elbe -10% events 12/20, Moldau -10 to -15% 13/22, future undershooting 37/41, research project 38/42. Event numbers refer to final events.jsonl line numbers.",
+        "relationship_quality": "The last exported edge narrows the climatic cause of border-flow undershooting to low-rainfall catchments, while the undershooting passage speaks about expected climate change generally. Export acceptance does not guarantee causal precision.",
+        "15": "Winter rain increase and higher flows/floods are co-listed, but the causal connection is not explicitly retained in final statements or edges; strict checklist therefore only partial."
+      }
+    },
+    "r1_chars4000": {
+      "ratings": [
+        "P",
+        "F",
+        "M",
+        "M",
+        "F",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "F",
+        "F",
+        "F",
+        "F",
+        "F",
+        "M",
+        "M",
+        "M",
+        "F"
+      ],
+      "notes": {
+        "1": "Before and after values retained, but baseline years missing from extracted fields; only after-period normalized.",
+        "8": "Complete comparison appears in raw response but is rejected for quote_not_found:p0011_b0003.",
+        "duplicates": "Events 7/8 repeat the border agreement validity statement.",
+        "omissions": "Summer causal chain, catchment totals and reservoir management conflict absent from final exports."
+      }
+    },
+    "r1_chars10000": {
+      "ratings": [
+        "F",
+        "F",
+        "M",
+        "M",
+        "F",
+        "F",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "F",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M"
+      ],
+      "notes": {
+        "omissions": "Only six exported events. Winter/summer chains, Elbe -10% projection, catchment figures, management conflict and future undershooting are absent. Raw response also contains only ten events, so omissions are not explained by filtering alone.",
+        "1": "Both periods retained explicitly in statement; single normalized interval does not represent both periods but source comparison is recoverable.",
+        "relationship_quality": "The single exported edge turns the 40.0 m3/s minimum release into the cause of the historical QM364 increase. Source explicitly attributes the increase to the cascade and says 40.0 approximately corresponds to 38.8; this more specific edge is not directly supported."
+      }
+    },
+    "r2_chars10000": {
+      "ratings": [
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M"
+      ],
+      "notes": {
+        "export_failure": "All eight raw events and three raw relationships contain unknown_topic; additional quote errors occur. No final records, therefore zero checklist coverage. This is export coverage, not a claim that the raw answer contains no correct statements.",
+        "repair": "Self-relationship repair rejected because it changed unaffected metadata."
+      }
+    },
+    "r2_chars4000": {
+      "ratings": [
+        "P",
+        "F",
+        "M",
+        "M",
+        "F",
+        "F",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "M",
+        "F",
+        "F",
+        "P",
+        "M",
+        "P",
+        "M",
+        "F"
+      ],
+      "notes": {
+        "1": "Baseline period omitted from extracted fields.",
+        "13": "Both comparison periods retained in time_original.",
+        "15": "Winter flooding and redistribution retained, increased rain share and full causal chain not extracted.",
+        "17": "Only 41.6% retained; catchment totals missing.",
+        "other": "Border agreement wrongly modeled as interval 1988-05 to 2000 rather than agreement date plus target horizon. No final relationships survived validation."
+      }
+    },
+    "r2_chars2000": {
+      "ratings": [
+        "P",
+        "F",
+        "M",
+        "M",
+        "F",
+        "F",
+        "M",
+        "P",
+        "M",
+        "M",
+        "E",
+        "F",
+        "F",
+        "F",
+        "P",
+        "F",
+        "P",
+        "F",
+        "F"
+      ],
+      "notes": {
+        "1": "Baseline period missing from extracted fields, as in first small trial.",
+        "8": "Both numerical values appear in separate events 5/6, but baseline period 1922-1965 is absent and comparison is not fully reconstructed.",
+        "11": "Event 10 again invents operating-rule start in 1964; event 11 invents historical cutoff 1961.",
+        "15": "Winter rain and higher flows co-listed without explicit causal connection in exported statement or relationship.",
+        "17": "51394 and 41.6% present, total 21372 missing from extracted fields.",
+        "duplicates": "Examples: Elbe forecast events 15/21, Moldau forecast 16/23, border undershooting 39/43, research project 40/44.",
+        "other": "Existing mean precipitation below 550 mm/a is labeled predicted in event 32, although the source uses it as an existing regional property. Last edge again narrows the cause to low-rainfall catchments."
+      }
+    }
+  }
+}

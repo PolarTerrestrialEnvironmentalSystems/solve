@@ -1,0 +1,392 @@
+{
+  "index": 1,
+  "elapsed_seconds": 56.90721299999859,
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "pilot_uncertainty",
+      "pages": [
+        3
+      ],
+      "result": {
+        "document": {
+          "title": "Nr. des Indikators B10 Zufluss zur Rappbodetalsperre",
+          "issuer": null,
+          "authors": null,
+          "publication_date": null,
+          "evidence": [
+            {
+              "quote": "Nr. des Indikators B10",
+              "block_id": "p0001_b0001",
+              "page": 1,
+              "field_names": [
+                "title"
+              ],
+              "printed_page": null,
+              "table_id": null,
+              "row": null,
+              "column": null
+            },
+            {
+              "quote": "Bezeichnung Zufluss zur Rappbodetalsperre",
+              "block_id": "p0001_b0001",
+              "page": 1,
+              "field_names": [
+                "title"
+              ],
+              "printed_page": null,
+              "table_id": null,
+              "row": null,
+              "column": null
+            }
+          ]
+        },
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "recipient",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": "Explizite Nennung im Kontext des Indikators 'Zufluss zur Rappbodetalsperre' und im Text."
+            },
+            "statement": "Im Jahr 2007 sticht ein Extremwert in der Zeitreihe für das hydrologische Sommerhalbjahr deutlich heraus.",
+            "ontology_concept": "core:Observation",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Rappbodetalsperre",
+              "input_pathway": "Zufluss"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": "Jahr 2007",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2007",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "observed",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Bei Betrachtung der Zeitreihe für das hydrologische Sommerhalbjahr sticht das Jahr 2007 deutlich heraus.",
+                "block_id": "p0003_b0001",
+                "page": 3,
+                "field_names": [
+                  "statement",
+                  "time_original",
+                  "time_normalized",
+                  "spatial_scope",
+                  "waterbody_references"
+                ],
+                "printed_page": null,
+                "table_id": "p0003_t001",
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e2",
+            "record_type": "Messung",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "unresolved",
+              "reason": "Bezieht sich auf eine Wetterstation im Einzugsgebiet, nicht direkt auf den Wasserkörper."
+            },
+            "statement": "Der Sommer 2007 zählt an der Wetterstation Harzgerode zu den niederschlagsreicheren Sommern.",
+            "ontology_concept": "core:Observation",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Wetterstation Harzgerode"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": {
+              "station": "Wetterstation Harzgerode"
+            },
+            "time_original": "Sommer 2007",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2007",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "season",
+            "assertion_mode": "observed",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Auch wenn der Sommer 2007 an der Wetterstation Harzgerode zu den niederschlagsreicheren Sommern zählt (LAU 2020)",
+                "block_id": "p0003_b0001",
+                "page": 3,
+                "field_names": [
+                  "statement",
+                  "time_original",
+                  "time_normalized",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": "p0003_t001",
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e3",
+            "record_type": "Ereignis",
+            "waterbody_references": null,
+            "waterbody_name_original": null,
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "unresolved",
+              "reason": "Bezieht sich auf das Einzugsgebiet (Harz), nicht direkt auf den Wasserkörper."
+            },
+            "statement": "Infolge des Orkans Kyrill wurden im Januar 2007 im Harz sehr viele Bäume entwurzelt und Kalamitätsflächen entstanden.",
+            "ontology_concept": "core:Event",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Harz"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": "Januar 2007",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2007-01",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "month",
+            "assertion_mode": "observed",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:ecology",
+              "topic:morphology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Möglicherweise spielt eine Rolle, dass infolge des Orkans Kyrill im Januar 2007 im Harz sehr viele Bäume entwurzelt wurden und Kalamitätsflächen entstanden sind",
+                "block_id": "p0003_b0001",
+                "page": 3,
+                "field_names": [
+                  "statement",
+                  "time_original",
+                  "time_normalized",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": "p0003_t001",
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e4",
+            "record_type": "Prozess",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "recipient",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": "Explizite Nennung im Text."
+            },
+            "statement": "Auf den Kalamitätsflächen könnte der Niederschlag schneller abflusswirksam geworden sein, was zu erhöhten Zuflüssen in die Rappbodetalsperre geführt haben könnte.",
+            "ontology_concept": "core:Process",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Kalamitätsflächen im Harz",
+              "input_pathway": "Zufluss"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "not_stated",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "suspected",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "auf denen der Niederschlag schneller abflusswirksam geworden sein. Dies könnte zu erhöhten Zuflüssen in die Rappbodetalsperre geführt haben.",
+                "block_id": "p0003_b0001",
+                "page": 3,
+                "field_names": [
+                  "statement",
+                  "spatial_scope",
+                  "waterbody_references"
+                ],
+                "printed_page": null,
+                "table_id": "p0003_t001",
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "r1",
+            "source_event_id": "e3",
+            "target_event_id": "e4",
+            "relationship_type": "contributes_to",
+            "statement": "Die durch den Orkan Kyrill verursachte Entwaldung und Entstehung von Kalamitätsflächen könnte durch schnelleren Abfluss zu erhöhten Zuflüssen in die Rappbodetalsperre beigetragen haben.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "recipient",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "description": "Harz / Rappbodetalsperre"
+            },
+            "assertion_mode": "suspected",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": "Entwurzelte Bäume und Kalamitätsflächen führen zu schnellerer Abflusswirksamkeit des Niederschlags.",
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Möglicherweise spielt eine Rolle, dass infolge des Orkans Kyrill im Januar 2007 im Harz sehr viele Bäume entwurzelt wurden und Kalamitätsflächen entstanden sind, auf denen der Niederschlag schneller abflusswirksam geworden sein. Dies könnte zu erhöhten Zuflüssen in die Rappbodetalsperre geführt haben.",
+                "block_id": "p0003_b0001",
+                "page": 3,
+                "field_names": [
+                  "statement",
+                  "mechanism"
+                ],
+                "printed_page": null,
+                "table_id": "p0003_t001",
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "context_requests": [],
+        "notes": [
+          "Die Quelle stellt einen hypothetischen Zusammenhang zwischen dem Orkan Kyrill (Entwaldung) und erhöhten Zuflüssen her ('Möglicherweise', 'könnte').",
+          "Der Sommer 2007 wird als niederschlagsreich beschrieben, was den Extremwert in der Zeitreihe nicht vollständig erklärt, weshalb die Entwaldung als möglicher Faktor für schnelleren Abfluss diskutiert wird."
+        ]
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            62.04000075,
+            60.90126012500002,
+            322.6075599454099,
+            139.86162987500006
+          ],
+          "text": "Nr. des Indikators B10\nBezeichnung Zufluss zur Rappbodetalsperre\nThemenfeld Wasser\nRäumliche Gliederung Rappbodetalsperre\nBearbeitungsstand 08.07.2025",
+          "page": 1,
+          "printed_page": null,
+          "block_id": "p0001_b0001",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0003_t001",
+          "table_group": "p0003_t001",
+          "row": 1,
+          "bbox": [
+            56.880000375,
+            57.119995625,
+            535.4399872500001,
+            611.4000053750001
+          ],
+          "text": "Bei Betrachtung der Zeitreihe für das hydrologische Sommerhalbjahr sticht das\nJahr 2007 deutlich heraus. Auch wenn der Sommer 2007 an der Wetterstation\nHarzgerode zu den niederschlagsreicheren Sommern zählt (LAU 2020), ist die-\nses Extrem ohne eine detailliertere Analyse nicht zu erklären. Möglicherweise\nspielt eine Rolle, dass infolge des Orkans Kyrill im Januar 2007 im Harz sehr\nviele Bäume entwurzelt wurden und Kalamitätsflächen entstanden sind, auf de-\nnen der Niederschlag schneller abflusswirksam geworden sein. Dies könnte zu\nerhöhten Zuflüssen in die Rappbodetalsperre geführt haben.",
+          "page": 3,
+          "printed_page": null,
+          "block_id": "p0003_b0001",
+          "section": null
+        }
+      ],
+      "extracted_at": "2026-09-28T13:51:05.787352+00:00",
+      "response_model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\results\\reference\\fein\\raw_responses\\pilot_uncertainty_e3754a14e7a0.json",
+      "purpose": "extraction"
+    }
+  ],
+  "finished": "2026-09-28T13:51:05.801348+00:00"
+}

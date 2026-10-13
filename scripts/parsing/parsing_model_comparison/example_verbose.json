@@ -1,0 +1,67 @@
+{
+  "event_id": "e3",
+  "record_type": "Maßnahme",
+  "waterbody_references": [
+    {
+      "name_original": "Rappbodetalsperre",
+      "role": "affected_waterbody",
+      "identifiers": null
+    }
+  ],
+  "waterbody_name_original": "Rappbodetalsperre",
+  "waterbody_identifiers": null,
+  "waterbody_assignment": {
+    "status": "resolved",
+    "reason": "Explizit im Dokumentkontext als 'Räumliche Gliederung' und im Text als 'Talsperrenbewirtschaftung' genannt."
+  },
+  "statement": "Wasserentnahme zur Energiegewinnung wurde gegebenenfalls eingeschränkt.",
+  "ontology_concept": "fine:WaterAbstraction",
+  "participants": null,
+  "spatial_scope": {
+    "description": "Rappbodetalsperre",
+    "ontology_predicate": null
+  },
+  "system_scope": {
+    "boundary": "Talsperrenbetrieb",
+    "type": "internal"
+  },
+  "values": null,
+  "measurement_context": null,
+  "time_original": null,
+  "time_status": "not_stated",
+  "time_normalized": null,
+  "time_precision": null,
+  "assertion_mode": "reported",
+  "polarity": "affirmed",
+  "implementation_status": "completed",
+  "categories": [
+    "topic:management",
+    "topic:use"
+  ],
+  "category_assessment": null,
+  "source_document": null,
+  "publication_date": null,
+  "retrieved_at": null,
+  "evidence": [
+    {
+      "quote": "Wasserentnahme etwa zur Energiegewinnung wurde ggf. eingeschränkt.",
+      "block_id": "p0002_b0002",
+      "page": 2,
+      "field_names": [
+        "statement",
+        "spatial_scope",
+        "waterbody_references",
+        "implementation_status"
+      ],
+      "printed_page": null,
+      "table_id": null,
+      "row": null,
+      "column": null
+    }
+  ],
+  "extraction_metadata": null,
+  "quality_assessment": {
+    "needs_ontology_extension": false,
+    "review_status": "extracted"
+  }
+}

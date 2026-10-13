@@ -1,0 +1,412 @@
+{
+  "signature": "421514d1b7597766cf878993fc07dd5102f0d5e68086685ffe09f4e26133c657",
+  "config": {
+    "variant": "reference",
+    "settings": {
+      "base_url": "https://api.blablador.fz-juelich.de/v1/",
+      "model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "rpm": 30,
+      "timeout": 300,
+      "max_retries": 1,
+      "max_output_tokens": 16000,
+      "context_tokens": 65536,
+      "temperature": 0,
+      "json_mode": "auto",
+      "thinking_mode": "off"
+    },
+    "workers": 1,
+    "repetitions": 1,
+    "context_calls": 0,
+    "model_identity": {
+      "id": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "root": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "max_model_len": 262144
+    },
+    "pdf": {
+      "document_id": "doc_d1367f5d9f0e19451126eec4",
+      "content_hash": "d1367f5d9f0e19451126eec4ad6cb76920c5f0d51ac3f7de4736e74f4252ee39",
+      "local_file": "C:\\Users\\jowals001\\awi\\solve\\scripts\\SOLVE_multisite_code_v1_1_0\\dossier_33_seen_serper_v1_6_2_20260925\\archive\\pdf\\d1367f5d9f0e19451126eec4ad6cb76920c5f0d51ac3f7de4736e74f4252ee39.pdf",
+      "filename": "d1367f5d9f0e19451126eec4ad6cb76920c5f0d51ac3f7de4736e74f4252ee39.pdf",
+      "title": null,
+      "issuer": null,
+      "authors": null,
+      "url": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "pdf_metadata": {
+        "/Author": "Prüß, Andrea",
+        "/CreationDate": "D:20250708152229+02'00'",
+        "/ModDate": "D:20250708152229+02'00'",
+        "/Producer": "Microsoft: Print To PDF",
+        "/Title": "Microsoft Word - 250708_ST_Kennblatt_Zufluss_RTS_FINAL.docx"
+      }
+    },
+    "cases": [
+      {
+        "chunk_id": "chunk_0003_2e4d413d",
+        "blocks": [
+          {
+            "kind": "table_row",
+            "table_id": "p0002_t001",
+            "table_group": "p0002_t001",
+            "row": 1,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              781.200023375
+            ],
+            "text": " | der Talsperre und die Wasserqualität ist es von Bedeutung, dass die Talsperre\nhinreichend mit Frischwasser versorgt wird, insbesondere über ihre Zuflüsse.\nSinkt der Wasserspiegel in einer Talsperre, können sich Nährstoffe und Plank-\ntonorganismen wie Algen und Bakterien im enger werdenden Stauraum akku-\nmulieren (Horn et al. 2014). Dies gilt insbesondere für die oberen, wärmeren\nWasserschichten während der Sommerstagnation (das Rohwasser für die\nTrinkwasseraufbereitung wird aus dem Tiefenwasser entnommen). Bei sinken-\nden Wasserständen kann das Verhältnis dieses wärmeren Wassers (Epilim-\nnion) zum Tiefenwasser (Hypolimnion) ungünstiger werden. Im Zuge der\nHerbstvollzirkulation mischt sich das Oberflächenwasser mit dem Tiefenwasser,\nsodass sich auch in den tieferen Wasserschichten Stoffe aufkonzentrieren kön-\nnen, die die Trinkwasseraufbereitung aufwändiger machen. Auch könnte die\nWasserqualität beeinträchtigt werden, wenn auf länger freiliegenden Flächen, z.\nB. im Stauwurzelbereich, Vegetation aufwächst (Kraut, Strauch), welche später\nwieder überstaut wird, was zur Zersetzung dieser Biomasse mit Sauerstoffver-\nbrauch und Nährstofffreisetzung führen kann. Nimmt die Wasserqualität ab,\nwird die Trinkwasseraufbereitung aufwändiger.\nDie Bedeutung des Themas zeigt sich auch darin, dass der Talsperrenbetrieb\ninsbesondere in den zurückliegenden fünf Trockenjahren (2018–2022) die Tal-\nsperrenbewirtschaftung bereits angepasst hat. Dabei galt grundsätzlich, dass\ndie Stauraumbewirtschaftung zur Sicherung der Rohwasserbereitstellung\noberste Priorität hat (Cöster 2021). Die Minderung des Wasserdargebotes\nwirkte sich allerdings auf die verfügbare Wassermenge für die Energiegewin-\nnung aus. Für die Rohwasserbereitstellung und Niedrigwasseraufhöhung der\nBode gab es bisher keine Einschränkungen (Cöster 2021). Unter anderem wur-\nden folgende Maßnahmen umgesetzt:\n Der Stauinhalt wurde bis zum Jahresende nicht unter 60 Mio. m³ ge-",
+            "page": 2,
+            "printed_page": null,
+            "block_id": "p0002_b0001",
+            "section": null
+          },
+          {
+            "kind": "table_row",
+            "table_id": "p0002_t001",
+            "table_group": "p0002_t001",
+            "row": 1,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              781.200023375
+            ],
+            "text": "senkt, um selbst bei geringen Winterzuflüssen die Rohwasserversor-\ngung sicherzustellen. Wasserentnahme etwa zur Energiegewinnung\nwurde ggf. eingeschränkt.\n Das Sommerstauziel (sonst 01. Mai) wurde vorgezogen, da die Monate\nMärz und April in den letzten Jahren zu trocken waren. Unter Berück-\nsichtigung der Schneerücklage wurde das Sommerstauziel bereits im\nMärz erreicht.\nBetrachtung des hydrologischen Jahres:\nDas hydrologische Jahr (Synonyme: „Abflussjahr“, „Wasserwirtschaftsjahr“) ist\nin der DIN 4049 definiert. Bei der Analyse des Abflusses von Fließgewässern ist\ndie Betrachtung des hydrologischen Jahres statt des Kalenderjahres üblich und\nhat sich bewährt. „Durch die Verschiebung zum Kalenderjahr werden […] auch\ndie Niederschläge erfasst, die als Schnee und Eis im Einzugsgebiet gespeichert\nwerden und erst im Frühjahr als Schmelzwasser abflusswirksam sind.“ (Helm-\nholtz-Zentrum Hereon 2013)",
+            "page": 2,
+            "printed_page": null,
+            "block_id": "p0002_b0002",
+            "section": null
+          }
+        ],
+        "context_blocks": [
+          {
+            "kind": "text",
+            "bbox": [
+              276.36000824999996,
+              797.581293125,
+              315.7597500506838,
+              807.541668125
+            ],
+            "text": "Seite 1/6",
+            "page": 1,
+            "printed_page": null,
+            "block_id": "p0001_b0006",
+            "section": null
+          },
+          {
+            "kind": "table_row",
+            "table_id": "p0002_t001",
+            "table_group": "p0002_t001",
+            "row": 2,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              781.200023375
+            ],
+            "text": "Spalten:  | der Talsperre und die Wasserqualität ist es von Bedeutung, dass die Talsperre\nhinreichend mit Frischwasser versorgt wird, insbesondere über ihre Zuflüsse.\nSinkt der Wasserspiegel in einer Talsperre, können sich Nährstoffe und Plank-\ntonorganismen wie Algen und Bakterien im enger werdenden Stauraum akku-\nmulieren (Horn et al. 2014). Dies gilt insbesondere für die oberen, wärmeren\nWasserschichten während der Sommerstagnation (das Rohwasser für die\nTrinkwasseraufbereitung wird aus dem Tiefenwasser entnommen). Bei sinken-\nden Wasserständen kann das Verhältnis dieses wärmeren Wassers (Epilim-\nnion) zum Tiefenwasser (Hypolimnion) ungünstiger werden. Im Zuge der\nHerbstvollzirkulation mischt sich das Oberflächenwasser mit dem Tiefenwasser,\nsodass sich auch in den tieferen Wasserschichten Stoffe aufkonzentrieren kön-\nnen, die die Trinkwasseraufbereitung aufwändiger machen. Auch könnte die\nWasserqualität beeinträchtigt werden, wenn auf länger freiliegenden Flächen, z.\nB. im Stauwurzelbereich, Vegetation aufwächst (Kraut, Strauch), welche später\nwieder überstaut wird, was zur Zersetzung dieser Biomasse mit Sauerstoffver-\nbrauch und Nährstofffreisetzung führen kann. Nimmt die Wasserqualität ab,\nwird die Trinkwasseraufbereitung aufwändiger.\nDie Bedeutung des Themas zeigt sich auch darin, dass der Talsperrenbetrieb\ninsbesondere in den zurückliegenden fünf Trockenjahren (2018–2022) die Tal-\nsperrenbewirtschaftung bereits angepasst hat. Dabei galt grundsätzlich, dass\ndie Stauraumbewirtschaftung zur Sicherung der Rohwasserbereitstellung\noberste Priorität hat (Cöster 2021). Die Minderung des Wasserdargebotes\nwirkte sich allerdings auf die verfügbare Wassermenge für die Energiegewin-\nnung aus. Für die Rohwasserbereitstellung und Niedrigwasseraufhöhung der\nBode gab es bisher keine Einschränkungen (Cöster 2021). Unter anderem wur-\nden folgende Maßnahmen umgesetzt:\n Der Stauinhalt wurde bis zum Jahresende nicht unter 60 Mio. m³ ge-",
+            "page": 2,
+            "printed_page": null,
+            "block_id": "p0002_b0003",
+            "section": null
+          }
+        ],
+        "pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "chunk_0007_ce76af19",
+        "blocks": [
+          {
+            "kind": "table_row",
+            "table_id": "p0003_t001",
+            "table_group": "p0003_t001",
+            "row": 1,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              611.4000053750001
+            ],
+            "text": " | 3,2 °C (errechnet aus LAU 2022). Im Winter 1995/1996 lag hingegen das Tem-\nperaturmittel der Wintermonate in Harzgerode bei nur 1,8 °C (LAU 2022). Es\nkann daher vermutet werden, dass der geringe Niederschlag, der fiel, als\nSchnee gespeichert wurde.\nAusnehmend groß war der Zufluss zur Rappbodetalsperre beispielsweise im\nWinter 2007/2008. Die Witterungsdaten der Klimastation Harzgerode zeigen,\ndass dieser Winter niederschlagsreich war (oberhalb des 85. Perzentils des\nZeitraums 1961–1990 (vgl. LAU 2020)). Auffallend ist, dass seit dem Jahr 2009\nin keinem Jahr mehr der langjährige mittlere Zufluss von 1971–2000 von 76\nMio. m³ mehr überschritten, sondern mit Ausnahme des Jahres 2018 in allen\nJahren unterschritten wurde.\nBei Betrachtung der Zeitreihe für das hydrologische Sommerhalbjahr sticht das\nJahr 2007 deutlich heraus. Auch wenn der Sommer 2007 an der Wetterstation\nHarzgerode zu den niederschlagsreicheren Sommern zählt (LAU 2020), ist die-\nses Extrem ohne eine detailliertere Analyse nicht zu erklären. Möglicherweise\nspielt eine Rolle, dass infolge des Orkans Kyrill im Januar 2007 im Harz sehr\nviele Bäume entwurzelt wurden und Kalamitätsflächen entstanden sind, auf de-\nnen der Niederschlag schneller abflusswirksam geworden sein. Dies könnte zu\nerhöhten Zuflüssen in die Rappbodetalsperre geführt haben.\nZu den extrem trockenen Sommern gehört beispielsweise der Sommer 2018, in\ndem im Gebiet der Talsperre -56,6 % des mittleren Niederschlags der Jahre\n1971–2000 fiel (Cöster 2021). Insgesamt zeigt sich für das Sommerhalbjahr,\ndass die Anzahl der Jahre mit sehr geringen Zuflüssen zur Rappbodetalsperre\nmit der Zeit deutlich zunimmt. Von den 14 Jahren von 2011 bis 2024 flossen in\nneun Jahren weniger als 10 Mio. m³ in die Talsperre. In der gesamten Zeitreihe\nvon 1971 bis 2024 kam dies überhaupt nur in 16 Sommern vor.\nEine Trend- und Bruchpunktanalyse der Daten ergab, dass die Menge des Zu-\nflusses im Winterhalbjahr seit den frühen 2000er Jahren statistisch signifikant",
+            "page": 3,
+            "printed_page": null,
+            "block_id": "p0003_b0001",
+            "section": null
+          },
+          {
+            "kind": "table_row",
+            "table_id": "p0003_t001",
+            "table_group": "p0003_t001",
+            "row": 1,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              611.4000053750001
+            ],
+            "text": "sinkt, während sie in den 1970er-, 1980er- und 1990er-Jahren noch anstieg. Für\ndas Sommerhalbjahr zeigt sich über die gesamte Zeitreihe ein statistisch signifi-\nkanter fallender Trend.\nZusatz: Die Jahressumme des errechneten Zuflusses zur Rappbodetalsperre\nschwankt von Jahr zu Jahr stark. Besonders wasserreiche Jahre waren die\nJahre 2002 und 2007. Sie waren ungewöhnlich niederschlagsreich (LAU 2020).\nBesonders wasserarm waren die Jahre 1996, 2009, 2021 und 2022. Auch diese\nWerte lassen sich in der Regel anhand der Jahresniederschlagssummen gut er-\nklären.\nAuffallend ist der andauernd geringe Zufluss seit 2009. Seit diesem Jahr liegt\nder errechnete Zufluss in allen Jahren unterhalb des langjährigen mittleren Zu-\nfluss von 1971–2000 von 97 Mio. m³. Eine Trend- und Bruchpunktanalyse der\nDaten ergab, dass die Jahresmenge des Zuflusses seit den frühen 2000er Jah-\nren statistisch signifikant sinkt, während sie in den 1970er, 1980er und 1990er\nJahren noch anstieg.",
+            "page": 3,
+            "printed_page": null,
+            "block_id": "p0003_b0002",
+            "section": null
+          }
+        ],
+        "context_blocks": [
+          {
+            "kind": "text",
+            "bbox": [
+              276.36000824999996,
+              797.581293125,
+              315.7597500506838,
+              807.541668125
+            ],
+            "text": "Seite 2/6",
+            "page": 2,
+            "printed_page": null,
+            "block_id": "p0002_b0009",
+            "section": null
+          },
+          {
+            "kind": "table_row",
+            "table_id": "p0003_t001",
+            "table_group": "p0003_t001",
+            "row": 2,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              611.4000053750001
+            ],
+            "text": "Spalten:  | 3,2 °C (errechnet aus LAU 2022). Im Winter 1995/1996 lag hingegen das Tem-\nperaturmittel der Wintermonate in Harzgerode bei nur 1,8 °C (LAU 2022). Es\nkann daher vermutet werden, dass der geringe Niederschlag, der fiel, als\nSchnee gespeichert wurde.\nAusnehmend groß war der Zufluss zur Rappbodetalsperre beispielsweise im\nWinter 2007/2008. Die Witterungsdaten der Klimastation Harzgerode zeigen,\ndass dieser Winter niederschlagsreich war (oberhalb des 85. Perzentils des\nZeitraums 1961–1990 (vgl. LAU 2020)). Auffallend ist, dass seit dem Jahr 2009\nin keinem Jahr mehr der langjährige mittlere Zufluss von 1971–2000 von 76\nMio. m³ mehr überschritten, sondern mit Ausnahme des Jahres 2018 in allen\nJahren unterschritten wurde.\nBei Betrachtung der Zeitreihe für das hydrologische Sommerhalbjahr sticht das\nJahr 2007 deutlich heraus. Auch wenn der Sommer 2007 an der Wetterstation\nHarzgerode zu den niederschlagsreicheren Sommern zählt (LAU 2020), ist die-\nses Extrem ohne eine detailliertere Analyse nicht zu erklären. Möglicherweise\nspielt eine Rolle, dass infolge des Orkans Kyrill im Januar 2007 im Harz sehr\nviele Bäume entwurzelt wurden und Kalamitätsflächen entstanden sind, auf de-\nnen der Niederschlag schneller abflusswirksam geworden sein. Dies könnte zu\nerhöhten Zuflüssen in die Rappbodetalsperre geführt haben.\nZu den extrem trockenen Sommern gehört beispielsweise der Sommer 2018, in\ndem im Gebiet der Talsperre -56,6 % des mittleren Niederschlags der Jahre\n1971–2000 fiel (Cöster 2021). Insgesamt zeigt sich für das Sommerhalbjahr,\ndass die Anzahl der Jahre mit sehr geringen Zuflüssen zur Rappbodetalsperre\nmit der Zeit deutlich zunimmt. Von den 14 Jahren von 2011 bis 2024 flossen in\nneun Jahren weniger als 10 Mio. m³ in die Talsperre. In der gesamten Zeitreihe\nvon 1971 bis 2024 kam dies überhaupt nur in 16 Sommern vor.\nEine Trend- und Bruchpunktanalyse der Daten ergab, dass die Menge des Zu-",
+            "page": 3,
+            "printed_page": null,
+            "block_id": "p0003_b0003",
+            "section": null
+          }
+        ],
+        "pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "pilot_table_2016_2030",
+        "pages": [
+          5
+        ],
+        "blocks": [
+          {
+            "kind": "table_row",
+            "table_id": "p0005_t003",
+            "table_group": "p0005_t003",
+            "row": 1,
+            "bbox": [
+              56.880000375,
+              287.75999037500003,
+              535.43998725,
+              380.879993375
+            ],
+            "text": "Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030",
+            "page": 5,
+            "printed_page": null,
+            "block_id": "p0005_b0009",
+            "section": null
+          },
+          {
+            "kind": "table_row",
+            "table_id": "p0005_t003",
+            "table_group": "p0005_t003",
+            "row": 2,
+            "bbox": [
+              56.880000375,
+              287.75999037500003,
+              535.43998725,
+              380.879993375
+            ],
+            "text": "Spalten: Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030\nZufluss gesamt -\nWinterhalbjahr | 69 | 49 | 76 | 68 | 63 | 58 | 60 | 74 | 78 |  |  |  |  |  | ",
+            "page": 5,
+            "printed_page": null,
+            "block_id": "p0005_b0010",
+            "section": null
+          },
+          {
+            "kind": "table_row",
+            "table_id": "p0005_t003",
+            "table_group": "p0005_t003",
+            "row": 3,
+            "bbox": [
+              56.880000375,
+              287.75999037500003,
+              535.43998725,
+              380.879993375
+            ],
+            "text": "Spalten: Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030\nZufluss gesamt -\nSommerhalbjahr | 6 | 26 | 1 | 5 | 6 | 9 | 1 | 14 | 12 |  |  |  |  |  | ",
+            "page": 5,
+            "printed_page": null,
+            "block_id": "p0005_b0011",
+            "section": null
+          },
+          {
+            "kind": "table_row",
+            "table_id": "p0005_t003",
+            "table_group": "p0005_t003",
+            "row": 4,
+            "bbox": [
+              56.880000375,
+              287.75999037500003,
+              535.43998725,
+              380.879993375
+            ],
+            "text": "Spalten: Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030\nZufluss gesamt -\nJahressumme | 75 | 75 | 77 | 72 | 69 | 67 | 61 | 88 | 91 |  |  |  |  |  | ",
+            "page": 5,
+            "printed_page": null,
+            "block_id": "p0005_b0012",
+            "section": null
+          }
+        ],
+        "context_blocks": [
+          {
+            "kind": "table_row",
+            "table_id": "p0003_t001",
+            "table_group": "p0003_t001",
+            "row": 2,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              611.4000053750001
+            ],
+            "text": "flusses im Winterhalbjahr seit den frühen 2000er Jahren statistisch signifikant\nsinkt, während sie in den 1970er-, 1980er- und 1990er-Jahren noch anstieg. Für\ndas Sommerhalbjahr zeigt sich über die gesamte Zeitreihe ein statistisch signifi-\nkanter fallender Trend.\nZusatz: Die Jahressumme des errechneten Zuflusses zur Rappbodetalsperre\nschwankt von Jahr zu Jahr stark. Besonders wasserreiche Jahre waren die\nJahre 2002 und 2007. Sie waren ungewöhnlich niederschlagsreich (LAU 2020).\nBesonders wasserarm waren die Jahre 1996, 2009, 2021 und 2022. Auch diese\nWerte lassen sich in der Regel anhand der Jahresniederschlagssummen gut er-\nklären.\nAuffallend ist der andauernd geringe Zufluss seit 2009. Seit diesem Jahr liegt\nder errechnete Zufluss in allen Jahren unterhalb des langjährigen mittleren Zu-\nfluss von 1971–2000 von 97 Mio. m³. Eine Trend- und Bruchpunktanalyse der\nDaten ergab, dass die Jahresmenge des Zuflusses seit den frühen 2000er Jah-\nren statistisch signifikant sinkt, während sie in den 1970er, 1980er und 1990er\nJahren noch anstieg.\nMaßeinheit | Mio. m³",
+            "page": 3,
+            "printed_page": null,
+            "block_id": "p0003_b0004",
+            "section": null
+          }
+        ]
+      }
+    ],
+    "cover": [
+      {
+        "kind": "text",
+        "bbox": [
+          62.04000075,
+          60.90126012500002,
+          322.6075599454099,
+          139.86162987500006
+        ],
+        "text": "Nr. des Indikators B10\nBezeichnung Zufluss zur Rappbodetalsperre\nThemenfeld Wasser\nRäumliche Gliederung Rappbodetalsperre\nBearbeitungsstand 08.07.2025",
+        "page": 1,
+        "printed_page": null,
+        "block_id": "p0001_b0001",
+        "section": null
+      },
+      {
+        "kind": "table_row",
+        "table_id": "p0001_t001",
+        "table_group": "p0001_t001",
+        "row": 1,
+        "bbox": [
+          56.880000375,
+          164.75999637500001,
+          535.43998725,
+          782.759990375
+        ],
+        "text": "Definition und Berech-\nnungsvorschrift | Dargestellt werden die Zuflussmenge zur Rappbodetalsperre im hydrologischen\nWinterhalbjahr sowie im hydrologischen Sommerhalbjahr in Mio. m³. Ein Zusatz\nzeigt zudem die Zuflussmenge zur Rappbodetalsperre im hydrologischen Jahr\nin Mio. m³. Der Indikator wird wie folgt berechnet:\nDie Daten werden unverändert vom Talsperrenbetrieb Sachsen-Anhalt über-\nnommen. Der Zufluss wird aus den folgenden Komponenten aufsummiert: tägli-\nche Zuflüsse aus dem Einzugsgebiet (diese Größe wird berechnet, s. u.), tägli-\nche Zuflüsse aus dem Stollen, täglicher Korrekturwert von 0,1 m³/s (Begrün-\ndung s. u.).\nDer (tägliche) Zufluss aus dem Einzugsgebiet errechnet sich aus der täglichen\nInhaltsdifferenz und den jeweiligen Abgabemengen abzüglich des gemessenen\nZuflusses über den Stollen. Die Tageswerte werden vom Talsperrenbetrieb auf\nPlausibilität geprüft, falls notwendig korrigiert und anschließend für die betrach-\nteten Monate aufsummiert.\nDer Korrekturwert wird berücksichtigt, weil der Grundablass der Rappbodetal-\nsperre seit langem undicht ist. Der dadurch entstehende Wasserverlust wird\nvom Talsperrenbetrieb auf 0,1 m³/s geschätzt.\nHydrologisches Winterhalbjahr: 01.11.–30.04.\nHydrologisches Sommerhalbjahr: 01.05.–31.10.\nHydrologisches Jahr: 01.11.–31.10.",
+        "page": 1,
+        "printed_page": null,
+        "block_id": "p0001_b0002",
+        "section": null
+      },
+      {
+        "kind": "table_row",
+        "table_id": "p0001_t001",
+        "table_group": "p0001_t001",
+        "row": 2,
+        "bbox": [
+          56.880000375,
+          164.75999637500001,
+          535.43998725,
+          782.759990375
+        ],
+        "text": "Spalten: Definition und Berech-\nnungsvorschrift | Dargestellt werden die Zuflussmenge zur Rappbodetalsperre im hydrologischen\nWinterhalbjahr sowie im hydrologischen Sommerhalbjahr in Mio. m³. Ein Zusatz\nzeigt zudem die Zuflussmenge zur Rappbodetalsperre im hydrologischen Jahr\nin Mio. m³. Der Indikator wird wie folgt berechnet:\nDie Daten werden unverändert vom Talsperrenbetrieb Sachsen-Anhalt über-\nnommen. Der Zufluss wird aus den folgenden Komponenten aufsummiert: tägli-\nche Zuflüsse aus dem Einzugsgebiet (diese Größe wird berechnet, s. u.), tägli-\nche Zuflüsse aus dem Stollen, täglicher Korrekturwert von 0,1 m³/s (Begrün-\ndung s. u.).\nDer (tägliche) Zufluss aus dem Einzugsgebiet errechnet sich aus der täglichen\nInhaltsdifferenz und den jeweiligen Abgabemengen abzüglich des gemessenen\nZuflusses über den Stollen. Die Tageswerte werden vom Talsperrenbetrieb auf\nPlausibilität geprüft, falls notwendig korrigiert und anschließend für die betrach-\nteten Monate aufsummiert.\nDer Korrekturwert wird berücksichtigt, weil der Grundablass der Rappbodetal-\nsperre seit langem undicht ist. Der dadurch entstehende Wasserverlust wird\nvom Talsperrenbetrieb auf 0,1 m³/s geschätzt.\nHydrologisches Winterhalbjahr: 01.11.–30.04.\nHydrologisches Sommerhalbjahr: 01.05.–31.10.\nHydrologisches Jahr: 01.11.–31.10.\nDatenquelle, Aufberei-\ntung | TSB: Talsperrenmonitoring",
+        "page": 1,
+        "printed_page": null,
+        "block_id": "p0001_b0003",
+        "section": null
+      },
+      {
+        "kind": "table_row",
+        "table_id": "p0001_t001",
+        "table_group": "p0001_t001",
+        "row": 3,
+        "bbox": [
+          56.880000375,
+          164.75999637500001,
+          535.43998725,
+          782.759990375
+        ],
+        "text": "Spalten: Definition und Berech-\nnungsvorschrift | Dargestellt werden die Zuflussmenge zur Rappbodetalsperre im hydrologischen\nWinterhalbjahr sowie im hydrologischen Sommerhalbjahr in Mio. m³. Ein Zusatz\nzeigt zudem die Zuflussmenge zur Rappbodetalsperre im hydrologischen Jahr\nin Mio. m³. Der Indikator wird wie folgt berechnet:\nDie Daten werden unverändert vom Talsperrenbetrieb Sachsen-Anhalt über-\nnommen. Der Zufluss wird aus den folgenden Komponenten aufsummiert: tägli-\nche Zuflüsse aus dem Einzugsgebiet (diese Größe wird berechnet, s. u.), tägli-\nche Zuflüsse aus dem Stollen, täglicher Korrekturwert von 0,1 m³/s (Begrün-\ndung s. u.).\nDer (tägliche) Zufluss aus dem Einzugsgebiet errechnet sich aus der täglichen\nInhaltsdifferenz und den jeweiligen Abgabemengen abzüglich des gemessenen\nZuflusses über den Stollen. Die Tageswerte werden vom Talsperrenbetrieb auf\nPlausibilität geprüft, falls notwendig korrigiert und anschließend für die betrach-\nteten Monate aufsummiert.\nDer Korrekturwert wird berücksichtigt, weil der Grundablass der Rappbodetal-\nsperre seit langem undicht ist. Der dadurch entstehende Wasserverlust wird\nvom Talsperrenbetrieb auf 0,1 m³/s geschätzt.\nHydrologisches Winterhalbjahr: 01.11.–30.04.\nHydrologisches Sommerhalbjahr: 01.05.–31.10.\nHydrologisches Jahr: 01.11.–31.10.\nBedeutung | Bedeutung der Rappbodetalsperre und Wahl des Indikators:\nDie Rappbodetalsperre ist die größte Trinkwassertalsperre Deutschlands (Cös-\nter 2021). Das Rohwasser aus der Talsperre wird im Wasserwerk Wienrode\n(Betreiber: Fernwasserversorgung Elbaue-Ostharz GmbH, FEO) zu Trinkwas-\nser aufbereitet. Mit der Jahresmenge aus der Rappbodetalsperre / Wasserwerk\nWienrode wird etwas mehr als ein Drittel des Trinkwasserbedarfs von Sachsen-\nAnhalt abgedeckt (Cöster 2021). Die Trinkwassermenge aus der Rappbodetal-\nsperre entspricht dem Bedarf von ca. 1,2 Mio. Einwohnern (Einwohnerwerte).\nSie dient aber auch dem Hochwasserschutz, der Niedrigwasseraufhöhung, der",
+        "page": 1,
+        "printed_page": null,
+        "block_id": "p0001_b0004",
+        "section": null
+      },
+      {
+        "kind": "table_row",
+        "table_id": "p0001_t001",
+        "table_group": "p0001_t001",
+        "row": 3,
+        "bbox": [
+          56.880000375,
+          164.75999637500001,
+          535.43998725,
+          782.759990375
+        ],
+        "text": "Stromerzeugung und der Fischerei. Insgesamt hat sie einen Stauraum von 113\nMio. m³ (TSB 2023).\nDas Einzugsgebiet der Rappbodetalsperre ist insgesamt 274 km² groß, wobei\n157,5 km² davon durch den Überleitungsstollen aus dem Stausee Königshütte\n(Überleitungssperre Trogfurter Brücke), der die Bode staut, resultieren (TSB\n2014, Cöster 2021). Die mit dem Klimawandel verbundenen Änderungen im\nNiederschlagsregime sowie steigende Temperaturen insbesondere im Sommer\nkönnen die Wasserbilanz im Einzugsgebiet der Rappbodetalsperre verändern\nund vermehrt zu Niedrigwasser in den Zuflüssen zur Talsperre führen. Die Tal-\nsperre bekommt dann möglicherweise nicht mehr genug Frischwasser. Um die-\nses Phänomen möglichst vollständig zu erfassen, betrachtet der Indikator nicht\nnur die errechnete Zuflussmenge aus dem eigenen Einzugsgebiet der Rappbo-\ndetalsperre (116,5 km² groß), sondern auch den Zufluss aus dem Überleitungs-\nstollen.\nBedeutung des Themas:\nDie Rappbodetalsperre erfüllt viele wichtige Funktionen, allen voran die Bereit-\nstellung von Rohwasser für die Trinkwassergewinnung. Für die Funktionalität",
+        "page": 1,
+        "printed_page": null,
+        "block_id": "p0001_b0005",
+        "section": null
+      },
+      {
+        "kind": "text",
+        "bbox": [
+          276.36000824999996,
+          797.581293125,
+          315.7597500506838,
+          807.541668125
+        ],
+        "text": "Seite 1/6",
+        "page": 1,
+        "printed_page": null,
+        "block_id": "p0001_b0006",
+        "section": null
+      }
+    ],
+    "code_hashes": {
+      "blablador_client.py": "c8fd1cc7afc83cb30415a4666d50fa9603144f274282eaaa3234a7ad2751f8be",
+      "common.py": "d5cc2e36ee286a02ddf563f2794b2a5321e5e78eeceef61199ae1e5c323d5a2f",
+      "extract_facts.py": "bbb7df1c2d967cdd5330437f2b6743a36ada0e3bf777986eab4def9bddbc76ec",
+      "parse_directory.py": "96ee97eedb3b45cb05ac150f9e3e6e5dc52b7803a47edc6618f8ccb3a344670e",
+      "prepare_document.py": "312506be5a726061e11ea2c49a88c584a6386dc71b2927aea204e4319258e04e",
+      "run_parsing_tests.py": "d1ecd48175326937bb8c56ee22dbccc4d38d34e226b6c6ba12e7110c02c4adc2",
+      "schemas.py": "a73a331f385eed501feca7c4862e997a11494b9f0471ca95fdd094f804d88384",
+      "validate_export.py": "6ed99d8b1636b7518b414e1b2327fff40634155ba9913cc7d2084299cdedba9d",
+      "verify_release.py": "abf57c75580a390cda0c9571e98d8f4286de9604924f7a29f029950a05baa745"
+    },
+    "schema_hash": "1b7c253f21930e4fc454db5bcf2287ba271ba24ec72a587f525f4cc7f3b8d1b6",
+    "prompt_hash": "1f1d9329bb15ffebc1bfebe7839ff76b5f1775e8e2ce319d3dd479cb4819fe02",
+    "ontology_hash": "4b23a99e8de959124ece98c3dd920e3077e4860412bb109880d970df9c53c9b0",
+    "dependencies": {
+      "pdfplumber": "0.11.10",
+      "pypdf": "6.19.0",
+      "pydantic": "2.13.5",
+      "openpyxl": "3.1.5"
+    },
+    "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "updated_at": "2026-09-28T13:38:12.140514+00:00"
+}

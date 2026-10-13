@@ -1,0 +1,5 @@
+minute_utc,scope,run_id,ontology,model,endpoint,requests,successful,failed,unfinished,retries,http_429,max_requests_last_60s,prompt_tokens,completion_tokens
+2026-09-28T14:04:00+00:00,detail,r1_moldau_qm364_reference,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,1,13879,2628
+2026-09-28T14:04:00+00:00,total,,,,,1,1,0,0,0,0,1,13879,2628
+2026-09-28T14:05:00+00:00,detail,r1_moldau_qm364_reference,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,0,0,0,0,0,0,0,,
+2026-09-28T14:05:00+00:00,total,,,,,0,0,0,0,0,0,0,,
