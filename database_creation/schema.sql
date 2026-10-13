@@ -1,0 +1,24 @@
+CREATE EXTENSION IF NOT EXISTS postgis;
+CREATE SCHEMA IF NOT EXISTS ingest;
+CREATE SCHEMA IF NOT EXISTS solve;
+CREATE TABLE IF NOT EXISTS ingest.batch(id text PRIMARY KEY,created_at timestamptz DEFAULT now(),status text NOT NULL,manifest jsonb NOT NULL);
+CREATE TABLE IF NOT EXISTS ingest.blob(sha256 text PRIMARY KEY,content bytea NOT NULL);
+CREATE TABLE IF NOT EXISTS ingest.file(id text PRIMARY KEY,path text NOT NULL,sha256 text NOT NULL REFERENCES ingest.blob(sha256),bytes bigint NOT NULL);
+CREATE TABLE IF NOT EXISTS ingest.batch_file(batch_id text REFERENCES ingest.batch(id),file_id text REFERENCES ingest.file(id),PRIMARY KEY(batch_id,file_id));
+CREATE TABLE IF NOT EXISTS ingest.dataset(id text PRIMARY KEY,file_id text REFERENCES ingest.file(id),family text,headers jsonb,crs_original text,complete boolean NOT NULL DEFAULT false,row_count bigint);
+CREATE TABLE IF NOT EXISTS ingest.batch_dataset(batch_id text REFERENCES ingest.batch(id),dataset_id text REFERENCES ingest.dataset(id),PRIMARY KEY(batch_id,dataset_id));
+CREATE TABLE IF NOT EXISTS ingest.record(id text PRIMARY KEY,dataset_id text REFERENCES ingest.dataset(id),ordinal bigint NOT NULL,payload jsonb NOT NULL,UNIQUE(dataset_id,ordinal));
+CREATE TABLE IF NOT EXISTS solve.processed(id text PRIMARY KEY,batch_id text REFERENCES ingest.batch(id),table_name text NOT NULL,record_id text NOT NULL,payload jsonb NOT NULL,UNIQUE(batch_id,table_name,record_id));
+CREATE TABLE IF NOT EXISTS solve.feature(id text PRIMARY KEY,record_id text REFERENCES ingest.record(id),target_class text NOT NULL,identity_code text,entity_id text,geom geometry(Geometry,25833),quality_status text NOT NULL,payload jsonb NOT NULL);
+CREATE TABLE IF NOT EXISTS solve.waterbody_assignment(id text PRIMARY KEY,batch_id text REFERENCES ingest.batch(id),owner_type text NOT NULL,owner_id text NOT NULL,payload jsonb NOT NULL,UNIQUE(batch_id,owner_type,owner_id));
+CREATE INDEX IF NOT EXISTS waterbody_assignment_owner ON solve.waterbody_assignment(owner_type,owner_id);
+CREATE OR REPLACE VIEW solve.waterbody_links AS SELECT a.batch_id,a.owner_type,a.owner_id,l->>'target_entity_id' AS target_entity_id,l->>'target_code' AS target_code,l->>'assignment_status' AS assignment_status,l->>'method' AS method,l AS payload FROM solve.waterbody_assignment a CROSS JOIN LATERAL jsonb_array_elements(a.payload->'links') l
+UNION ALL SELECT p.batch_id,'mention'::text,p.payload->>'mention_id',p.payload->>'target_entity_id',p.payload->>'target_code',COALESCE(p.payload->>'assignment_status','candidate'),p.payload->>'method',p.payload FROM solve.processed p WHERE p.table_name='entity_links';
+CREATE TABLE IF NOT EXISTS solve.observation(id text PRIMARY KEY,record_id text REFERENCES ingest.record(id),ordinal integer NOT NULL,target_class text NOT NULL,station_code text,parameter_original text,unit_original text,value_original text,value_numeric double precision,qualifier text,note_original text,time_original text,observed_at timestamp,context jsonb NOT NULL,quality_status text NOT NULL);
+CREATE INDEX IF NOT EXISTS observation_station ON solve.observation(station_code);
+CREATE INDEX IF NOT EXISTS observation_parameter_time ON solve.observation(parameter_original,observed_at);
+CREATE INDEX IF NOT EXISTS feature_geometry ON solve.feature USING gist(geom);
+CREATE OR REPLACE VIEW solve.findings AS SELECT batch_id,payload->>'id' AS id,payload->>'source_record_id' AS source_record_id,payload->>'target_class' AS target_class,payload->>'statement' AS statement,payload->>'statement_review_status' AS review_status,payload->>'classification_review_status' AS classification_review_status,payload->>'warning' AS warning,payload FROM solve.processed WHERE table_name='findings';
+CREATE OR REPLACE VIEW solve.relationships AS SELECT batch_id,payload->>'id' AS id,payload->>'source_id' AS source_id,payload->>'target_id' AS target_id,payload->>'predicate' AS predicate,payload->>'review_status' AS review_status,payload FROM solve.processed WHERE table_name='relationships';
+CREATE OR REPLACE VIEW solve.interventions AS SELECT f.id,f.geom,f.payload,f.payload->>'mass_name' AS name,f.payload->>'lp_status' AS status_original,CASE f.payload->>'lp_status' WHEN 'P' THEN 'planning_completed' WHEN 'B' THEN 'planning_and_construction_completed' ELSE 'unknown_code_mapping' END AS implementation_status,CASE f.payload->>'lp_status' WHEN 'P' THEN 'planning_period' WHEN 'B' THEN 'planning_and_construction_period' ELSE 'unknown_period' END AS time_semantics,f.payload->>'jahr_von' AS year_from_original,f.payload->>'jahr_bis' AS year_to_original,'user_status_years_v1'::text AS field_definition FROM solve.feature f WHERE f.target_class='solve:Intervention';
+CREATE OR REPLACE VIEW solve.source_records AS SELECT r.*,d.family,f.path,b.batch_id FROM ingest.record r JOIN ingest.dataset d ON d.id=r.dataset_id JOIN ingest.file f ON f.id=d.file_id JOIN ingest.batch_dataset b ON b.dataset_id=d.id;
