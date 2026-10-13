@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+results/
+input/*.pdf
+input/*.PDF
+!input/GEK_Obere_Bode_Endbericht-Textteil.pdf

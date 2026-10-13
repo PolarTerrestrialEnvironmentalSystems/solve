@@ -1,0 +1,1 @@
+Weitere zu parsende PDFs hier ablegen. Die Bode-Test-PDF ist bereits enthalten.

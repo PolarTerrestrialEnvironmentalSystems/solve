@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-13",
+  "offline_tests": {
+    "passed": 13,
+    "failed": 0
+  },
+  "dry_run": {
+    "status": "dry_run",
+    "pdf": "input/GEK_Obere_Bode_Endbericht-Textteil.pdf",
+    "pages": 124,
+    "chunks": 31,
+    "rpm": 10
+  },
+  "live_api_test": false,
+  "source": "weitergabe/SOLVE_Parsing_Fein_Batch_1.0.0",
+  "destination": "repo/pdf_parser",
+  "changes": [
+    "Batch default RPM 30 -> 10",
+    ".env.example RPM 30 -> 10",
+    "Example PDF included",
+    "README and Git ignore updated"
+  ],
+  "api_key_included": false
+}
