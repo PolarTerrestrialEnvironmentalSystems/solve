@@ -35,7 +35,7 @@ Daraus folgen zwei Verknüpfungsarten:
    speist, werden Ursache→Wirkung-*Vorschläge* gebildet: ursächliche Befunde oben
    (Maßnahme/Prozess/Ereignis) → Zustands-/Messbefunde unten.
 
-> **Ehrlich bleiben:** Die kausalen Cross-Region-Kanten sind **topologisch abgeleitete
+> Die kausalen Cross-Region-Kanten sind **topologisch abgeleitete
 > Kandidaten** (`confidence=inferred`) zum Sichten – **keine** aus dem Text belegten
 > Aussagen. Die textbelegten Kausalkanten stehen weiterhin nur in `pdf_relationship.csv`.
 
