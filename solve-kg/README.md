@@ -15,6 +15,9 @@ verbunden) blieb unverknüpft.
 `topology.py` + `region_link.py` schließen diese Lücke über die amtliche
 **Gewässerkennzahl (GKZ)**, die die Fließtopologie hierarchisch kodiert:
 
+<img width="846" height="411" alt="Bildschirmfoto 2026-10-20 um 11 01 52" src="https://github.com/user-attachments/assets/5758c3b1-600e-4d91-a618-68984a05e7a2" />
+
+
 ```
 5        Elbe            (Flussgebietseinheit)
 └ 56     Saale
