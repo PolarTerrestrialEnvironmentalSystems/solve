@@ -17,7 +17,7 @@ Knoten andocken wie die DB-Daten (Messungen, Geometrien).
 | `water-mappings-pdf.obda` | Ontop-Mappings für die obigen Tabellen |
 | `views.sql` | CREATE TABLE/VIEW + `\copy`-Ladebefehle |
 
-## Einbau in euer `water-kg-ontop/`
+## Einbau in das `water-kg-ontop/`
 1. **Tabellen laden:** `psql -d water_kg -f views.sql`, dann die drei `\copy`-Zeilen ausführen.
 2. **Ontologie:** `water-pdf.ttl` neben `water-core.ttl` legen und entweder zusammenführen
    oder per `owl:imports` einbinden.
