@@ -44,6 +44,6 @@ separater, noch nicht eingemergter Strang.
 
 ## Daten & Zugänge
 
-Liegen lokal, gehören **nicht** ins öffentliche Repo: Quell-PDFs, `WRRL/…`-Fachdaten,
+Liegen lokal, sind **nicht** im öffentliche Repo: `WRRL/…`-Fachdaten,
 GeoJSON, `results/`, und vor allem **`.env`** mit dem Blablador-Key.
 `solve-kg/.gitignore` schließt all das aus.
