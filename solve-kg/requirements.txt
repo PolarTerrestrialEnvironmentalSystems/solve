@@ -1,0 +1,11 @@
+# Laufzeit-Abhängigkeiten der Parsing-Pipeline (LLM-Extraktion + PDF-Aufbereitung).
+# Hinweis: die Cross-Region-Verknüpfung (dbf.py, topology.py, region_link.py) und
+# der Beweis-Test laufen OHNE Drittpakete, nur mit der Standardbibliothek.
+#
+# Exakt gepinnte Versionen siehe requirements.lock.txt.
+
+pydantic>=2.13,<3
+pdfplumber>=0.11
+pdfminer.six>=20250000
+pypdf>=6
+openpyxl>=3.1

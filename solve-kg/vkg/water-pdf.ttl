@@ -1,0 +1,59 @@
+# Ontologie-Ergaenzung fuer die aus PDFs extrahierten Fakten.
+# Baut auf der bestehenden water-core.ttl auf (gleiche Namensraeume).
+# Idee: PDFs liefern DOKUMENTIERTE BEFUNDE (Ereignisse/Zustaende/Massnahmen) und
+# KAUSALE VERKNUEPFUNGEN, die in der DB nicht stehen. Sie haengen ueber den
+# amtlichen Code (eu_cd_lw) an denselben water:WaterBody-IRIs wie die DB-Daten.
+
+@prefix water: <https://example.org/ontology/water#> .
+@prefix sosa:  <http://www.w3.org/ns/sosa/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+### Klassen ###########################################################
+
+water:DocumentedFinding
+    a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Aus einem Dokument belegter Befund"@de ;
+    rdfs:comment "Ein aus Fliesstext extrahiertes Ereignis/Zustand/Massnahme etc., mit Beleg."@de .
+
+# Feinere Typen entsprechend unserem record_type (optional nutzbar):
+water:StateFinding       a owl:Class ; rdfs:subClassOf water:DocumentedFinding .   # Zustand
+water:MeasureFinding     a owl:Class ; rdfs:subClassOf water:DocumentedFinding .   # Maßnahme
+water:EventFinding       a owl:Class ; rdfs:subClassOf water:DocumentedFinding .   # Ereignis
+water:ProcessFinding     a owl:Class ; rdfs:subClassOf water:DocumentedFinding .   # Prozess
+water:PropertyFinding    a owl:Class ; rdfs:subClassOf water:DocumentedFinding .   # Eigenschaft
+# Messungen sind zugleich Beobachtungen (passt auf die bestehende water:Measurement):
+water:MeasurementFinding a owl:Class ; rdfs:subClassOf water:DocumentedFinding, sosa:Observation .
+
+water:CausalLink
+    a owl:Class ;
+    rdfs:label "Kausale Verknuepfung zwischen zwei Befunden"@de ;
+    rdfs:comment "Reifizierte Ursache->Wirkung-Kante; traegt Typ, Mechanismus und Beleg."@de .
+
+### Objekt-Eigenschaften ##############################################
+
+water:concernsWaterBody
+    a owl:ObjectProperty ;
+    rdfs:domain water:DocumentedFinding ;
+    rdfs:range water:WaterBody ;
+    rdfs:label "betrifft Wasserkoerper"@de .
+
+water:cause
+    a owl:ObjectProperty ;
+    rdfs:domain water:CausalLink ; rdfs:range water:DocumentedFinding .
+
+water:effect
+    a owl:ObjectProperty ;
+    rdfs:domain water:CausalLink ; rdfs:range water:DocumentedFinding .
+
+### Daten-Eigenschaften ###############################################
+
+water:recordType     a owl:DatatypeProperty ; rdfs:domain water:DocumentedFinding .
+water:statementText  a owl:DatatypeProperty ; rdfs:domain water:DocumentedFinding .
+water:timeOriginal   a owl:DatatypeProperty ; rdfs:domain water:DocumentedFinding .
+water:evidenceQuote  a owl:DatatypeProperty ; rdfs:domain prov:Entity .
+water:relationshipType a owl:DatatypeProperty ; rdfs:domain water:CausalLink .
+water:mechanism      a owl:DatatypeProperty ; rdfs:domain water:CausalLink .

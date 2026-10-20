@@ -1,0 +1,72 @@
+[PrefixDeclaration]
+water:      https://example.org/ontology/water#
+resource:   https://example.org/resource/
+rdfs:       http://www.w3.org/2000/01/rdf-schema#
+sosa:       http://www.w3.org/ns/sosa/
+prov:       http://www.w3.org/ns/prov#
+xsd:        http://www.w3.org/2001/XMLSchema#
+
+# Mappings fuer die aus PDFs extrahierten Fakten.
+# Sie nutzen DIESELBE Wasserkoerper-IRI wie das bestehende Mapping
+# (resource:water-body/{eu_cd_lw}) -> dadurch haengen PDF-Befunde und
+# DB-Messungen/Geometrien automatisch am selben Knoten.
+
+[MappingDeclaration] @collection [[
+
+mappingId   PdfFinding
+target      resource:finding/{event_id}
+                a water:DocumentedFinding ;
+                rdfs:label {statement} ;
+                water:statementText {statement} ;
+                water:recordType {record_type} ;
+                prov:wasDerivedFrom resource:document/{source_document} .
+source      SELECT event_id, statement, record_type, source_document
+            FROM water_kg.v_pdf_event_rdf
+
+# Nur wenn der Befund auf einen aufgeloesten amtlichen Code zeigt:
+# dann verbindet er sich mit dem DB-Wasserkoerper derselben IRI.
+mappingId   PdfFindingWaterBody
+target      resource:finding/{event_id}
+                water:concernsWaterBody resource:water-body/{eu_cd_lw} .
+source      SELECT event_id, eu_cd_lw
+            FROM water_kg.v_pdf_event_rdf
+            WHERE eu_cd_lw IS NOT NULL AND eu_cd_lw <> ''
+
+# Zeitangabe (nur wo vorhanden):
+mappingId   PdfFindingTime
+target      resource:finding/{event_id}
+                water:timeOriginal {time_original} .
+source      SELECT event_id, time_original
+            FROM water_kg.v_pdf_event_rdf
+            WHERE time_original IS NOT NULL AND time_original <> ''
+
+# Beleg-Zitat als Nachweis am Befund:
+mappingId   PdfFindingEvidence
+target      resource:finding/{event_id}
+                water:evidenceQuote {quote} .
+source      SELECT event_id, quote
+            FROM water_kg.v_pdf_event_rdf
+            WHERE quote IS NOT NULL AND quote <> ''
+
+# Messungen zusaetzlich als Beobachtung typisieren (fuegt sich in sosa:):
+mappingId   PdfMeasurementType
+target      resource:finding/{event_id}
+                a water:MeasurementFinding .
+source      SELECT event_id
+            FROM water_kg.v_pdf_event_rdf
+            WHERE record_type = 'Messung'
+
+# Kausale Verknuepfung als eigener Knoten (traegt Typ + Mechanismus + Beleg):
+mappingId   PdfCausalLink
+target      resource:causal-link/{relationship_id}
+                a water:CausalLink ;
+                water:cause  resource:finding/{source_event_id} ;
+                water:effect resource:finding/{target_event_id} ;
+                water:relationshipType {relationship_type} ;
+                water:mechanism {mechanism} ;
+                prov:wasDerivedFrom resource:document/{source_document} .
+source      SELECT relationship_id, source_event_id, target_event_id,
+                   relationship_type, mechanism, source_document
+            FROM water_kg.pdf_relationship
+
+]]
