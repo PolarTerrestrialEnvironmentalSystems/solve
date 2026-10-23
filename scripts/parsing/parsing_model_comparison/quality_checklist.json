@@ -1,0 +1,42 @@
+{
+  "scope": "Verkleinerter Pilot nach abgebrochener Kalibrierung: Massnahmen, Kyrill-Vermutung und neun Sommerwerte. Keine vollstaendige Goldannotation.",
+  "narrative_checks": [
+    "Keine Einschraenkungen der Rohwasserbereitstellung und Niedrigwasseraufhoehung der Bode; Verneinung erhalten.",
+    "Stauinhalt bis Jahresende nicht unter 60 Mio. m3; Zweck Rohwasserversorgung auch bei geringen Winterzufluessen.",
+    "Sommerstauziel von Mai auf Maerz vorgezogen; Schneeruecklage als Bedingung erhalten.",
+    "Kyrill als moegliche Erklaerung des Sommerzuflusses 2007, nicht als bewiesene Ursache."
+  ],
+  "table_page": 5,
+  "table_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "summer_Mio_m3": [
+    6,
+    26,
+    1,
+    5,
+    6,
+    9,
+    1,
+    14,
+    12
+  ],
+  "empty_years": [
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "empty_year_rule": "Keine Messwerte erfinden; leere Zellen sind keine Nullen.",
+  "release_criterion": "Keine Modellfreigabe allein aufgrund dieser kleinen Stichprobe. Kritische Verneinungen, Unsicherheiten, Referenzen und Tabellenwerte muessen erhalten bleiben."
+}

@@ -1,0 +1,210 @@
+{
+  "cache_key": "43e72161269e8ebf6891920874440f4aeada108f32a60c0267697a5a559dd8e9",
+  "status": "complete",
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "pilot_table_2016_2030",
+      "pages": [
+        5
+      ],
+      "result": {
+        "document": {
+          "title": "Zufluss zur Rappbodetalsperre",
+          "issuer": null,
+          "authors": null,
+          "publication_date": {
+            "original": "08.07.2025",
+            "normalized": "2025-07-08",
+            "precision": "day"
+          },
+          "evidence": [
+            {
+              "quote": "Nr. des Indikators B10 Bezeichnung Zufluss zur Rappbodetalsperre Themenfeld Wasser Räumliche Gliederung Rappbodetalsperre Bearbeitungsstand 08.07.2025",
+              "block_id": "p0001_b0001",
+              "page": 1,
+              "field_names": [
+                "title",
+                "publication_date"
+              ],
+              "printed_page": null,
+              "table_id": null,
+              "row": null,
+              "column": null
+            }
+          ]
+        },
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "recipient",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": "Explizite Nennung im Dokumenttitel und Kontext."
+            },
+            "statement": "Zufluss gesamt zur Rappbodetalsperre im Sommerhalbjahr für die Jahre 2016 bis 2024.",
+            "ontology_concept": "core:Observation",
+            "participants": null,
+            "spatial_scope": {
+              "location": "Rappbodetalsperre",
+              "role": "recipient"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt",
+                "value_original": "6 (2016), 26 (2017), 1 (2018), 5 (2019), 6 (2020), 9 (2021), 1 (2022), 14 (2023), 12 (2024)",
+                "value_normalized": null,
+                "unit_original": "Mio. m³",
+                "unit_normalized": "Mio. m³",
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "aggregation": "Sommerhalbjahr",
+              "parameter": "Zufluss gesamt"
+            },
+            "time_original": null,
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2016",
+              "end": "2024",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "observed",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:hydrology.level_flow"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Zufluss gesamt - Sommerhalbjahr | 6 | 26 | 1 | 5 | 6 | 9 | 1 | 14 | 12 |  |  |  |  |  | ",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "spatial_scope",
+                  "time_normalized",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              },
+              {
+                "quote": "Maßeinheit | Mio. m³",
+                "block_id": "p0003_b0004",
+                "page": 3,
+                "field_names": [
+                  "values"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "relationships": [],
+        "context_requests": [],
+        "notes": [
+          "Die Tabelle enthält Werte für die Jahre 2016 bis 2024. Die Spalten 2025 bis 2030 sind leer.",
+          "Die Maßeinheit 'Mio. m³' wurde aus einem separaten Tabellenblock (p0003_b0004) extrahiert, der als Kontext für die Datentabelle auf Seite 5 dient."
+        ]
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            62.04000075,
+            60.90126012500002,
+            322.6075599454099,
+            139.86162987500006
+          ],
+          "text": "Nr. des Indikators B10\nBezeichnung Zufluss zur Rappbodetalsperre\nThemenfeld Wasser\nRäumliche Gliederung Rappbodetalsperre\nBearbeitungsstand 08.07.2025",
+          "page": 1,
+          "printed_page": null,
+          "block_id": "p0001_b0001",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0003_t001",
+          "table_group": "p0003_t001",
+          "row": 2,
+          "bbox": [
+            56.880000375,
+            57.119995625,
+            535.4399872500001,
+            611.4000053750001
+          ],
+          "text": "Maßeinheit | Mio. m³",
+          "page": 3,
+          "printed_page": null,
+          "block_id": "p0003_b0004",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0005_t003",
+          "table_group": "p0005_t003",
+          "row": 1,
+          "bbox": [
+            56.880000375,
+            287.75999037500003,
+            535.43998725,
+            380.879993375
+          ],
+          "text": "Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030",
+          "page": 5,
+          "printed_page": null,
+          "block_id": "p0005_b0009",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0005_t003",
+          "table_group": "p0005_t003",
+          "row": 3,
+          "bbox": [
+            56.880000375,
+            287.75999037500003,
+            535.43998725,
+            380.879993375
+          ],
+          "text": "Spalten: Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030\nZufluss gesamt -\nSommerhalbjahr | 6 | 26 | 1 | 5 | 6 | 9 | 1 | 14 | 12 |  |  |  |  |  | ",
+          "page": 5,
+          "printed_page": null,
+          "block_id": "p0005_b0011",
+          "section": null
+        }
+      ],
+      "extracted_at": "2026-09-28T13:52:29.810731+00:00",
+      "response_model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\results\\compact_qwen\\fein\\raw_responses\\pilot_table_2016_2030_a51219d0e26f.json",
+      "purpose": "extraction"
+    }
+  ]
+}

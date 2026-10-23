@@ -1,0 +1,805 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "alias-apertus",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "swiss-ai/Apertus-8B-Instruct-2509",
+      "parent": null,
+      "max_model_len": 65536,
+      "permission": [
+        {
+          "id": "modelperm-89fcbe2567ace78a",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "15 - Apertus-8B-Instruct-2509 - A new swiss model from September 2025",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "swiss-ai/Apertus-8B-Instruct-2509",
+      "parent": null,
+      "max_model_len": 65536,
+      "permission": [
+        {
+          "id": "modelperm-8cb0af7b3387ac2e",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-eve",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "eve-esa/EVE-Instruct",
+      "parent": null,
+      "max_model_len": 131072,
+      "permission": [
+        {
+          "id": "modelperm-9f63ea0320704087",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "20 - EVE-Instruct - Expert Earth Observation and Earth Science (ES) domains",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "eve-esa/EVE-Instruct",
+      "parent": null,
+      "max_model_len": 131072,
+      "permission": [
+        {
+          "id": "modelperm-afda831c44606934",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "01 - GPT-OSS-120b - an open model released by OpenAI in August 2025",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "openai/gpt-oss-120b",
+      "parent": null,
+      "max_model_len": 131072,
+      "permission": [
+        {
+          "id": "modelperm-955ac8058dba9b7f",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-fast",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "openai/gpt-oss-120b",
+      "parent": null,
+      "max_model_len": 131072,
+      "permission": [
+        {
+          "id": "modelperm-8cac390dcf3a8aa5",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "01 - MiniMax-M2.7 - our best model as of April, 2026",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "MiniMaxAI/MiniMax-M2.7",
+      "parent": null,
+      "max_model_len": 131072,
+      "permission": [
+        {
+          "id": "modelperm-bce5afef69d90cb9",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-huge",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "MiniMaxAI/MiniMax-M2.7",
+      "parent": null,
+      "max_model_len": 131072,
+      "permission": [
+        {
+          "id": "modelperm-9e58a9d6046f3357",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "parent": null,
+      "max_model_len": 262144,
+      "permission": [
+        {
+          "id": "modelperm-9a40ad6bf97c8c62",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-large",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "parent": null,
+      "max_model_len": 262144,
+      "permission": [
+        {
+          "id": "modelperm-8f5d9a0b97914e0c",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-qwen3.8-flash-next",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "parent": null,
+      "max_model_len": 262144,
+      "permission": [
+        {
+          "id": "modelperm-9efb39e079a57a93",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-embeddings",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "Qwen/Qwen3-Embedding-8B",
+      "parent": null,
+      "max_model_len": 8192,
+      "permission": [
+        {
+          "id": "modelperm-9652449e5090fcd2",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "Qwen/Qwen3-Embedding-8B",
+      "parent": null,
+      "max_model_len": 8192,
+      "permission": [
+        {
+          "id": "modelperm-a9cd602a88702e42",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "text-davinci-003",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "Qwen/Qwen3-Embedding-8B",
+      "parent": null,
+      "max_model_len": 8192,
+      "permission": [
+        {
+          "id": "modelperm-92ce939758938f1f",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "text-embedding-ada-002",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "Qwen/Qwen3-Embedding-8B",
+      "parent": null,
+      "max_model_len": 8192,
+      "permission": [
+        {
+          "id": "modelperm-befd04d426965911",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-qwen3-8b-embeddings",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "Qwen/Qwen3-Embedding-8B",
+      "parent": null,
+      "max_model_len": 8192,
+      "permission": [
+        {
+          "id": "modelperm-9581426015e2ae01",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "07 - Qwen3.8-27B-FP8 - Multimodal model from Aug 2026",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "Qwen/Qwen3.8-27B-FP8",
+      "parent": null,
+      "max_model_len": 262144,
+      "permission": [
+        {
+          "id": "modelperm-bea8ad6db7ae98b9",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-qwen38-27b",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "Qwen/Qwen3.8-27B-FP8",
+      "parent": null,
+      "max_model_len": 262144,
+      "permission": [
+        {
+          "id": "modelperm-ad2950dc5e2af245",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-code",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "Qwen/Qwen3.8-27B-FP8",
+      "parent": null,
+      "max_model_len": 262144,
+      "permission": [
+        {
+          "id": "modelperm-ab4e2ae323cd1329",
+          "object": "model_permission",
+          "created": 1790676916,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    },
+    {
+      "id": "alias-default",
+      "object": "model",
+      "created": 0,
+      "owned_by": "switchyard",
+      "root": null,
+      "parent": null,
+      "type": "model",
+      "display_name": "alias-default",
+      "capabilities": {
+        "streaming": true,
+        "tool_calling": null,
+        "vision": null,
+        "context_window": null,
+        "supported_inbound_formats": [
+          "openai-chat-completions",
+          "openai-responses",
+          "anthropic-messages"
+        ]
+      }
+    },
+    {
+      "id": "15 - DeepSeek-V4.1-Flash on JUWELS Booster",
+      "object": "model",
+      "created": 1790334301,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/DeepSeek-V4.1-Flash",
+      "parent": null,
+      "client_count": 1,
+      "max_model_len": 1048576,
+      "permission": [
+        {
+          "allow_create_engine": false,
+          "allow_fine_tuning": false,
+          "allow_logprobs": true,
+          "allow_sampling": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "created": 1790334301,
+          "group": null,
+          "id": "modelperm-bb2bb3f5037c82f4",
+          "is_blocking": false,
+          "object": "model_permission",
+          "organization": "*"
+        }
+      ]
+    },
+    {
+      "id": "30 - Swiss AI: Apertus-v1.5-70B",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/scratch/ccstao/strube1/models/Apertus-v1.5-70B",
+      "parent": null,
+      "client_count": 2,
+      "max_model_len": 262144
+    },
+    {
+      "id": "80 - MiMo-V2.6-Flash-RL on Juwels Booster",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/MiMo-V2.6-Flash-RL",
+      "parent": null,
+      "client_count": 4,
+      "max_model_len": 1048576
+    },
+    {
+      "id": "80 - MiMo-V2.6-Pro-RL on Juwels Booster",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/MiMo-V2.6-Pro-RL",
+      "parent": null,
+      "client_count": 4,
+      "max_model_len": 1048576
+    },
+    {
+      "id": "90 - Kimi-K3 1M on Juwels Booster",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/Kimi-K3-NVFP4",
+      "parent": null,
+      "client_count": 6,
+      "max_model_len": 1048576
+    },
+    {
+      "id": "90 - Qwen 3.8-27B on Juwels Booster",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/Qwen3.8-27B",
+      "parent": null,
+      "client_count": 10,
+      "max_model_len": 262144
+    },
+    {
+      "id": "90 - Qwen 3.8-Flash-Next-125B-AWQ-W4A16 on Juwels Booster - An excellent model from September 2026",
+      "object": "model",
+      "created": 1790329412,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/Qwen3.8-Flash-Next-AWQ-W4A16",
+      "parent": null,
+      "client_count": 4,
+      "max_model_len": 940000
+    },
+    {
+      "id": "999 - FLUX.2-dev - An image generator (Black Forest Labs)",
+      "object": "model",
+      "created": 1790330042,
+      "owned_by": "vllm",
+      "root": "/p/haicluster/llama/FastChat/models/Qwen-Image-2512",
+      "parent": null,
+      "client_count": 1
+    },
+    {
+      "id": "999 - Qwen-Image-2.1 on JUWELS Booster (generation + editing)",
+      "object": "model",
+      "created": 1790329370,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/Qwen-Image-2.1",
+      "parent": null,
+      "client_count": 2
+    },
+    {
+      "id": "999 - Qwen-Image-2512 - An image generator",
+      "object": "model",
+      "created": 1790329363,
+      "owned_by": "vllm",
+      "root": "/p/haicluster/llama/FastChat/models/Qwen-Image-2512",
+      "parent": null,
+      "client_count": 1
+    },
+    {
+      "id": "999 - Qwen-Image-2512 on JUWELS Booster (A100)",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/haicluster/llama/FastChat/models/Qwen-Image-2512",
+      "parent": null,
+      "client_count": 2
+    },
+    {
+      "id": "Anonymizer: M-size ShinrAI PII 1.3",
+      "object": "model",
+      "created": 1700000000,
+      "owned_by": "innovius",
+      "root": null,
+      "parent": null,
+      "client_count": 1
+    },
+    {
+      "id": "Swift-Qwen3.8-27b",
+      "object": "model",
+      "created": 1790605792,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/Swift-Qwen3.8-27b",
+      "parent": null,
+      "client_count": 1,
+      "max_model_len": 262144,
+      "permission": [
+        {
+          "allow_create_engine": false,
+          "allow_fine_tuning": false,
+          "allow_logprobs": true,
+          "allow_sampling": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "created": 1790605792,
+          "group": null,
+          "id": "modelperm-b4c78f860dc06499",
+          "is_blocking": false,
+          "object": "model_permission",
+          "organization": "*"
+        }
+      ]
+    },
+    {
+      "id": "alias-anonymizer",
+      "object": "model",
+      "created": 1700000000,
+      "owned_by": "innovius",
+      "root": null,
+      "parent": null,
+      "client_count": 1
+    },
+    {
+      "id": "alias-apertus-70b",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/scratch/ccstao/strube1/models/Apertus-v1.5-70B",
+      "parent": null,
+      "client_count": 2,
+      "max_model_len": 262144
+    },
+    {
+      "id": "alias-deepseek-v41-flash-booster",
+      "object": "model",
+      "created": 1790334301,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/DeepSeek-V4.1-Flash",
+      "parent": null,
+      "client_count": 1,
+      "max_model_len": 1048576,
+      "permission": [
+        {
+          "allow_create_engine": false,
+          "allow_fine_tuning": false,
+          "allow_logprobs": true,
+          "allow_sampling": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "created": 1790334301,
+          "group": null,
+          "id": "modelperm-b8d6f47ab8b28e9d",
+          "is_blocking": false,
+          "object": "model_permission",
+          "organization": "*"
+        }
+      ]
+    },
+    {
+      "id": "alias-flux2",
+      "object": "model",
+      "created": 1790330042,
+      "owned_by": "vllm",
+      "root": "/p/haicluster/llama/FastChat/models/Qwen-Image-2512",
+      "parent": null,
+      "client_count": 1
+    },
+    {
+      "id": "alias-image",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": null,
+      "parent": null,
+      "client_count": 5
+    },
+    {
+      "id": "alias-kimi-k3-1m",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/Kimi-K3-NVFP4",
+      "parent": null,
+      "client_count": 6,
+      "max_model_len": 1048576
+    },
+    {
+      "id": "alias-mimo-v2.6-flash",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/MiMo-V2.6-Flash-RL",
+      "parent": null,
+      "client_count": 4,
+      "max_model_len": 1048576
+    },
+    {
+      "id": "alias-mimo-v2.6-pro",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/MiMo-V2.6-Pro-RL",
+      "parent": null,
+      "client_count": 4,
+      "max_model_len": 1048576
+    },
+    {
+      "id": "alias-qwen3.8-27b",
+      "object": "model",
+      "created": 1790676916,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/Qwen3.8-27B",
+      "parent": null,
+      "client_count": 10,
+      "max_model_len": 262144
+    },
+    {
+      "id": "alias-qwen38-quick",
+      "object": "model",
+      "created": 1790605792,
+      "owned_by": "vllm",
+      "root": "/p/project1/atmlaml/strube1/FastChat/models/Swift-Qwen3.8-27b",
+      "parent": null,
+      "client_count": 1,
+      "max_model_len": 262144,
+      "permission": [
+        {
+          "allow_create_engine": false,
+          "allow_fine_tuning": false,
+          "allow_logprobs": true,
+          "allow_sampling": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "created": 1790605792,
+          "group": null,
+          "id": "modelperm-abe7edc3641c228e",
+          "is_blocking": false,
+          "object": "model_permission",
+          "organization": "*"
+        }
+      ]
+    },
+    {
+      "id": "faster-whisper-large-v3",
+      "object": "model",
+      "created": 1700000000,
+      "owned_by": "Systran",
+      "root": null,
+      "parent": null,
+      "client_count": 1
+    },
+    {
+      "id": "gpt-oss-anonymizer",
+      "object": "model",
+      "created": 1700000000,
+      "owned_by": "innovius",
+      "root": null,
+      "parent": null,
+      "client_count": 1
+    }
+  ]
+}

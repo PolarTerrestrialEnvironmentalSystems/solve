@@ -1,0 +1,116 @@
+{
+  "variant": "fein",
+  "events": 18,
+  "relationships": 0,
+  "causal_self_relationships_rejected": 2,
+  "causal_self_relationship_repairs": {
+    "rejected": 1
+  },
+  "complete_chunks": 2,
+  "failed_chunks": 0,
+  "event_types": {
+    "Prozess": 6,
+    "Messung": 1,
+    "Zustand": 10,
+    "Maßnahme": 1
+  },
+  "topics": {
+    "topic:hydrology": 16,
+    "topic:hydrology.level_flow": 12,
+    "topic:management": 5,
+    "topic:identity.geometry": 1,
+    "topic:monitoring": 1,
+    "topic:chemistry": 1
+  },
+  "merged_event_duplicates": 0,
+  "merged_relationship_duplicates": 0,
+  "review_items": 26,
+  "review_kinds": {
+    "source_quality_repair": 1,
+    "causal_self_relationship_repair": 1,
+    "rejected_event": 3,
+    "rejected_relationship": 2,
+    "event_needs_review": 18,
+    "possible_duplicate_or_conflict": 1
+  },
+  "event_fields_filled": {
+    "event_id": 18,
+    "record_type": 18,
+    "waterbody_references": 13,
+    "waterbody_name_original": 5,
+    "waterbody_identifiers": 0,
+    "waterbody_assignment": 5,
+    "statement": 18,
+    "ontology_concept": 18,
+    "participants": 1,
+    "spatial_scope": 17,
+    "system_scope": 0,
+    "values": 10,
+    "measurement_context": 0,
+    "time_original": 5,
+    "time_status": 18,
+    "time_normalized": 5,
+    "time_precision": 5,
+    "assertion_mode": 18,
+    "polarity": 18,
+    "implementation_status": 18,
+    "categories": 18,
+    "category_assessment": 0,
+    "source_document": 18,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 18,
+    "extraction_metadata": 18,
+    "quality_assessment": 18
+  },
+  "relationship_fields_filled": {
+    "relationship_id": 0,
+    "source_event_id": 0,
+    "target_event_id": 0,
+    "relationship_type": 0,
+    "statement": 0,
+    "relationship_scope": 0,
+    "waterbody_references": 0,
+    "spatial_scope": 0,
+    "assertion_mode": 0,
+    "polarity": 0,
+    "derivation_status": 0,
+    "evidence_basis": 0,
+    "mechanism": 0,
+    "conditions": 0,
+    "additional_factors": 0,
+    "effect_size": 0,
+    "valid_time": 0,
+    "response_time_definition": 0,
+    "response_time_anchors": 0,
+    "response_time_value": 0,
+    "response_time_origin": 0,
+    "response_time_evidence": 0,
+    "effect_duration": 0,
+    "categories": 0,
+    "source_document": 0,
+    "publication_date": 0,
+    "retrieved_at": 0,
+    "evidence": 0,
+    "extraction_metadata": 0,
+    "quality_assessment": 0
+  },
+  "empty_chunks": [],
+  "model_notes": [
+    {
+      "chunk_id": "chunk_0001_69c9f584",
+      "notes": [
+        "Die Beziehung zwischen Talsperrenbewirtschaftung und Abflusserhöhung ist im Text explizit als 'infolge der Wirkung' beschrieben.",
+        "Die Auswirkung der Niedrigwasseraufhöhung auf die Elbe wird im Text erwähnt, aber ohne spezifische quantitative Werte für die Elbe selbst in den bereitgestellten Blöcken (nur qualitative Beschreibung 'verbesserung der Abflüsse').",
+        "Der Text auf Seite 11 bricht bei 'infol-' ab, daher ist der vollständige Satz zur Elbe am Pegel Děčín nicht vorhanden."
+      ]
+    },
+    {
+      "chunk_id": "chunk_0002_7f3a2222",
+      "notes": [
+        "Die Aussage zur Reduzierung des QM355-Abflusswertes (Kulasová) wurde als Teil der allgemeinen Klimawandelfolgen betrachtet, aber ohne spezifischen Wert oder Zeitraum als eigenständiges Event nicht detailliert extrahiert, da der Text 'merkbare Reduzierung' ohne Quantifizierung angibt.",
+        "Beziehungen zwischen Klimawandel und Abflussänderungen sind im Text explizit als 'zu erwartender Klimawandel' -> 'Veränderungen im Niederschlags- und Abflussverhalten' formuliert. Diese kausalen Ketten wurden in den Events als 'predicted' erfasst, aber keine separaten Relationship-Objekte erzeugt, da die Kausalität direkt in den Event-Statements als Bedingung ('infolge des...') enthalten ist und keine separaten, isolierten Ursache-Wirkung-Events mit unterschiedlichen IDs vorliegen, die eine explizite Relationship-Instanz erfordern würden, ohne die Events zu fragmentieren. Die Anweisung 'Bei causes... müssen Ursache und Wirkung zwei unterschiedliche belegte Events sein' wird hier so interpretiert, dass wenn der Text 'A führt zu B' sagt, A und B als separate Events modelliert werden könnten. Hier ist 'Klimawandel' ein breiter Zustand/Prozess, der nicht als einzelnes diskretes Event mit eigenem Zeitfenster im Text isoliert ist, sondern als treibende Kraft für mehrere spezifische hydrologische Änderungen (e1, e2, e3, e4, e5, e10) fungiert. Da 'Klimawandel' selbst kein spezifisches, datiertes Ereignis im Text ist, sondern ein allgemeiner Zustand, wurde er nicht als separates Event e0 modelliert, um keine erfundenen Zeitangaben zu erzeugen. Die Kausalität ist in den 'predicted'-Events inhärent enthalten."
+      ]
+    }
+  ]
+}

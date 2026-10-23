@@ -1,0 +1,815 @@
+{
+  "cache_key": "7df8b21045ebd99b8447c7742ebb8ed06b75448fe884163a10c44ab73257cc43",
+  "status": "complete",
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "chunk_0002_0dd86fc4",
+      "pages": [
+        11
+      ],
+      "result": {
+        "document": null,
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Maßnahme",
+            "waterbody_references": [
+              {
+                "name_original": "Eger",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Eger",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": "Explizit als 'Eger' benannt."
+            },
+            "statement": "Die Talsperre Nechranice (und weitere Talsperren im Einzugsgebiet der Eger) haben einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger.",
+            "ontology_concept": "core:Intervention",
+            "participants": [
+              {
+                "name_original": "Talsperre Nechranice",
+                "role": "Anlage",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "description": "Einzugsgebiet der Eger",
+              "waterbody": "Eger"
+            },
+            "system_scope": {
+              "boundary": "Einzugsgebiet der Eger",
+              "type": "extern"
+            },
+            "values": null,
+            "measurement_context": null,
+            "time_original": "ab 1966",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1966",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "completed",
+            "categories": [
+              "topic:management",
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem Stauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merk-baren Einfluss auf die Niedrigwasseraufhöhung der Eger",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "spatial_scope",
+                  "participants",
+                  "time_normalized",
+                  "time_original",
+                  "time_precision",
+                  "time_status"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e2",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Eger",
+                "role": "observed_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Eger",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": "Explizit als 'Eger' benannt."
+            },
+            "statement": "Der Abfluss der Eger am Pegel Louny (QM364) betrug in der unbeeinflussten Jahresreihe 1922-1965 2,7 m³/s.",
+            "ontology_concept": "core:Observation",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Eger am Pegel Louny",
+              "waterbody": "Eger"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Abfluss (QM364)",
+                "value_original": "2,7",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "aggregation": "QM364 (364 Überschreitungstage)",
+              "location_description": "unterhalb der Talsperre Nechranice",
+              "station": "Pegel Louny"
+            },
+            "time_original": "Jahresreihe 1922-1965",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1922",
+              "end": "1965",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "observed",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:monitoring"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "wurde der Abfluss der Eger am Pegel Louny unterhalb der Talsperre Nechranice für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s (für die unbedeu-tend durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1922-1965)",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "measurement_context",
+                  "time_normalized",
+                  "time_original",
+                  "time_precision",
+                  "time_status"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              },
+              {
+                "quote": "auf 8,0 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1966-1993) erhöht.",
+                "block_id": "p0011_b0004",
+                "page": 11,
+                "field_names": [
+                  "values"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e3",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Eger",
+                "role": "observed_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Eger",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": "Explizit als 'Eger' benannt."
+            },
+            "statement": "Der Abfluss der Eger am Pegel Louny (QM364) betrug in der durch Talsperrenbewirtschaftung beeinflussten Jahresreihe 1966-1993 8,0 m³/s.",
+            "ontology_concept": "core:Observation",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Eger am Pegel Louny",
+              "waterbody": "Eger"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Abfluss (QM364)",
+                "value_original": "8,0",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "aggregation": "QM364 (364 Überschreitungstage)",
+              "location_description": "unterhalb der Talsperre Nechranice",
+              "station": "Pegel Louny"
+            },
+            "time_original": "Jahresreihe 1966-1993",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1966",
+              "end": "1993",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "observed",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:monitoring"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "wurde der Abfluss der Eger am Pegel Louny unterhalb der Talsperre Nechranice für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "measurement_context"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              },
+              {
+                "quote": "auf 8,0 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1966-1993) erhöht.",
+                "block_id": "p0011_b0004",
+                "page": 11,
+                "field_names": [
+                  "values",
+                  "time_normalized",
+                  "time_original",
+                  "time_precision",
+                  "time_status"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e4",
+            "record_type": "Maßnahme",
+            "waterbody_references": [
+              {
+                "name_original": "Eger",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Eger",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": "Kontext Eger."
+            },
+            "statement": "Die Talsperre Nechranice wird im Zusammenwirken mit den Talsperren Jesenice/Odrava und Skalka/Eger so gesteuert, dass ein Mindestabfluss von 8,0 m³/s gesichert ist.",
+            "ontology_concept": "core:Intervention",
+            "participants": [
+              {
+                "name_original": "Talsperre Nechranice",
+                "role": "Anlage",
+                "class_id": "core:Facility",
+                "identifiers": null
+              },
+              {
+                "name_original": "Talsperre Jesenice/Odrava",
+                "role": "beteiligte Anlage",
+                "class_id": "core:Facility",
+                "identifiers": null
+              },
+              {
+                "name_original": "Talsperre Skalka/Eger",
+                "role": "beteiligte Anlage",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "description": "unterhalb der Talsperre Nechranice",
+              "waterbody": "Eger"
+            },
+            "system_scope": {
+              "boundary": "Einzugsgebiet der Eger",
+              "type": "extern"
+            },
+            "values": [
+              {
+                "parameter": "Mindestabfluss",
+                "value_original": "8,0",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "completed",
+            "categories": [
+              "topic:management",
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "wird die Tal-sperre Nechranice gemäß Talsperrenbetriebsplan so gesteuert, dass unterhalb der Talsperre Nechranice ein Mindestabfluss von 8,0 m³/s gesichert ist.",
+                "block_id": "p0011_b0004",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "participants",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e5",
+            "record_type": "Zustand",
+            "waterbody_references": [
+              {
+                "name_original": "Eger",
+                "role": "observed_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Eger",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "probable",
+              "reason": "Kontext der vorherigen Sätze bezieht sich auf die Eger."
+            },
+            "statement": "Vor Errichtung der Talsperren traten in längeren Niedrigwasserperioden öfter Abflüsse von 1,5 bis 2,0 m³/s auf.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Eger (implizit durch Kontext)",
+              "waterbody": "Eger"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Abfluss",
+                "value_original": "1,5 bis 2,0",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": "vor Errichtung der Talsperren",
+            "time_status": "resolved_from_context",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "In längeren Niedrigwasserperioden vor Errichtung der Talsperren sind öfter Abflüsse von 1,5 bis 2,0 m³/ aufgetreten.",
+                "block_id": "p0011_b0004",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_original",
+                  "time_status"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e6",
+            "record_type": "Maßnahme",
+            "waterbody_references": [
+              {
+                "name_original": "Moldau",
+                "role": "affected_waterbody",
+                "identifiers": null
+              },
+              {
+                "name_original": "Elbe",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": "Explizit als 'Moldau' benannt."
+            },
+            "statement": "Die Niedrigwasseraufhöhung durch die Talsperren der Moldaukaskade (u.a. Talsperre Vrané) beeinflusst die Abflüsse der unteren Moldau und der Elbe unterhalb der Mündung.",
+            "ontology_concept": "core:Intervention",
+            "participants": [
+              {
+                "name_original": "Talsperre Vrané",
+                "role": "Anlage",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "description": "untere Moldau und Elbe unterhalb der Mündung der Moldau",
+              "waterbody": "Moldau"
+            },
+            "system_scope": {
+              "boundary": "Einzugsgebiet der Moldau",
+              "type": "extern"
+            },
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "completed",
+            "categories": [
+              "topic:management",
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren Moldau, sondern auch der Elbe unterhalb der Mündung der Moldau in die Elbe bei Mělník.",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "spatial_scope",
+                  "participants"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e7",
+            "record_type": "Zustand",
+            "waterbody_references": [
+              {
+                "name_original": "Elbe",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Elbe",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": "Explizit als 'Elbe' benannt."
+            },
+            "statement": "Die Abflüsse der Elbe unterhalb der Mündung der Moldau sind merkbar beeinflusst.",
+            "ontology_concept": "core:State",
+            "participants": null,
+            "spatial_scope": {
+              "description": "Elbe unterhalb der Mündung der Moldau",
+              "waterbody": "Elbe"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren Moldau, sondern auch der Elbe unterhalb der Mündung der Moldau in die Elbe bei Mělník.",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "r1",
+            "source_event_id": "e1",
+            "target_event_id": "e3",
+            "relationship_type": "increases",
+            "statement": "Die Talsperrenbewirtschaftung (Talsperre Nechranice u.a.) erhöht den Abfluss der Eger am Pegel Louny (QM364) von 2,7 m³/s auf 8,0 m³/s.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "description": "Eger am Pegel Louny"
+            },
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": "Wirkung der Talsperren im Einzugsgebiet der Eger",
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "wurde der Abfluss der Eger am Pegel Louny ... infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s ... auf 8,0 m³/s ... erhöht.",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "source_event_id",
+                  "target_event_id"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "relationship_id": "r2",
+            "source_event_id": "e6",
+            "target_event_id": "e7",
+            "relationship_type": "affects",
+            "statement": "Die Niedrigwasseraufhöhung der Moldau beeinflusst die Abflüsse der Elbe unterhalb der Mündung.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "description": "Elbe unterhalb der Mündung der Moldau"
+            },
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren Moldau, sondern auch der Elbe unterhalb der Mündung der Moldau in die Elbe bei Mělník.",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "source_event_id",
+                  "target_event_id"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "context_requests": [],
+        "notes": []
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            454.94829999999996,
+            292.81810000000013,
+            462.94829999999996
+          ],
+          "text": "Abb. 3: Moldau mit Karlsbrücke und Prager Burg (Foto: M. Simon)",
+          "page": 11,
+          "printed_page": null,
+          "block_id": "p0011_b0002",
+          "section": "10 Manfred Simon und Jürgen Böhme"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.85560000000004,
+            720.8226000000001,
+            552.7531000000007,
+            787.3926000000001
+          ],
+          "text": "Die Niedrigwasseraufhöhung der Eger führte nicht nur zur Verbesserung der Abflüsse der 103,4 km langen\nEger von der Talsperre Nechranice bis zur Mündung in die Elbe bei Litoměřice, sondern auch der Elbe un-\nterhalb der Mündung der Eger.\nNach analogen Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem\nJahre 1994 wurde der Abfluss der Elbe am Pegel Děčín für 364 Überschreitungstage (QM364) infol-",
+          "page": 11,
+          "printed_page": null,
+          "block_id": "p0011_b0005",
+          "section": "10 Manfred Simon und Jürgen Böhme"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.85560000000001,
+            471.3426,
+            552.8266000000009,
+            713.0526000000001
+          ],
+          "text": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren\nMoldau, sondern auch der Elbe unterhalb der Mündung der Moldau in die Elbe bei Mělník. Die unterste\nTalsperre der Moldaukaskade, die Talsperre Vrané mit einem Einzugsgebiet von 17 782 km², liegt 71,3 km\noberhalb der Mündung der Moldau (28 090 km²) in die Elbe.\nDie Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem\nStauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merk-\nbaren Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung\nder Eger.\nNach Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem Jahre 1994\nwurde der Abfluss der Eger am Pegel Louny unterhalb der Talsperre Nechranice für 364 Überschreitungstage\n(QM364) infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s (für die unbedeu-",
+          "page": 11,
+          "printed_page": null,
+          "block_id": "p0011_b0003",
+          "section": "10 Manfred Simon und Jürgen Böhme"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.85560000000001,
+            471.3426,
+            552.8266000000009,
+            713.0526000000001
+          ],
+          "text": "tend durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1922-1965) auf 8,0 m³/s (für die durch\nTalsperrenbewirtschaftung beeinflusste Jahresreihe 1966-1993) erhöht.\nIm Zusammenwirken mit den im oberen Einzugsgebiet der Eger liegenden Talsperren Jesenice/Odrava\n(52,75 Mio. m³ – Inbetriebnahme 1961) und Skalka/Eger (15,92 Mio. m³ – Inbetriebnahme 1964) wird die Tal-\nsperre Nechranice gemäß Talsperrenbetriebsplan so gesteuert, dass unterhalb der Talsperre Nechranice ein\nMindestabfluss von 8,0 m³/s gesichert ist. In längeren Niedrigwasserperioden vor Errichtung der Talsperren\nsind öfter Abflüsse von 1,5 bis 2,0 m³/ aufgetreten.",
+          "page": 11,
+          "printed_page": null,
+          "block_id": "p0011_b0004",
+          "section": "10 Manfred Simon und Jürgen Böhme"
+        }
+      ],
+      "extracted_at": "2026-09-29T10:37:55.622106+00:00",
+      "response_model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\chunk_size_study\\results\\r2_chars2000\\fein\\raw_responses\\chunk_0002_0dd86fc4_causal_repair_bf30910553b8.json",
+      "purpose": "extraction",
+      "relationship_review": [
+        {
+          "kind": "causal_self_relationship_repair",
+          "chunk_id": "chunk_0002_0dd86fc4",
+          "relationship_ids": [
+            "r2"
+          ],
+          "original_candidates": [
+            {
+              "relationship_id": "r2",
+              "source_event_id": "e6",
+              "target_event_id": "e6",
+              "relationship_type": "affects",
+              "statement": "Die Niedrigwasseraufhöhung der Moldau beeinflusst die Abflüsse der Elbe unterhalb der Mündung.",
+              "relationship_scope": "specific_case",
+              "waterbody_references": null,
+              "spatial_scope": {
+                "description": "Elbe unterhalb der Mündung der Moldau"
+              },
+              "assertion_mode": "reported",
+              "polarity": "affirmed",
+              "derivation_status": "explicit_in_source",
+              "evidence_basis": null,
+              "mechanism": null,
+              "conditions": null,
+              "additional_factors": null,
+              "effect_size": null,
+              "valid_time": null,
+              "response_time_definition": null,
+              "response_time_anchors": null,
+              "response_time_value": null,
+              "response_time_origin": "not_stated",
+              "response_time_evidence": null,
+              "effect_duration": null,
+              "categories": [
+                "topic:hydrology"
+              ],
+              "source_document": null,
+              "publication_date": null,
+              "retrieved_at": null,
+              "evidence": [
+                {
+                  "quote": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren Moldau, sondern auch der Elbe unterhalb der Mündung der Moldau in die Elbe bei Mělník.",
+                  "block_id": "p0011_b0003",
+                  "page": 11,
+                  "field_names": [
+                    "statement",
+                    "source_event_id",
+                    "target_event_id"
+                  ],
+                  "printed_page": null,
+                  "table_id": null,
+                  "row": null,
+                  "column": null
+                }
+              ],
+              "extraction_metadata": null,
+              "quality_assessment": null
+            }
+          ],
+          "original_raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\chunk_size_study\\results\\r2_chars2000\\fein\\raw_responses\\chunk_0002_0dd86fc4_21524f02f47c.json",
+          "status": "accepted",
+          "repair_raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\chunk_size_study\\results\\r2_chars2000\\fein\\raw_responses\\chunk_0002_0dd86fc4_causal_repair_bf30910553b8.json",
+          "withdrawn_relationship_ids": []
+        }
+      ],
+      "original_raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\chunk_size_study\\results\\r2_chars2000\\fein\\raw_responses\\chunk_0002_0dd86fc4_21524f02f47c.json"
+    }
+  ]
+}

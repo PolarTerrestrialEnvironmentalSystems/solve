@@ -1,0 +1,3 @@
+Hier die zu verarbeitenden PDFs ablegen. Es werden .pdf und .PDF erkannt.
+Unterordner werden nur mit --recursive verarbeitet.
+Für einen fortzusetzenden Lauf den PDF-Bestand unverändert lassen.

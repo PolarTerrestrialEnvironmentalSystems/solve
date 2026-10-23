@@ -1,0 +1,1313 @@
+{
+  "cache_key": "81cc7f8cade537ef4ac34af1ebfce3ad5318948faa401a57af7a9f17a1d9914f",
+  "status": "complete",
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "chunk_0001_30e816b5",
+      "pages": [
+        10,
+        11
+      ],
+      "result": {
+        "document": null,
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Prozess",
+            "waterbody_references": [
+              {
+                "name_original": "Moldau",
+                "role": "affected_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Der Abfluss der Moldau in Prag (QM364) wurde infolge der Wirkung der Talsperren der Moldaukaskade von 20,0 m³/s auf 38,8 m³/s erhöht.",
+            "ontology_concept": null,
+            "participants": [
+              {
+                "name_original": "Talsperren der Moldaukaskade",
+                "role": "cause",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "location": "Moldau in Prag",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "QM364",
+                "value_original": "20,0",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              },
+              {
+                "parameter": "QM364",
+                "value_original": "38,8",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              },
+              {
+                "parameter": "QM364",
+                "value_original": "18,8",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": "Jahresreihe 1955-1993",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1955",
+              "end": "1993",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "wurde der Abfluss der Moldau in Prag für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren der Moldaukaskade von 20,0 m³/s (für die unbedeutend durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1924-1953) auf 38,8 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste Jahresreihe 1955-1993), d. h. um 18,8 m³/s, erhöht.",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_normalized",
+                  "participants",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e2",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Moldau",
+                "role": "observed_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Der QM364-Wert der Moldau in Prag wurde nach Ermittlungen der IKSE (2008) für die Jahresreihe 1961-2005 mit 36,9 m³/s angegeben.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "location": "Moldau in Prag",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "QM364",
+                "value_original": "36,9",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": "Jahresreihe 1961-2005",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1961",
+              "end": "2005",
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:monitoring"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Dieser Wert liegt nach Ermittlungen der IKSE aus dem Jahre 2008 bei 36,9 m³/s für die Jahresreihe 1961-2005.",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_normalized",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e3",
+            "record_type": "Eigenschaft",
+            "waterbody_references": [
+              {
+                "name_original": "Moldau",
+                "role": "main_waterbody",
+                "identifiers": null
+              },
+              {
+                "name_original": "Berounka",
+                "role": "contributing_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Der QM364-Wert der Moldau in Prag (38,8 m³/s) enthält einen Anteil von 3,8 m³/s aus der Berounka.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "location": "Moldau in Prag",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "QM364",
+                "value_original": "3,8",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "In dem QM364-Abfluss von 38,8 m³/s ist der QM364-Wert für die Berounka mit 3,8 m³/s enthalten.",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e4",
+            "record_type": "Eigenschaft",
+            "waterbody_references": [
+              {
+                "name_original": "Moldau",
+                "role": "located_in",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Die Moldaukaskade besteht aus neun Talsperren direkt in der Moldau (Lipno I bis Vrané) mit einem Gesamstauraum von 1.352,58 Mio. m³.",
+            "ontology_concept": null,
+            "participants": [
+              {
+                "name_original": "Talsperre Lipno I",
+                "role": "component",
+                "class_id": "core:Facility",
+                "identifiers": null
+              },
+              {
+                "name_original": "Talsperre Vrané",
+                "role": "component",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "location": "Moldau",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Stauraum",
+                "value_original": "1 352,58",
+                "value_normalized": null,
+                "unit_original": "Mio. m³",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:identity",
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Die Moldaukaskade besteht aus neun Talsperren direkt in der Moldau liegend (Abb. 2), von der Talsperre Lipno I im Böhmerwald bis zur Talsperre Vrané oberhalb von Prag, mit einem Stauraum von 1 352,58 Mio. m³.",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "participants"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e5",
+            "record_type": "Maßnahme",
+            "waterbody_references": [
+              {
+                "name_original": "Moldau",
+                "role": "target_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Gemäß Bewirtschaftungsplan der Moldaukaskade wird aus der Talsperre Vrané ein Mindestabfluss von 40,0 m³/s zur Stützung der Wasserstände der Moldau in Prag gesichert.",
+            "ontology_concept": null,
+            "participants": [
+              {
+                "name_original": "Talsperre Vrané",
+                "role": "source_facility",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "location": "Moldau oberhalb der Mündung der Berounka",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Mindestabfluss",
+                "value_original": "40,0",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:management",
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "aus der Talsperre Vrané, oberhalb der Mündung der Berounka in die Moldau, ein Mindestabfluss von 40,0 m³/s gesichert.",
+                "block_id": "p0010_b0003",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "participants",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e6",
+            "record_type": "Zustand",
+            "waterbody_references": [
+              {
+                "name_original": "Moldau",
+                "role": "observed_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Vor Errichtung der Talsperren kam es in Prag öfter zu Abflüssen von nur 12,0 bis 15,0 m³/s.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "location": "Moldau in Prag",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Abfluss",
+                "value_original": "12,0 bis 15,0",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": "Vor Errichtung der Talsperren",
+            "time_status": "resolved_from_context",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Vor Errichtung der Talsperren kam es in Prag öfter zu Abflüssen von nur 12,0 bis15,0 m³/s.",
+                "block_id": "p0010_b0003",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_original",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e7",
+            "record_type": "Prozess",
+            "waterbody_references": [
+              {
+                "name_original": "Elbe",
+                "role": "affected_waterbody",
+                "identifiers": null
+              },
+              {
+                "name_original": "Moldau",
+                "role": "source_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Elbe",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Die Niedrigwasseraufhöhung durch die Talsperren der Moldaukaskade führte zu einer merkbaren Beeinflussung der Abflüsse der Elbe unterhalb der Mündung der Moldau bei Mělník.",
+            "ontology_concept": null,
+            "participants": [
+              {
+                "name_original": "Talsperre Vrané",
+                "role": "cause_facility",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "location": "Elbe unterhalb der Mündung der Moldau bei Mělník",
+              "waterbody": "Elbe"
+            },
+            "system_scope": null,
+            "values": null,
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren Moldau, sondern auch der Elbe unterhalb der Mündung der Moldau in die Elbe bei Mělník.",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "spatial_scope",
+                  "participants"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e8",
+            "record_type": "Eigenschaft",
+            "waterbody_references": [
+              {
+                "name_original": "Moldau",
+                "role": "located_in",
+                "identifiers": null
+              },
+              {
+                "name_original": "Elbe",
+                "role": "receiving_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Die Talsperre Vrané (Einzugsgebiet 17.782 km²) liegt 71,3 km oberhalb der Mündung der Moldau (Einzugsgebiet 28.090 km²) in die Elbe.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "location": "Moldau",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Einzugsgebiet Talsperre Vrané",
+                "value_original": "17 782",
+                "value_normalized": null,
+                "unit_original": "km²",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              },
+              {
+                "parameter": "Abstand zur Mündung",
+                "value_original": "71,3",
+                "value_normalized": null,
+                "unit_original": "km",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              },
+              {
+                "parameter": "Einzugsgebiet Moldau",
+                "value_original": "28 090",
+                "value_normalized": null,
+                "unit_original": "km²",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:identity",
+              "topic:hydrology"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Die unterste Talsperre der Moldaukaskade, die Talsperre Vrané mit einem Einzugsgebiet von 17 782 km², liegt 71,3 km oberhalb der Mündung der Moldau (28 090 km²) in die Elbe.",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e9",
+            "record_type": "Eigenschaft",
+            "waterbody_references": [
+              {
+                "name_original": "Eger",
+                "role": "affected_waterbody",
+                "identifiers": null
+              },
+              {
+                "name_original": "Elbe",
+                "role": "downstream_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Eger",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Die Talsperren im Einzugsgebiet der Eger, insbesondere die Talsperre Nechranice (Stauraum 272,43 Mio. m³, ab 1966/in Betrieb 1968), haben einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger und der Elbe nach der Mündung.",
+            "ontology_concept": null,
+            "participants": [
+              {
+                "name_original": "Talsperre Nechranice",
+                "role": "main_facility",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "location": "Eger",
+              "waterbody": "Eger"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Stauraum",
+                "value_original": "272,43",
+                "value_normalized": null,
+                "unit_original": "Mio. m³",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": "ab 1966 (offizielle Inbetriebnahme der Talsperre 1968)",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1966",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:identity",
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem Stauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merk-baren Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung der Eger.",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_normalized",
+                  "participants",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e10",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Eger",
+                "role": "observed_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Eger",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Der QM364-Abfluss der Eger am Pegel Louny wurde infolge der Talsperrenwirkung von 2,7 m³/s (Referenzwert) verändert (Wert für beeinflusste Reihe im Text abgeschnitten).",
+            "ontology_concept": null,
+            "participants": [
+              {
+                "name_original": "Talsperren im Einzugsgebiet der Eger",
+                "role": "cause",
+                "class_id": "core:Facility",
+                "identifiers": null
+              },
+              {
+                "name_original": "Pegel Louny",
+                "role": "measurement_location",
+                "class_id": "core:MonitoringStation",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "location": "Eger am Pegel Louny",
+              "waterbody": "Eger"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "QM364",
+                "value_original": "2,7",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": "aus dem Jahre 1994",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "1994",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:monitoring"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Nach Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem Jahre 1994 wurde der Abfluss der Eger am Pegel Louny unterhalb der Talsperre Nechranice für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s (für die unbedeu-",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "time_normalized",
+                  "participants",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "event_id": "e11",
+            "record_type": "Maßnahme",
+            "waterbody_references": [
+              {
+                "name_original": "Moldau",
+                "role": "target_waterbody",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Moldau",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Es wird erwartet, dass der Mindestabfluss aus der Talsperre Vrané von 40,0 m³/s auch bei einem klimawandelbedingten Rückgang des mittleren Abflusses der Moldau beibehalten wird.",
+            "ontology_concept": null,
+            "participants": [
+              {
+                "name_original": "Talsperre Vrané",
+                "role": "source_facility",
+                "class_id": "core:Facility",
+                "identifiers": null
+              }
+            ],
+            "spatial_scope": {
+              "location": "Moldau in Prag",
+              "waterbody": "Moldau"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Mindestabfluss",
+                "value_original": "40,0",
+                "value_normalized": null,
+                "unit_original": "m³/s",
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": null,
+            "time_original": null,
+            "time_status": "no_specific_time",
+            "time_normalized": null,
+            "time_precision": null,
+            "assertion_mode": "predicted",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "topic:hydrology",
+              "topic:management"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Auch bei einem Rückgang des mittleren Abflusses der Moldau infolge des zu erwarten-den Klimawandels wird man im Interesse der Erhaltung des Stadtbildes von Prag den bisher festgelegten Mindestabfluss aus der Talsperre Vrané von 40,0 m³/s sicherlich beibehalten (Abb. 3).",
+                "block_id": "p0011_b0001",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "values",
+                  "participants",
+                  "spatial_scope"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "r1",
+            "source_event_id": "e1",
+            "target_event_id": "e1",
+            "relationship_type": "increases",
+            "statement": "Die Talsperren der Moldaukaskade erhöhen den QM364-Abfluss der Moldau in Prag.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "location": "Moldau in Prag"
+            },
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "wurde der Abfluss der Moldau in Prag für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren der Moldaukaskade von 20,0 m³/s ... auf 38,8 m³/s ... erhöht.",
+                "block_id": "p0010_b0002",
+                "page": 10,
+                "field_names": [
+                  "statement",
+                  "source_event_id",
+                  "target_event_id"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "relationship_id": "r2",
+            "source_event_id": "e1",
+            "target_event_id": "e7",
+            "relationship_type": "affects",
+            "statement": "Die Niedrigwasseraufhöhung der Moldau (durch Talsperren) beeinflusst die Abflüsse der Elbe unterhalb der Mündung.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "location": "Elbe unterhalb der Mündung der Moldau"
+            },
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren Moldau, sondern auch der Elbe unterhalb der Mündung der Moldau in die Elbe bei Mělník.",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "source_event_id",
+                  "target_event_id"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          },
+          {
+            "relationship_id": "r3",
+            "source_event_id": "e9",
+            "target_event_id": "e9",
+            "relationship_type": "affects",
+            "statement": "Die Talsperren im Einzugsgebiet der Eger beeinflussen die Niedrigwasseraufhöhung der Eger und damit die Elbe nach der Mündung.",
+            "relationship_scope": "specific_case",
+            "waterbody_references": null,
+            "spatial_scope": {
+              "location": "Elbe nach der Mündung der Eger"
+            },
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "derivation_status": "explicit_in_source",
+            "evidence_basis": null,
+            "mechanism": null,
+            "conditions": null,
+            "additional_factors": null,
+            "effect_size": null,
+            "valid_time": null,
+            "response_time_definition": null,
+            "response_time_anchors": null,
+            "response_time_value": null,
+            "response_time_origin": "not_stated",
+            "response_time_evidence": null,
+            "effect_duration": null,
+            "categories": [
+              "topic:hydrology"
+            ],
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "Die Talsperren im Einzugsgebiet der Eger ... haben ... einen merk-baren Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung der Eger.",
+                "block_id": "p0011_b0003",
+                "page": 11,
+                "field_names": [
+                  "statement",
+                  "source_event_id",
+                  "target_event_id"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": null
+          }
+        ],
+        "context_requests": [],
+        "notes": []
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            70.85560000000001,
+            471.3426,
+            552.8266000000009,
+            713.0526000000001
+          ],
+          "text": "Diese Niedrigwasseraufhöhung führte nicht nur zur merkbaren Beeinflussung der Abflüsse der unteren\nMoldau, sondern auch der Elbe unterhalb der Mündung der Moldau in die Elbe bei Mělník. Die unterste\nTalsperre der Moldaukaskade, die Talsperre Vrané mit einem Einzugsgebiet von 17 782 km², liegt 71,3 km\noberhalb der Mündung der Moldau (28 090 km²) in die Elbe.\nDie Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem\nStauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merk-\nbaren Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung\nder Eger.\nNach Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem Jahre 1994\nwurde der Abfluss der Eger am Pegel Louny unterhalb der Talsperre Nechranice für 364 Überschreitungstage\n(QM364) infolge der Wirkung der Talsperren im Einzugsgebiet der Eger von 2,7 m³/s (für die unbedeu-",
+          "page": 11,
+          "printed_page": null,
+          "block_id": "p0011_b0003",
+          "section": "10 Manfred Simon und Jürgen Böhme"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            42.5197,
+            56.69319999999993,
+            467.5836999999999,
+            68.69319999999993
+          ],
+          "text": "4. Auswirkungen der tschechischen Talsperren auf die Niedrigwasserabflüsse",
+          "page": 10,
+          "printed_page": null,
+          "block_id": "p0010_b0001",
+          "section": "4. Auswirkungen der tschechischen Talsperren auf die Niedrigwasserabflüsse"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            42.5197,
+            81.7568,
+            524.4802000000008,
+            249.12610000000006
+          ],
+          "text": "Nach Untersuchungen des Tschechischen Hydrometeorologischen Institutes in Prag aus dem Jahre 1994\nwurde der Abfluss der Moldau in Prag für 364 Überschreitungstage (QM364) infolge der Wirkung der\nTalsperren der Moldaukaskade von 20,0 m³/s (für die unbedeutend durch Talsperrenbewirtschaftung\nbeeinflusste Jahresreihe 1924-1953) auf 38,8 m³/s (für die durch Talsperrenbewirtschaftung beeinflusste\nJahresreihe 1955-1993), d. h. um 18,8 m³/s, erhöht. Dieser Wert liegt nach Ermittlungen der IKSE aus dem\nJahre 2008 bei 36,9 m³/s für die Jahresreihe 1961-2005. In dem QM364-Abfluss von 38,8 m³/s ist der QM364-\nWert für die Berounka mit 3,8 m³/s enthalten.\nDie Moldaukaskade besteht aus neun Talsperren direkt in der Moldau liegend (Abb. 2), von der Talsperre\nLipno I im Böhmerwald bis zur Talsperre Vrané oberhalb von Prag, mit einem Stauraum von 1 352,58 Mio. m³.\nZur Stützung der Wasserstände der Moldau in Prag wird gemäß Bewirtschaftungsplan der Moldaukaskade",
+          "page": 10,
+          "printed_page": null,
+          "block_id": "p0010_b0002",
+          "section": "4. Auswirkungen der tschechischen Talsperren auf die Niedrigwasserabflüsse"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            42.5197,
+            81.7568,
+            524.4802000000008,
+            249.12610000000006
+          ],
+          "text": "aus der Talsperre Vrané, oberhalb der Mündung der Berounka in die Moldau, ein Mindestabfluss von\n40,0 m³/s gesichert. Dieser Wert entspricht in etwa dem QM364-Wert von 38,8 m3/s. Vor Errichtung der\nTalsperren kam es in Prag öfter zu Abflüssen von nur 12,0 bis15,0 m³/s.",
+          "page": 10,
+          "printed_page": null,
+          "block_id": "p0010_b0003",
+          "section": "4. Auswirkungen der tschechischen Talsperren auf die Niedrigwasserabflüsse"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            42.5197,
+            724.5897,
+            203.87969999999996,
+            732.5897
+          ],
+          "text": "Abb. 2: Längsschnitt der Moldaukaskade (IKSE)",
+          "page": 10,
+          "printed_page": null,
+          "block_id": "p0010_b0004",
+          "section": "4. Auswirkungen der tschechischen Talsperren auf die Niedrigwasserabflüsse"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            42.5196,
+            811.9442,
+            348.191,
+            820.9442
+          ],
+          "text": "10 Manfred Simon und Jürgen Böhme",
+          "page": 10,
+          "printed_page": null,
+          "block_id": "p0010_b0005",
+          "section": "10 Manfred Simon und Jürgen Böhme"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            56.69319999999993,
+            552.7741000000007,
+            104.9932
+          ],
+          "text": "Die durch feste Überfallwehre in Prag gestaute Moldau trägt wesentlich zu dem von Touristen geliebten\nFlair der Stadt bei. Auch bei einem Rückgang des mittleren Abflusses der Moldau infolge des zu erwarten-\nden Klimawandels wird man im Interesse der Erhaltung des Stadtbildes von Prag den bisher festgelegten\nMindestabfluss aus der Talsperre Vrané von 40,0 m³/s sicherlich beibehalten (Abb. 3).",
+          "page": 11,
+          "printed_page": null,
+          "block_id": "p0011_b0001",
+          "section": "10 Manfred Simon und Jürgen Böhme"
+        },
+        {
+          "kind": "text",
+          "bbox": [
+            70.8661,
+            454.94829999999996,
+            292.81810000000013,
+            462.94829999999996
+          ],
+          "text": "Abb. 3: Moldau mit Karlsbrücke und Prager Burg (Foto: M. Simon)",
+          "page": 11,
+          "printed_page": null,
+          "block_id": "p0011_b0002",
+          "section": "10 Manfred Simon und Jürgen Böhme"
+        }
+      ],
+      "extracted_at": "2026-09-29T10:14:43.377237+00:00",
+      "response_model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\chunk_size_study\\results\\r1_chars2000\\fein\\raw_responses\\chunk_0001_30e816b5_99edd8e11cf3.json",
+      "purpose": "extraction",
+      "relationship_review": [
+        {
+          "kind": "causal_self_relationship_repair",
+          "chunk_id": "chunk_0001_30e816b5",
+          "relationship_ids": [
+            "r1",
+            "r3"
+          ],
+          "original_candidates": [
+            {
+              "relationship_id": "r1",
+              "source_event_id": "e1",
+              "target_event_id": "e1",
+              "relationship_type": "increases",
+              "statement": "Die Talsperren der Moldaukaskade erhöhen den QM364-Abfluss der Moldau in Prag.",
+              "relationship_scope": "specific_case",
+              "waterbody_references": null,
+              "spatial_scope": {
+                "location": "Moldau in Prag"
+              },
+              "assertion_mode": "reported",
+              "polarity": "affirmed",
+              "derivation_status": "explicit_in_source",
+              "evidence_basis": null,
+              "mechanism": null,
+              "conditions": null,
+              "additional_factors": null,
+              "effect_size": null,
+              "valid_time": null,
+              "response_time_definition": null,
+              "response_time_anchors": null,
+              "response_time_value": null,
+              "response_time_origin": "not_stated",
+              "response_time_evidence": null,
+              "effect_duration": null,
+              "categories": [
+                "topic:hydrology"
+              ],
+              "source_document": null,
+              "publication_date": null,
+              "retrieved_at": null,
+              "evidence": [
+                {
+                  "quote": "wurde der Abfluss der Moldau in Prag für 364 Überschreitungstage (QM364) infolge der Wirkung der Talsperren der Moldaukaskade von 20,0 m³/s ... auf 38,8 m³/s ... erhöht.",
+                  "block_id": "p0010_b0002",
+                  "page": 10,
+                  "field_names": [
+                    "statement",
+                    "source_event_id",
+                    "target_event_id"
+                  ],
+                  "printed_page": null,
+                  "table_id": null,
+                  "row": null,
+                  "column": null
+                }
+              ],
+              "extraction_metadata": null,
+              "quality_assessment": null
+            },
+            {
+              "relationship_id": "r3",
+              "source_event_id": "e9",
+              "target_event_id": "e9",
+              "relationship_type": "affects",
+              "statement": "Die Talsperren im Einzugsgebiet der Eger beeinflussen die Niedrigwasseraufhöhung der Eger und damit die Elbe nach der Mündung.",
+              "relationship_scope": "specific_case",
+              "waterbody_references": null,
+              "spatial_scope": {
+                "location": "Elbe nach der Mündung der Eger"
+              },
+              "assertion_mode": "reported",
+              "polarity": "affirmed",
+              "derivation_status": "explicit_in_source",
+              "evidence_basis": null,
+              "mechanism": null,
+              "conditions": null,
+              "additional_factors": null,
+              "effect_size": null,
+              "valid_time": null,
+              "response_time_definition": null,
+              "response_time_anchors": null,
+              "response_time_value": null,
+              "response_time_origin": "not_stated",
+              "response_time_evidence": null,
+              "effect_duration": null,
+              "categories": [
+                "topic:hydrology"
+              ],
+              "source_document": null,
+              "publication_date": null,
+              "retrieved_at": null,
+              "evidence": [
+                {
+                  "quote": "Die Talsperren im Einzugsgebiet der Eger ... haben ... einen merk-baren Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung der Eger.",
+                  "block_id": "p0011_b0003",
+                  "page": 11,
+                  "field_names": [
+                    "statement",
+                    "source_event_id",
+                    "target_event_id"
+                  ],
+                  "printed_page": null,
+                  "table_id": null,
+                  "row": null,
+                  "column": null
+                }
+              ],
+              "extraction_metadata": null,
+              "quality_assessment": null
+            }
+          ],
+          "original_raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\chunk_size_study\\results\\r1_chars2000\\fein\\raw_responses\\chunk_0001_30e816b5_99edd8e11cf3.json",
+          "status": "rejected",
+          "reason": "APIError"
+        }
+      ]
+    }
+  ]
+}

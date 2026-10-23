@@ -1,0 +1,59 @@
+[
+  {
+    "name": "r1_chars4000",
+    "size": 4000,
+    "repeat": 1,
+    "elapsed_seconds": 78.84278320000158,
+    "initial_chunks": 2,
+    "primary_chars": [
+      4306,
+      3446
+    ],
+    "all_complete": true,
+    "raw_events": 13,
+    "raw_relationships": 3,
+    "exported_events": 13,
+    "exported_relationships": 3,
+    "fatal_row_reasons": {},
+    "context_calls": 0,
+    "split_reasons": {},
+    "http_attempts": 2,
+    "request_purposes": {
+      "extraction": 2
+    },
+    "completion_tokens": 7206,
+    "prompt_tokens": 34229,
+    "finished": "2026-09-29T11:02:48.022382+00:00"
+  },
+  {
+    "name": "r2_chars4000",
+    "size": 4000,
+    "repeat": 2,
+    "elapsed_seconds": 183.1065285000077,
+    "initial_chunks": 2,
+    "primary_chars": [
+      4306,
+      3446
+    ],
+    "all_complete": true,
+    "raw_events": 14,
+    "raw_relationships": 3,
+    "exported_events": 11,
+    "exported_relationships": 1,
+    "fatal_row_reasons": {
+      "quote_not_found:p0011_b0003": 2,
+      "quote_not_found:p0017_b0001": 1
+    },
+    "context_calls": 0,
+    "split_reasons": {},
+    "http_attempts": 4,
+    "request_purposes": {
+      "extraction": 2,
+      "source_quality_repair": 1,
+      "causal_self_relationship_repair": 1
+    },
+    "completion_tokens": 16011,
+    "prompt_tokens": 75886,
+    "finished": "2026-09-29T11:05:51.180099+00:00"
+  }
+]

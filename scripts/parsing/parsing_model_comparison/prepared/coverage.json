@@ -1,0 +1,38 @@
+{
+  "preparation_fingerprint": "935a1d2989c9504a1c0c344c0ea92c602018e1b3cdce66b4da57a08a7d247880",
+  "total_pages": 6,
+  "selected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "not_selected_pages": [],
+  "chunks": 9,
+  "empty_selected_pages": [],
+  "page_issues": {
+    "1": [
+      "table_structure_requires_spot_check"
+    ],
+    "2": [
+      "table_structure_requires_spot_check"
+    ],
+    "3": [
+      "table_structure_requires_spot_check"
+    ],
+    "4": [
+      "complex_vector_content_not_interpreted",
+      "table_structure_requires_spot_check"
+    ],
+    "5": [
+      "table_structure_requires_spot_check"
+    ],
+    "6": [
+      "image_content_not_interpreted"
+    ]
+  },
+  "ocr_performed": false,
+  "images_interpreted": false
+}

@@ -1,0 +1,787 @@
+{
+  "index": 2,
+  "elapsed_seconds": 43.41294709999056,
+  "packages": [
+    {
+      "status": "complete",
+      "chunk_id": "pilot_table_2016_2030",
+      "pages": [
+        5
+      ],
+      "result": {
+        "document": null,
+        "events": [
+          {
+            "event_id": "e1",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "target",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Zufluss gesamt im Sommerhalbjahr an der Rappbodetalsperre betrug 6 Mio. m³ im Jahr 2016.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "waterbody": "Rappbodetalsperre"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt (Sommerhalbjahr)",
+                "value_original": "6",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "unit_original": "Mio. m³"
+            },
+            "time_original": "2016",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2016",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "6",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "time_original",
+                  "waterbody_name_original",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          },
+          {
+            "event_id": "e2",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "target",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Zufluss gesamt im Sommerhalbjahr an der Rappbodetalsperre betrug 26 Mio. m³ im Jahr 2017.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "waterbody": "Rappbodetalsperre"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt (Sommerhalbjahr)",
+                "value_original": "26",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "unit_original": "Mio. m³"
+            },
+            "time_original": "2017",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2017",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "26",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "time_original",
+                  "waterbody_name_original",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          },
+          {
+            "event_id": "e3",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "target",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Zufluss gesamt im Sommerhalbjahr an der Rappbodetalsperre betrug 1 Mio. m³ im Jahr 2018.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "waterbody": "Rappbodetalsperre"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt (Sommerhalbjahr)",
+                "value_original": "1",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "unit_original": "Mio. m³"
+            },
+            "time_original": "2018",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2018",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "1",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "time_original",
+                  "waterbody_name_original",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          },
+          {
+            "event_id": "e4",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "target",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Zufluss gesamt im Sommerhalbjahr an der Rappbodetalsperre betrug 5 Mio. m³ im Jahr 2019.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "waterbody": "Rappbodetalsperre"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt (Sommerhalbjahr)",
+                "value_original": "5",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "unit_original": "Mio. m³"
+            },
+            "time_original": "2019",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2019",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "5",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "time_original",
+                  "waterbody_name_original",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          },
+          {
+            "event_id": "e5",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "target",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Zufluss gesamt im Sommerhalbjahr an der Rappbodetalsperre betrug 6 Mio. m³ im Jahr 2020.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "waterbody": "Rappbodetalsperre"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt (Sommerhalbjahr)",
+                "value_original": "6",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "unit_original": "Mio. m³"
+            },
+            "time_original": "2020",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2020",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "6",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "time_original",
+                  "waterbody_name_original",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          },
+          {
+            "event_id": "e6",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "target",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Zufluss gesamt im Sommerhalbjahr an der Rappbodetalsperre betrug 9 Mio. m³ im Jahr 2021.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "waterbody": "Rappbodetalsperre"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt (Sommerhalbjahr)",
+                "value_original": "9",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "unit_original": "Mio. m³"
+            },
+            "time_original": "2021",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2021",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "9",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "time_original",
+                  "waterbody_name_original",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          },
+          {
+            "event_id": "e7",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "target",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Zufluss gesamt im Sommerhalbjahr an der Rappbodetalsperre betrug 1 Mio. m³ im Jahr 2022.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "waterbody": "Rappbodetalsperre"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt (Sommerhalbjahr)",
+                "value_original": "1",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "unit_original": "Mio. m³"
+            },
+            "time_original": "2022",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2022",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "1",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "time_original",
+                  "waterbody_name_original",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          },
+          {
+            "event_id": "e8",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "target",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Zufluss gesamt im Sommerhalbjahr an der Rappbodetalsperre betrug 14 Mio. m³ im Jahr 2023.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "waterbody": "Rappbodetalsperre"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt (Sommerhalbjahr)",
+                "value_original": "14",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "unit_original": "Mio. m³"
+            },
+            "time_original": "2023",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2023",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "14",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "time_original",
+                  "waterbody_name_original",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          },
+          {
+            "event_id": "e9",
+            "record_type": "Messung",
+            "waterbody_references": [
+              {
+                "name_original": "Rappbodetalsperre",
+                "role": "target",
+                "identifiers": null
+              }
+            ],
+            "waterbody_name_original": "Rappbodetalsperre",
+            "waterbody_identifiers": null,
+            "waterbody_assignment": {
+              "status": "resolved",
+              "reason": null
+            },
+            "statement": "Zufluss gesamt im Sommerhalbjahr an der Rappbodetalsperre betrug 12 Mio. m³ im Jahr 2024.",
+            "ontology_concept": null,
+            "participants": null,
+            "spatial_scope": {
+              "waterbody": "Rappbodetalsperre"
+            },
+            "system_scope": null,
+            "values": [
+              {
+                "parameter": "Zufluss gesamt (Sommerhalbjahr)",
+                "value_original": "12",
+                "value_normalized": null,
+                "unit_original": null,
+                "unit_normalized": null,
+                "comparison_operator": null,
+                "normalization_rule": null
+              }
+            ],
+            "measurement_context": {
+              "unit_original": "Mio. m³"
+            },
+            "time_original": "2024",
+            "time_status": "explicit",
+            "time_normalized": {
+              "start": "2024",
+              "end": null,
+              "recurrence": null
+            },
+            "time_precision": "year",
+            "assertion_mode": "reported",
+            "polarity": "affirmed",
+            "implementation_status": "not_applicable",
+            "categories": [
+              "Hydrologie"
+            ],
+            "category_assessment": null,
+            "source_document": null,
+            "publication_date": null,
+            "retrieved_at": null,
+            "evidence": [
+              {
+                "quote": "12",
+                "block_id": "p0005_b0011",
+                "page": 5,
+                "field_names": [
+                  "values",
+                  "time_original",
+                  "waterbody_name_original",
+                  "statement"
+                ],
+                "printed_page": null,
+                "table_id": null,
+                "row": null,
+                "column": null
+              }
+            ],
+            "extraction_metadata": null,
+            "quality_assessment": {
+              "needs_ontology_extension": true
+            }
+          }
+        ],
+        "relationships": [],
+        "context_requests": [],
+        "notes": []
+      },
+      "supplied_blocks": [
+        {
+          "kind": "text",
+          "bbox": [
+            62.04000075,
+            60.90126012500002,
+            322.6075599454099,
+            139.86162987500006
+          ],
+          "text": "Nr. des Indikators B10\nBezeichnung Zufluss zur Rappbodetalsperre\nThemenfeld Wasser\nRäumliche Gliederung Rappbodetalsperre\nBearbeitungsstand 08.07.2025",
+          "page": 1,
+          "printed_page": null,
+          "block_id": "p0001_b0001",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0003_t001",
+          "table_group": "p0003_t001",
+          "row": 2,
+          "bbox": [
+            56.880000375,
+            57.119995625,
+            535.4399872500001,
+            611.4000053750001
+          ],
+          "text": "Maßeinheit | Mio. m³",
+          "page": 3,
+          "printed_page": null,
+          "block_id": "p0003_b0004",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0005_t003",
+          "table_group": "p0005_t003",
+          "row": 1,
+          "bbox": [
+            56.880000375,
+            287.75999037500003,
+            535.43998725,
+            380.879993375
+          ],
+          "text": "Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030",
+          "page": 5,
+          "printed_page": null,
+          "block_id": "p0005_b0009",
+          "section": null
+        },
+        {
+          "kind": "table_row",
+          "table_id": "p0005_t003",
+          "table_group": "p0005_t003",
+          "row": 3,
+          "bbox": [
+            56.880000375,
+            287.75999037500003,
+            535.43998725,
+            380.879993375
+          ],
+          "text": "Spalten: Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030\nZufluss gesamt -\nSommerhalbjahr | 6 | 26 | 1 | 5 | 6 | 9 | 1 | 14 | 12 |  |  |  |  |  | ",
+          "page": 5,
+          "printed_page": null,
+          "block_id": "p0005_b0011",
+          "section": null
+        }
+      ],
+      "extracted_at": "2026-09-28T13:51:51.073660+00:00",
+      "response_model": "01 - GPT-OSS-120b - an open model released by OpenAI in August 2025",
+      "response_format": "json_schema",
+      "raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\results\\compact_gptoss\\fein\\raw_responses\\pilot_table_2016_2030_5d159da6fdc6.json",
+      "purpose": "extraction"
+    }
+  ],
+  "finished": "2026-09-28T13:51:51.087971+00:00"
+}

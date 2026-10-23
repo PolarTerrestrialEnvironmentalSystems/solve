@@ -1,0 +1,158 @@
+{
+  "audit": [
+    {
+      "kind": "causal_self_relationship_repair",
+      "chunk_id": "pilot_measures",
+      "relationship_ids": [
+        "r2"
+      ],
+      "original_candidates": [
+        {
+          "relationship_id": "r2",
+          "source_event_id": "e7",
+          "target_event_id": "e7",
+          "relationship_type": "causes",
+          "statement": "Die Trockenheit in den Monaten März und April führte zur Vorverlegung des Sommerstauziels.",
+          "relationship_scope": "specific_case",
+          "waterbody_references": null,
+          "spatial_scope": null,
+          "assertion_mode": "reported",
+          "polarity": "affirmed",
+          "derivation_status": "explicit_in_source",
+          "evidence_basis": null,
+          "mechanism": null,
+          "conditions": null,
+          "additional_factors": null,
+          "effect_size": null,
+          "valid_time": null,
+          "response_time_definition": null,
+          "response_time_anchors": null,
+          "response_time_value": null,
+          "response_time_origin": "not_stated",
+          "response_time_evidence": null,
+          "effect_duration": null,
+          "categories": [
+            "topic:management",
+            "topic:hydrology"
+          ],
+          "source_document": null,
+          "publication_date": null,
+          "retrieved_at": null,
+          "evidence": [
+            {
+              "quote": "Das Sommerstauziel (sonst 01. Mai) wurde vorgezogen, da die Monate März und April in den letzten Jahren zu trocken waren.",
+              "block_id": "p0002_b0002",
+              "page": 2,
+              "field_names": [
+                "statement",
+                "source_event_id",
+                "target_event_id"
+              ],
+              "printed_page": null,
+              "table_id": null,
+              "row": null,
+              "column": null
+            }
+          ],
+          "extraction_metadata": null,
+          "quality_assessment": null
+        }
+      ],
+      "original_raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\results\\compact_qwen\\fein\\raw_responses\\pilot_measures_19cd378da5a9.json",
+      "status": "accepted",
+      "repair_raw_response_file": "C:\\Users\\jowals001\\Documents\\ChatGPT\\SOLVE\\parsing_model_comparison\\guard_implementation_validation\\live_repair\\raw_responses\\pilot_measures_causal_repair_dfdd6ac3955b.json",
+      "withdrawn_relationship_ids": []
+    }
+  ],
+  "summary": {
+    "variant": "fein",
+    "events": 9,
+    "relationships": 2,
+    "complete_chunks": 1,
+    "failed_chunks": 0,
+    "event_types": {
+      "Maßnahme": 6,
+      "Zustand": 3
+    },
+    "topics": {
+      "topic:management": 6,
+      "topic:hydrology": 8,
+      "topic:use": 2
+    },
+    "merged_event_duplicates": 0,
+    "merged_relationship_duplicates": 0,
+    "review_items": 14,
+    "review_kinds": {
+      "causal_self_relationship_repair": 1,
+      "document_metadata": 1,
+      "event_needs_review": 9,
+      "possible_duplicate_or_conflict": 1,
+      "relationship_needs_review": 2
+    },
+    "event_fields_filled": {
+      "event_id": 9,
+      "record_type": 9,
+      "waterbody_references": 9,
+      "waterbody_name_original": 0,
+      "waterbody_identifiers": 0,
+      "waterbody_assignment": 0,
+      "statement": 9,
+      "ontology_concept": 9,
+      "participants": 0,
+      "spatial_scope": 9,
+      "system_scope": 0,
+      "values": 1,
+      "measurement_context": 0,
+      "time_original": 4,
+      "time_status": 9,
+      "time_normalized": 1,
+      "time_precision": 1,
+      "assertion_mode": 9,
+      "polarity": 9,
+      "implementation_status": 9,
+      "categories": 9,
+      "category_assessment": 0,
+      "source_document": 9,
+      "publication_date": 0,
+      "retrieved_at": 0,
+      "evidence": 9,
+      "extraction_metadata": 9,
+      "quality_assessment": 9
+    },
+    "relationship_fields_filled": {
+      "relationship_id": 2,
+      "source_event_id": 2,
+      "target_event_id": 2,
+      "relationship_type": 2,
+      "statement": 2,
+      "relationship_scope": 2,
+      "waterbody_references": 0,
+      "spatial_scope": 0,
+      "assertion_mode": 2,
+      "polarity": 2,
+      "derivation_status": 2,
+      "evidence_basis": 0,
+      "mechanism": 0,
+      "conditions": 0,
+      "additional_factors": 0,
+      "effect_size": 0,
+      "valid_time": 0,
+      "response_time_definition": 0,
+      "response_time_anchors": 0,
+      "response_time_value": 0,
+      "response_time_origin": 2,
+      "response_time_evidence": 0,
+      "effect_duration": 0,
+      "categories": 2,
+      "source_document": 2,
+      "publication_date": 0,
+      "retrieved_at": 0,
+      "evidence": 2,
+      "extraction_metadata": 2,
+      "quality_assessment": 2
+    },
+    "empty_chunks": [],
+    "model_notes": []
+  },
+  "no_causal_self_relationship_exported": true
+}

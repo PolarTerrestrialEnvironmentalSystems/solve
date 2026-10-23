@@ -1,0 +1,15 @@
+[
+  {
+    "size": 4000,
+    "n": 2,
+    "mean_seconds": 130.97465585000464,
+    "min_seconds": 78.84278320000158,
+    "max_seconds": 183.1065285000077,
+    "mean_exported_events": 12,
+    "mean_exported_relationships": 2,
+    "http_attempts": [
+      2,
+      4
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "id": "chatcmpl-312b146f-e051-4fc8-99ea-c43ec425fd12",
+  "object": "chat.completion",
+  "created": 1790604599,
+  "model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"events\": [\n    {\n      \"assertion_mode\": \"reported\",\n      \"categories\": [\n        \"topic:hydrology\",\n        \"topic:use\"\n      ],\n      \"event_id\": \"e1\",\n      \"evidence\": [\n        {\n          \"block_id\": \"p0011_b0003\",\n          \"field_names\": [\n            \"statement\",\n            \"spatial_scope\",\n            \"time_original\",\n            \"time_normalized\",\n            \"time_precision\",\n            \"time_status\",\n            \"waterbody_references\",\n            \"participants\"\n          ],\n          \"page\": 11,\n          \"quote\": \"Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem Stauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung der Eger.\"\n        }\n      ],\n      \"implementation_status\": \"completed\",\n      \"ontology_concept\": \"fine:WaterAbstraction\",\n      \"participants\": [\n        {\n          \"class_id\": \"core:Facility\",\n          \"name_original\": \"Talsperre bei Nechranice\",\n          \"role\": \"Anlage\"\n        }\n      ],\n      \"polarity\": \"affirmed\",\n      \"record_type\": \"Prozess\",\n      \"spatial_scope\": {\n        \"description\": \"Einzugsgebiet der Eger\",\n        \"location\": \"Nechranice\"\n      },\n      \"statement\": \"Die Talsperre bei Nechranice (größte Talsperre im Einzugsgebiet der Eger) hat ab 1966 einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger.\",\n      \"time_normalized\": {\n        \"start\": \"1966\"\n      },\n      \"time_original\": \"ab 1966\",\n      \"time_precision\": \"year\",\n      \"time_status\": \"explicit\",\n      \"values\": [\n        {\n          \"parameter\": \"Stauraum\",\n          \"unit_original\": \"Mio. m³\",\n          \"value_original\": \"272,43\"\n        }\n      ],\n      \"waterbody_references\": [\n        {\n          \"name_original\": \"Eger\",\n          \"role\": \"betroffener Wasserkörper\"\n        }\n      ]\n    },\n    {\n      \"assertion_mode\": \"reported\",\n      \"categories\": [\n        \"topic:hydrology\"\n      ],\n      \"event_id\": \"e2\",\n      \"evidence\": [\n        {\n          \"block_id\": \"p0011_b0003\",\n          \"field_names\": [\n            \"statement\",\n            \"time_original\",\n            \"time_normalized\",\n            \"time_precision\",\n            \"time_status\",\n            \"participants\"\n          ],\n          \"page\": 11,\n          \"quote\": \"Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem Stauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung der Eger.\"\n        }\n      ],\n      \"implementation_status\": \"completed\",\n      \"ontology_concept\": \"core:Event\",\n      \"participants\": [\n        {\n          \"class_id\": \"core:Facility\",\n          \"name_original\": \"Talsperre bei Nechranice\",\n          \"role\": \"Anlage\"\n        }\n      ],\n      \"polarity\": \"affirmed\",\n      \"record_type\": \"Ereignis\",\n      \"statement\": \"Offizielle Inbetriebnahme der Talsperre bei Nechranice.\",\n      \"time_normalized\": {\n        \"start\": \"1968\"\n      },\n      \"time_original\": \"1968\",\n      \"time_precision\": \"year\",\n      \"time_status\": \"explicit\"\n    },\n    {\n      \"assertion_mode\": \"reported\",\n      \"categories\": [\n        \"topic:hydrology\"\n      ],\n      \"event_id\": \"e3\",\n      \"evidence\": [\n        {\n          \"block_id\": \"p0011_b0003\",\n          \"field_names\": [\n            \"statement\",\n            \"spatial_scope\",\n            \"waterbody_references\"\n          ],\n          \"page\": 11,\n          \"quote\": \"Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem Stauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung der Eger.\"\n        }\n      ],\n      \"ontology_concept\": \"core:State\",\n      \"polarity\": \"affirmed\",\n      \"record_type\": \"Zustand\",\n      \"spatial_scope\": {\n        \"description\": \"Elbe nach der Mündung der Eger\"\n      },\n      \"statement\": \"Merklicher Einfluss auf die Niedrigwasseraufhöhung der Elbe nach der Mündung der Eger.\",\n      \"time_status\": \"not_stated\",\n      \"waterbody_references\": [\n        {\n          \"name_original\": \"Elbe\",\n          \"role\": \"betroffener Wasserkörper\"\n        }\n      ]\n    }\n  ],\n  \"relationships\": [\n    {\n      \"assertion_mode\": \"reported\",\n      \"categories\": [\n        \"topic:hydrology\"\n      ],\n      \"derivation_status\": \"explicit_in_source\",\n      \"evidence\": [\n        {\n          \"block_id\": \"p0011_b0003\",\n          \"field_names\": [\n            \"statement\",\n            \"source_event_id\",\n            \"target_event_id\"\n          ],\n          \"page\": 11,\n          \"quote\": \"Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem Stauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung der Eger.\"\n        }\n      ],\n      \"polarity\": \"affirmed\",\n      \"relationship_id\": \"r1\",\n      \"relationship_scope\": \"specific_case\",\n      \"relationship_type\": \"affects\",\n      \"source_event_id\": \"e1\",\n      \"statement\": \"Die Talsperre bei Nechranice hat einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger.\",\n      \"target_event_id\": \"e3\"\n    },\n    {\n      \"assertion_mode\": \"reported\",\n      \"categories\": [\n        \"topic:hydrology\"\n      ],\n      \"derivation_status\": \"explicit_in_source\",\n      \"evidence\": [\n        {\n          \"block_id\": \"p0011_b0003\",\n          \"field_names\": [\n            \"statement\",\n            \"source_event_id\",\n            \"target_event_id\"\n          ],\n          \"page\": 11,\n          \"quote\": \"Die Talsperren im Einzugsgebiet der Eger haben mit der größten Talsperre bei Nechranice mit einem Stauraum von 272,43 Mio. m³ ab 1966 (offizielle Inbetriebnahme der Talsperre 1968) ebenfalls einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Eger und damit auch auf die Elbe nach der Mündung der Eger.\"\n        }\n      ],\n      \"polarity\": \"affirmed\",\n      \"relationship_id\": \"r2\",\n      \"relationship_scope\": \"specific_case\",\n      \"relationship_type\": \"affects\",\n      \"source_event_id\": \"e1\",\n      \"statement\": \"Die Talsperre bei Nechranice hat einen merklichen Einfluss auf die Niedrigwasseraufhöhung der Elbe nach der Mündung der Eger.\",\n      \"target_event_id\": \"e3\"\n    }\n  ]\n}",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.3.1.dev3+g0bfc7a15d-tp4-cb091a32",
+  "usage": {
+    "prompt_tokens": 13976,
+    "total_tokens": 15985,
+    "completion_tokens": 2009,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}

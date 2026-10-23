@@ -1,0 +1,19 @@
+minute_utc,scope,run_id,ontology,model,endpoint,requests,successful,failed,unfinished,retries,http_429,max_requests_last_60s,prompt_tokens,completion_tokens
+2026-09-29T10:16:00+00:00,detail,r1_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,3,15658,4301
+2026-09-29T10:16:00+00:00,total,,,,,1,1,0,0,0,0,3,15658,4301
+2026-09-29T10:17:00+00:00,detail,r1_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,3,18617,4774
+2026-09-29T10:17:00+00:00,total,,,,,1,1,0,0,0,0,3,18617,4774
+2026-09-29T10:18:00+00:00,detail,r1_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,1,15028,4001
+2026-09-29T10:18:00+00:00,total,,,,,1,1,0,0,0,0,1,15028,4001
+2026-09-29T10:19:00+00:00,detail,r1_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,1,15647,5589
+2026-09-29T10:19:00+00:00,total,,,,,1,1,0,0,0,0,1,15647,5589
+2026-09-29T10:20:00+00:00,detail,r1_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,1,15312,7672
+2026-09-29T10:20:00+00:00,total,,,,,1,1,0,0,0,0,1,15312,7672
+2026-09-29T10:21:00+00:00,detail,r1_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,0,0,0,0,0,0,0,,
+2026-09-29T10:21:00+00:00,total,,,,,0,0,0,0,0,0,0,,
+2026-09-29T10:22:00+00:00,detail,r1_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,1,20650,8082
+2026-09-29T10:22:00+00:00,total,,,,,1,1,0,0,0,0,1,20650,8082
+2026-09-29T10:23:00+00:00,detail,r1_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,1,1,0,0,0,0,1,14706,1802
+2026-09-29T10:23:00+00:00,total,,,,,1,1,0,0,0,0,1,14706,1802
+2026-09-29T10:24:00+00:00,detail,r1_chars2000,fein,"02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",chat/completions,0,0,0,0,0,0,0,,
+2026-09-29T10:24:00+00:00,total,,,,,0,0,0,0,0,0,0,,

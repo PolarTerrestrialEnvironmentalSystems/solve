@@ -1,0 +1,35 @@
+{
+  "assertion_mode": "reported",
+  "categories": [
+    "topic:management",
+    "topic:use"
+  ],
+  "event_id": "e6",
+  "evidence": [
+    {
+      "block_id": "p0002_b0002",
+      "field_names": [
+        "statement",
+        "spatial_scope",
+        "waterbody_references"
+      ],
+      "page": 2,
+      "quote": "Wasserentnahme etwa zur Energiegewinnung wurde ggf. eingeschränkt."
+    }
+  ],
+  "implementation_status": "completed",
+  "ontology_concept": "core:Intervention",
+  "polarity": "affirmed",
+  "record_type": "Maßnahme",
+  "spatial_scope": {
+    "description": "Rappbodetalsperre"
+  },
+  "statement": "Wasserentnahme zur Energiegewinnung wurde gegebenenfalls eingeschränkt.",
+  "time_status": "no_specific_time",
+  "waterbody_references": [
+    {
+      "name_original": "Rappbodetalsperre",
+      "role": "affected_waterbody"
+    }
+  ]
+}

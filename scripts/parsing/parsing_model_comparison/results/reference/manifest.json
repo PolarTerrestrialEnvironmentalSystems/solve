@@ -1,0 +1,215 @@
+{
+  "signature": "2be3688b186ac72db02988e0f50f8704763fc66095995d168b984a6f240a3422",
+  "config": {
+    "variant": "reference",
+    "settings": {
+      "base_url": "https://api.blablador.fz-juelich.de/v1/",
+      "model": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "rpm": 30,
+      "timeout": 300,
+      "max_retries": 1,
+      "max_output_tokens": 16000,
+      "context_tokens": 65536,
+      "temperature": 0,
+      "json_mode": "auto",
+      "thinking_mode": "off"
+    },
+    "workers": 1,
+    "repetitions": 1,
+    "context_calls": 0,
+    "model_identity": {
+      "id": "02 - Qwen3.8-Flash-Next-NVFP4, general purpose large model",
+      "root": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "max_model_len": 262144
+    },
+    "pdf": {
+      "document_id": "doc_d1367f5d9f0e19451126eec4",
+      "content_hash": "d1367f5d9f0e19451126eec4ad6cb76920c5f0d51ac3f7de4736e74f4252ee39",
+      "local_file": "C:\\Users\\jowals001\\awi\\solve\\scripts\\SOLVE_multisite_code_v1_1_0\\dossier_33_seen_serper_v1_6_2_20260925\\archive\\pdf\\d1367f5d9f0e19451126eec4ad6cb76920c5f0d51ac3f7de4736e74f4252ee39.pdf",
+      "filename": "d1367f5d9f0e19451126eec4ad6cb76920c5f0d51ac3f7de4736e74f4252ee39.pdf",
+      "title": null,
+      "issuer": null,
+      "authors": null,
+      "url": null,
+      "publication_date": null,
+      "retrieved_at": null,
+      "pdf_metadata": {
+        "/Author": "Prüß, Andrea",
+        "/CreationDate": "D:20250708152229+02'00'",
+        "/ModDate": "D:20250708152229+02'00'",
+        "/Producer": "Microsoft: Print To PDF",
+        "/Title": "Microsoft Word - 250708_ST_Kennblatt_Zufluss_RTS_FINAL.docx"
+      }
+    },
+    "cases": [
+      {
+        "chunk_id": "pilot_measures",
+        "pages": [
+          2
+        ],
+        "blocks": [
+          {
+            "kind": "table_row",
+            "table_id": "p0002_t001",
+            "table_group": "p0002_t001",
+            "row": 1,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              781.200023375
+            ],
+            "text": "Die Bedeutung des Themas zeigt sich auch darin, dass der Talsperrenbetrieb\ninsbesondere in den zurückliegenden fünf Trockenjahren (2018–2022) die Tal-\nsperrenbewirtschaftung bereits angepasst hat. Dabei galt grundsätzlich, dass\ndie Stauraumbewirtschaftung zur Sicherung der Rohwasserbereitstellung\noberste Priorität hat (Cöster 2021). Die Minderung des Wasserdargebotes\nwirkte sich allerdings auf die verfügbare Wassermenge für die Energiegewin-\nnung aus. Für die Rohwasserbereitstellung und Niedrigwasseraufhöhung der\nBode gab es bisher keine Einschränkungen (Cöster 2021). Unter anderem wur-\nden folgende Maßnahmen umgesetzt:\n Der Stauinhalt wurde bis zum Jahresende nicht unter 60 Mio. m³ ge-",
+            "page": 2,
+            "printed_page": null,
+            "block_id": "p0002_b0001",
+            "section": null
+          },
+          {
+            "kind": "table_row",
+            "table_id": "p0002_t001",
+            "table_group": "p0002_t001",
+            "row": 1,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              781.200023375
+            ],
+            "text": "senkt, um selbst bei geringen Winterzuflüssen die Rohwasserversor-\ngung sicherzustellen. Wasserentnahme etwa zur Energiegewinnung\nwurde ggf. eingeschränkt.\n Das Sommerstauziel (sonst 01. Mai) wurde vorgezogen, da die Monate\nMärz und April in den letzten Jahren zu trocken waren. Unter Berück-\nsichtigung der Schneerücklage wurde das Sommerstauziel bereits im\nMärz erreicht.",
+            "page": 2,
+            "printed_page": null,
+            "block_id": "p0002_b0002",
+            "section": null
+          }
+        ],
+        "context_blocks": []
+      },
+      {
+        "chunk_id": "pilot_uncertainty",
+        "pages": [
+          3
+        ],
+        "blocks": [
+          {
+            "kind": "table_row",
+            "table_id": "p0003_t001",
+            "table_group": "p0003_t001",
+            "row": 1,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              611.4000053750001
+            ],
+            "text": "Bei Betrachtung der Zeitreihe für das hydrologische Sommerhalbjahr sticht das\nJahr 2007 deutlich heraus. Auch wenn der Sommer 2007 an der Wetterstation\nHarzgerode zu den niederschlagsreicheren Sommern zählt (LAU 2020), ist die-\nses Extrem ohne eine detailliertere Analyse nicht zu erklären. Möglicherweise\nspielt eine Rolle, dass infolge des Orkans Kyrill im Januar 2007 im Harz sehr\nviele Bäume entwurzelt wurden und Kalamitätsflächen entstanden sind, auf de-\nnen der Niederschlag schneller abflusswirksam geworden sein. Dies könnte zu\nerhöhten Zuflüssen in die Rappbodetalsperre geführt haben.",
+            "page": 3,
+            "printed_page": null,
+            "block_id": "p0003_b0001",
+            "section": null
+          }
+        ],
+        "context_blocks": []
+      },
+      {
+        "chunk_id": "pilot_table_2016_2030",
+        "pages": [
+          5
+        ],
+        "blocks": [
+          {
+            "kind": "table_row",
+            "table_id": "p0005_t003",
+            "table_group": "p0005_t003",
+            "row": 1,
+            "bbox": [
+              56.880000375,
+              287.75999037500003,
+              535.43998725,
+              380.879993375
+            ],
+            "text": "Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030",
+            "page": 5,
+            "printed_page": null,
+            "block_id": "p0005_b0009",
+            "section": null
+          },
+          {
+            "kind": "table_row",
+            "table_id": "p0005_t003",
+            "table_group": "p0005_t003",
+            "row": 3,
+            "bbox": [
+              56.880000375,
+              287.75999037500003,
+              535.43998725,
+              380.879993375
+            ],
+            "text": "Spalten: Messstelle | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030\nZufluss gesamt -\nSommerhalbjahr | 6 | 26 | 1 | 5 | 6 | 9 | 1 | 14 | 12 |  |  |  |  |  | ",
+            "page": 5,
+            "printed_page": null,
+            "block_id": "p0005_b0011",
+            "section": null
+          }
+        ],
+        "context_blocks": [
+          {
+            "kind": "table_row",
+            "table_id": "p0003_t001",
+            "table_group": "p0003_t001",
+            "row": 2,
+            "bbox": [
+              56.880000375,
+              57.119995625,
+              535.4399872500001,
+              611.4000053750001
+            ],
+            "text": "Maßeinheit | Mio. m³",
+            "page": 3,
+            "printed_page": null,
+            "block_id": "p0003_b0004",
+            "section": null
+          }
+        ]
+      }
+    ],
+    "cover": [
+      {
+        "kind": "text",
+        "bbox": [
+          62.04000075,
+          60.90126012500002,
+          322.6075599454099,
+          139.86162987500006
+        ],
+        "text": "Nr. des Indikators B10\nBezeichnung Zufluss zur Rappbodetalsperre\nThemenfeld Wasser\nRäumliche Gliederung Rappbodetalsperre\nBearbeitungsstand 08.07.2025",
+        "page": 1,
+        "printed_page": null,
+        "block_id": "p0001_b0001",
+        "section": null
+      }
+    ],
+    "code_hashes": {
+      "blablador_client.py": "c8fd1cc7afc83cb30415a4666d50fa9603144f274282eaaa3234a7ad2751f8be",
+      "common.py": "d5cc2e36ee286a02ddf563f2794b2a5321e5e78eeceef61199ae1e5c323d5a2f",
+      "extract_facts.py": "bbb7df1c2d967cdd5330437f2b6743a36ada0e3bf777986eab4def9bddbc76ec",
+      "parse_directory.py": "96ee97eedb3b45cb05ac150f9e3e6e5dc52b7803a47edc6618f8ccb3a344670e",
+      "prepare_document.py": "312506be5a726061e11ea2c49a88c584a6386dc71b2927aea204e4319258e04e",
+      "run_parsing_tests.py": "d1ecd48175326937bb8c56ee22dbccc4d38d34e226b6c6ba12e7110c02c4adc2",
+      "schemas.py": "a73a331f385eed501feca7c4862e997a11494b9f0471ca95fdd094f804d88384",
+      "validate_export.py": "6ed99d8b1636b7518b414e1b2327fff40634155ba9913cc7d2084299cdedba9d",
+      "verify_release.py": "abf57c75580a390cda0c9571e98d8f4286de9604924f7a29f029950a05baa745"
+    },
+    "schema_hash": "1b7c253f21930e4fc454db5bcf2287ba271ba24ec72a587f525f4cc7f3b8d1b6",
+    "prompt_hash": "1f1d9329bb15ffebc1bfebe7839ff76b5f1775e8e2ce319d3dd479cb4819fe02",
+    "ontology_hash": "4b23a99e8de959124ece98c3dd920e3077e4860412bb109880d970df9c53c9b0",
+    "dependencies": {
+      "pdfplumber": "0.11.10",
+      "pypdf": "6.19.0",
+      "pydantic": "2.13.5",
+      "openpyxl": "3.1.5"
+    },
+    "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "updated_at": "2026-09-28T13:51:52.816367+00:00"
+}
