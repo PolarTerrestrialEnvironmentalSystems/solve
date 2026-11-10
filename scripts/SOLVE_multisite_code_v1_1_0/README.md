@@ -1,9 +1,26 @@
-# Blablador integration — local revision 1.6.1
+# SOLVE: Quellenrecherche mit Serper und Blablador
+
+Die **Elbe-Kampagne vom 10.11.2026 (Crawler 1.8.0)** ergänzt ein amtliches Register mit Seen und
+Flussabschnitten für sechs Bundesländer, vorab geprüfte Startquellen und einen
+Linux-Launcher für 30 Worker. Die eigentliche Startlink-Auswahl wird bei dieser
+Kampagne übersprungen; Vorprüfung, Inhaltsbewertung und weitere Recherche bleiben aktiv.
+
+- [Linux-Start, Schlüssel, Logs und Fortsetzen](ELBE_LINUX.md)
+- [Gewässerlisten nach Bundesland sowie See/Fluss](inputs/elbe_20261110/catalog/README.md)
+- [Startquellen-Abdeckung und verbleibende Defizite](inputs/elbe_20261110/SEED_COVERAGE.md)
+- [Anklickbare Startlinks je See und Bundesland](inputs/elbe_20261110/startlinks/README.md)
+
+`start-elbe-linux.sh` ist der Einstieg für diese Kampagne. Die bisherigen
+Arendsee- und 33-Seen-Starter bleiben separat nutzbar; sie wechseln nicht
+automatisch auf das Elbe-Register. Die nachgelagerte Ereignisextraktion und
+Graphverarbeitung liegt unter [`solve-kg/`](../../solve-kg/README.md).
+
+## Historische Dokumentation: Revision 1.6.1
 
 1.6.1 adds safe response diagnostics and bounded smaller-batch retries for
 malformed start-link reviews. Existing successful decisions remain reusable.
 
-**Current setup:** the standard starter researches **Arendsee only**, using
+**Setup of revision 1.6.1:** the standard starter researches **Arendsee only**, using
 **Serper instead of SearXNG**. Before downloading web search results, Blablador
 selects up to 20 suitable entry URLs, excluding tourism/navigation and uncertain
 candidates, and replenishes the pool through additional pages and queries within

@@ -1,0 +1,3 @@
+# Optional dependencies for build_elbe_inventory.py; crawler dependencies are unchanged.
+shapely>=2.0,<3
+pyproj>=3.6,<4

@@ -3,13 +3,28 @@ import json
 import time
 import scientific_discovery
 
+INITIAL_FAMILIES = ('overview', 'start_pool_initial', 'start_pool_page', 'start_pool_topic')
+
 
 def plan(r):
+    from run_web_enrichment import canonical
+    prepared = r.cfg['start_links'].get('prepared', False)
     for wb in r.cfg['waterbodies']:
         profile = r.profiles[wb['id']]
+        if prepared:
+            # Switching an existing dossier must not resume an obsolete entry-pool search.
+            r.store.db.execute("UPDATE searches SET status='disabled',reason='prepared_seed_mode' "
+                               "WHERE profile=? AND family IN (?,?,?,?) "
+                               "AND status IN ('pending','retry','deferred_budget','waiting_external')",
+                               (profile, *INITIAL_FAMILIES))
         for url in wb['seed_urls']:
-            if not r.store.one('SELECT id FROM tasks WHERE profile=? AND url=?',(profile,url)):
+            existing = r.store.one('SELECT id,status,reason FROM tasks WHERE profile=? AND url=?',
+                                   (profile, canonical(url)))
+            if not existing:
                 r.enqueue(profile, url, label=wb.get('seed_titles', {}).get(url, 'Geprüfter Rechercheeinstieg'), priority=94, force=True)
+            elif prepared and existing['status'] == 'deferred' and existing['reason'] == 'start_link_not_selected':
+                # Explicit preparation replaces only the old entry selection, not content/preflight decisions.
+                r.store.db.execute("UPDATE tasks SET status='pending',reason='prepared_seed' WHERE id=?", (existing['id'],))
         # Additional entry points are operational discovery settings: keep them
         # outside the identity profile so existing reviews/tasks remain active.
         for source in r.cfg['scientific_sources']:
@@ -20,9 +35,10 @@ def plan(r):
             if not existing or existing['status'] == 'deferred' and existing['reason'] in {'low_priority','depth_budget'}:
                 r.enqueue(profile, url, label=source['title'], priority=94, force=True,
                           branch='scientific_source:' + url)
-        r.add_search(profile, '"' + wb.get('query_name', wb['name']).replace('"', '') + '"',
-                     'overview', 'Gewässer ohne zusätzliche Einschränkungen', 95)
-        if r.cfg['start_links']['enabled']:
+        if not prepared:
+            r.add_search(profile, '"' + wb.get('query_name', wb['name']).replace('"', '') + '"',
+                         'overview', 'Gewässer ohne zusätzliche Einschränkungen', 95)
+        if r.cfg['start_links']['enabled'] and not prepared:
             for term in r.cfg['start_links']['initial_keywords']:
                 r.add_search(profile,wb.get('query_name',wb['name'])+' '+term.strip(),
                     'start_pool_initial','Zusätzlicher Suchbegriff für die erste Startlink-Auswahl',90)
@@ -110,11 +126,12 @@ def batch_waiting(r, search):
 
 def next_search(r, core):
     import quality_search
+    import start_links
     if r.cfg['search']['provider']=='none':
         return None
     routes = quality_search.available(r, core) if r.cfg['search']['provider'] == 'searxng' else ['configured']
     providers = [r.cfg['search']['provider']] if routes else []
-    if r.cfg['start_links']['enabled'] and 'serper' in providers:
+    if start_links.enabled(r) and 'serper' in providers:
         providers.remove('serper')  # Dedicated entry-pool phase owns these queries.
     if 'serper' in providers and quality_search.metadata_next_try(r, 'serper') > time.time():
         providers.remove('serper')
@@ -126,6 +143,8 @@ def next_search(r, core):
     # Count actual attempts/completions, not the number of preplanned rows.
     order = sorted(r.active, key=lambda p:(sum(q['status'] not in {'pending','disabled','deferred_budget'} for q in histories[p]), r.bodies[p]['name']))
     for profile in order:
+        if start_links.prepared_waiting(r, profile):
+            continue
         history = histories[profile]
         pending = [q for q in history if q['status'] in {'pending','retry'} and q['next_try'] <= time.time()
                    and q['provider'] in providers]

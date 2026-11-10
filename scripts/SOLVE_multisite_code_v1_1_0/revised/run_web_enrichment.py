@@ -34,8 +34,8 @@ import urllib.robotparser
 import uuid
 from scientific_discovery import DEFAULT_DOMAINS
 
-VERSION = "1.7.0"
-PARSER_VERSION = "solve-parser-3"
+VERSION = "1.8.0"
+PARSER_VERSION = "solve-parser-4"
 REVIEW_VERSION = "solve-review-5"
 SCHEMA_VERSION = "1"
 TRACKING = {"fbclid", "gclid", "msclkid", "mc_cid", "mc_eid"}
@@ -48,7 +48,7 @@ PHYSICAL = re.compile(r"(?:nur (?:im|vor Ort im) Lesesaal|nicht digitalisiert|"
 DOI = re.compile(r"\b10\.\d{4,9}/[^\s<>\"\[\]]+", re.I)
 URL_RE = re.compile(r"https?://[^\s<>\"\[\]]+", re.I)
 DEFAULTS = {
-    "start_links": {"enabled": False, "skip_selection": False, "target": 20, "batch_size": 20,
+    "start_links": {"enabled": False, "skip_selection": False, "prepared": False, "target": 20, "batch_size": 20,
                     "initial_keywords": [],
                     "min_importance": 60, "max_searches": 20, "max_pages": 3},
     "scientific_sources": [],
@@ -98,7 +98,8 @@ def keep_text(cfg):
 def parse_metadata(parsed):
     """Only bibliographic/technical metadata; source text remains transient."""
     keys = ("title", "status", "warnings", "parser_version", "pages_total",
-            "pages_parsed", "ocr_pages", "sparse_or_failed_pages")
+            "pages_parsed", "ocr_pages", "sparse_or_failed_pages", "parse_scope",
+            "requested_pages", "selected_pages", "selection_complete", "context_pages", "evidence_pages")
     out = {k: parsed[k] for k in keys if k in parsed}
     out.update(text_retained=False, transient_text_available=bool(parsed.get("text", "").strip()),
                link_count=len(parsed.get("links", [])))
@@ -244,6 +245,9 @@ def load_config(path):
             if not isinstance(wb[k], list) or any(not isinstance(x, str) for x in wb[k]):
                 raise ValueError(f"{wb['id']}.{k} muss eine Liste von Texten sein")
         wb.setdefault("region", "")
+        if 'waterbody_kind' in wb and (not isinstance(wb['waterbody_kind'], str) or wb['waterbody_kind'] not in {
+                'lake', 'reservoir', 'river', 'river_segment', 'river_reach', 'stream', 'canal', 'unknown'}):
+            raise ValueError('waterbody_kind: lake, reservoir, river, river_segment, river_reach, stream, canal oder unknown')
         for flag in ("identity_requires_confirmation", "require_geography"):
             if flag in wb and not isinstance(wb[flag], bool):
                 raise ValueError(f"{wb['id']}.{flag} muss boolesch sein")
@@ -300,6 +304,15 @@ def load_config(path):
         raise ValueError('start_links benötigt enabled als booleschen Wert')
     if type(sl['skip_selection']) is not bool:
         raise ValueError('start_links.skip_selection muss boolesch sein')
+    if type(sl['prepared']) is not bool:
+        raise ValueError('start_links.prepared muss boolesch sein')
+    if sl['prepared']:
+        if not sl['skip_selection'] or cfg['search']['strategy'] != 'focused':
+            raise ValueError('start_links.prepared benötigt skip_selection=true und search.strategy=focused')
+        for wb in bodies:
+            urls = [canonical(url) for url in wb['seed_urls']]
+            if not urls or any(url is None for url in urls) or len(set(urls)) != len(urls):
+                raise ValueError('Vorbereitete Startquellen benötigen gültige, eindeutige seed_urls je Gewässer')
     for field in ('target','batch_size','max_searches','max_pages'):
         if type(sl[field]) is not int or not 1<=sl[field]<=100:
             raise ValueError('start_links.'+field+' muss zwischen 1 und 100 liegen')
@@ -919,10 +932,33 @@ def parse_pdf_worker(path, output, options):
             return
         result["title"] = str((reader.metadata or {}).get("/Title", ""))
         result["pages_total"] = len(reader.pages)
+        requested = options.get("page_selection")
+        selection_warning = options.get("selection_warning")
+        selected = None
+        if requested is not None:
+            result["requested_pages"] = requested
+            for field in ('context_pages', 'evidence_pages'):
+                if field in options:
+                    result[field] = options[field]
+            if (isinstance(requested, list) and requested and
+                    all(isinstance(n, int) and not isinstance(n, bool) and 1 <= n <= len(reader.pages) for n in requested)
+                    and len(set(requested)) <= int(options["max_pdf_pages"])):
+                selected = sorted(set(requested))
+                result.update(parse_scope="selected_pages", selected_pages=selected, selection_complete=False)
+            else:
+                selection_warning = "invalid_prepared_page_selection"
+        if selection_warning:
+            result["warnings"].append(selection_warning)
+            result.update(parse_scope="full_document_fallback", selection_complete=False)
+        elif selected is None:
+            result["parse_scope"] = "full_document"
+        page_numbers = selected if selected is not None else range(1, min(len(reader.pages), int(options["max_pdf_pages"])) + 1)
         missing = []
         ocr_count = 0
-        for i, page in enumerate(reader.pages[:int(options["max_pdf_pages"])]):
-            locator = f"PDF page {i + 1}"
+        for page_number in page_numbers:
+            i = page_number - 1
+            page = reader.pages[i]
+            locator = f"PDF page {page_number}"
             try:
                 text = page.extract_text() or ""
                 # A low text count is a review signal, not proof that the page is a scan.
@@ -958,7 +994,12 @@ def parse_pdf_worker(path, output, options):
                 result["warnings"].append(f"page_{i+1}_{type(e).__name__}")
         result["text"] = "\n\n".join(f["text"] for f in result["fragments"])
         result["sparse_or_failed_pages"] = missing
-        if result["pages_parsed"] < result["pages_total"] or result["pages_total"] > options["max_pdf_pages"]:
+        if selection_warning:
+            result["status"] = "partial_invalid_page_selection"
+        elif selected is not None:
+            result["selection_complete"] = result["pages_parsed"] == len(selected) and not missing
+            result["status"] = "partial_selected_pages" if result["selection_complete"] else "partial_selected_page_error"
+        elif result["pages_parsed"] < result["pages_total"] or result["pages_total"] > options["max_pdf_pages"]:
             result["status"] = "partial_page_limit_or_error"
         elif missing:
             result["status"] = "partial_ocr_or_visual_review" if result["text"].strip() else "ocr_required"
@@ -971,12 +1012,56 @@ def parse_pdf_worker(path, output, options):
     dump(output, result)
 
 
-def parse_source(store, source, cfg):
+def prepared_pdf_selection(cfg, wb, url):
+    """Use page evidence only for the exact body and the exact source document.
+
+    A catalogue page describing a link is not a page within the linked PDF.
+    Invalid ranges fall back to a full parse and retain an explicit review warning.
+    """
+    if not cfg.get('start_links', {}).get('prepared') or not wb:
+        return {}
+    url = canonical(url)
+    if not url or url not in {canonical(value) for value in wb.get('seed_urls', [])}:
+        return {}
+    metadata = wb.get('seed_evidence', {})
+    if not isinstance(metadata, dict):
+        return {}
+    evidence = next((value for key, value in metadata.items() if canonical(key) == url), None)
+    if not isinstance(evidence, dict):
+        return {}
+    matched_id = evidence.get('catalogue_verified_waterbody_id')
+    if not isinstance(matched_id, str) or not matched_id or matched_id not in {wb.get('id'), *wb.get('identifiers', [])}:
+        return {}
+    # These page locators describe source_url, not necessarily the linked seed URL.
+    if canonical(evidence.get('source_url', '')) != url:
+        return {}
+    pages = evidence.get('catalogue_pages', evidence.get('pages'))
+    if pages is None:
+        page = evidence.get('catalogue_page', evidence.get('page'))
+        pages = [page] if page is not None else None
+    if pages is None:
+        return {}
+    if (not isinstance(pages, list) or not pages or
+            any(not isinstance(n, int) or isinstance(n, bool) or n < 1 for n in pages)):
+        return dict(selection_warning='invalid_prepared_page_selection')
+    context = evidence.get('context_pages', [])
+    if (not isinstance(context, list) or
+            any(not isinstance(n, int) or isinstance(n, bool) or n < 1 for n in context)):
+        return dict(selection_warning='invalid_prepared_page_selection')
+    selected = sorted({1, *pages, *context})  # Page one supplies the original header.
+    if len(selected) > cfg['limits']['max_pdf_pages']:
+        return dict(selection_warning='invalid_prepared_page_selection')
+    return dict(page_selection=selected, evidence_pages=sorted(set(pages)), context_pages=sorted({1, *context}))
+
+
+def parse_source(store, source, cfg, wb=None, task_url=None):
     options = dict(max_pdf_pages=cfg["limits"]["max_pdf_pages"], max_ocr_pages=cfg["limits"]["max_ocr_pages"],
                    max_links=cfg["limits"]["max_links_per_document"], ocr=cfg["ocr"]["enabled"], language=cfg["ocr"]["language"])
     # Relative HTML links depend on the final URL; PDF parsing does not.
     path = store.root / source["path"]
     is_pdf = path.suffix == ".pdf"
+    if is_pdf:
+        options.update(prepared_pdf_selection(cfg, wb, task_url or source['url']))
     key = stable([source["sha"], PARSER_VERSION, options, keep_text(cfg), None if is_pdf else source["final_url"]])
     if not keep_text(cfg) and key in store.transient_parses:
         return key, store.transient_parses[key]
@@ -996,6 +1081,8 @@ def parse_source(store, source, cfg):
                 result = json.loads(worker_result.read_text(encoding="utf-8"))
             except (subprocess.SubprocessError, OSError, ValueError) as e:
                 result = dict(title="", text="", fragments=[], links=[], status="pdf_parse_timeout_or_error", warnings=[type(e).__name__])
+                if options.get('page_selection'):
+                    result.update(parse_scope='selected_pages', requested_pages=options['page_selection'], selection_complete=False)
     elif path.suffix == ".html":
         raw = path.read_bytes()
         charset = re.search(r"charset=[\"']?([\w-]+)", source["mime"] or "", re.I)
@@ -1031,6 +1118,16 @@ def parse_source(store, source, cfg):
 
 def names(wb):
     return [wb["name"]] + wb["aliases"] + wb["identifiers"]
+
+
+def aquatic_context(wb, text):
+    """A type hint resolves no identity; exact names/IDs and evidence remain required."""
+    terms = r'see|sees|lake|gewasser|seewasser|seebecken'
+    if wb.get('waterbody_kind') in {'river', 'river_segment', 'river_reach', 'stream', 'canal'}:
+        terms = (r'gewasser|fluss|flusse|flusses|flussen|flusslauf|flussabschnitt|flusskilometer|'
+                 r'fliessgewasser|fliessgewassers|fliessgewassern|river|rivers|stream|streams|'
+                 r'bach|baches|bachlauf|kanal|kanals')
+    return bool(re.search(r'\b(?:' + terms + r')\b', norm(text)))
 
 
 def identity_spans(wb, text):
@@ -1077,7 +1174,7 @@ def local_identity_topics(wb, topics, text):
         for name, start, end in spans:
             window = value[max(0, start-250):end+250]
             if wb.get("ambiguous_place_name") and re.search(r"\b(?:stadt|gemeinde|ort)\s+$", value[max(0,start-20):start]):
-                if not re.search(r"\b(?:see|sees|seewasser|seebecken|gewasser)\b", window):
+                if not aquatic_context(wb, window):
                     continue
             found.update(topic_hits(window, topics))
         if not spans and identity_matches(wb, paragraph):
@@ -1212,7 +1309,7 @@ def validate_review(response, request):
                 raise ValueError('Themenbeleg nicht auf angegebener Fundstelle')
             if out['decision']=='relevant' and not identity_matches(wb,quote):
                 raise ValueError('Themenbeleg ohne konkreten Gewässerbezug')
-            if wb.get('ambiguous_place_name') and not re.search(r'\b(?:see|sees|lake|gewasser|seewasser|seebecken)\b',norm(quote)):
+            if wb.get('ambiguous_place_name') and not aquatic_context(wb, quote):
                 raise ValueError('Mehrdeutiger Stadt-/Gewässerbeleg')
             out['evidence_locations'].append(dict(topic=e['topic'],locator=locator,quote_sha256=hashlib.sha256(quote.encode()).hexdigest()))
             if quote not in out['evidence_quotes']:
@@ -1868,7 +1965,7 @@ class Research:
                     self.exploration_used[task['profile']] = self.exploration_used.get(task['profile'],0) + 1
             self.body_fetch_attempts[task['profile']]=self.body_fetch_attempts.get(task['profile'],0)+1
             source = self.fetcher.fetch(task["url"], refresh=task["reason"] == "refresh")
-            parse_key, parsed = parse_source(self.store, source, self.cfg)
+            parse_key, parsed = parse_source(self.store, source, self.cfg, self.bodies[task['profile']], task['url'])
             review_id, decision, links = self.review(task, source, parsed)
             if self.cfg['review']['required'] and self.store.one('SELECT status FROM reviews WHERE id=?',(review_id,))['status'] == 'needs_review':
                 self.store.db.execute("UPDATE tasks SET status='pending',reason='reassess',review_id=?,parse_key=? WHERE id=?", (review_id,parse_key,task['id']))
@@ -1898,7 +1995,12 @@ class Research:
 
     def run(self):
         self.plan()
-        if self.cfg['start_links']['enabled'] and self.cfg['start_links']['skip_selection']:
+        if self.cfg['start_links']['prepared']:
+            import start_links
+            count = sum(len(start_links.prepared_urls(self, p)) for p in self.active)
+            self.store.event('prepared_start_links', dict(count=count))
+            print(f'Vorbereitete Startquellen: {count}. Keine neue Startlink-Auswahl; weitere Recherche nach dem ersten Seed-Durchgang.', flush=True)
+        elif self.cfg['start_links']['enabled'] and self.cfg['start_links']['skip_selection']:
             import start_links
             selected = sum(start_links.selected_count(self,p) for p in self.active)
             self.store.event('start_links_selection_skipped',dict(selected=selected))
@@ -2057,7 +2159,7 @@ class Research:
             request = json.loads(record["request"])
             if source["sha"] != request["source_sha"]:
                 raise ValueError("Quelle wurde verändert; neue Bewertung der neuen Fassung erforderlich")
-            _, parsed = parse_source(self.store, source, self.cfg)
+            _, parsed = parse_source(self.store, source, self.cfg, self.bodies[task['profile']], task['url'])
             self.store.db.execute("UPDATE reviews SET status='complete',response=?,engine='assistant' WHERE id=?",
                                   (json.dumps(response, ensure_ascii=False), record["id"]))
             links = [dict(x, id=stable([x["url"], x.get("label", ""), x.get("locator", "")])[:20]) for x in parsed["links"]]

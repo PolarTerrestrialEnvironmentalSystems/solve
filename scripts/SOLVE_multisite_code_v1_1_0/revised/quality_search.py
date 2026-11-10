@@ -95,7 +95,8 @@ def next_search_wakeup(r, core):
         return None
     pending = [s for s in r.store.rows("SELECT * FROM searches WHERE status IN ('pending','retry')")
                if s['profile'] in r.active]
-    if r.cfg['start_links']['enabled'] and r.cfg['start_links']['skip_selection']:
+    if (r.cfg['start_links']['enabled'] and r.cfg['start_links']['skip_selection']
+            and not r.cfg['start_links'].get('prepared', False)):
         pending = [s for s in pending if s['provider'] != 'serper']
     now, due = time.time(), []
     import scientific_discovery

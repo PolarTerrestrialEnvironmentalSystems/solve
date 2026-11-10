@@ -72,7 +72,25 @@ genau eine Entscheidung zurück, keine weiteren IDs. Nur JSON:
 
 
 def enabled(r):
-    return r.cfg['start_links']['enabled'] and r.cfg['search']['provider']=='serper'
+    return (r.cfg['start_links']['enabled'] and r.cfg['search']['provider']=='serper'
+            and not r.cfg['start_links'].get('prepared', False))
+
+
+def prepared_urls(r, profile):
+    # Use the same canonicalization as enqueue, including tracking removal.
+    import run_web_enrichment as core
+    return {core.canonical(url) for url in r.bodies[profile]['seed_urls']}
+
+
+def prepared_waiting(r, profile):
+    """Give each fixed seed a first pass before adding adaptive search branches."""
+    if not r.cfg['start_links'].get('prepared', False):
+        return False
+    seeds = prepared_urls(r, profile)
+    attempted = getattr(r, 'attempted_tasks', set())
+    return any(t['url'] in seeds and t['id'] not in attempted
+               for t in r.store.rows("SELECT id,url FROM tasks WHERE profile=? AND status IN ('pending','retry','in_progress')",
+                                     (profile,)))
 
 
 def initialize(r, core):
@@ -325,6 +343,13 @@ def perform(r, task):
 
 
 def report(r):
+    if r.cfg['start_links'].get('prepared', False):
+        return [dict(waterbody=r.bodies[p]['name'], target=len(prepared_urls(r, p)),
+                     selected=len(prepared_urls(r, p)), status='prepared_seed_urls',
+                     selection_method='prepared_configuration',
+                     candidates=[dict(url=url, selected=True, origin='prepared_seed')
+                                 for url in sorted(prepared_urls(r, p))])
+                for p in sorted(r.active)]
     if not enabled(r):
         return []
     return [dict(waterbody=r.bodies[p]['name'],target=r.cfg['start_links']['target'],

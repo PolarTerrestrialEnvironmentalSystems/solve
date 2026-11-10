@@ -1,0 +1,174 @@
+{
+  "access_date": "2026-11-10",
+  "provider": "European Environment Agency (EEA); national WFD2022 reporting",
+  "service": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer",
+  "reporting_cycle": "third RBMP 2022–2027",
+  "where": "countryCode='DE' AND euRBDCode='DE5000'",
+  "attribute_probes": {
+    "2": {
+      "expected_count": 2724,
+      "actual_count": 2724,
+      "count_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2/query?f=json&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&returnCountOnly=true",
+      "probes": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2/query?f=json&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CcYear%2CcountryCode%2CeuRBDCode%2CeuSubUnitCode%2CeuSurfaceWaterBodyCode%2CsurfaceWaterBodyName%2CsurfaceWaterBodyCategory%2CnaturalAWBHMWB%2CsurfaceWaterBodyTransboundary%2CcArea%2CcLength%2Creservoir&returnGeometry=false&orderByFields=OBJECTID&resultOffset=0&resultRecordCount=2000",
+          "bytes": 766348,
+          "sha256": "101187ceb8cd9f61cfe64030c506f17061cabcf615f6f737cf0452d5aee1e625",
+          "returned": 2000,
+          "exceededTransferLimit": true
+        },
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2/query?f=json&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CcYear%2CcountryCode%2CeuRBDCode%2CeuSubUnitCode%2CeuSurfaceWaterBodyCode%2CsurfaceWaterBodyName%2CsurfaceWaterBodyCategory%2CnaturalAWBHMWB%2CsurfaceWaterBodyTransboundary%2CcArea%2CcLength%2Creservoir&returnGeometry=false&orderByFields=OBJECTID&resultOffset=2000&resultRecordCount=2000",
+          "bytes": 278242,
+          "sha256": "6dab08aa7078f08ba510661f6aad0d070871352458ca0e31799dc5b2664d56b6",
+          "returned": 724,
+          "exceededTransferLimit": false
+        }
+      ]
+    },
+    "3": {
+      "expected_count": 0,
+      "actual_count": 0,
+      "count_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/3/query?f=json&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&returnCountOnly=true",
+      "probes": []
+    },
+    "4": {
+      "expected_count": 362,
+      "actual_count": 362,
+      "count_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4/query?f=json&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&returnCountOnly=true",
+      "probes": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4/query?f=json&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CcYear%2CcountryCode%2CeuRBDCode%2CeuSubUnitCode%2CeuSurfaceWaterBodyCode%2CsurfaceWaterBodyName%2CsurfaceWaterBodyCategory%2CnaturalAWBHMWB%2CsurfaceWaterBodyTransboundary%2CcArea%2CcLength%2Creservoir&returnGeometry=false&orderByFields=OBJECTID&resultOffset=0&resultRecordCount=2000",
+          "bytes": 136383,
+          "sha256": "5269db48fb566527ea0830be030b589f1202456af447b71bcd1cb12041f3a708",
+          "returned": 362,
+          "exceededTransferLimit": false
+        }
+      ]
+    }
+  },
+  "geometry_probes": [
+    {
+      "file": "bkg_states_25833.geojson",
+      "url": "https://sgx.geodatenzentrum.de/wfs_vg250?service=WFS&version=2.0.0&request=GetFeature&typeNames=vg250%3Avg250_lan&outputFormat=application%2Fjson&srsName=EPSG%3A25833",
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 5411156,
+      "sha256": "702b78f839163e87b71bd89694cd8f524bf660910f2a1f8d95646f0a73abe3bc",
+      "feature_count": 34,
+      "error": null
+    },
+    {
+      "file": "layer2_meta.json",
+      "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2?f=json",
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 10910,
+      "sha256": "e7f0c8d134636785fb79c6f2a5968ed468456c9070c686582bd206558fbc3197",
+      "feature_count": 0,
+      "error": null
+    },
+    {
+      "file": "layer2_geometry_offset0.geojson",
+      "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2/query?f=geojson&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CeuSurfaceWaterBodyCode&returnGeometry=true&outSR=25833&resultOffset=0&resultRecordCount=500&orderByFields=OBJECTID",
+      "status": 200,
+      "content_type": "application/geo+json;charset=UTF-8",
+      "bytes": 6881540,
+      "sha256": "fe7997ca047f08f22e51b5e47f383e12c9c3e262a92963bd4f11c646defb6bf1",
+      "feature_count": 500,
+      "error": null
+    },
+    {
+      "file": "layer2_geometry_offset500.geojson",
+      "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2/query?f=geojson&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CeuSurfaceWaterBodyCode&returnGeometry=true&outSR=25833&resultOffset=500&resultRecordCount=500&orderByFields=OBJECTID",
+      "status": 200,
+      "content_type": "application/geo+json;charset=UTF-8",
+      "bytes": 5117960,
+      "sha256": "71250e45be92180beb7cfbd12968a7ce2a4bf728c1702e7d238fb5f31b10aa02",
+      "feature_count": 500,
+      "error": null
+    },
+    {
+      "file": "layer2_geometry_offset1000.geojson",
+      "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2/query?f=geojson&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CeuSurfaceWaterBodyCode&returnGeometry=true&outSR=25833&resultOffset=1000&resultRecordCount=500&orderByFields=OBJECTID",
+      "status": 200,
+      "content_type": "application/geo+json;charset=UTF-8",
+      "bytes": 6848369,
+      "sha256": "324138a235e0bf329bc5c52d85ac80352206ae421d308baa6d3d3b30c4562b41",
+      "feature_count": 500,
+      "error": null
+    },
+    {
+      "file": "layer2_geometry_offset1500.geojson",
+      "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2/query?f=geojson&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CeuSurfaceWaterBodyCode&returnGeometry=true&outSR=25833&resultOffset=1500&resultRecordCount=500&orderByFields=OBJECTID",
+      "status": 200,
+      "content_type": "application/geo+json;charset=UTF-8",
+      "bytes": 5846871,
+      "sha256": "80e57f5c5707aba0ef64294c53022c66fb20c0f341e79d10034431f1a236bc25",
+      "feature_count": 500,
+      "error": null
+    },
+    {
+      "file": "layer2_geometry_offset2000.geojson",
+      "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2/query?f=geojson&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CeuSurfaceWaterBodyCode&returnGeometry=true&outSR=25833&resultOffset=2000&resultRecordCount=500&orderByFields=OBJECTID",
+      "status": 200,
+      "content_type": "application/geo+json;charset=UTF-8",
+      "bytes": 6700249,
+      "sha256": "ec93281aff384a64ac513c3e521262a3f4f83c5c108cad8e2e91989f23190b51",
+      "feature_count": 500,
+      "error": null
+    },
+    {
+      "file": "layer2_geometry_offset2500.geojson",
+      "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/2/query?f=geojson&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CeuSurfaceWaterBodyCode&returnGeometry=true&outSR=25833&resultOffset=2500&resultRecordCount=500&orderByFields=OBJECTID",
+      "status": 200,
+      "content_type": "application/geo+json;charset=UTF-8",
+      "bytes": 1933500,
+      "sha256": "a93d25d31f98d560c462ac00020ebdb31b712ab9419c4095105d1cec6960fca1",
+      "feature_count": 224,
+      "error": null
+    },
+    {
+      "file": "layer4_meta.json",
+      "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4?f=json",
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 11010,
+      "sha256": "15735991efb1058584316b3778579aa56a53e5cf8ff80fb59ea1433f9554d6a9",
+      "feature_count": 0,
+      "error": null
+    },
+    {
+      "file": "layer4_geometry_offset0.geojson",
+      "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4/query?f=geojson&where=countryCode%3D%27DE%27+AND+euRBDCode%3D%27DE5000%27&outFields=OBJECTID%2CeuSurfaceWaterBodyCode&returnGeometry=true&outSR=25833&resultOffset=0&resultRecordCount=500&orderByFields=OBJECTID",
+      "status": 200,
+      "content_type": "application/geo+json;charset=UTF-8",
+      "bytes": 8652573,
+      "sha256": "6a740052ed6053290db59903aa2596c6b2c33f570b562a1a8653a96e571385b4",
+      "feature_count": 362,
+      "error": null
+    }
+  ],
+  "completeness_assertions": {
+    "2": {
+      "count": 2724,
+      "unique_objectids": 2724,
+      "ids_equal_attributes_and_geometry": true
+    },
+    "4": {
+      "count": 362,
+      "unique_objectids": 362,
+      "ids_equal_attributes_and_geometry": true
+    }
+  },
+  "unique_code_count": 3086,
+  "unique_code_matches_row_count": true,
+  "bkg_source": "https://gdz.bkg.bund.de/index.php/default/wfs-verwaltungsgebiete-1-250-000-stand-01-01-wfs-vg250.html",
+  "bkg_license": "Datenlizenz Deutschland Namensnennung2.0; ©BKG2026 dl-de/by-2-0, Datenquellen https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf",
+  "state_geometry_method": "Union of all WFS vg250:vg250_lan features by lkz. Both datasets explicitly EPSG25833. Positive polygon-area or line-length intersection; touch-only kept separate. No buffers, no name-derived spatial join, no simplification requested.",
+  "registry_artifact": {
+    "source_file": "selected_six_states_waterbodies.json",
+    "sha256": "dc7b8c7513dcd3436550cce0e3845d90fed90b411ee1a07cbf77fc83c9e94251",
+    "note": "Normalized input registry only; raw geometries and downloaded archives are not in this repository."
+  }
+}

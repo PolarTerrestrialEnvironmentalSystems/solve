@@ -1,8 +1,13 @@
 # SOLVE Gewässer-Parser & Knowledge-Graph — Versionsübersicht
 
 > **Neueste Version: [`solve-kg/`](solve-kg/)** — das ist der aktuelle Stand des Parsers
-> **plus** die Knowledge-Graph-Schicht. Alles andere in diesem Ordner ist älter oder
-> Zwischenstand. Nutzungs-Doku: [`solve-kg/README.md`](solve-kg/README.md).
+> **plus** die Knowledge-Graph-Schicht. Nutzungs-Doku: [`solve-kg/README.md`](solve-kg/README.md).
+>
+> **Quellenrecherche / Elbe-Kampagne:** Der vorgelagerte Blablador-Crawler liegt unter
+> [`scripts/SOLVE_multisite_code_v1_1_0/`](scripts/SOLVE_multisite_code_v1_1_0/).
+> [Linux-Anleitung mit vorbereiteten Startquellen und 30 Workern](scripts/SOLVE_multisite_code_v1_1_0/ELBE_LINUX.md)
+> · [Seen und Flussabschnitte nach Bundesland](scripts/SOLVE_multisite_code_v1_1_0/inputs/elbe_20261110/catalog/README.md).
+> Diese Recherche ersetzt den Parser nicht; ihre Quellen können anschließend dort verarbeitet werden.
 
 Dieses Dokument sagt, **welche Version die neueste ist** und **was sich am Parser
 gegenüber dem Baseline-Modell verändert hat**.
