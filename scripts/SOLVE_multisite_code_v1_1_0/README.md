@@ -1,9 +1,13 @@
-# SOLVE: Quellenrecherche mit Serper und Blablador
+# SOLVE: Quellenrecherche mit Blablador und optionaler Websuche
 
-Die **Elbe-Kampagne vom 10.11.2026 (Crawler 1.8.0)** ergänzt ein amtliches Register mit Seen und
+Die **Elbe-Kampagne vom 10.11.2026 (Crawler 1.8.1)** ergänzt ein amtliches Register mit Seen und
 Flussabschnitten für sechs Bundesländer, vorab geprüfte Startquellen und einen
 Linux-Launcher für 30 Worker. Die eigentliche Startlink-Auswahl wird bei dieser
-Kampagne übersprungen; Vorprüfung, Inhaltsbewertung und weitere Recherche bleiben aktiv.
+Kampagne übersprungen. Neue Kampagnen verwenden standardmäßig **keine Such-API**:
+Vorprüfung, Inhaltsbewertung und Linkverfolgung bleiben aktiv; ein Serper-Schlüssel
+ist dafür nicht erforderlich. `run --search-provider none` schaltet die Such-APIs
+auch für bereits vorbereitete Workspaces ab, ohne deren Profile umzuschreiben.
+Zusätzliche Websuche lässt sich mit `--search-provider serper` einschalten.
 
 - [Linux-Start, Schlüssel, Logs und Fortsetzen](ELBE_LINUX.md)
 - [Gewässerlisten nach Bundesland sowie See/Fluss](inputs/elbe_20261110/catalog/README.md)

@@ -437,7 +437,7 @@ def scale_budgets(config, count):
     config["review"]["max_calls_per_run"] = 100 * count
 
 
-def campaign_config(eligible, base_path):
+def campaign_config(eligible, base_path, search_provider="none"):
     config = copy.deepcopy(read_json(base_path))
     config.pop("credentials_env_file", None)
     config["waterbodies"] = [make_waterbody(row, accepted) for row, accepted in eligible]
@@ -448,8 +448,8 @@ def campaign_config(eligible, base_path):
             topic["keywords"] = list(dict.fromkeys(topic.get("keywords", []) + RIVER_TOPICS.get(topic["name"], [])))
     config["scientific_sources"] = []
     config.setdefault("scientific_discovery", {}).update(enabled=False, datacite_enabled=False)
-    config.setdefault("retrieval", {}).update(enabled=True, crossref_enabled=False)
-    config.setdefault("search", {}).update(provider="serper", api_key_env="SERPER_KEY", strategy="focused")
+    config.setdefault("retrieval", {}).update(enabled=True, crossref_enabled=False, wait_for_search_routes=False)
+    config.setdefault("search", {}).update(provider=search_provider, api_key_env="SERPER_KEY", strategy="focused")
     config.setdefault("preflight", {}).update(enabled=True, api_key_env="BLABLADOR_KEY")
     config.setdefault("review", {}).update(mode="api", required=True, api_key_env="BLABLADOR_KEY")
     config.setdefault("start_links", {}).update(prepared=True, skip_selection=True, enabled=True)
@@ -457,7 +457,8 @@ def campaign_config(eligible, base_path):
     config["limits"]["parse_timeout_seconds"] = max(600, config["limits"].get("parse_timeout_seconds", 90))
     config["context"] = config.get("context", "") + (
         " Research official Elbe waterbodies in the configured spatial scope. Preserve river-segment and lake-subbasin identities. "
-        "Use the supplied accepted start sources first; continue via relevant outgoing links and focused Serper searches. "
+        "Use the supplied accepted start sources first; continue via relevant outgoing links. "
+        "Additional search APIs are controlled by the runtime search-provider setting. "
         "Only original sources and provenance are retained; reading/parsing is transient. No database import or event extraction.")
     scale_budgets(config, len(eligible))
     return core.load_config(config)
@@ -483,6 +484,7 @@ def prepare(args):
         "seed_manifests": manifests, "seed_manifest_issues": issues,
         "requested_count": len(rows), "included_count": len(eligible),
         "excluded_count": len(rows) - len(eligible), "allow_shortfall": args.allow_shortfall,
+        "search_provider": args.search_provider,
         "minimum_lake_seeds": args.minimum_lake_seeds, "minimum_river_seeds": args.minimum_river_seeds,
         "maximum_seeds": args.maximum_seeds, "status_counts": dict(Counter(item["status"] for item in decisions)),
         "waterbodies": decisions,
@@ -491,7 +493,7 @@ def prepare(args):
         root.mkdir(parents=True)
         write_json(root / "preparation_report.json", report)
         raise ValueError(f"Kein Gewässer erfüllt die Startquellen-Regeln. Bericht: {root / 'preparation_report.json'}; kein lauffähiges Manifest erstellt.")
-    config = campaign_config(eligible, args.base_config)
+    config = campaign_config(eligible, args.base_config, args.search_provider)
     groups = min(args.groups, len(eligible))
     parts = []
     for index in range(groups):
@@ -537,12 +539,14 @@ def current_group_status(directory, config):
     profiles = {core.stable(dict(waterbody=body, topics=config["topics"], context=config.get("context", "")))
                 for body in config["waterbodies"]}
     result = {"directory": directory.name, "waterbody_count": len(config["waterbodies"]),
-              "current_pending_tasks": None, "current_pending_searches": None, "count_source": "not_initialized"}
+              "current_pending_tasks": None, "current_pending_searches": None,
+              "current_suspended_searches": None, "count_source": "not_initialized"}
     last_file = directory / "last_run.json"
     if last_file.exists():
         last = read_json(last_file)
         result["last_run"] = {key: last.get(key) for key in
-            ("stop_reason", "tasks", "fetch_attempts", "searches", "pending_tasks", "pending_searches", "api_calls")}
+            ("stop_reason", "tasks", "fetch_attempts", "searches", "pending_tasks", "pending_searches",
+             "suspended_searches", "search_provider", "api_calls")}
         result["last_run_note"] = "Historical run summary only; never added to the current pending totals."
     database = directory / "research.sqlite"
     if not database.exists():
@@ -555,6 +559,8 @@ def current_group_status(directory, config):
                 result[table + "_by_status"] = counts
                 pending = ("pending", "retry", "in_progress") if table == "tasks" else ("pending", "retry")
                 result["current_pending_" + table] = sum(counts.get(key, 0) for key in pending)
+                if table == "searches":
+                    result["current_suspended_searches"] = counts.get("suspended", 0)
             result["count_source"] = "sqlite_current_config_profiles_only"
     except sqlite3.Error as error:
         result["count_source"] = "database_unavailable"
@@ -578,6 +584,7 @@ def campaign_status(root):
             "counted_groups": len(counted), "uncounted_groups": len(groups) - len(counted),
             "current_pending_tasks": sum(group["current_pending_tasks"] for group in counted),
             "current_pending_searches": sum(group["current_pending_searches"] for group in counted),
+            "current_suspended_searches": sum(group["current_suspended_searches"] for group in counted),
             "totals_complete": len(counted) == len(groups), "groups": groups}
 
 
@@ -634,6 +641,8 @@ def main(argv=None):
     prep.add_argument("--minimum-river-seeds", type=int, default=1)
     prep.add_argument("--maximum-seeds", type=int, default=20)
     prep.add_argument("--allow-shortfall", action="store_true", help="Unter Mindestzahl zulassen, aber nie ohne eine angenommene Quelle")
+    prep.add_argument("--search-provider", choices=["none", "serper"], default="none",
+                      help="none (Standard): nur Startquellen und Linkverfolgung; serper: zusätzliche Websuchen")
     run = commands.add_parser("run", help="Vorbereiteten Workspace starten oder fortsetzen; kein neues prepare")
     run.add_argument("--workspace", required=True)
     run.add_argument("--workers", type=int, default=30)
@@ -641,6 +650,8 @@ def main(argv=None):
     run.add_argument("--llm-interval", type=float, default=6)
     run.add_argument("--llm-cooldown", type=float, default=60)
     run.add_argument("--env-file", default=os.getenv("SOLVE_ENV_FILE"))
+    run.add_argument("--search-provider", choices=["none", "serper"],
+                     help="Suchmodus für diesen Lauf überschreiben, auch bei vorhandenen Workspaces")
     check = commands.add_parser("check-api", help="Blablador-Zugang und Modellliste prüfen; keine Such-/Generierungsanfragen")
     check.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     check.add_argument("--env-file", default=os.getenv("SOLVE_ENV_FILE"))
@@ -675,6 +686,7 @@ def main(argv=None):
         else:
             print(f"{result['waterbody_count']} Gewässer; {result['group_count']} Gruppen, {result['counted_groups']} mit aktuellem DB-Stand.")
             print(f"Ausstehend in diesen DBs: {result['current_pending_tasks']} Abruf-/Prüfaufgaben, {result['current_pending_searches']} Suchaufträge.")
+            print(f"Wegen deaktivierter Suche ausgesetzt: {result['current_suspended_searches']} gespeicherte Suchaufträge.")
             if not result["totals_complete"]:
                 print("Gesamtsumme unvollständig: nicht gestartete oder unlesbare Gruppen werden nicht als null ausgegeben.")
             for group in result["groups"]:
@@ -703,7 +715,8 @@ def main(argv=None):
     if not report["ok"]:
         return 1
     import parallel_crawler
-    return parallel_crawler.run(root, args.workers, args.env_file, args.llm_workers, args.llm_interval, args.llm_cooldown)
+    return parallel_crawler.run(root, args.workers, args.env_file, args.llm_workers, args.llm_interval,
+                                args.llm_cooldown, args.search_provider)
 
 
 if __name__ == "__main__":

@@ -89,6 +89,8 @@ def routes_unavailable(r, core):
 
 def next_search_wakeup(r, core):
     """Read-only earliest useful retry; completed searches require no wait."""
+    if r.cfg['search']['provider'] == 'none':
+        return None
     if not r.cfg['retrieval']['wait_for_search_routes'] or r.cfg['search']['strategy'] != 'focused':
         return None
     if max(r.search_used, r.search_http_used) >= r.cfg['limits']['max_searches_per_run']:

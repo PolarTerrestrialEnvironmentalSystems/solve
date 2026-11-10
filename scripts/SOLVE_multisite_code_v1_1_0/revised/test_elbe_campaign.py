@@ -4,6 +4,7 @@ from pathlib import Path
 import sqlite3
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import elbe_campaign as campaign
 import run_web_enrichment as core
@@ -124,6 +125,7 @@ class CampaignTests(unittest.TestCase):
                 "--registry", str(registry), "--seeds", str(seeds), "--groups", "2"]), 0)
             report = campaign.read_json(workspace / "preparation_report.json")
             self.assertEqual(report["included_count"], 3)
+            self.assertEqual(report["search_provider"], "none")
             self.assertEqual(report["status_counts"], {"ready": 3, "excluded_unseeded": 1})
             for name, count in [("group-01", 2), ("group-02", 1)]:
                 config = core.load_config(workspace / name / "config.json")
@@ -131,6 +133,7 @@ class CampaignTests(unittest.TestCase):
                 self.assertEqual(config["preflight"]["max_calls_per_run"], count * 500)
                 self.assertEqual(config["limits"]["max_seconds_per_run"], 604800)
                 self.assertTrue(config["start_links"]["prepared"])
+                self.assertEqual(config["search"]["provider"], "none")
                 self.assertFalse(config["scientific_discovery"]["enabled"])
                 self.assertFalse(config["retrieval"]["crossref_enabled"])
                 self.assertNotIn("credentials_env_file", config)
@@ -151,6 +154,31 @@ class CampaignTests(unittest.TestCase):
             self.assertTrue((workspace / "preparation_report.json").exists())
             self.assertFalse((workspace / "parallel.json").exists())
 
+    def test_search_mode_does_not_change_profile_identity(self):
+        eligible = [(body("DELW_DEBB1", "Lake"), accepted(1))]
+        without = campaign.campaign_config(eligible, campaign.DEFAULT_CONFIG)
+        with_search = campaign.campaign_config(eligible, campaign.DEFAULT_CONFIG, "serper")
+        self.assertEqual(with_search["search"]["provider"], "serper")
+        for field in ("waterbodies", "topics", "context"):
+            self.assertEqual(without[field], with_search[field])
+
+    def test_existing_serper_workspace_accepts_runtime_override_without_rewriting(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            registry, seeds, workspace = root / "registry.json", root / "seeds.json", root / "run"
+            registry.write_text(json.dumps([body("DELW_DEBB1", "Lake")]), encoding="utf8")
+            seeds.write_text(json.dumps([{"waterbody_id": "DELW_DEBB1", "accepted": accepted(1)}]), encoding="utf8")
+            campaign.main(["prepare", "--workspace", str(workspace), "--registry", str(registry),
+                           "--seeds", str(seeds), "--allow-shortfall", "--search-provider", "serper"])
+            config_path = workspace / "group-01/config.json"
+            before = config_path.read_bytes()
+            with patch("check_blablador.check_config", return_value={"ok": True, "checks": []}), \
+                 patch("parallel_crawler.run", return_value=0) as run:
+                result = campaign.main(["run", "--workspace", str(workspace), "--search-provider", "none"])
+            self.assertEqual(result, 0)
+            self.assertEqual(run.call_args.args[-1], "none")
+            self.assertEqual(config_path.read_bytes(), before)
+
     def test_status_ignores_foreign_profiles_and_historical_totals(self):
         with tempfile.TemporaryDirectory() as temp:
             directory = Path(temp)
@@ -161,11 +189,13 @@ class CampaignTests(unittest.TestCase):
                     database.execute(f"CREATE TABLE {table}(profile TEXT, status TEXT)")
                     database.executemany(f"INSERT INTO {table} VALUES(?,?)", [(profile, "pending"),
                         ("foreign_or_old_profile", "pending"), ("foreign_or_old_profile", "retry")])
+                database.execute("INSERT INTO searches VALUES(?,?)", (profile, "suspended"))
                 database.commit()
             campaign.write_json(directory / "last_run.json", {"pending_tasks": 900, "pending_searches": 800})
             status = campaign.current_group_status(directory, config)
             self.assertEqual(status["current_pending_tasks"], 1)
             self.assertEqual(status["current_pending_searches"], 1)
+            self.assertEqual(status["current_suspended_searches"], 1)
             self.assertEqual(status["last_run"]["pending_tasks"], 900)
 
 

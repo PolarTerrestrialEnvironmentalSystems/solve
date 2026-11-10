@@ -23,8 +23,8 @@ Für einen neuen Ordner:
 ```bash
 git clone --branch codex/elbe-crawler-20261110 --single-branch \
   https://github.com/PolarTerrestrialEnvironmentalSystems/solve.git \
-  "$HOME/solve-elbe"
-cd "$HOME/solve-elbe/scripts/SOLVE_multisite_code_v1_1_0"
+  /bioing/data/WaterPlace/skripts/solve/crawler_scripts
+cd /bioing/data/WaterPlace/skripts/solve/crawler_scripts/scripts/SOLVE_multisite_code_v1_1_0
 bash setup-linux.sh
 ```
 
@@ -32,11 +32,12 @@ Voraussetzung: Python 3.10 oder neuer mit `venv`, Git und Zugriff auf die APIs s
 
 ## Schlüsseldatei
 
-Eine vorhandene `.env` darf weiterverwendet werden. Benötigte Variablennamen:
+Eine vorhandene `.env` darf weiterverwendet werden. Der Standardmodus ab 1.8.1 verwendet vorhandene Startquellen und Linkverfolgung ohne Such-API. Dafür wird nur Blablador benötigt:
 
 ```dotenv
-SERPER_KEY=hier_den_serper_schluessel_eintragen
 BLABLADOR_KEY=hier_den_blablador_schluessel_eintragen
+# Nur für ausdrücklich eingeschaltete zusätzliche Websuche:
+# SERPER_KEY=hier_den_serper_schluessel_eintragen
 # Optional: zusätzlicher Blablador-Schlüssel
 # GRAPHRAG_API_KEY2=hier_den_zweiten_schluessel_eintragen
 ```
@@ -67,7 +68,7 @@ Dabei wird nur die Modellliste abgefragt, keine Such- oder Generierungsanfrage g
 
 Die gelieferten Startquellen stehen in `inputs/elbe_20261110/seeds.json`. Sie stammen aus amtlichen Katalogen, fachlichen Webseiten, Forschung und Publikationen. Die Recherche prüft Erreichbarkeit, Gewässerbezug und fachliche Relevanz. Gesperrte, unklare oder touristische Treffer füllen keine fehlenden Plätze auf. HTTP-Erreichbarkeit ist keine Garantie für die spätere fachliche Annahme einer Quelle.
 
-**Erreichter Stand:** 10.097 Zuordnungen zu 2.774 verschiedenen URLs. Alle 343 Seen und 2.211 Flussabschnitte haben Quellen. Nur **sieben Seen erreichen zehn oder mehr**; die übrigen 336 haben zwei bis neun. Der unten gezeigte strenge Standardstart umfasst deshalb 2.211 Flussabschnitte und sieben Seen. Für **alle 2.554 Gewässer** dem `prepare`-Befehl ausdrücklich `--allow-shortfall` hinzufügen. [Rechercheverfahren und Grenzen](inputs/elbe_20261110/RESEARCH_NOTES.md) · [Startlinks je See](inputs/elbe_20261110/startlinks/README.md).
+**Erreichter Stand:** 10.097 Zuordnungen zu 2.774 verschiedenen URLs. Alle 343 Seen und 2.211 Flussabschnitte haben Quellen. Nur **sieben Seen erreichen zehn oder mehr**; die übrigen 336 haben zwei bis neun. Der unten gezeigte Start umfasst mit `--allow-shortfall` **alle 2.554 Gewässer**. Ohne diese Option gilt die strenge Mindestzahl; dann starten 2.211 Flussabschnitte und sieben Seen. [Rechercheverfahren und Grenzen](inputs/elbe_20261110/RESEARCH_NOTES.md) · [Startlinks je See](inputs/elbe_20261110/startlinks/README.md).
 
 Die Vorbereitung verlangt standardmäßig **mindestens zehn angenommene Start-URLs pro See**, maximal zwanzig. Für Flussabschnitte gilt mindestens eine konkrete Fachquelle mit passender Kennung; die Vorgabe von zehn bis zwanzig bezog sich auf die Seen. Der Abdeckungsbericht nennt auch Gewässer unterhalb der Mindestzahl. Diese bleiben vollständig in der Liste, werden im Standardlauf aber ausgeschlossen.
 
@@ -80,22 +81,26 @@ Bei Sammelberichten mit nachgewiesener Kennung und Seitenzuordnung liest der Par
 In einer `screen`- oder `tmux`-Sitzung bleibt der Lauf auch nach Trennen von PuTTY bestehen. Beispielsweise zuerst `screen -S solve-elbe` öffnen und darin:
 
 ```bash
-cd "$HOME/solve-elbe/scripts/SOLVE_multisite_code_v1_1_0"
+cd /bioing/data/WaterPlace/skripts/solve/crawler_scripts/scripts/SOLVE_multisite_code_v1_1_0
 lauf="$HOME/solve-runs/elbe_$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$HOME/solve-runs"
-printf '%s\n' "$lauf" > "$HOME/solve-runs/elbe-current.txt"
 
 bash start-elbe-linux.sh prepare \
   --workspace "$lauf" \
   --seeds inputs/elbe_20261110/seeds.json \
   --kind all \
-  --groups 30
+  --groups 30 \
+  --allow-shortfall \
+  --search-provider none &&
+
+printf '%s\n' "$lauf" > "$HOME/solve-runs/elbe-current.txt" &&
 
 bash start-elbe-linux.sh run \
   --workspace "$lauf" \
   --workers 30 \
   --llm-workers 2 \
   --llm-interval 6 \
+  --search-provider none \
   --env-file "$HOME/.config/solve/keys.env"
 ```
 
@@ -105,7 +110,9 @@ Mit `--kind lakes` oder `--kind rivers` nur einen Typ auswählen. Mit `--state S
 
 Wenn bewusst auch Seen mit weniger als zehn fachlich angenommenen Links starten sollen, `prepare` zusätzlich `--allow-shortfall` übergeben. Das Defizit wird weiterhin ausgewiesen. Gewässer ohne eine einzige angenommene Quelle werden immer ausgeschlossen.
 
-**Die Startlink-Auswahl läuft nicht erneut.** Die normalen Vorprüfungen und Inhaltsbewertungen durch Blablador bleiben aktiv. Nach dem Einstieg kann der Crawler relevante ausgehende Links verfolgen und weitere gezielte Serper-Suchen anlegen. „Vorbereitete Startlinks“ bedeutet daher nicht, dass während des ganzen Laufs keine Suchanfragen mehr stattfinden.
+**Die Startlink-Auswahl läuft nicht erneut.** Mit `--search-provider none` sind außerdem alle späteren Such- und Metadaten-API-Anfragen deaktiviert; es wird kein Serper-Schlüssel verlangt. Die normalen Vorprüfungen und Inhaltsbewertungen durch Blablador bleiben aktiv. Der Crawler lädt die vorhandenen Startquellen und verfolgt passende ausgehende Links, einschließlich tatsächlich gefundener PDF- und DOI-Links. Zusätzliche Quellen findet er in diesem Modus über diese Links; unabhängige neue Suchtreffer kommen nicht hinzu.
+
+`prepare` verwendet ab 1.8.1 standardmäßig `none`. Bei `run` gilt ohne Override die gespeicherte Konfiguration, die bei älteren Workspaces noch Serper enthalten kann. Deshalb für bestehende Läufe ausdrücklich `run --search-provider none` verwenden. Die Gruppenkonfigurationen, Profilkennungen, Downloads und Quellenbewertungen bleiben dabei erhalten. Offene Suchaufträge werden als `suspended` aufbewahrt und im Status getrennt ausgewiesen; ihre Wartezeiten und Suchbudgets stoppen den Crawl nicht. Mit `run --search-provider serper` und gültigem `SERPER_KEY` können passende gespeicherte Suchaufträge später wieder aufgenommen werden. Auch dann bleibt die vorbereitete Startlink-Auswahl übersprungen.
 
 30 Worker bedeuten bis zu 30 gleichzeitig bearbeitete Gruppen. Blablador-Anfragen bleiben standardmäßig auf zwei gemeinsame Slots und mindestens sechs Sekunden Abstand zwischen neuen Anfragen begrenzt. Das orientiert sich am dokumentierten externen Limit von zehn Anfragen je 60 Sekunden für `alias-large`; für `alias-fast` nennt der Anbieter 30 je 60 Sekunden ([Blablador-API-Dokumentation](https://sdlaml.pages.jsc.fz-juelich.de/ai/guides/blablador_api_access/), geprüft am 10.11.2026). Dieser gemeinsame Abstand ist bewusst auch auf die schnellere Vorprüfung angewendet. Die Slots erlauben überlappende Antworten, erhöhen aber nicht die Startrate. Weitere Anwendungen mit demselben Benutzerkontingent können trotzdem Wartezeiten auslösen. Suchabstände, Webseitenregeln, Download-Cache und API-Wartezeiten begrenzen die tatsächliche Abrufrate zusätzlich. Mehr CPU-Kerne umgehen keine API-Limits.
 
@@ -116,7 +123,7 @@ Pro Gewässer und Lauf sind zunächst 500 Prüfaufgaben, 100 Abrufversuche, 40 S
 In einem zweiten Terminal:
 
 ```bash
-cd "$HOME/solve-elbe/scripts/SOLVE_multisite_code_v1_1_0"
+cd /bioing/data/WaterPlace/skripts/solve/crawler_scripts/scripts/SOLVE_multisite_code_v1_1_0
 lauf="$(cat "$HOME/solve-runs/elbe-current.txt")"
 bash start-elbe-linux.sh status --workspace "$lauf"
 tail -n 30 -F "$lauf"/logs/group-*.log

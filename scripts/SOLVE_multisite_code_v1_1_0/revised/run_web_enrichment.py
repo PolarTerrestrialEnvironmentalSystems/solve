@@ -34,7 +34,7 @@ import urllib.robotparser
 import uuid
 from scientific_discovery import DEFAULT_DOMAINS
 
-VERSION = "1.8.0"
+VERSION = "1.8.1"
 PARSER_VERSION = "solve-parser-4"
 REVIEW_VERSION = "solve-review-5"
 SCHEMA_VERSION = "1"
@@ -320,8 +320,9 @@ def load_config(path):
         raise ValueError('start_links.min_importance muss zwischen 0 und 100 liegen')
     if not isinstance(sl['initial_keywords'],list) or len(sl['initial_keywords'])>20 or any(not isinstance(k,str) or not k.strip() or len(k)>100 for k in sl['initial_keywords']):
         raise ValueError('start_links.initial_keywords benötigt höchstens 20 kurze, nicht leere Suchbegriffe')
-    if sl['enabled'] and (cfg['search']['provider']!='serper' or cfg['search']['strategy']!='focused' or not cfg['preflight']['enabled']):
-        raise ValueError('start_links benötigt Serper, focused und aktivierte LLM-Vorprüfung')
+    start_provider = cfg['search']['provider'] == 'serper' or (sl['prepared'] and cfg['search']['provider'] == 'none')
+    if sl['enabled'] and (not start_provider or cfg['search']['strategy']!='focused' or not cfg['preflight']['enabled']):
+        raise ValueError('start_links benötigt Serper (oder none mit prepared=true), focused und aktivierte LLM-Vorprüfung')
     for field in ('max_errors_per_run', 'max_consecutive_errors'):
         if type(cfg['preflight'][field]) is not int or cfg['preflight'][field] < 1:
             raise ValueError('preflight.' + field + ' muss positiv ganzzahlig sein')
@@ -456,6 +457,8 @@ class Store:
           query TEXT, provider TEXT, family TEXT, status TEXT, priority REAL, attempts INTEGER DEFAULT 0,
           next_try REAL DEFAULT 0, created TEXT, completed TEXT, result_count INTEGER,
           new_count INTEGER, reason TEXT, error TEXT, results TEXT);
+        CREATE TABLE IF NOT EXISTS search_suspensions(search_id TEXT PRIMARY KEY,
+          previous_status TEXT NOT NULL, suspended_at TEXT);
         CREATE TABLE IF NOT EXISTS reviews(id TEXT PRIMARY KEY, profile TEXT, task_id INTEGER,
           status TEXT, request TEXT, response TEXT, rule_response TEXT, created TEXT, engine TEXT);
         CREATE TABLE IF NOT EXISTS preflight_reviews(id TEXT PRIMARY KEY, profile TEXT, url TEXT,
@@ -1555,11 +1558,43 @@ class Research:
         if cfg['review']['required'] and not os.getenv(cfg['review']['api_key_env'], ''):
             self.store.close()
             raise ValueError('Inhaltsprüfung benötigt ' + cfg['review']['api_key_env'])
+        self.sync_search_state()
 
     def close(self):
         self.store.close()
 
+    def sync_search_state(self):
+        """Pause open search jobs without losing their retry state or crawl results."""
+        changed = 0
+        if self.cfg['search']['provider'] == 'none':
+            rows = self.store.rows("SELECT id,profile,status FROM searches WHERE status IN ('pending','retry','deferred_budget','waiting_external')")
+            for row in rows:
+                if row['profile'] not in self.active:
+                    continue
+                self.store.db.execute('INSERT OR IGNORE INTO search_suspensions VALUES(?,?,?)',
+                                      (row['id'], row['status'], utc()))
+                self.store.db.execute("UPDATE searches SET status='suspended' WHERE id=?", (row['id'],))
+                changed += 1
+            event = 'searches_suspended'
+        else:
+            rows = self.store.rows('SELECT s.id,s.profile,s.status,p.previous_status FROM searches s JOIN search_suspensions p ON p.search_id=s.id')
+            for row in rows:
+                if row['profile'] not in self.active:
+                    continue
+                # An explicitly imported result may already have completed a paused job.
+                if row['status'] == 'suspended':
+                    self.store.db.execute('UPDATE searches SET status=? WHERE id=?', (row['previous_status'], row['id']))
+                    changed += 1
+                self.store.db.execute('DELETE FROM search_suspensions WHERE search_id=?', (row['id'],))
+            event = 'searches_resumed'
+        self.store.db.commit()
+        if changed:
+            self.store.event(event, dict(count=changed, search_provider=self.cfg['search']['provider']))
+
     def add_search(self, profile, query, family, reason, priority=50, provider=None, page=1):
+        # The global off switch also covers explicit Crossref/DataCite providers.
+        if self.cfg['search']['provider'] == 'none':
+            return None
         provider = provider or self.cfg['search']['provider']
         if provider == 'serper':
             import serper_search
@@ -1620,6 +1655,7 @@ class Research:
         return True
 
     def plan(self):
+        self.sync_search_state()
         if self.cfg['search']['strategy'] == 'focused':
             import focused_search
             focused_search.plan(self)
@@ -1698,6 +1734,8 @@ class Research:
         self.store.db.commit()
 
     def next_search(self):
+        if self.cfg['search']['provider'] == 'none':
+            return None
         if self.cfg['search']['strategy'] == 'focused':
             import focused_search
             return focused_search.next_search(self, sys.modules[__name__])
@@ -1716,6 +1754,8 @@ class Research:
         return max(candidates, key=score)
 
     def do_search(self, s):
+        if self.cfg['search']['provider'] == 'none':
+            return
         self.search_used += 1
         if s["provider"] == "external":
             self.store.db.execute("UPDATE searches SET status='waiting_external' WHERE id=?", (s["id"],))
@@ -1999,7 +2039,10 @@ class Research:
             import start_links
             count = sum(len(start_links.prepared_urls(self, p)) for p in self.active)
             self.store.event('prepared_start_links', dict(count=count))
-            print(f'Vorbereitete Startquellen: {count}. Keine neue Startlink-Auswahl; weitere Recherche nach dem ersten Seed-Durchgang.', flush=True)
+            mode = ('Keine neue Startlink-Auswahl; Such-APIs deaktiviert, weiter mit Quellenprüfung und Linkverfolgung.'
+                    if self.cfg['search']['provider'] == 'none' else
+                    'Keine neue Startlink-Auswahl; weitere Recherche nach dem ersten Seed-Durchgang.')
+            print(f'Vorbereitete Startquellen: {count}. {mode}', flush=True)
         elif self.cfg['start_links']['enabled'] and self.cfg['start_links']['skip_selection']:
             import start_links
             selected = sum(start_links.selected_count(self,p) for p in self.active)
@@ -2048,7 +2091,7 @@ class Research:
                         stop = "run_fetch_budget"
                     elif any(n >= self.cfg["limits"]["max_urls_per_host_per_run"] for n in self.fetcher.host_uses.values()):
                         stop = "run_host_budget"
-                    elif self.store.one("SELECT COUNT(*) n FROM searches WHERE status='waiting_external'")["n"]:
+                    elif self.cfg['search']['provider'] != 'none' and self.store.one("SELECT COUNT(*) n FROM searches WHERE status='waiting_external'")["n"]:
                         stop = "waiting_external_searches"
                     else:
                         import quality_search
@@ -2090,6 +2133,7 @@ class Research:
             import quality_search
             pending_tasks = [t for t in self.store.rows("SELECT profile,reason FROM tasks WHERE status IN ('pending','retry','in_progress')") if t['profile'] in self.active]
             pending_searches = [s for s in self.store.rows("SELECT profile,provider FROM searches WHERE status IN ('pending','retry')") if s['profile'] in self.active]
+            suspended_searches = sum(s['profile'] in self.active for s in self.store.rows("SELECT profile FROM searches WHERE status='suspended'"))
             exploration_deferred = sum(t['reason'] == 'preflight_exploration_budget' for t in pending_tasks)
             routes_unavailable = quality_search.routes_unavailable(self, sys.modules[__name__])
             if stop == 'no_due_tasks':
@@ -2097,13 +2141,14 @@ class Research:
                     stop = 'preflight_call_budget'
                 elif self.cfg['review']['required'] and self.api_used >= self.cfg['review']['max_calls_per_run']:
                     stop = 'review_call_budget'
-                elif max(self.search_used,self.search_http_used) >= self.cfg['limits']['max_searches_per_run']:
+                elif self.cfg['search']['provider'] != 'none' and max(self.search_used,self.search_http_used) >= self.cfg['limits']['max_searches_per_run']:
                     stop = 'search_call_budget'
                 elif exploration_deferred and any(n >= self.cfg['preflight']['exploration_per_waterbody'] for n in self.exploration_used.values()):
                     stop = 'preflight_exploration_budget'
                 elif routes_unavailable and any(s['provider'] == 'searxng' for s in pending_searches):
                     stop = 'search_routes_unavailable_or_cooling'
             summary = dict(stop_reason=stop, tasks=self.processed, fetch_attempts=self.fetcher.used,
+                           search_provider=self.cfg['search']['provider'], suspended_searches=suspended_searches,
                            unique_tasks_attempted=len(touched), pending_tasks=len(pending_tasks),
                            exploration_deferred=exploration_deferred, pending_searches=len(pending_searches),
                            search_routes_unavailable=routes_unavailable,
@@ -2247,6 +2292,7 @@ class Research:
         self.store.db.commit()
 
     def export(self):
+        self.sync_search_state()
         import human_review
         export_started = time.monotonic()
         out = self.store.root / "results"
@@ -2345,7 +2391,7 @@ class Research:
                 write_csv(directory / (label + ".csv"), records,fields=human_review.FIELDS if label=='03b_manuelle_pruefung' else None)
             searches = self.store.rows("SELECT * FROM searches WHERE profile=? ORDER BY created", (profile,))
             for search in searches:
-                if search["status"] == "waiting_external":
+                if self.cfg['search']['provider'] != 'none' and search["status"] == "waiting_external":
                     search_requests.append(dict(search_id=search["id"], waterbody_id=wb["id"], query=search["query"], family=search["family"], reason=search["reason"],
                                                 history=self.history(profile)))
             for review in self.store.rows("SELECT * FROM reviews WHERE profile=? AND status IN ('waiting_external','needs_review')", (profile,)):
@@ -2356,6 +2402,7 @@ class Research:
                 print(f"Export {body_index}/{len(self.bodies)}: {wb['name']}", flush=True)
             summary.extend([f"## {wb['name']} ({wb['id']})", "", *(f"- {k}: {len(v)}" for k, v in buckets.items()),
                             f"- Suchanfragen geplant: {len(searches)}; abgeschlossen: {sum(s['status'] in {'done','no_results'} for s in searches)}; bestätigt ohne Treffer: {sum(s['status']=='no_results' for s in searches)}; Fehler/Wiederholung: {sum(s['status'] in {'error','retry'} for s in searches)}",
+                            f"- Ausgesetzte Suchanfragen: {sum(s['status']=='suspended' for s in searches)}",
                             f"- Offene Aufgaben: {sum(t['status'] in {'pending','retry','deferred','in_progress'} for t in tasks)}", "",
                             "Themen mit vorläufig als nützlich bewerteten Quellen (keine Vollständigkeitsmessung):", "",
                             *(f"- {name}: {number}" for name, number in coverage.items()), ""])
@@ -2369,7 +2416,9 @@ class Research:
         jsonl(out / "abrufprotokoll.jsonl", self.store.rows("SELECT * FROM fetch_events ORDER BY id"))
         (out / "REVIEW_INSTRUCTIONS.txt").write_text(REVIEW_SYSTEM, encoding="utf-8")
         summary.extend(["## Weiterarbeit", "", f"Offene externe Suchaufträge: {len(search_requests)}; offene KI-Bewertungen: {len(review_requests)}.",
-                        "Ein erneuter run-Aufruf nutzt gespeicherte Suchergebnisse und Dateien. Für ChatGPT zuerst die Aufträge in search_requests.jsonl bzw. review_requests.jsonl bearbeiten und importieren.",
+                        ("Suchanbieter deaktiviert; gespeicherte Suchaufträge sind ausgesetzt. Ein erneuter run-Aufruf verarbeitet Startquellen und vorhandene URLs weiter. Offene KI-Bewertungen stehen in review_requests.jsonl."
+                         if self.cfg['search']['provider'] == 'none' else
+                         "Ein erneuter run-Aufruf nutzt gespeicherte Suchergebnisse und Dateien. Für ChatGPT zuerst die Aufträge in search_requests.jsonl bzw. review_requests.jsonl bearbeiten und importieren."),
                         "Offene Aufgaben können auf Budgets, Wartefristen, nicht lesbaren Inhalt oder fehlende Bewertungen zurückgehen. Nicht gefunden bedeutet nicht nicht vorhanden.", ""])
         (out / "RECHERCHEBERICHT.md").write_text("\n".join(summary), encoding="utf-8")
         print(f"Ergebnisexport abgeschlossen ({time.monotonic()-export_started:.1f} Sekunden).", flush=True)

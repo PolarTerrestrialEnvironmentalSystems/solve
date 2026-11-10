@@ -35,6 +35,8 @@ def plan(r):
             if not existing or existing['status'] == 'deferred' and existing['reason'] in {'low_priority','depth_budget'}:
                 r.enqueue(profile, url, label=source['title'], priority=94, force=True,
                           branch='scientific_source:' + url)
+        if r.cfg['search']['provider'] == 'none':
+            continue  # Direct source URLs remain usable; all discovery APIs are off.
         if not prepared:
             r.add_search(profile, '"' + wb.get('query_name', wb['name']).replace('"', '') + '"',
                          'overview', 'Gewässer ohne zusätzliche Einschränkungen', 95)

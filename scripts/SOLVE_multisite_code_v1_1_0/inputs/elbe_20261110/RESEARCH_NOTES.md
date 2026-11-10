@@ -39,6 +39,7 @@ Bei großen Sammelberichten bleiben **Kennungsfundstellen und Kontextseiten getr
 ## Softwareprüfung
 
 - 257 Laufzeit-/Verhaltenstests und fünf räumliche Inventartests bestanden. Die räumlichen Tests wurden in einer Umgebung mit den zusätzlichen Geo-Abhängigkeiten ausgeführt.
+- Nachprüfung für 1.8.1: 265 Laufzeit-/Verhaltenstests bestanden, einschließlich Suchabschaltung, Wiederaufnahme gespeicherter Suchaufträge und Worker-Weitergabe ohne Serper-Schlüssel. Eine zusätzliche Vorbereitung mit dem echten Manifest ergab alle 2.554 Gewässer in 30 Gruppen und 10.097 Quellenzuordnungen mit `search.provider=none`, ohne Netzwerkaufrufe.
 - Bash-Syntax geprüft; Python-3.10-Grammatik geprüft. Die Ausführungstests fanden auf Windows statt. Eine tatsächliche Ausführung auf dem Linux-Server ist damit nicht behauptet.
 - Offline-Probe mit dem echten Register: 2.554 Profile in 30 Gruppen, vorbereitete Quellen statt neuer Startsuchaufträge, keine Netzwerkabrufe. Der Statuszähler wurde gegen die Datenbanken geprüft.
 - Quellen-Audit: alle Kennungen, URL-Eindeutigkeit/Obergrenze, gesperrte Domains, HTTP-/Identitäts-/Reviewprovenienz und sämtliche Coverage-Summen unabhängig geprüft; keine Fehler.
@@ -51,4 +52,4 @@ SHA-256 von `seeds.json`:
 892e22ec8a8c319ef94372bdf6e9962a760802b43f8036b6257663ccdb8a924d
 ```
 
-Die [Linux-Anleitung](../../ELBE_LINUX.md) beschreibt den strengen Start sowie `--allow-shortfall` für die ausdrücklich gewünschte Einbeziehung von Seen mit weniger als zehn Startquellen. Normale LLM-Vorprüfung, Inhaltsbewertung, Linkverfolgung und spätere gezielte Suche bleiben aktiv.
+Die [Linux-Anleitung](../../ELBE_LINUX.md) beschreibt den strengen Start sowie `--allow-shortfall` für die ausdrücklich gewünschte Einbeziehung von Seen mit weniger als zehn Startquellen. **Ab Crawler 1.8.1** laufen neue Elbe-Kampagnen standardmäßig ohne Such-API: LLM-Vorprüfung, Inhaltsbewertung und Linkverfolgung bleiben aktiv. `run --search-provider none` wählt diesen Modus auch für vorhandene Workspaces; zusätzliche Serper-Suche ist optional. Die oben dokumentierte Serper-Recherche beschreibt die bereits erfolgte Vorbereitung der gelieferten Startquellen.
