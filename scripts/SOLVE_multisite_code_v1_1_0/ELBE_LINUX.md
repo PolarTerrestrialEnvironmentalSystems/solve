@@ -120,6 +120,10 @@ Pro Gewässer und Lauf sind zunächst 500 Prüfaufgaben, 100 Abrufversuche, 40 S
 
 ## Logs, Ergebnisse und Fortsetzen
 
+Ab 1.8.2 bleibt der Parallelstarter nach `review_api_errors` und `preflight_api_errors` aktiv. Die betroffene Gruppe speichert und exportiert zunächst regulär. Danach startet sie mit demselben Workspace automatisch erneut, nach 60, 120, 240, 480 und schließlich höchstens 900 Sekunden Wartezeit. Weitere Wiederholungen sind nicht zahlenmäßig begrenzt. Andere Gruppen können währenddessen weiterarbeiten; die gemeinsamen API-Limits gelten unverändert. Downloads, Bewertungen und Aufgaben werden wiederverwendet, fehlgeschlagene erforderliche Bewertungen bleiben zur erneuten Prüfung offen.
+
+Die Meldung `automatische Fortsetzung in ... Sekunden` steht im Hauptterminal und im Gruppenlog. `parallel_retry_state.json` enthält die zuletzt geplanten Wiederaufnahmen; `parallel_last_run.json` nennt deren Anzahl. Strg+C oder SIGTERM beendet den Koordinator kontrolliert und verwirft geplante Wiederaufnahmen. Bei Bedarf deaktiviert `run --no-auto-retry-api` diese Funktion. Normale Fertigstellung, andere Budget-/Abbruchgründe und Prozessabstürze ohne frischen Abschlussbericht werden nicht automatisch neu gestartet. Ein Serverneustart oder das Beenden des gesamten Koordinators benötigt weiterhin einen erneuten `run`-Aufruf.
+
 In einem zweiten Terminal:
 
 ```bash

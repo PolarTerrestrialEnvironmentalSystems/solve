@@ -34,7 +34,7 @@ import urllib.robotparser
 import uuid
 from scientific_discovery import DEFAULT_DOMAINS
 
-VERSION = "1.8.1"
+VERSION = "1.8.2"
 PARSER_VERSION = "solve-parser-4"
 REVIEW_VERSION = "solve-review-5"
 SCHEMA_VERSION = "1"

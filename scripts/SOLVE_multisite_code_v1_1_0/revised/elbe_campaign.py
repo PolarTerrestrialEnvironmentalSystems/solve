@@ -650,6 +650,8 @@ def main(argv=None):
     run.add_argument("--llm-interval", type=float, default=6)
     run.add_argument("--llm-cooldown", type=float, default=60)
     run.add_argument("--env-file", default=os.getenv("SOLVE_ENV_FILE"))
+    run.add_argument("--no-auto-retry-api", dest="auto_retry_api", action="store_false",
+                     help="Automatische Wiederaufnahme nach API-Fehlergrenze abschalten")
     run.add_argument("--search-provider", choices=["none", "serper"],
                      help="Suchmodus für diesen Lauf überschreiben, auch bei vorhandenen Workspaces")
     check = commands.add_parser("check-api", help="Blablador-Zugang und Modellliste prüfen; keine Such-/Generierungsanfragen")
@@ -716,7 +718,7 @@ def main(argv=None):
         return 1
     import parallel_crawler
     return parallel_crawler.run(root, args.workers, args.env_file, args.llm_workers, args.llm_interval,
-                                args.llm_cooldown, args.search_provider)
+                                args.llm_cooldown, args.search_provider, auto_retry_api=args.auto_retry_api)
 
 
 if __name__ == "__main__":
