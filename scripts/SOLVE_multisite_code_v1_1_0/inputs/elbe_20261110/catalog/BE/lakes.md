@@ -1,0 +1,23 @@
+# Berlin: Seen-Wasserkörper
+
+16 Einträge. Amtliche IDs bleiben getrennt, auch bei gleichem Namen.
+Mehrländer-Zuordnung ist nicht additiv. `Grenzprüfung` kennzeichnet Überlappungen unter 1 % der Quellgeometrie.
+
+| Originalname | Amtliche ID | Meldeland | Räumliche Länder | Grenzprüfung |
+|---|---|---|---|---|
+| BERLINER OBERHAVEL | DELW_DEBE_80001581959_2 | BE | BE | – |
+| BERLINER UNTERHAVEL 1 | DELW_DEBE_8000958359_1 | BE | BB, BE | BB |
+| BERLINER UNTERHAVEL 2 | DELW_DEBE_8000958359_2 | BE | BE | – |
+| DAEMERITZSEE | DELW_DEBE_800015827919 | BE | BB, BE | BB |
+| FLAKENSEE | DELW_DEBB800015827891 | BB | BB, BE | – |
+| GRIEBNITZSEE | DELW_DEBB8000158389 | BB | BB, BE | – |
+| GROSS GLIENICKER SEE | DELW_DEBE_80001583583 | BE | BB, BE | – |
+| GROSSER MUEGGELSEE | DELW_DEBE_800015827959 | BE | BE | – |
+| GROSSER WANNSEE | DELW_DEBE_8000258359 | BE | BE | – |
+| JUNGFERNSEE | DELW_DEBB800015837 | BB | BB, BE | BE |
+| KROSSINSEE | DELW_DEBB800015828769 | BB | BB, BE | – |
+| LANGER SEE | DELW_DEBE_800045828959 | BE | BE | – |
+| NIEDERNEUENDORFER SEE | DELW_DEBE_80001581959 | BE | BB, BE | BB |
+| SEDDINSEE | DELW_DEBE_80002582893 | BE | BB, BE | BB |
+| TEGELER SEE | DELW_DEBE_800055819699 | BE | BE | – |
+| ZEUTHENER SEE | DELW_DEBE_80003582879 | BE | BB, BE | – |

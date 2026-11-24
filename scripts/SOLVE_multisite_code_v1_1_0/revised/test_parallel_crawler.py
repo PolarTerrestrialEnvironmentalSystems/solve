@@ -92,6 +92,30 @@ class ParallelTests(unittest.TestCase):
         with core.WorkspaceLock(original), self.assertRaisesRegex(RuntimeError, 'bereits bearbeitet'):
             parallel.prepare(self.root / 'new', self.cfg, 2, original)
 
+    def test_real_workers_disable_saved_serper_without_key_and_preserve_configs(self):
+        cfg = core.load_config(dict(self.cfg, search=dict(provider='serper')))
+        target = self.root / 'without_search'
+        parallel.prepare(target, cfg, 2)
+        originals = {path: path.read_bytes() for path in target.glob('group-*/config.json')}
+        env = dict(os.environ)
+        env.pop('SERPER_KEY', None)
+        result = subprocess.run([sys.executable, str(Path(parallel.__file__)), 'run',
+            '--workspace', str(target), '--workers', '2', '--search-provider', 'none'],
+            env=env, capture_output=True, timeout=40)
+        self.assertEqual(result.returncode, 0, result.stdout.decode(errors='replace') + result.stderr.decode(errors='replace'))
+        for path, before in originals.items():
+            self.assertEqual(path.read_bytes(), before)
+            saved = json.loads((path.parent / 'last_run.json').read_text())
+            self.assertEqual(saved['search_provider'], 'none')
+            self.assertEqual(saved['search_http_calls'], 0)
+            self.assertEqual(saved['pending_searches'], 0)
+        effective = parallel.search_override(cfg, 'none')
+        for field in ('waterbodies', 'topics', 'context'):
+            self.assertEqual(effective[field], cfg[field])
+        self.assertEqual(cfg['search']['provider'], 'serper')
+        report = json.loads((target / 'parallel_last_run.json').read_text())
+        self.assertEqual(report['search_provider_override'], 'none')
+
     def test_interrupt_is_forwarded_to_all_active_workers(self):
         target = self.root / 'parallel'
         parallel.prepare(target, self.cfg, 2)

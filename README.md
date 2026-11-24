@@ -1,5 +1,7 @@
 # SOLVE Gewässer-Parser & Knowledge-Graph — Versionsübersicht
 
+> **Skript- und Datenübersicht (24.11.2026):** [Einstieg](docs/START_HERE.md) · [Skripte](docs/SCRIPT_INDEX.md) · [Datenpfade](docs/DATA_LOCATIONS.md) · [Linux-Start](docs/LINUX_START.md). Dieser Branch bündelt zusätzlich den Elbe-Crawler, den 30-Seen-Basisdaten-Pilot und die historischen V2-Importskripte. Die unten beschriebene Parser-Versionslinie bleibt erhalten.
+
 > **Neueste Version: [`solve-kg/`](solve-kg/)** — das ist der aktuelle Stand des Parsers
 > **plus** die Knowledge-Graph-Schicht. Alles andere in diesem Ordner ist älter oder
 > Zwischenstand. Nutzungs-Doku: [`solve-kg/README.md`](solve-kg/README.md).

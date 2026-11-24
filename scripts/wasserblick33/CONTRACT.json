@@ -1,0 +1,22 @@
+{
+  "bundle_version": 1,
+  "description": "Bundle contains tables object of row lists. Geometry is nullable WGS84 GeoJSON; original source CRS and raw coordinates remain in raw_record payload. JSON columns stay JSON. All IDs are deterministic strings. Missing/uncertain references are issues or candidates, never fabricated FK links.",
+  "tables": {
+    "dataset": {"pk": "dataset_id", "columns": ["dataset_id", "reporting_cycle", "source_name", "source_url", "retrieved_at", "sha256", "metadata"]},
+    "raw_record": {"pk": "raw_id", "columns": ["raw_id", "dataset_id", "layer", "source_id", "payload"]},
+    "water_body": {"pk": "water_body_id", "columns": ["water_body_id", "dataset_id", "eu_code", "name", "category", "geometry", "raw_id", "attributes"]},
+    "water_body_identifier": {"pk": "identifier_id", "columns": ["identifier_id", "water_body_id", "scheme", "value", "provenance"]},
+    "monitoring_station": {"pk": "station_id", "columns": ["station_id", "dataset_id", "eu_code", "name", "geometry", "raw_id", "attributes"]},
+    "station_water_body": {"pk": "link_id", "columns": ["link_id", "station_id", "water_body_id", "source_code", "method", "raw_id"]},
+    "water_body_assessment": {"pk": "assessment_id", "columns": ["assessment_id", "water_body_id", "parameter_code", "value_raw", "value_label", "unit", "reporting_cycle", "raw_id", "metadata"]},
+    "lake": {"pk": "lake_id", "columns": ["lake_id", "name", "aliases", "requested_identifiers"]},
+    "lake_water_body": {"pk": "link_id", "columns": ["link_id", "lake_id", "water_body_id", "relation_type", "method", "evidence"]},
+    "match_candidate": {"pk": "candidate_id", "columns": ["candidate_id", "lake_id", "water_body_id", "status", "method", "reason", "evidence"]},
+    "source_document": {"pk": "source_id", "columns": ["source_id", "url", "title", "metadata"]},
+    "event": {"pk": "event_id", "columns": ["event_id", "lake_id", "record_type", "statement", "time_start", "time_end", "time_precision", "payload"]},
+    "event_evidence": {"pk": "evidence_id", "columns": ["evidence_id", "event_id", "source_id", "locator", "payload"]},
+    "import_issue": {"pk": "issue_id", "columns": ["issue_id", "severity", "entity_type", "entity_id", "code", "message", "details"]}
+  },
+  "json_columns": ["metadata", "payload", "geometry", "attributes", "provenance", "value_raw", "aliases", "requested_identifiers", "evidence", "details"],
+  "notes": ["lake_water_body contains accepted links only; relation_type same_water_body or part_of. Review/unmatched have no link.", "No direct event-to-measurement links are inferred; event -> lake -> official water_body is contextual association only.", "WRRL station and assessment availability depends on selected official data source; absent tables are explicit empty arrays with coverage issues."]
+}

@@ -89,13 +89,16 @@ def routes_unavailable(r, core):
 
 def next_search_wakeup(r, core):
     """Read-only earliest useful retry; completed searches require no wait."""
+    if r.cfg['search']['provider'] == 'none':
+        return None
     if not r.cfg['retrieval']['wait_for_search_routes'] or r.cfg['search']['strategy'] != 'focused':
         return None
     if max(r.search_used, r.search_http_used) >= r.cfg['limits']['max_searches_per_run']:
         return None
     pending = [s for s in r.store.rows("SELECT * FROM searches WHERE status IN ('pending','retry')")
                if s['profile'] in r.active]
-    if r.cfg['start_links']['enabled'] and r.cfg['start_links']['skip_selection']:
+    if (r.cfg['start_links']['enabled'] and r.cfg['start_links']['skip_selection']
+            and not r.cfg['start_links'].get('prepared', False)):
         pending = [s for s in pending if s['provider'] != 'serper']
     now, due = time.time(), []
     import scientific_discovery

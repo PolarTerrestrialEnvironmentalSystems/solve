@@ -34,8 +34,8 @@ import urllib.robotparser
 import uuid
 from scientific_discovery import DEFAULT_DOMAINS
 
-VERSION = "1.7.0"
-PARSER_VERSION = "solve-parser-3"
+VERSION = "1.8.2"
+PARSER_VERSION = "solve-parser-4"
 REVIEW_VERSION = "solve-review-5"
 SCHEMA_VERSION = "1"
 TRACKING = {"fbclid", "gclid", "msclkid", "mc_cid", "mc_eid"}
@@ -48,7 +48,7 @@ PHYSICAL = re.compile(r"(?:nur (?:im|vor Ort im) Lesesaal|nicht digitalisiert|"
 DOI = re.compile(r"\b10\.\d{4,9}/[^\s<>\"\[\]]+", re.I)
 URL_RE = re.compile(r"https?://[^\s<>\"\[\]]+", re.I)
 DEFAULTS = {
-    "start_links": {"enabled": False, "skip_selection": False, "target": 20, "batch_size": 20,
+    "start_links": {"enabled": False, "skip_selection": False, "prepared": False, "target": 20, "batch_size": 20,
                     "initial_keywords": [],
                     "min_importance": 60, "max_searches": 20, "max_pages": 3},
     "scientific_sources": [],
@@ -98,7 +98,8 @@ def keep_text(cfg):
 def parse_metadata(parsed):
     """Only bibliographic/technical metadata; source text remains transient."""
     keys = ("title", "status", "warnings", "parser_version", "pages_total",
-            "pages_parsed", "ocr_pages", "sparse_or_failed_pages")
+            "pages_parsed", "ocr_pages", "sparse_or_failed_pages", "parse_scope",
+            "requested_pages", "selected_pages", "selection_complete", "context_pages", "evidence_pages")
     out = {k: parsed[k] for k in keys if k in parsed}
     out.update(text_retained=False, transient_text_available=bool(parsed.get("text", "").strip()),
                link_count=len(parsed.get("links", [])))
@@ -244,6 +245,9 @@ def load_config(path):
             if not isinstance(wb[k], list) or any(not isinstance(x, str) for x in wb[k]):
                 raise ValueError(f"{wb['id']}.{k} muss eine Liste von Texten sein")
         wb.setdefault("region", "")
+        if 'waterbody_kind' in wb and (not isinstance(wb['waterbody_kind'], str) or wb['waterbody_kind'] not in {
+                'lake', 'reservoir', 'river', 'river_segment', 'river_reach', 'stream', 'canal', 'unknown'}):
+            raise ValueError('waterbody_kind: lake, reservoir, river, river_segment, river_reach, stream, canal oder unknown')
         for flag in ("identity_requires_confirmation", "require_geography"):
             if flag in wb and not isinstance(wb[flag], bool):
                 raise ValueError(f"{wb['id']}.{flag} muss boolesch sein")
@@ -300,6 +304,15 @@ def load_config(path):
         raise ValueError('start_links benötigt enabled als booleschen Wert')
     if type(sl['skip_selection']) is not bool:
         raise ValueError('start_links.skip_selection muss boolesch sein')
+    if type(sl['prepared']) is not bool:
+        raise ValueError('start_links.prepared muss boolesch sein')
+    if sl['prepared']:
+        if not sl['skip_selection'] or cfg['search']['strategy'] != 'focused':
+            raise ValueError('start_links.prepared benötigt skip_selection=true und search.strategy=focused')
+        for wb in bodies:
+            urls = [canonical(url) for url in wb['seed_urls']]
+            if not urls or any(url is None for url in urls) or len(set(urls)) != len(urls):
+                raise ValueError('Vorbereitete Startquellen benötigen gültige, eindeutige seed_urls je Gewässer')
     for field in ('target','batch_size','max_searches','max_pages'):
         if type(sl[field]) is not int or not 1<=sl[field]<=100:
             raise ValueError('start_links.'+field+' muss zwischen 1 und 100 liegen')
@@ -307,8 +320,9 @@ def load_config(path):
         raise ValueError('start_links.min_importance muss zwischen 0 und 100 liegen')
     if not isinstance(sl['initial_keywords'],list) or len(sl['initial_keywords'])>20 or any(not isinstance(k,str) or not k.strip() or len(k)>100 for k in sl['initial_keywords']):
         raise ValueError('start_links.initial_keywords benötigt höchstens 20 kurze, nicht leere Suchbegriffe')
-    if sl['enabled'] and (cfg['search']['provider']!='serper' or cfg['search']['strategy']!='focused' or not cfg['preflight']['enabled']):
-        raise ValueError('start_links benötigt Serper, focused und aktivierte LLM-Vorprüfung')
+    start_provider = cfg['search']['provider'] == 'serper' or (sl['prepared'] and cfg['search']['provider'] == 'none')
+    if sl['enabled'] and (not start_provider or cfg['search']['strategy']!='focused' or not cfg['preflight']['enabled']):
+        raise ValueError('start_links benötigt Serper (oder none mit prepared=true), focused und aktivierte LLM-Vorprüfung')
     for field in ('max_errors_per_run', 'max_consecutive_errors'):
         if type(cfg['preflight'][field]) is not int or cfg['preflight'][field] < 1:
             raise ValueError('preflight.' + field + ' muss positiv ganzzahlig sein')
@@ -443,6 +457,8 @@ class Store:
           query TEXT, provider TEXT, family TEXT, status TEXT, priority REAL, attempts INTEGER DEFAULT 0,
           next_try REAL DEFAULT 0, created TEXT, completed TEXT, result_count INTEGER,
           new_count INTEGER, reason TEXT, error TEXT, results TEXT);
+        CREATE TABLE IF NOT EXISTS search_suspensions(search_id TEXT PRIMARY KEY,
+          previous_status TEXT NOT NULL, suspended_at TEXT);
         CREATE TABLE IF NOT EXISTS reviews(id TEXT PRIMARY KEY, profile TEXT, task_id INTEGER,
           status TEXT, request TEXT, response TEXT, rule_response TEXT, created TEXT, engine TEXT);
         CREATE TABLE IF NOT EXISTS preflight_reviews(id TEXT PRIMARY KEY, profile TEXT, url TEXT,
@@ -919,10 +935,33 @@ def parse_pdf_worker(path, output, options):
             return
         result["title"] = str((reader.metadata or {}).get("/Title", ""))
         result["pages_total"] = len(reader.pages)
+        requested = options.get("page_selection")
+        selection_warning = options.get("selection_warning")
+        selected = None
+        if requested is not None:
+            result["requested_pages"] = requested
+            for field in ('context_pages', 'evidence_pages'):
+                if field in options:
+                    result[field] = options[field]
+            if (isinstance(requested, list) and requested and
+                    all(isinstance(n, int) and not isinstance(n, bool) and 1 <= n <= len(reader.pages) for n in requested)
+                    and len(set(requested)) <= int(options["max_pdf_pages"])):
+                selected = sorted(set(requested))
+                result.update(parse_scope="selected_pages", selected_pages=selected, selection_complete=False)
+            else:
+                selection_warning = "invalid_prepared_page_selection"
+        if selection_warning:
+            result["warnings"].append(selection_warning)
+            result.update(parse_scope="full_document_fallback", selection_complete=False)
+        elif selected is None:
+            result["parse_scope"] = "full_document"
+        page_numbers = selected if selected is not None else range(1, min(len(reader.pages), int(options["max_pdf_pages"])) + 1)
         missing = []
         ocr_count = 0
-        for i, page in enumerate(reader.pages[:int(options["max_pdf_pages"])]):
-            locator = f"PDF page {i + 1}"
+        for page_number in page_numbers:
+            i = page_number - 1
+            page = reader.pages[i]
+            locator = f"PDF page {page_number}"
             try:
                 text = page.extract_text() or ""
                 # A low text count is a review signal, not proof that the page is a scan.
@@ -958,7 +997,12 @@ def parse_pdf_worker(path, output, options):
                 result["warnings"].append(f"page_{i+1}_{type(e).__name__}")
         result["text"] = "\n\n".join(f["text"] for f in result["fragments"])
         result["sparse_or_failed_pages"] = missing
-        if result["pages_parsed"] < result["pages_total"] or result["pages_total"] > options["max_pdf_pages"]:
+        if selection_warning:
+            result["status"] = "partial_invalid_page_selection"
+        elif selected is not None:
+            result["selection_complete"] = result["pages_parsed"] == len(selected) and not missing
+            result["status"] = "partial_selected_pages" if result["selection_complete"] else "partial_selected_page_error"
+        elif result["pages_parsed"] < result["pages_total"] or result["pages_total"] > options["max_pdf_pages"]:
             result["status"] = "partial_page_limit_or_error"
         elif missing:
             result["status"] = "partial_ocr_or_visual_review" if result["text"].strip() else "ocr_required"
@@ -971,12 +1015,56 @@ def parse_pdf_worker(path, output, options):
     dump(output, result)
 
 
-def parse_source(store, source, cfg):
+def prepared_pdf_selection(cfg, wb, url):
+    """Use page evidence only for the exact body and the exact source document.
+
+    A catalogue page describing a link is not a page within the linked PDF.
+    Invalid ranges fall back to a full parse and retain an explicit review warning.
+    """
+    if not cfg.get('start_links', {}).get('prepared') or not wb:
+        return {}
+    url = canonical(url)
+    if not url or url not in {canonical(value) for value in wb.get('seed_urls', [])}:
+        return {}
+    metadata = wb.get('seed_evidence', {})
+    if not isinstance(metadata, dict):
+        return {}
+    evidence = next((value for key, value in metadata.items() if canonical(key) == url), None)
+    if not isinstance(evidence, dict):
+        return {}
+    matched_id = evidence.get('catalogue_verified_waterbody_id')
+    if not isinstance(matched_id, str) or not matched_id or matched_id not in {wb.get('id'), *wb.get('identifiers', [])}:
+        return {}
+    # These page locators describe source_url, not necessarily the linked seed URL.
+    if canonical(evidence.get('source_url', '')) != url:
+        return {}
+    pages = evidence.get('catalogue_pages', evidence.get('pages'))
+    if pages is None:
+        page = evidence.get('catalogue_page', evidence.get('page'))
+        pages = [page] if page is not None else None
+    if pages is None:
+        return {}
+    if (not isinstance(pages, list) or not pages or
+            any(not isinstance(n, int) or isinstance(n, bool) or n < 1 for n in pages)):
+        return dict(selection_warning='invalid_prepared_page_selection')
+    context = evidence.get('context_pages', [])
+    if (not isinstance(context, list) or
+            any(not isinstance(n, int) or isinstance(n, bool) or n < 1 for n in context)):
+        return dict(selection_warning='invalid_prepared_page_selection')
+    selected = sorted({1, *pages, *context})  # Page one supplies the original header.
+    if len(selected) > cfg['limits']['max_pdf_pages']:
+        return dict(selection_warning='invalid_prepared_page_selection')
+    return dict(page_selection=selected, evidence_pages=sorted(set(pages)), context_pages=sorted({1, *context}))
+
+
+def parse_source(store, source, cfg, wb=None, task_url=None):
     options = dict(max_pdf_pages=cfg["limits"]["max_pdf_pages"], max_ocr_pages=cfg["limits"]["max_ocr_pages"],
                    max_links=cfg["limits"]["max_links_per_document"], ocr=cfg["ocr"]["enabled"], language=cfg["ocr"]["language"])
     # Relative HTML links depend on the final URL; PDF parsing does not.
     path = store.root / source["path"]
     is_pdf = path.suffix == ".pdf"
+    if is_pdf:
+        options.update(prepared_pdf_selection(cfg, wb, task_url or source['url']))
     key = stable([source["sha"], PARSER_VERSION, options, keep_text(cfg), None if is_pdf else source["final_url"]])
     if not keep_text(cfg) and key in store.transient_parses:
         return key, store.transient_parses[key]
@@ -996,6 +1084,8 @@ def parse_source(store, source, cfg):
                 result = json.loads(worker_result.read_text(encoding="utf-8"))
             except (subprocess.SubprocessError, OSError, ValueError) as e:
                 result = dict(title="", text="", fragments=[], links=[], status="pdf_parse_timeout_or_error", warnings=[type(e).__name__])
+                if options.get('page_selection'):
+                    result.update(parse_scope='selected_pages', requested_pages=options['page_selection'], selection_complete=False)
     elif path.suffix == ".html":
         raw = path.read_bytes()
         charset = re.search(r"charset=[\"']?([\w-]+)", source["mime"] or "", re.I)
@@ -1031,6 +1121,16 @@ def parse_source(store, source, cfg):
 
 def names(wb):
     return [wb["name"]] + wb["aliases"] + wb["identifiers"]
+
+
+def aquatic_context(wb, text):
+    """A type hint resolves no identity; exact names/IDs and evidence remain required."""
+    terms = r'see|sees|lake|gewasser|seewasser|seebecken'
+    if wb.get('waterbody_kind') in {'river', 'river_segment', 'river_reach', 'stream', 'canal'}:
+        terms = (r'gewasser|fluss|flusse|flusses|flussen|flusslauf|flussabschnitt|flusskilometer|'
+                 r'fliessgewasser|fliessgewassers|fliessgewassern|river|rivers|stream|streams|'
+                 r'bach|baches|bachlauf|kanal|kanals')
+    return bool(re.search(r'\b(?:' + terms + r')\b', norm(text)))
 
 
 def identity_spans(wb, text):
@@ -1077,7 +1177,7 @@ def local_identity_topics(wb, topics, text):
         for name, start, end in spans:
             window = value[max(0, start-250):end+250]
             if wb.get("ambiguous_place_name") and re.search(r"\b(?:stadt|gemeinde|ort)\s+$", value[max(0,start-20):start]):
-                if not re.search(r"\b(?:see|sees|seewasser|seebecken|gewasser)\b", window):
+                if not aquatic_context(wb, window):
                     continue
             found.update(topic_hits(window, topics))
         if not spans and identity_matches(wb, paragraph):
@@ -1212,7 +1312,7 @@ def validate_review(response, request):
                 raise ValueError('Themenbeleg nicht auf angegebener Fundstelle')
             if out['decision']=='relevant' and not identity_matches(wb,quote):
                 raise ValueError('Themenbeleg ohne konkreten Gewässerbezug')
-            if wb.get('ambiguous_place_name') and not re.search(r'\b(?:see|sees|lake|gewasser|seewasser|seebecken)\b',norm(quote)):
+            if wb.get('ambiguous_place_name') and not aquatic_context(wb, quote):
                 raise ValueError('Mehrdeutiger Stadt-/Gewässerbeleg')
             out['evidence_locations'].append(dict(topic=e['topic'],locator=locator,quote_sha256=hashlib.sha256(quote.encode()).hexdigest()))
             if quote not in out['evidence_quotes']:
@@ -1458,11 +1558,43 @@ class Research:
         if cfg['review']['required'] and not os.getenv(cfg['review']['api_key_env'], ''):
             self.store.close()
             raise ValueError('Inhaltsprüfung benötigt ' + cfg['review']['api_key_env'])
+        self.sync_search_state()
 
     def close(self):
         self.store.close()
 
+    def sync_search_state(self):
+        """Pause open search jobs without losing their retry state or crawl results."""
+        changed = 0
+        if self.cfg['search']['provider'] == 'none':
+            rows = self.store.rows("SELECT id,profile,status FROM searches WHERE status IN ('pending','retry','deferred_budget','waiting_external')")
+            for row in rows:
+                if row['profile'] not in self.active:
+                    continue
+                self.store.db.execute('INSERT OR IGNORE INTO search_suspensions VALUES(?,?,?)',
+                                      (row['id'], row['status'], utc()))
+                self.store.db.execute("UPDATE searches SET status='suspended' WHERE id=?", (row['id'],))
+                changed += 1
+            event = 'searches_suspended'
+        else:
+            rows = self.store.rows('SELECT s.id,s.profile,s.status,p.previous_status FROM searches s JOIN search_suspensions p ON p.search_id=s.id')
+            for row in rows:
+                if row['profile'] not in self.active:
+                    continue
+                # An explicitly imported result may already have completed a paused job.
+                if row['status'] == 'suspended':
+                    self.store.db.execute('UPDATE searches SET status=? WHERE id=?', (row['previous_status'], row['id']))
+                    changed += 1
+                self.store.db.execute('DELETE FROM search_suspensions WHERE search_id=?', (row['id'],))
+            event = 'searches_resumed'
+        self.store.db.commit()
+        if changed:
+            self.store.event(event, dict(count=changed, search_provider=self.cfg['search']['provider']))
+
     def add_search(self, profile, query, family, reason, priority=50, provider=None, page=1):
+        # The global off switch also covers explicit Crossref/DataCite providers.
+        if self.cfg['search']['provider'] == 'none':
+            return None
         provider = provider or self.cfg['search']['provider']
         if provider == 'serper':
             import serper_search
@@ -1523,6 +1655,7 @@ class Research:
         return True
 
     def plan(self):
+        self.sync_search_state()
         if self.cfg['search']['strategy'] == 'focused':
             import focused_search
             focused_search.plan(self)
@@ -1601,6 +1734,8 @@ class Research:
         self.store.db.commit()
 
     def next_search(self):
+        if self.cfg['search']['provider'] == 'none':
+            return None
         if self.cfg['search']['strategy'] == 'focused':
             import focused_search
             return focused_search.next_search(self, sys.modules[__name__])
@@ -1619,6 +1754,8 @@ class Research:
         return max(candidates, key=score)
 
     def do_search(self, s):
+        if self.cfg['search']['provider'] == 'none':
+            return
         self.search_used += 1
         if s["provider"] == "external":
             self.store.db.execute("UPDATE searches SET status='waiting_external' WHERE id=?", (s["id"],))
@@ -1868,7 +2005,7 @@ class Research:
                     self.exploration_used[task['profile']] = self.exploration_used.get(task['profile'],0) + 1
             self.body_fetch_attempts[task['profile']]=self.body_fetch_attempts.get(task['profile'],0)+1
             source = self.fetcher.fetch(task["url"], refresh=task["reason"] == "refresh")
-            parse_key, parsed = parse_source(self.store, source, self.cfg)
+            parse_key, parsed = parse_source(self.store, source, self.cfg, self.bodies[task['profile']], task['url'])
             review_id, decision, links = self.review(task, source, parsed)
             if self.cfg['review']['required'] and self.store.one('SELECT status FROM reviews WHERE id=?',(review_id,))['status'] == 'needs_review':
                 self.store.db.execute("UPDATE tasks SET status='pending',reason='reassess',review_id=?,parse_key=? WHERE id=?", (review_id,parse_key,task['id']))
@@ -1898,7 +2035,15 @@ class Research:
 
     def run(self):
         self.plan()
-        if self.cfg['start_links']['enabled'] and self.cfg['start_links']['skip_selection']:
+        if self.cfg['start_links']['prepared']:
+            import start_links
+            count = sum(len(start_links.prepared_urls(self, p)) for p in self.active)
+            self.store.event('prepared_start_links', dict(count=count))
+            mode = ('Keine neue Startlink-Auswahl; Such-APIs deaktiviert, weiter mit Quellenprüfung und Linkverfolgung.'
+                    if self.cfg['search']['provider'] == 'none' else
+                    'Keine neue Startlink-Auswahl; weitere Recherche nach dem ersten Seed-Durchgang.')
+            print(f'Vorbereitete Startquellen: {count}. {mode}', flush=True)
+        elif self.cfg['start_links']['enabled'] and self.cfg['start_links']['skip_selection']:
             import start_links
             selected = sum(start_links.selected_count(self,p) for p in self.active)
             self.store.event('start_links_selection_skipped',dict(selected=selected))
@@ -1946,7 +2091,7 @@ class Research:
                         stop = "run_fetch_budget"
                     elif any(n >= self.cfg["limits"]["max_urls_per_host_per_run"] for n in self.fetcher.host_uses.values()):
                         stop = "run_host_budget"
-                    elif self.store.one("SELECT COUNT(*) n FROM searches WHERE status='waiting_external'")["n"]:
+                    elif self.cfg['search']['provider'] != 'none' and self.store.one("SELECT COUNT(*) n FROM searches WHERE status='waiting_external'")["n"]:
                         stop = "waiting_external_searches"
                     else:
                         import quality_search
@@ -1988,6 +2133,7 @@ class Research:
             import quality_search
             pending_tasks = [t for t in self.store.rows("SELECT profile,reason FROM tasks WHERE status IN ('pending','retry','in_progress')") if t['profile'] in self.active]
             pending_searches = [s for s in self.store.rows("SELECT profile,provider FROM searches WHERE status IN ('pending','retry')") if s['profile'] in self.active]
+            suspended_searches = sum(s['profile'] in self.active for s in self.store.rows("SELECT profile FROM searches WHERE status='suspended'"))
             exploration_deferred = sum(t['reason'] == 'preflight_exploration_budget' for t in pending_tasks)
             routes_unavailable = quality_search.routes_unavailable(self, sys.modules[__name__])
             if stop == 'no_due_tasks':
@@ -1995,13 +2141,14 @@ class Research:
                     stop = 'preflight_call_budget'
                 elif self.cfg['review']['required'] and self.api_used >= self.cfg['review']['max_calls_per_run']:
                     stop = 'review_call_budget'
-                elif max(self.search_used,self.search_http_used) >= self.cfg['limits']['max_searches_per_run']:
+                elif self.cfg['search']['provider'] != 'none' and max(self.search_used,self.search_http_used) >= self.cfg['limits']['max_searches_per_run']:
                     stop = 'search_call_budget'
                 elif exploration_deferred and any(n >= self.cfg['preflight']['exploration_per_waterbody'] for n in self.exploration_used.values()):
                     stop = 'preflight_exploration_budget'
                 elif routes_unavailable and any(s['provider'] == 'searxng' for s in pending_searches):
                     stop = 'search_routes_unavailable_or_cooling'
             summary = dict(stop_reason=stop, tasks=self.processed, fetch_attempts=self.fetcher.used,
+                           search_provider=self.cfg['search']['provider'], suspended_searches=suspended_searches,
                            unique_tasks_attempted=len(touched), pending_tasks=len(pending_tasks),
                            exploration_deferred=exploration_deferred, pending_searches=len(pending_searches),
                            search_routes_unavailable=routes_unavailable,
@@ -2057,7 +2204,7 @@ class Research:
             request = json.loads(record["request"])
             if source["sha"] != request["source_sha"]:
                 raise ValueError("Quelle wurde verändert; neue Bewertung der neuen Fassung erforderlich")
-            _, parsed = parse_source(self.store, source, self.cfg)
+            _, parsed = parse_source(self.store, source, self.cfg, self.bodies[task['profile']], task['url'])
             self.store.db.execute("UPDATE reviews SET status='complete',response=?,engine='assistant' WHERE id=?",
                                   (json.dumps(response, ensure_ascii=False), record["id"]))
             links = [dict(x, id=stable([x["url"], x.get("label", ""), x.get("locator", "")])[:20]) for x in parsed["links"]]
@@ -2145,6 +2292,7 @@ class Research:
         self.store.db.commit()
 
     def export(self):
+        self.sync_search_state()
         import human_review
         export_started = time.monotonic()
         out = self.store.root / "results"
@@ -2243,7 +2391,7 @@ class Research:
                 write_csv(directory / (label + ".csv"), records,fields=human_review.FIELDS if label=='03b_manuelle_pruefung' else None)
             searches = self.store.rows("SELECT * FROM searches WHERE profile=? ORDER BY created", (profile,))
             for search in searches:
-                if search["status"] == "waiting_external":
+                if self.cfg['search']['provider'] != 'none' and search["status"] == "waiting_external":
                     search_requests.append(dict(search_id=search["id"], waterbody_id=wb["id"], query=search["query"], family=search["family"], reason=search["reason"],
                                                 history=self.history(profile)))
             for review in self.store.rows("SELECT * FROM reviews WHERE profile=? AND status IN ('waiting_external','needs_review')", (profile,)):
@@ -2254,6 +2402,7 @@ class Research:
                 print(f"Export {body_index}/{len(self.bodies)}: {wb['name']}", flush=True)
             summary.extend([f"## {wb['name']} ({wb['id']})", "", *(f"- {k}: {len(v)}" for k, v in buckets.items()),
                             f"- Suchanfragen geplant: {len(searches)}; abgeschlossen: {sum(s['status'] in {'done','no_results'} for s in searches)}; bestätigt ohne Treffer: {sum(s['status']=='no_results' for s in searches)}; Fehler/Wiederholung: {sum(s['status'] in {'error','retry'} for s in searches)}",
+                            f"- Ausgesetzte Suchanfragen: {sum(s['status']=='suspended' for s in searches)}",
                             f"- Offene Aufgaben: {sum(t['status'] in {'pending','retry','deferred','in_progress'} for t in tasks)}", "",
                             "Themen mit vorläufig als nützlich bewerteten Quellen (keine Vollständigkeitsmessung):", "",
                             *(f"- {name}: {number}" for name, number in coverage.items()), ""])
@@ -2267,7 +2416,9 @@ class Research:
         jsonl(out / "abrufprotokoll.jsonl", self.store.rows("SELECT * FROM fetch_events ORDER BY id"))
         (out / "REVIEW_INSTRUCTIONS.txt").write_text(REVIEW_SYSTEM, encoding="utf-8")
         summary.extend(["## Weiterarbeit", "", f"Offene externe Suchaufträge: {len(search_requests)}; offene KI-Bewertungen: {len(review_requests)}.",
-                        "Ein erneuter run-Aufruf nutzt gespeicherte Suchergebnisse und Dateien. Für ChatGPT zuerst die Aufträge in search_requests.jsonl bzw. review_requests.jsonl bearbeiten und importieren.",
+                        ("Suchanbieter deaktiviert; gespeicherte Suchaufträge sind ausgesetzt. Ein erneuter run-Aufruf verarbeitet Startquellen und vorhandene URLs weiter. Offene KI-Bewertungen stehen in review_requests.jsonl."
+                         if self.cfg['search']['provider'] == 'none' else
+                         "Ein erneuter run-Aufruf nutzt gespeicherte Suchergebnisse und Dateien. Für ChatGPT zuerst die Aufträge in search_requests.jsonl bzw. review_requests.jsonl bearbeiten und importieren."),
                         "Offene Aufgaben können auf Budgets, Wartefristen, nicht lesbaren Inhalt oder fehlende Bewertungen zurückgehen. Nicht gefunden bedeutet nicht nicht vorhanden.", ""])
         (out / "RECHERCHEBERICHT.md").write_text("\n".join(summary), encoding="utf-8")
         print(f"Ergebnisexport abgeschlossen ({time.monotonic()-export_started:.1f} Sekunden).", flush=True)

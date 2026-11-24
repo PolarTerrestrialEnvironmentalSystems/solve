@@ -95,9 +95,25 @@ def prepare(root, cfg, groups, source=None):
     print(f'Vorbereitet: {len(entries)} Gruppen unter {root}', flush=True)
 
 
-def worker(root, name, env_file):
+def search_override(cfg, provider=None):
+    """Apply a per-run search choice without rewriting frozen profiles/configs."""
+    if provider is None:
+        return cfg
+    if provider not in {'none', 'serper'}:
+        raise ValueError('--search-provider muss none oder serper sein')
+    result = copy.deepcopy(cfg)
+    result['search']['provider'] = provider
+    if provider == 'serper':
+        result['search']['api_key_env'] = 'SERPER_KEY'
+    else:
+        result['retrieval'].update(crossref_enabled=False, wait_for_search_routes=False)
+        result['scientific_discovery'].update(enabled=False, datacite_enabled=False)
+    return core.load_config(result)
+
+
+def worker(root, name, env_file, search_provider=None):
     folder = root / name
-    cfg = core.load_config(folder / 'config.json')
+    cfg = search_override(core.load_config(folder / 'config.json'), search_provider)
     cfg['credentials_env_file'] = str(Path(env_file).resolve()) if env_file else ''
     cfg['storage']['shared_cache_dir'] = str(root / 'download_cache')
     cfg['storage']['shared_cache_wait_seconds'] = 600
@@ -131,18 +147,33 @@ def worker(root, name, env_file):
             research.close()
 
 
-def run(root, workers, env_file=None, llm_workers=2, llm_interval=2, llm_cooldown=60):
+def summary_stamp(path):
+    try:
+        stat = path.stat()
+        return stat.st_mtime_ns, stat.st_size
+    except FileNotFoundError:
+        return None
+
+
+def api_retry_delay(attempt):
+    return min(900, 60 * 2 ** min(max(0, attempt - 1), 4))
+
+
+def run(root, workers, env_file=None, llm_workers=2, llm_interval=2, llm_cooldown=60,
+        search_provider=None, *, auto_retry_api=True):
     if workers < 1:
         raise ValueError('--workers muss mindestens 1 sein')
     if llm_workers < 1 or llm_interval < 0 or llm_cooldown < 1:
         raise ValueError('LLM-Slots und Wartezeiten sind ungültig')
     manifest = json.loads((root / 'parallel.json').read_text(encoding='utf-8'))
     pending = list(manifest['groups'])
+    entries = {entry['directory']: entry for entry in pending}
+    retries, stamps, retry_status = {}, {}, {}
     # Check keys before spawning any workers; secrets remain in the environment.
     import credential_env
     credential_env.load({'credentials_env_file': env_file or ''})
     for entry in pending:
-        cfg = core.load_config(root / entry['directory'] / 'config.json')
+        cfg = search_override(core.load_config(root / entry['directory'] / 'config.json'), search_provider)
         needed = []
         if cfg['search']['provider'] == 'serper':
             needed.append(cfg['search']['api_key_env'])
@@ -156,6 +187,8 @@ def run(root, workers, env_file=None, llm_workers=2, llm_interval=2, llm_cooldow
     if os.getenv('BLABLADOR_KEY'):
         key_count = len({os.getenv(name) for name in ('BLABLADOR_KEY', 'GRAPHRAG_API_KEY2') if os.getenv(name)})
         print(f'Blablador: {key_count} Schlüssel geladen; maximal {llm_workers} gleichzeitige LLM-Aufrufe insgesamt.', flush=True)
+    if search_provider == 'none':
+        print('Such-APIs deaktiviert: vorhandene Startquellen und weiterführende Links; kein Serper-Schlüssel benötigt.', flush=True)
     active, completed = {}, []
     stopping = False
     (root / 'logs').mkdir(exist_ok=True)
@@ -165,16 +198,27 @@ def run(root, workers, env_file=None, llm_workers=2, llm_interval=2, llm_cooldow
     signal.signal(signal.SIGTERM, interrupt)
     try:
         with core.WorkspaceLock(root):
+            write_json(root / 'parallel_retry_state.json', retry_status)
             while pending or active:
                 try:
                     while pending and len(active) < workers and not stopping:
-                        entry = pending.pop(0)
+                        due = next((i for i, item in enumerate(pending)
+                                    if item.get('_retry_at', 0) <= time.monotonic()), None)
+                        if due is None:
+                            break
+                        entry = pending.pop(due)
                         name = entry['directory']
+                        stamps[name] = summary_stamp(root / name / 'last_run.json')
+                        if name in retry_status:
+                            retry_status[name].update(state='running', retry_at=None)
+                            write_json(root / 'parallel_retry_state.json', retry_status)
                         log = (root / 'logs' / (name + '.log')).open('a', encoding='utf-8')
                         log.write('\n--- Neuer Lauf ' + time.strftime('%Y-%m-%d %H:%M:%S') + ' ---\n')
                         log.flush()
                         command = [sys.executable, '-u', str(Path(__file__).resolve()), '_worker',
                                    '--workspace', str(root), '--group', name]
+                        if search_provider is not None:
+                            command.extend(['--search-provider', search_provider])
                         options = {'start_new_session': True} if os.name != 'nt' else {
                             'creationflags': subprocess.CREATE_NEW_PROCESS_GROUP}
                         try:
@@ -197,12 +241,40 @@ def run(root, workers, env_file=None, llm_workers=2, llm_interval=2, llm_cooldow
                             del active[name]
                             completed.append({'group': name, 'exit_code': code})
                             print(f'{name} beendet: Exit-Code {code}', flush=True)
-                    if active:
-                        time.sleep(.25)
+                            summary = {}
+                            path = root / name / 'last_run.json'
+                            if code == 0 and summary_stamp(path) != stamps[name]:
+                                try:
+                                    summary = json.loads(path.read_text(encoding='utf-8'))
+                                except (OSError, ValueError):
+                                    pass
+                            reason = summary.get('stop_reason')
+                            if (auto_retry_api and not stopping and code == 0 and
+                                    reason in {'review_api_errors', 'preflight_api_errors'}):
+                                retries[name] = retries.get(name, 0) + 1
+                                delay = api_retry_delay(retries[name])
+                                pending.append(dict(entries[name], _retry_at=time.monotonic() + delay))
+                                retry_status[name] = dict(state='waiting', reason=reason,
+                                    attempt=retries[name], delay_seconds=delay, retry_at=time.time() + delay)
+                                message = (f'{name}: {reason}; automatische Fortsetzung in {delay} Sekunden '
+                                           f'(Wiederaufnahme {retries[name]}). Strg+C beendet kontrolliert.')
+                                print(message, flush=True)
+                                with (root / 'logs' / (name + '.log')).open('a', encoding='utf-8') as notice:
+                                    notice.write('\n' + message + '\n')
+                            elif name in retry_status:
+                                retry_status[name].update(state='finished', retry_at=None,
+                                                          stop_reason=reason, exit_code=code)
+                            write_json(root / 'parallel_retry_state.json', retry_status)
+                    if active or pending:
+                        time.sleep(.25 if active else 1)
                 except KeyboardInterrupt:
                     if not stopping:
                         stopping = True
                         pending.clear()
+                        for item in retry_status.values():
+                            if item['state'] == 'waiting':
+                                item.update(state='cancelled', retry_at=None)
+                        write_json(root / 'parallel_retry_state.json', retry_status)
                         print('Abbruch angefordert. Warte auf Speichern und Export der Worker …', flush=True)
                         for process, log in active.values():
                             if process.poll() is None:
@@ -212,7 +284,9 @@ def run(root, workers, env_file=None, llm_workers=2, llm_interval=2, llm_cooldow
                                     pass
                     else:
                         print('Worker speichern noch. Bitte auf das Ende warten.', flush=True)
-            write_json(root / 'parallel_last_run.json', {'interrupted': stopping, 'workers': completed})
+            write_json(root / 'parallel_last_run.json', {'interrupted': stopping, 'workers': completed,
+                                                        'search_provider_override': search_provider,
+                                                        'api_restarts': retries})
     finally:
         signal.signal(signal.SIGTERM, previous)
         # Also clean up children if the coordinator itself encounters an exception.
@@ -233,18 +307,24 @@ def main(argv=None):
     parser.add_argument('--groups', type=int, default=30, help='Feste Gruppen beim Vorbereiten (Standard: 30)')
     parser.add_argument('--workers', type=int, default=30, help='Gleichzeitig laufende Gruppen (Standard: 30)')
     parser.add_argument('--env-file', default=os.getenv('SOLVE_ENV_FILE'))
+    parser.add_argument('--search-provider', choices=['none', 'serper'],
+                        help='Suchmodus für diesen Lauf überschreiben; Gruppenkonfigurationen bleiben unverändert')
     parser.add_argument('--group')
     parser.add_argument('--llm-workers', type=int, default=2, help='Gleichzeitige LLM-Aufrufe aller Worker zusammen')
     parser.add_argument('--llm-interval', type=float, default=2, help='Mindestabstand zwischen LLM-Anfragestarts in Sekunden')
     parser.add_argument('--llm-cooldown', type=float, default=60, help='Mindestpause nach HTTP 429; steigt bei Wiederholung')
+    parser.add_argument('--no-auto-retry-api', dest='auto_retry_api', action='store_false',
+                        help='Nach API-Fehlergrenze nicht automatisch fortsetzen')
     args = parser.parse_args(argv)
     root = Path(args.workspace).resolve()
     if args.command == 'prepare':
-        prepare(root, core.load_config(args.config), args.groups, args.source_workspace)
+        prepare(root, search_override(core.load_config(args.config), args.search_provider),
+                args.groups, args.source_workspace)
         return 0
     if args.command == '_worker':
-        return worker(root, args.group, args.env_file)
-    return run(root, args.workers, args.env_file, args.llm_workers, args.llm_interval, args.llm_cooldown)
+        return worker(root, args.group, args.env_file, args.search_provider)
+    return run(root, args.workers, args.env_file, args.llm_workers, args.llm_interval,
+               args.llm_cooldown, args.search_provider, auto_retry_api=args.auto_retry_api)
 
 
 if __name__ == '__main__':

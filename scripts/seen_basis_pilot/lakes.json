@@ -1,0 +1,808 @@
+{
+  "version": 1,
+  "created": "2026-11-19",
+  "scope": "5 WRRL-Seewasserkörper je Bundesland; Talsperren eingeschlossen; Auswahl aus dem deutschen Elbegebiet.",
+  "historical_identity_policy": "Nur exakte aktuelle Kennung; frühere Kennungswechsel werden als Lücke ausgewiesen, nicht durch Namensähnlichkeit ersetzt.",
+  "lineage": "EEA als Veröffentlichung der nationalen WRRL-Meldungen, nicht direkter WasserBLIcK-Abruf.",
+  "lakes": [
+    {
+      "state": "BB",
+      "name": "SCHARMUETZELSEE",
+      "waterbody_id": "DELW_DEBB800015828419",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/seen/800015828419.zip",
+          "filename": "lfu_datenpaket.zip",
+          "format": "zip",
+          "role": "landes_datenpaket",
+          "target_classes": "WaterBodyV2;MonitoringStationV2;MeasurementV2;ParameterV2;UnitV2",
+          "scope": "waterbody"
+        },
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/Steckbriefe/WRRL2021/LWBODY/DELW_DEBB800015828419.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/info/LinklisteSeen.pdf",
+          "instructions": "Die geladenen ZIP-Pakete enthalten Originaltabellen; noch keine automatische Normalisierung aller Klassen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "BB",
+      "name": "GROSSER STECHLINSEE",
+      "waterbody_id": "DELW_DEBB800015815219",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/seen/800015815219.zip",
+          "filename": "lfu_datenpaket.zip",
+          "format": "zip",
+          "role": "landes_datenpaket",
+          "target_classes": "WaterBodyV2;MonitoringStationV2;MeasurementV2;ParameterV2;UnitV2",
+          "scope": "waterbody"
+        },
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/Steckbriefe/WRRL2021/LWBODY/DELW_DEBB800015815219.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/info/LinklisteSeen.pdf",
+          "instructions": "Die geladenen ZIP-Pakete enthalten Originaltabellen; noch keine automatische Normalisierung aller Klassen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "BB",
+      "name": "SENFTENBERGER SEE",
+      "waterbody_id": "DELW_DEBB800015381723",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/seen/800015381723.zip",
+          "filename": "lfu_datenpaket.zip",
+          "format": "zip",
+          "role": "landes_datenpaket",
+          "target_classes": "WaterBodyV2;MonitoringStationV2;MeasurementV2;ParameterV2;UnitV2",
+          "scope": "waterbody"
+        },
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/Steckbriefe/WRRL2021/LWBODY/DELW_DEBB800015381723.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/info/LinklisteSeen.pdf",
+          "instructions": "Die geladenen ZIP-Pakete enthalten Originaltabellen; noch keine automatische Normalisierung aller Klassen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "BB",
+      "name": "LUEBBESEE",
+      "waterbody_id": "DELW_DEBB800015814259",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/seen/800015814259.zip",
+          "filename": "lfu_datenpaket.zip",
+          "format": "zip",
+          "role": "landes_datenpaket",
+          "target_classes": "WaterBodyV2;MonitoringStationV2;MeasurementV2;ParameterV2;UnitV2",
+          "scope": "waterbody"
+        },
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/Steckbriefe/WRRL2021/LWBODY/DELW_DEBB800015814259.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/info/LinklisteSeen.pdf",
+          "instructions": "Die geladenen ZIP-Pakete enthalten Originaltabellen; noch keine automatische Normalisierung aller Klassen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "BB",
+      "name": "LEHNITZSEE",
+      "waterbody_id": "DELW_DEBB8000158177",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/seen/8000158177.zip",
+          "filename": "lfu_datenpaket.zip",
+          "format": "zip",
+          "role": "landes_datenpaket",
+          "target_classes": "WaterBodyV2;MonitoringStationV2;MeasurementV2;ParameterV2;UnitV2",
+          "scope": "waterbody"
+        },
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/Steckbriefe/WRRL2021/LWBODY/DELW_DEBB8000158177.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://mleuv-daten.brandenburg.de/w/biodaten/info/LinklisteSeen.pdf",
+          "instructions": "Die geladenen ZIP-Pakete enthalten Originaltabellen; noch keine automatische Normalisierung aller Klassen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "BE",
+      "name": "GROSSER MUEGGELSEE",
+      "waterbody_id": "DELW_DEBE_800015827959",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://wasserportal.berlin.de/station.php?anzeige=i&station=115&thema=opq",
+          "filename": "station_115.html",
+          "format": "html",
+          "role": "station_page",
+          "target_classes": "MonitoringStationV2;MeasurementV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://wasserportal.berlin.de/",
+          "instructions": "Messstellen anhand amtlicher Kennung zuordnen; Messreihen je Station und Parameter exportieren. Keine unbestätigten Stations-IDs ableiten.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "BE",
+      "name": "TEGELER SEE",
+      "waterbody_id": "DELW_DEBE_800055819699",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [],
+      "manual_exports": [
+        {
+          "url": "https://wasserportal.berlin.de/",
+          "instructions": "Messstellen anhand amtlicher Kennung zuordnen; Messreihen je Station und Parameter exportieren. Keine unbestätigten Stations-IDs ableiten.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "BE",
+      "name": "GROSSER WANNSEE",
+      "waterbody_id": "DELW_DEBE_8000258359",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [],
+      "manual_exports": [
+        {
+          "url": "https://wasserportal.berlin.de/",
+          "instructions": "Messstellen anhand amtlicher Kennung zuordnen; Messreihen je Station und Parameter exportieren. Keine unbestätigten Stations-IDs ableiten.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "BE",
+      "name": "SEDDINSEE",
+      "waterbody_id": "DELW_DEBE_80002582893",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [],
+      "manual_exports": [
+        {
+          "url": "https://wasserportal.berlin.de/",
+          "instructions": "Messstellen anhand amtlicher Kennung zuordnen; Messreihen je Station und Parameter exportieren. Keine unbestätigten Stations-IDs ableiten.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "BE",
+      "name": "DAEMERITZSEE",
+      "waterbody_id": "DELW_DEBE_800015827919",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [],
+      "manual_exports": [
+        {
+          "url": "https://wasserportal.berlin.de/",
+          "instructions": "Messstellen anhand amtlicher Kennung zuordnen; Messreihen je Station und Parameter exportieren. Keine unbestätigten Stations-IDs ableiten.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "ST",
+      "name": "BERGWITZSEE",
+      "waterbody_id": "DELW_DEST_EL03OW07-00",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [],
+      "manual_exports": [
+        {
+          "url": "https://gld.lhw-sachsen-anhalt.de/",
+          "instructions": "Seen -> Fachthema -> Expertenrecherche -> Gewässer auswählen -> Messreihen Export. Stammdaten/Geodaten separat exportieren. Download-URLs sind sitzungsgebunden.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "ST",
+      "name": "ARENDSEE",
+      "waterbody_id": "DELW_DEST_MEL06OW17-00",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [],
+      "manual_exports": [
+        {
+          "url": "https://gld.lhw-sachsen-anhalt.de/",
+          "instructions": "Seen -> Fachthema -> Expertenrecherche -> Gewässer auswählen -> Messreihen Export. Stammdaten/Geodaten separat exportieren. Download-URLs sind sitzungsgebunden.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "ST",
+      "name": "GEISELTALSEE",
+      "waterbody_id": "DELW_DEST_SAL05OW07-00",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [],
+      "manual_exports": [
+        {
+          "url": "https://gld.lhw-sachsen-anhalt.de/",
+          "instructions": "Seen -> Fachthema -> Expertenrecherche -> Gewässer auswählen -> Messreihen Export. Stammdaten/Geodaten separat exportieren. Download-URLs sind sitzungsgebunden.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "ST",
+      "name": "SUESSER SEE",
+      "waterbody_id": "DELW_DEST_SAL06OW12-00",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [],
+      "manual_exports": [
+        {
+          "url": "https://gld.lhw-sachsen-anhalt.de/",
+          "instructions": "Seen -> Fachthema -> Expertenrecherche -> Gewässer auswählen -> Messreihen Export. Stammdaten/Geodaten separat exportieren. Download-URLs sind sitzungsgebunden.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "ST",
+      "name": "HUFEISENSEE",
+      "waterbody_id": "DELW_DEST_SAL15OW13-00",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [],
+      "manual_exports": [
+        {
+          "url": "https://gld.lhw-sachsen-anhalt.de/",
+          "instructions": "Seen -> Fachthema -> Expertenrecherche -> Gewässer auswählen -> Messreihen Export. Stammdaten/Geodaten separat exportieren. Download-URLs sind sitzungsgebunden.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "SN",
+      "name": "TALSPERRE BAUTZEN",
+      "waterbody_id": "DELW_DESN_057",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/owk_steckbriefe_22/Steckbrief_SWK_DESN_057.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/ida/p/messstellen_ow",
+          "instructions": "In iDA passende Messstellen und Parameter wählen und Messreihen exportieren. Überschreitungsstatistiken sind keine Einzelmessungen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "SN",
+      "name": "TALSPERRE MALTER",
+      "waterbody_id": "DELW_DESN_067",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/owk_steckbriefe_22/Steckbrief_SWK_DESN_067.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/ida/p/messstellen_ow",
+          "instructions": "In iDA passende Messstellen und Parameter wählen und Messreihen exportieren. Überschreitungsstatistiken sind keine Einzelmessungen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "SN",
+      "name": "TALSPERRE KLINGENBERG",
+      "waterbody_id": "DELW_DESN_063",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/owk_steckbriefe_22/Steckbrief_SWK_DESN_063.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/ida/p/messstellen_ow",
+          "instructions": "In iDA passende Messstellen und Parameter wählen und Messreihen exportieren. Überschreitungsstatistiken sind keine Einzelmessungen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "SN",
+      "name": "TALSPERRE EIBENSTOCK",
+      "waterbody_id": "DELW_DESN_060",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/owk_steckbriefe_22/Steckbrief_SWK_DESN_060.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/ida/p/messstellen_ow",
+          "instructions": "In iDA passende Messstellen und Parameter wählen und Messreihen exportieren. Überschreitungsstatistiken sind keine Einzelmessungen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "SN",
+      "name": "TALSPERRE POEHL",
+      "waterbody_id": "DELW_DESN_070",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/owk_steckbriefe_22/Steckbrief_SWK_DESN_070.pdf",
+          "filename": "wrrl_steckbrief.pdf",
+          "format": "pdf",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.umwelt.sachsen.de/umwelt/infosysteme/ida/p/messstellen_ow",
+          "instructions": "In iDA passende Messstellen und Parameter wählen und Messreihen exportieren. Überschreitungsstatistiken sind keine Einzelmessungen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "MV",
+      "name": "PLAUER SEE",
+      "waterbody_id": "DELW_DEMV_2400100",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://fis-wasser-mv.de/charts/steckbriefe/lw/lw_wk.php?schema=reporting_bp3&sg=2400100",
+          "filename": "wrrl_steckbrief.html",
+          "format": "html",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.lung.mv-regierung.de/fachinformationen/wasser/Fachinformationssysteme/fis-gewaesser",
+          "instructions": "FIS Gewässer: Messstellen und Monitoringdaten je See prüfen. WRRL-Steckbriefe enthalten Bewertungen, keine vollständigen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "MV",
+      "name": "FLEESENSEE",
+      "waterbody_id": "DELW_DEMV_2500300",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://fis-wasser-mv.de/charts/steckbriefe/lw/lw_wk.php?schema=reporting_bp3&sg=2500300",
+          "filename": "wrrl_steckbrief.html",
+          "format": "html",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.lung.mv-regierung.de/fachinformationen/wasser/Fachinformationssysteme/fis-gewaesser",
+          "instructions": "FIS Gewässer: Messstellen und Monitoringdaten je See prüfen. WRRL-Steckbriefe enthalten Bewertungen, keine vollständigen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "MV",
+      "name": "KOELPINSEE",
+      "waterbody_id": "DELW_DEMV_2500200",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://fis-wasser-mv.de/charts/steckbriefe/lw/lw_wk.php?schema=reporting_bp3&sg=2500200",
+          "filename": "wrrl_steckbrief.html",
+          "format": "html",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.lung.mv-regierung.de/fachinformationen/wasser/Fachinformationssysteme/fis-gewaesser",
+          "instructions": "FIS Gewässer: Messstellen und Monitoringdaten je See prüfen. WRRL-Steckbriefe enthalten Bewertungen, keine vollständigen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "MV",
+      "name": "GOLDENSEE",
+      "waterbody_id": "DELW_DEMV_1700800",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://fis-wasser-mv.de/charts/steckbriefe/lw/lw_wk.php?schema=reporting_bp3&sg=1700800",
+          "filename": "wrrl_steckbrief.html",
+          "format": "html",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.lung.mv-regierung.de/fachinformationen/wasser/Fachinformationssysteme/fis-gewaesser",
+          "instructions": "FIS Gewässer: Messstellen und Monitoringdaten je See prüfen. WRRL-Steckbriefe enthalten Bewertungen, keine vollständigen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "MV",
+      "name": "NEUMUEHLER SEE",
+      "waterbody_id": "DELW_DEMV_2200300",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://fis-wasser-mv.de/charts/steckbriefe/lw/lw_wk.php?schema=reporting_bp3&sg=2200300",
+          "filename": "wrrl_steckbrief.html",
+          "format": "html",
+          "role": "landes_steckbrief",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "waterbody"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://www.lung.mv-regierung.de/fachinformationen/wasser/Fachinformationssysteme/fis-gewaesser",
+          "instructions": "FIS Gewässer: Messstellen und Monitoringdaten je See prüfen. WRRL-Steckbriefe enthalten Bewertungen, keine vollständigen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "TH",
+      "name": "TALSPERRE BLEILOCH 2",
+      "waterbody_id": "DELW_DETH_12-2",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://aktion-fluss.de/wp-content/uploads/Anlage_1.pdf",
+          "filename": "wrrl_alle_owk_thueringen.pdf",
+          "format": "pdf",
+          "role": "landes_gesamtbericht",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "statewide_not_filtered"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://antares.thueringen.de/workbook/w/oberflaechenwasserguete",
+          "instructions": "Oberflächenwassergüte: zugeordnete Messstellen und verfügbare Exporte prüfen. HNZ-Pegel sind keine chemischen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "TH",
+      "name": "TALSPERRE HOHENWARTE 2",
+      "waterbody_id": "DELW_DETH_10-2",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://aktion-fluss.de/wp-content/uploads/Anlage_1.pdf",
+          "filename": "wrrl_alle_owk_thueringen.pdf",
+          "format": "pdf",
+          "role": "landes_gesamtbericht",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "statewide_not_filtered"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://antares.thueringen.de/workbook/w/oberflaechenwasserguete",
+          "instructions": "Oberflächenwassergüte: zugeordnete Messstellen und verfügbare Exporte prüfen. HNZ-Pegel sind keine chemischen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "TH",
+      "name": "TALSPERRE OHRA",
+      "waterbody_id": "DELW_DETH_05",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://aktion-fluss.de/wp-content/uploads/Anlage_1.pdf",
+          "filename": "wrrl_alle_owk_thueringen.pdf",
+          "format": "pdf",
+          "role": "landes_gesamtbericht",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "statewide_not_filtered"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://antares.thueringen.de/workbook/w/oberflaechenwasserguete",
+          "instructions": "Oberflächenwassergüte: zugeordnete Messstellen und verfügbare Exporte prüfen. HNZ-Pegel sind keine chemischen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "TH",
+      "name": "TALSPERRE ZEULENRODA",
+      "waterbody_id": "DELW_DETH_09",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://aktion-fluss.de/wp-content/uploads/Anlage_1.pdf",
+          "filename": "wrrl_alle_owk_thueringen.pdf",
+          "format": "pdf",
+          "role": "landes_gesamtbericht",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "statewide_not_filtered"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://antares.thueringen.de/workbook/w/oberflaechenwasserguete",
+          "instructions": "Oberflächenwassergüte: zugeordnete Messstellen und verfügbare Exporte prüfen. HNZ-Pegel sind keine chemischen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    },
+    {
+      "state": "TH",
+      "name": "TALSPERRE HEYDA",
+      "waterbody_id": "DELW_DETH_06",
+      "selection_source": "EEA WFD2022; geprüfte SOLVE-Elbgebietsregistrierung vom 10.11.2026",
+      "assets": [
+        {
+          "url": "https://aktion-fluss.de/wp-content/uploads/Anlage_1.pdf",
+          "filename": "wrrl_alle_owk_thueringen.pdf",
+          "format": "pdf",
+          "role": "landes_gesamtbericht",
+          "target_classes": "WaterBodyAssessmentV2",
+          "scope": "statewide_not_filtered"
+        }
+      ],
+      "manual_exports": [
+        {
+          "url": "https://antares.thueringen.de/workbook/w/oberflaechenwasserguete",
+          "instructions": "Oberflächenwassergüte: zugeordnete Messstellen und verfügbare Exporte prüfen. HNZ-Pegel sind keine chemischen Messreihen.",
+          "target_classes": [
+            "MeasurementV2",
+            "ParameterV2",
+            "UnitV2",
+            "SamplingSectionV2"
+          ]
+        }
+      ]
+    }
+  ]
+}

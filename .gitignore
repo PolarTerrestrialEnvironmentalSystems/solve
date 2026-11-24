@@ -54,3 +54,13 @@ __pycache__/
 /scripts/SOLVE_multisite_code_v1_1_0/inputs/*.jsonl
 /scripts/SOLVE_multisite_code_v1_1_0/inputs/site_contexts.json
 /scripts/SOLVE_multisite_code_v1_1_0/inputs/history/
+
+# Local research snapshots, databases and deployment secrets
+/outputs/
+/tmp/
+**/runtime/
+*.backup
+*.dump
+keys.env
+postgres.env
+preview.env

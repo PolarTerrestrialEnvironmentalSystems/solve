@@ -1,0 +1,156 @@
+[
+  {
+    "group_id": "candidate_schaalsee",
+    "proposed_display_name": "Schaalsee",
+    "group_kind": "whole_lake_candidate",
+    "status": "proposal_do_not_merge_waterbody_ids",
+    "evidence_sources": [
+      "S8",
+      "S5"
+    ],
+    "members": [
+      {
+        "waterbody_id": "DELW_DEMV_2300101",
+        "name_original": "SCHAALSEE RETHWIESENTIEF",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_2300102",
+        "name_original": "SCHAALSEE ZARRENTINER BECKEN",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_2300103",
+        "name_original": "SCHAALSEE LASSAHNER SEE",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_2300104",
+        "name_original": "SCHAALSEE TECHINER SEE",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_2300105",
+        "name_original": "SCHAALSEE BORGSEE",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_2300106",
+        "name_original": "SCHAALSEE DUTZOWER SEE",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_2300107",
+        "name_original": "SCHAALSEE BERNSTORFER SEE",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DESH_0288",
+        "name_original": "SCHAALSEE  NIENDORFER BINNENSEE",
+        "selected_spatial_6states": true,
+        "reporting_state": "SH"
+      },
+      {
+        "waterbody_id": "DELW_DESH_0488",
+        "name_original": "SCHAALSEE  NORDWESTTEIL",
+        "selected_spatial_6states": false,
+        "reporting_state": "SH"
+      }
+    ],
+    "notes": "Nine official waterbody units; eight positive target-state intersections; SH northwestern unit remains outside strict spatial selection but useful group context. No union of assessments. WRRL DE5000 assignment preserved despite engineered outlet toWakenitz; not reclassified by guessedhydrology."
+  },
+  {
+    "group_id": "candidate_schweriner_see_mv",
+    "proposed_display_name": "Schweriner See (Mecklenburg-Vorpommern)",
+    "group_kind": "whole_lake_candidate",
+    "status": "proposal_do_not_merge_waterbody_ids",
+    "evidence_sources": [
+      "S9",
+      "S5"
+    ],
+    "members": [
+      {
+        "waterbody_id": "DELW_DEMV_1700101",
+        "name_original": "SCHWERINER SEE INNENSEE",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_1700103",
+        "name_original": "SCHWERINER SEE AUSSENSEE",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      }
+    ],
+    "notes": "Do not include same-named DELW_DEBB80001582849239; that is a different lake inBB."
+  },
+  {
+    "group_id": "candidate_mueritz",
+    "proposed_display_name": "Müritz",
+    "group_kind": "whole_lake_candidate",
+    "status": "proposal_do_not_merge_waterbody_ids",
+    "evidence_sources": [
+      "S10",
+      "S5"
+    ],
+    "members": [
+      {
+        "waterbody_id": "DELW_DEMV_2500101",
+        "name_original": "MUERITZ BINNENMUERITZ",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_2500102",
+        "name_original": "MUERITZ AUSSENMUERITZ",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_2500103",
+        "name_original": "MUERITZ ROEBELER BUCHT",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      },
+      {
+        "waterbody_id": "DELW_DEMV_2500104",
+        "name_original": "MUERITZ KLEINE MUERITZ",
+        "selected_spatial_6states": true,
+        "reporting_state": "MV"
+      }
+    ],
+    "notes": "Four explicit source named Müritz subbasins; not automatically include Müritzarm2590000. Whole-lake source relevance still requires waterbody-level evidence."
+  },
+  {
+    "group_id": "candidate_berliner_unterhavel",
+    "proposed_display_name": "Berliner Unterhavel (Recherchegruppe)",
+    "group_kind": "research_group_not_asserted_single_lake",
+    "status": "proposal_do_not_merge_waterbody_ids",
+    "evidence_sources": [
+      "S11",
+      "S5"
+    ],
+    "members": [
+      {
+        "waterbody_id": "DELW_DEBE_8000958359_1",
+        "name_original": "BERLINER UNTERHAVEL 1",
+        "selected_spatial_6states": true,
+        "reporting_state": "BE"
+      },
+      {
+        "waterbody_id": "DELW_DEBE_8000958359_2",
+        "name_original": "BERLINER UNTERHAVEL 2",
+        "selected_spatial_6states": true,
+        "reporting_state": "BE"
+      }
+    ],
+    "notes": "Source classifies1+2 as twoLW; do not merge with river DERW_DEBE_58_3 or rename wholeHavelasoneLake. Catchment/network group onlypendingreview."
+  }
+]

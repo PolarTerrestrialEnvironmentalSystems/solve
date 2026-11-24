@@ -1,0 +1,488 @@
+{
+  "reporting_cycle": "2022-2027",
+  "decisions": {
+    "Eckertalsperre": {
+      "eu_code": "DELW_DENI_15008",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=7363; euSurfaceWaterBodyCode=DELW_DENI_15008; surfaceWaterBodyName=ECKERTALSPERRE",
+          "reason": "No regional identifier was present in the event input for Eckertalsperre. The independent official NLWKN name and water-body identifier 15008 were matched to the exact EEA identifier DELW_DENI_15008 and name ECKERTALSPERRE; reported lake and station locations corroborate the identity."
+        },
+        {
+          "url": "https://www.nlwkn.niedersachsen.de/download/57609/Band_3_-_Leitfaden_Massnahmenplanung_Oberflaechengewaesser_Teil_B_Stehende_Gewaesser_s._auch_Anhang_Seeberichte_.pdf",
+          "locator": "PDF pages 22 and 33 (printed 21 and 32): Eckertalsperre, water-body number 15008",
+          "reason": "Independent official NLWKN confirmation of name and identifier 15008; the EEA entry DELW_DENI_15008 and reported geography corroborate the same lake."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Bergwitzsee": {
+      "eu_code": "DELW_DEST_EL03OW07-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=50177; euSurfaceWaterBodyCode=DELW_DEST_EL03OW07-00; surfaceWaterBodyName=BERGWITZSEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Kiessee Prettin": {
+      "eu_code": "DELW_DEST_EL03OW15-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=43062; euSurfaceWaterBodyCode=DELW_DEST_EL03OW15-00; surfaceWaterBodyName=KIESSEE PRETTIN",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Niegripper See": {
+      "eu_code": "DELW_DEST_HAVOW04-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=7559; euSurfaceWaterBodyCode=DELW_DEST_HAVOW04-00; surfaceWaterBodyName=NIEGRIPPER SEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Schollener See": {
+      "eu_code": "DELW_DEST_HAVOW21-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=7562; euSurfaceWaterBodyCode=DELW_DEST_HAVOW21-00; surfaceWaterBodyName=SCHOLLENER SEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Barleber See I": {
+      "eu_code": "DELW_DEST_MEL03OW21-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=43058; euSurfaceWaterBodyCode=DELW_DEST_MEL03OW21-00; surfaceWaterBodyName=BARLEBER SEE I",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Barleber See II": {
+      "eu_code": "DELW_DEST_MEL03OW22-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=43086; euSurfaceWaterBodyCode=DELW_DEST_MEL03OW22-00; surfaceWaterBodyName=BARLEBER SEE II",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Neustädter See I": {
+      "eu_code": "DELW_DEST_MEL03OW23-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=22086; euSurfaceWaterBodyCode=DELW_DEST_MEL03OW23-00; surfaceWaterBodyName=NEUSTAEDTER SEE",
+          "reason": "The input identifies MEL03OW23-00. EEA reports exactly DELW_DEST_MEL03OW23-00 as NEUSTAEDTER SEE; its polygon and the two reported stations are in northern Magdeburg. Preserve the project alias Neustädter See I separately; no name-only global match is used."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Arendsee": {
+      "eu_code": "DELW_DEST_MEL06OW17-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=21901; euSurfaceWaterBodyCode=DELW_DEST_MEL06OW17-00; surfaceWaterBodyName=ARENDSEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Alte Elbe Sandkrug": {
+      "eu_code": "DELW_DEST_MEL07OW13-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=7404; euSurfaceWaterBodyCode=DELW_DEST_MEL07OW13-00; surfaceWaterBodyName=ALTE ELBE SANDKRUG",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Alte Elbe Jerichow": {
+      "eu_code": "DELW_DEST_MEL07OW14-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=7408; euSurfaceWaterBodyCode=DELW_DEST_MEL07OW14-00; surfaceWaterBodyName=ALTE ELBE JERICHOW",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Kiessee Barby": {
+      "eu_code": "DELW_DEST_MEL07OW15-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=22087; euSurfaceWaterBodyCode=DELW_DEST_MEL07OW15-00; surfaceWaterBodyName=KIESSEE BARBY",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Geiseltalsee": {
+      "eu_code": "DELW_DEST_SAL05OW07-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=238; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW07-00; surfaceWaterBodyName=GEISELTALSEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Rattmannsdorfer Teich": {
+      "eu_code": "DELW_DEST_SAL05OW14-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=22082; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW14-00; surfaceWaterBodyName=RATTMANNSDORFER TEICH",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Wallendorfer See": {
+      "eu_code": "DELW_DEST_SAL05OW15-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=216; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW15-00; surfaceWaterBodyName=WALLENDORFER SEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Raßnitzer See": {
+      "eu_code": "DELW_DEST_SAL05OW16-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=21884; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW16-00; surfaceWaterBodyName=RASSNITZER SEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Runstedter See": {
+      "eu_code": "DELW_DEST_SAL05OW17-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=257; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW17-00; surfaceWaterBodyName=RUNSTEDTER SEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Süßer See": {
+      "eu_code": "DELW_DEST_SAL06OW12-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=50184; euSurfaceWaterBodyCode=DELW_DEST_SAL06OW12-00; surfaceWaterBodyName=SUESSER SEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Tagebausee Luckenau": {
+      "eu_code": "DELW_DEST_SAL15OW10-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=50208; euSurfaceWaterBodyCode=DELW_DEST_SAL15OW10-00; surfaceWaterBodyName=TAGEBAUSEE LUCKENAU",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Hufeisensee": {
+      "eu_code": "DELW_DEST_SAL15OW13-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=21878; euSurfaceWaterBodyCode=DELW_DEST_SAL15OW13-00; surfaceWaterBodyName=HUFEISENSEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Talsperre Wendefurth": {
+      "eu_code": "DELW_DEST_SAL17OW04-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=50183; euSurfaceWaterBodyCode=DELW_DEST_SAL17OW04-00; surfaceWaterBodyName=TS WENDEFURTH",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Rappbodetalsperre": {
+      "eu_code": "DELW_DEST_SAL17OW14-00",
+      "relation_type": "part_of",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=21813; euSurfaceWaterBodyCode=DELW_DEST_SAL17OW14-00; surfaceWaterBodyName=TS RAPPBODE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        },
+        {
+          "url": "https://lvwa.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/LVWA/LVwA/Dokumente/4_landwirtschaftumwelt/404/wasserrahmrichtlinie/entwurf_gwk_2022_2027/Gwk_oberflaechen.pdf",
+          "locator": "PDF page31, rows6108 and6109, SAL17OW14-00, TS Rappbode mit Vorsperren",
+          "reason": "The 2022-2027 official reporting unit includes the reservoir and its pre-dams. Preserve all3 physical/project lake identities; link each as part_of, not sameAs. This mapping is not valid automatically for earlier cycles."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Rappbodetalsperre/Vorsperre Hassel": {
+      "eu_code": "DELW_DEST_SAL17OW14-00",
+      "relation_type": "part_of",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=21813; euSurfaceWaterBodyCode=DELW_DEST_SAL17OW14-00; surfaceWaterBodyName=TS RAPPBODE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        },
+        {
+          "url": "https://lvwa.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/LVWA/LVwA/Dokumente/4_landwirtschaftumwelt/404/wasserrahmrichtlinie/entwurf_gwk_2022_2027/Gwk_oberflaechen.pdf",
+          "locator": "PDF page31, rows6108 and6109, SAL17OW14-00, TS Rappbode mit Vorsperren",
+          "reason": "The 2022-2027 official reporting unit includes the reservoir and its pre-dams. Preserve all3 physical/project lake identities; link each as part_of, not sameAs. This mapping is not valid automatically for earlier cycles."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Rappbodetalsperre/Vorsperre Rappbode": {
+      "eu_code": "DELW_DEST_SAL17OW14-00",
+      "relation_type": "part_of",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=21813; euSurfaceWaterBodyCode=DELW_DEST_SAL17OW14-00; surfaceWaterBodyName=TS RAPPBODE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        },
+        {
+          "url": "https://lvwa.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/LVWA/LVwA/Dokumente/4_landwirtschaftumwelt/404/wasserrahmrichtlinie/entwurf_gwk_2022_2027/Gwk_oberflaechen.pdf",
+          "locator": "PDF page31, rows6108 and6109, SAL17OW14-00, TS Rappbode mit Vorsperren",
+          "reason": "The 2022-2027 official reporting unit includes the reservoir and its pre-dams. Preserve all3 physical/project lake identities; link each as part_of, not sameAs. This mapping is not valid automatically for earlier cycles."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Königsauer See": {
+      "eu_code": "DELW_DEST_SAL20OW08-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=21872; euSurfaceWaterBodyCode=DELW_DEST_SAL20OW08-00; surfaceWaterBodyName=KOENIGSAUER SEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Concordiasee": {
+      "eu_code": "DELW_DEST_SAL20OW09-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=21814; euSurfaceWaterBodyCode=DELW_DEST_SAL20OW09-00; surfaceWaterBodyName=CONCORDIASEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Muldestausee": {
+      "eu_code": "DELW_DEST_VM02OW02-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=21808; euSurfaceWaterBodyCode=DELW_DEST_VM02OW02-00; surfaceWaterBodyName=MULDESTAUSEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Gremminer See": {
+      "eu_code": "DELW_DEST_VM02OW06-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=50173; euSurfaceWaterBodyCode=DELW_DEST_VM02OW06-00; surfaceWaterBodyName=GREMMINER SEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Gröberner See": {
+      "eu_code": "DELW_DEST_VM02OW07-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=50168; euSurfaceWaterBodyCode=DELW_DEST_VM02OW07-00; surfaceWaterBodyName=GROEBERNER SEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Großer Goitzschesee": {
+      "eu_code": "DELW_DEST_VM02OW12-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=203; euSurfaceWaterBodyCode=DELW_DEST_VM02OW12-00; surfaceWaterBodyName=GROSSER GOITZSCHESEE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Landschaftssee Köckern": {
+      "eu_code": "DELW_DEST_VM02OW15-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=7391; euSurfaceWaterBodyCode=DELW_DEST_VM02OW15-00; surfaceWaterBodyName=LANDSCHAFTSSEE KOECKERN",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Förstergrube": {
+      "eu_code": "DELW_DEST_VM02OW16-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=199; euSurfaceWaterBodyCode=DELW_DEST_VM02OW16-00; surfaceWaterBodyName=FOERSTERGRUBE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    },
+    "Roitzscher Grube": {
+      "eu_code": "DELW_DEST_VM02OW17-00",
+      "relation_type": "same_water_body",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2022_SurfaceWaterBody_WM/MapServer/4",
+          "locator": "OBJECTID=7382; euSurfaceWaterBodyCode=DELW_DEST_VM02OW17-00; surfaceWaterBodyName=ROITZSCHER GRUBE",
+          "reason": "Exact existing regional WRRL identifier occurs as the suffix of the official EEA EU water-body identifier; the reported name agrees including normal German transliteration/abbreviation. This is a reporting-unit link, not a claim about every event or station."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "2022-2027 only; not historical"
+    }
+  },
+  "note": "33 project lake identities map to31 official reporting units; no merge of project lake records. Reviewed by assistant from primary sources, human review can amend."
+}

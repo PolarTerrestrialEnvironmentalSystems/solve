@@ -1,0 +1,551 @@
+{
+  "reporting_cycle": "2009-2015",
+  "report_year": 2010,
+  "decisions": {
+    "Eckertalsperre": {
+      "eu_code": "DELW_DENI_15008",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=21822; cYear=2010; euSurfaceWaterBodyCode=DELW_DENI_15008; surfaceWaterBodyName=ECKERTALSPERRE",
+          "reason": "The first-cycle EEA lake polygon explicitly reports ECKERTALSPERRE as DELW_DENI_15008, with the expected reservoir location. No WRRL code was present in the original project event input; this is an explicit official-source review."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Bergwitzsee": {
+      "eu_code": "DELW_DEST_EL03OW07-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=200; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_EL03OW07-00; surfaceWaterBodyName=BERGWITZSEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Kiessee Prettin": {
+      "eu_code": "DELW_DEST_EL03OW15-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7379; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_EL03OW15-00; surfaceWaterBodyName=KIESSEE PRETTIN",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Niegripper See": {
+      "eu_code": "DELW_DEST_HAVOW04-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=22070; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_HAVOW04-00; surfaceWaterBodyName=NIEGRIPPER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Schollener See": {
+      "eu_code": "DELW_DEST_HAVOW21-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "MultiPolygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=21918; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_HAVOW21-00; surfaceWaterBodyName=SCHOLLENER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Barleber See I": {
+      "eu_code": "DELW_DEST_MEL03OW21-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7416; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_MEL03OW21-00; surfaceWaterBodyName=BARLEBER SEE I",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Barleber See II": {
+      "eu_code": "DELW_DEST_MEL03OW22-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=234; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_MEL03OW22-00; surfaceWaterBodyName=BARLEBER SEE II",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Neustädter See I": {
+      "eu_code": "DELW_DEST_MEL03OW23-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7434; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_MEL03OW23-00; surfaceWaterBodyName=NEUSTAEDTER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Arendsee": {
+      "eu_code": "DELW_DEST_MEL06OW17-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=22078; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_MEL06OW17-00; surfaceWaterBodyName=ARENDSEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Alte Elbe Sandkrug": {
+      "eu_code": "DELW_DEST_MEL07OW13-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=50209; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_MEL07OW13-00; surfaceWaterBodyName=ALTE ELBE SANDKRUG",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Alte Elbe Jerichow": {
+      "eu_code": "DELW_DEST_MEL07OW14-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=50180; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_MEL07OW14-00; surfaceWaterBodyName=ALTE ELBE JERICHOW",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Kiessee Barby": {
+      "eu_code": "DELW_DEST_MEL07OW15-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=21894; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_MEL07OW15-00; surfaceWaterBodyName=KIESSEE BARBY",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Geiseltalsee": {
+      "eu_code": "DELW_DEST_SAL05OW07-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=21864; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW07-00; surfaceWaterBodyName=GEISELTALSEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Rattmannsdorfer Teich": {
+      "eu_code": "DELW_DEST_SAL05OW14-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=21811; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW14-00; surfaceWaterBodyName=RATTMANNSDORFER TEICH",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Wallendorfer See": {
+      "eu_code": "DELW_DEST_SAL05OW15-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=50181; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW15-00; surfaceWaterBodyName=WALLENDORFER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Raßnitzer See": {
+      "eu_code": "DELW_DEST_SAL05OW16-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=21818; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW16-00; surfaceWaterBodyName=RASSNITZER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Runstedter See": {
+      "eu_code": "DELW_DEST_SAL05OW17-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7464; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL05OW17-00; surfaceWaterBodyName=RUNSTEDTER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Süßer See": {
+      "eu_code": "DELW_DEST_SAL06OW12-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7417; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL06OW12-00; surfaceWaterBodyName=SUESSER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Tagebausee Luckenau": {
+      "eu_code": "DELW_DEST_SAL15OW10-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7426; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL15OW10-00; surfaceWaterBodyName=TAGEBAUSEE LUCKENAU",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Hufeisensee": {
+      "eu_code": "DELW_DEST_SAL15OW13-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7437; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL15OW13-00; surfaceWaterBodyName=HUFEISENSEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Talsperre Wendefurth": {
+      "eu_code": "DELW_DEST_SAL17OW04-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7427; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL17OW04-00; surfaceWaterBodyName=TS WENDEFURTH",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Rappbodetalsperre": {
+      "eu_code": "DELW_DEST_SAL17OW14-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=21860; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL17OW14-00; surfaceWaterBodyName=TS RAPPBODE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        },
+        {
+          "url": "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/SAL17_db_web.pdf",
+          "locator": "PDF page5: (Rappbode) TS Rappbode, DEST_SAL17OW14-00; separate pre-dams on pages4 and7",
+          "reason": "The first-cycle report separates main reservoir and both pre-dams. Do not reuse the 2022-2027 combined reporting-unit mapping."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Rappbodetalsperre/Vorsperre Hassel": {
+      "eu_code": "DEST_SAL17OW18-00",
+      "relation_type": "same_water_body",
+      "expected_category": "RW",
+      "expected_geometry_type": "MultiPoint",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/2",
+          "locator": "OBJECTID=5393; cYear=2010; euSurfaceWaterBodyCode=DEST_SAL17OW18-00; surfaceWaterBodyName=SAL17OW18-00",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        },
+        {
+          "url": "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/SAL17_db_web.pdf",
+          "locator": "PDF page 7: Hauptgewaesser, OWK-Code WRRL, Gewaesser-Kategorie FS; first plan 22.12.2009 to 22.12.2015",
+          "reason": "The original state report explicitly maps this named pre-dam to the historical DEST_SAL17OW13-00 or DEST_SAL17OW18-00 identifier. EEA records the reporting category RW and only a representative MultiPoint; preserve both without converting to a lake polygon."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Rappbodetalsperre/Vorsperre Rappbode": {
+      "eu_code": "DEST_SAL17OW13-00",
+      "relation_type": "same_water_body",
+      "expected_category": "RW",
+      "expected_geometry_type": "MultiPoint",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/2",
+          "locator": "OBJECTID=5391; cYear=2010; euSurfaceWaterBodyCode=DEST_SAL17OW13-00; surfaceWaterBodyName=SAL17OW13-00",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        },
+        {
+          "url": "https://lhw.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LHW/DownloadBereich/Gew-bericht_OW_2005_2008/SAL17_db_web.pdf",
+          "locator": "PDF page 4: Hauptgewaesser, OWK-Code WRRL, Gewaesser-Kategorie FS; first plan 22.12.2009 to 22.12.2015",
+          "reason": "The original state report explicitly maps this named pre-dam to the historical DEST_SAL17OW13-00 or DEST_SAL17OW18-00 identifier. EEA records the reporting category RW and only a representative MultiPoint; preserve both without converting to a lake polygon."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Königsauer See": {
+      "eu_code": "DELW_DEST_SAL20OW08-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7449; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL20OW08-00; surfaceWaterBodyName=KOENIGSAUER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Concordiasee": {
+      "eu_code": "DELW_DEST_SAL20OW09-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=21877; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_SAL20OW09-00; surfaceWaterBodyName=CONCORDIASEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Muldestausee": {
+      "eu_code": "DELW_DEST_VM02OW02-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=50171; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_VM02OW02-00; surfaceWaterBodyName=MULDESTAUSEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Gremminer See": {
+      "eu_code": "DELW_DEST_VM02OW06-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7375; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_VM02OW06-00; surfaceWaterBodyName=GREMMINER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Gröberner See": {
+      "eu_code": "DELW_DEST_VM02OW07-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=7377; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_VM02OW07-00; surfaceWaterBodyName=GROEBERNER SEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Großer Goitzschesee": {
+      "eu_code": "DELW_DEST_VM02OW12-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=50169; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_VM02OW12-00; surfaceWaterBodyName=GROSSER GOITZSCHESEE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Landschaftssee Köckern": {
+      "eu_code": "DELW_DEST_VM02OW15-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=43032; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_VM02OW15-00; surfaceWaterBodyName=LANDSCHAFTSSEE KOECKERN",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Förstergrube": {
+      "eu_code": "DELW_DEST_VM02OW16-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=50176; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_VM02OW16-00; surfaceWaterBodyName=FOERSTERGRUBE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    },
+    "Roitzscher Grube": {
+      "eu_code": "DELW_DEST_VM02OW17-00",
+      "relation_type": "same_water_body",
+      "expected_category": "LW",
+      "expected_geometry_type": "Polygon",
+      "evidence": [
+        {
+          "url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7",
+          "locator": "OBJECTID=21866; cYear=2010; euSurfaceWaterBodyCode=DELW_DEST_VM02OW17-00; surfaceWaterBodyName=ROITZSCHER GRUBE",
+          "reason": "The selected first-cycle row itself verifies the official identifier and reported name; transliterated German names and TS abbreviation were reviewed. This identifies the reporting unit for this cycle, not the temporal occurrence or correctness of each linked event."
+        }
+      ],
+      "reviewed_by": "source-based assistant review",
+      "reviewed_at": "2026-10-31",
+      "temporal_scope": "First RBMP 2009/2010-2015 reporting identity only; does not date any event or assert historical shoreline geometry."
+    }
+  },
+  "geometry_note": "EEA reference geometries can have been updated from later-cycle geometries for identical objects. MultiPoint geometry of the two historical pre-dam records is representative only.",
+  "station_note": "2010-reference monitoring-site rows contain later revisions and reported main-reservoir foreign keys. Preserve those exact references rather than forcing stations onto the historically separate pre-dam IDs."
+}

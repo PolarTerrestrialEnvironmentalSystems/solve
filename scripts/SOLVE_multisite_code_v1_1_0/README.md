@@ -1,9 +1,35 @@
-# Blablador integration — local revision 1.6.1
+# SOLVE: Quellenrecherche mit Blablador und optionaler Websuche
+
+Die **Elbe-Kampagne vom 10.11.2026 (Crawler 1.8.2)** ergänzt ein amtliches Register mit Seen und
+Flussabschnitten für sechs Bundesländer, vorab geprüfte Startquellen und einen
+Linux-Launcher für 30 Worker. Die eigentliche Startlink-Auswahl wird bei dieser
+Kampagne übersprungen. Neue Kampagnen verwenden standardmäßig **keine Such-API**:
+Vorprüfung, Inhaltsbewertung und Linkverfolgung bleiben aktiv; ein Serper-Schlüssel
+ist dafür nicht erforderlich. `run --search-provider none` schaltet die Such-APIs
+auch für bereits vorbereitete Workspaces ab, ohne deren Profile umzuschreiben.
+Zusätzliche Websuche lässt sich mit `--search-provider serper` einschalten.
+
+Ab 1.8.2 setzt der Parallelstarter Gruppen nach `review_api_errors` oder
+`preflight_api_errors` automatisch fort: gespeicherter Stand, zunächst 60 Sekunden
+Pause, bei Wiederholung bis zu 15 Minuten. Strg+C beendet auch wartende
+Wiederaufnahmen. `--no-auto-retry-api` schaltet die Automatik ab.
+
+- [Linux-Start, Schlüssel, Logs und Fortsetzen](ELBE_LINUX.md)
+- [Gewässerlisten nach Bundesland sowie See/Fluss](inputs/elbe_20261110/catalog/README.md)
+- [Startquellen-Abdeckung und verbleibende Defizite](inputs/elbe_20261110/SEED_COVERAGE.md)
+- [Anklickbare Startlinks je See und Bundesland](inputs/elbe_20261110/startlinks/README.md)
+
+`start-elbe-linux.sh` ist der Einstieg für diese Kampagne. Die bisherigen
+Arendsee- und 33-Seen-Starter bleiben separat nutzbar; sie wechseln nicht
+automatisch auf das Elbe-Register. Die nachgelagerte Ereignisextraktion und
+Graphverarbeitung liegt unter [`solve-kg/`](../../solve-kg/README.md).
+
+## Historische Dokumentation: Revision 1.6.1
 
 1.6.1 adds safe response diagnostics and bounded smaller-batch retries for
 malformed start-link reviews. Existing successful decisions remain reusable.
 
-**Current setup:** the standard starter researches **Arendsee only**, using
+**Setup of revision 1.6.1:** the standard starter researches **Arendsee only**, using
 **Serper instead of SearXNG**. Before downloading web search results, Blablador
 selects up to 20 suitable entry URLs, excluding tourism/navigation and uncertain
 candidates, and replenishes the pool through additional pages and queries within

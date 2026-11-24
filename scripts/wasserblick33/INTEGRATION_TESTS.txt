@@ -1,0 +1,69 @@
+PostgreSQL / PostGIS integration tests
+====================================
+
+These tests require an isolated PostgreSQL database whose name begins with
+solve33_test. They never use SOLVE_DATABASE_URL, the application's .env, an
+implicit user-name database, or an existing prototype database.
+
+Prerequisites:
+- Python dependencies from requirements.txt.
+- An explicitly created, disposable PostgreSQL database with PostGIS available.
+- A finished version-1 bundle containing the actual events and official data.
+- The test user can CREATE SCHEMA and CREATE EXTENSION postgis (or PostGIS has
+  already been installed in the test database).
+
+Set SOLVE33_TEST_DATABASE_URL to the private test connection string, and
+SOLVE33_TEST_BUNDLE to the absolute bundle.json path. The test database name
+must start solve33_test. Do not put credentials into committed shell scripts,
+log captures or documentation. The parent task's temporary PostgreSQL uses
+localhost port 55439, separate from the project Compose port 55433.
+
+Run from the project folder:
+
+  python -m unittest discover -s tests -p test_database_integration.py -v
+
+Without both environment variables, the suite is skipped before contacting
+any database. With a non-test database name, it refuses before connecting.
+Each test creates a randomly named solve33_it_* schema and removes only that
+schema on completion. It does not drop databases or modify other schemas.
+
+Tests cover:
+- Actual bundle row counts, validated foreign keys, PostGIS SRID/validity.
+- Temporal views preserve every reported version and distinguish report_year /
+  reporting_cycle from the source acquisition timestamp retrieved_at.
+- Exact same-bundle import twice, with matching hashes and no duplication.
+- Rejection of an invented event-to-lake foreign key.
+- Topologically invalid polygon and rollback of the entire fresh schema.
+- Database-level bounds checking against projected coordinates mislabeled WGS84.
+- Refusal of a changed bundle in an existing schema; prior data remains intact.
+- Detection of a missing row without silently repairing the snapshot.
+- Refusal to adopt an unrelated preexisting schema; sentinel table preserved.
+
+Compose review notes:
+- postgres_data is mounted at /var/lib/postgresql as required by the selected
+  PostgreSQL 18 image layout; Neo4j data and logs use separate named volumes.
+- Services bind only to 127.0.0.1:55433, 7475 and 7688 on the host.
+- The tools profile reaches postgres:5432 and neo4j:7687 on the Compose network.
+- SOLVE33_DATA_DIR is mounted at /data. CLI paths inside that container must use
+  /data/... rather than a Windows drive path or an unrelated host path.
+- Dockerfile copies only Python/JSON/SQL and dependency manifests, not .env.
+  Keep .dockerignore excluding .env and data to avoid sending them in build context.
+- init_env.py generates 64-character hexadecimal passwords. These are safe in
+  the PostgreSQL URI used by Compose. If manually replacing a password with
+  punctuation such as @, /, # or %, URI percent-encoding must be handled; a raw
+  password must not simply be interpolated into a connection URI.
+- Credentials initialize NEW named volumes. Editing .env does not reset the
+  password of an already initialized PostgreSQL or Neo4j data volume.
+- tools runs as UID 10001. Read-only input bundles must be readable by that UID;
+  commands that write /data require suitable permissions on the mounted folder.
+- tools waits for PostgreSQL health. Neo4j dependency waits only for startup;
+  wait for the Neo4j startup message before its import CLI if it is not yet ready.
+
+Compose commands (after python init_env.py):
+
+  docker compose up -d postgres neo4j
+  docker compose --profile tools run --rm tools python pg_import.py --bundle /data/bundle.json --validate-only
+  docker compose --profile tools run --rm tools python pg_import.py --bundle /data/bundle.json
+
+These notes do not claim that Docker was available or that a live integration
+test passed. Record the actual test result from the configured isolated server.

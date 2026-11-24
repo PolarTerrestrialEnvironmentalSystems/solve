@@ -1,0 +1,15 @@
+certifi==2026.10.23
+charset-normalizer==3.5.2
+idna==3.20
+neo4j==6.4.1
+numpy==2.5.4
+psycopg==3.3.6
+psycopg-binary==3.3.6
+pyproj==3.8.0
+python-dotenv==1.2.4
+pytz==2026.6
+requests==2.34.2
+shapely==2.2.0
+typing_extensions==4.16.0
+tzdata==2026.6
+urllib3==2.8.0

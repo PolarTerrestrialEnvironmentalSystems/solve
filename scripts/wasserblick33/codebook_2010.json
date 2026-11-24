@@ -1,0 +1,157 @@
+{
+  "report_year": 2010,
+  "domains": {
+    "swEcologicalStatusOrPotentialValue": {
+      "values": {
+        "1": "High",
+        "2": "Good",
+        "Unknown": "Unknown",
+        "3": "Moderate",
+        "4": "Poor",
+        "5": "Bad"
+      },
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7?f=json",
+      "locator": "drawingInfo.renderer.uniqueValueInfos; field1=swEcologicalStatusOrPotentialValue",
+      "verified_at": "2026-10-31",
+      "field_alias": "swEcologicalStatusOrPotentialValue",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "qeStatusOrPotentialValue": {
+      "values": {
+        "1": "High",
+        "2": "Good",
+        "Unknown": "Unknowns",
+        "3": "Moderate",
+        "4": "Poor",
+        "5": "Bad"
+      },
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "drawingInfo.renderer.uniqueValueInfos; field1=qeStatusOrPotentialValue",
+      "verified_at": "2026-10-31",
+      "field_alias": "qeStatusOrPotentialValue",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "swChemicalStatusValue": {
+      "values": {
+        "2": "Good",
+        "Unknown": "Unknown",
+        "3": "Failing to achieve good"
+      },
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/21?f=json",
+      "locator": "drawingInfo.renderer.uniqueValueInfos; field1=swChemicalStatusValue",
+      "verified_at": "2026-10-31",
+      "field_alias": "swChemicalStatusValue",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "swChemicalStatusValueWithoutUPBT": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_SurfaceWaterBody_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero."
+    },
+    "QE1": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE1_-_Biological_quality_elements",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE1_1": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE1-1_-_Phytoplankton",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE1_2": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE1-2_-_Other_aquatic_flora",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE1_2_1": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE1-2-1_-_Macroalgae",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE1_2_2": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE1-2-2_-_Angiosperms",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE1_2_3": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE1-2-3_-_Macrophytes",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE1_2_4": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE1-2-4_-_Phytobenthos",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE1_3": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE1-3_-_Benthic_invertebrates",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE1_4": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE1-4_-_Fish",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE2": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE2_-_Hydromorphological_quality_elements",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE3": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE3_-_Chemical_and_physico-chemical_quality_elements",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE3_1": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE3-1_-_General_parameters",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    },
+    "QE3_3": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json",
+      "locator": "Source field retained; field domain is null",
+      "note": "No separate verified code domain in inspected layer. Preserve raw value; do not infer labels or replace unknown/Unpopulated with zero.",
+      "field_alias": "QE3-3_-_River_Basin_Specific_Pollutants",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2010_QualityElements_WM/MapServer/7?f=json"
+    }
+  }
+}

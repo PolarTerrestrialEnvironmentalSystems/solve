@@ -1,0 +1,456 @@
+{
+  "domains": {
+    "swEcologicalStatusOrPotentialValue": {
+      "values": {
+        "1": "High",
+        "2": "Good",
+        "Unknown": "Unknown",
+        "3": "Moderate",
+        "4": "Poor",
+        "5": "Bad"
+      },
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_SurfaceWaterBody_WM/MapServer/4?f=pjson",
+      "locator": "drawingInfo.renderer.uniqueValueInfos; value->label",
+      "verified_at": "2026-10-31"
+    },
+    "swChemicalStatusValue": {
+      "values": {
+        "2": "Good",
+        "Unknown": "Unknown",
+        "3": "Failing to achieve good"
+      },
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_SurfaceWaterBody_WM/MapServer/11?f=pjson",
+      "locator": "drawingInfo.renderer.uniqueValueInfos; value->label",
+      "verified_at": "2026-10-31"
+    },
+    "swChemicalStatusValueWithoutUPBT": {
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_SurfaceWaterBody_WM/MapServer/4?f=pjson",
+      "locator": "fields[name=swChemicalStatusValueWithoutUPBT] has domain=null",
+      "note": "Raw values retained; no separate confirmed code domain available in inspected service. Do not label by assuming the scale from a different field."
+    },
+    "qeStatusOrPotentialValue": {
+      "values": {
+        "1": "High",
+        "2": "Good",
+        "Unknown": "Unknowns",
+        "3": "Moderate",
+        "4": "Poor",
+        "5": "Bad"
+      },
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "locator": "drawingInfo.renderer.uniqueValueInfos; field1=qeStatusOrPotentialValue",
+      "verified_at": "2026-10-31",
+      "note": "This service aggregate legend is not applied to individual component fields."
+    },
+    "QE1": {
+      "field_alias": "QE1_-_Biological_quality_elements",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE1].alias",
+      "verified_at": "2026-10-31",
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "locator": "fields[name=QE1].domain=null",
+      "note": "Service aggregate field absent from the inspected StatusQE_Enum. Preserve raw values; component reporting rules are not automatically applied to this aggregate."
+    },
+    "QE1_1": {
+      "field_alias": "QE1-1_-_Phytoplankton",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE1_1].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Moderate status or potential",
+        "4": "Poor status or potential",
+        "5": "Bad status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE1-1 - Phytoplankton",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE1_2": {
+      "field_alias": "QE1-2_-_Other_aquatic_flora",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE1_2].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Moderate status or potential",
+        "4": "Poor status or potential",
+        "5": "Bad status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE1-2 - Other aquatic flora",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE1_2_1": {
+      "field_alias": "QE1-2-1_-_Macroalgae",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE1_2_1].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Moderate status or potential",
+        "4": "Poor status or potential",
+        "5": "Bad status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE1-2-1 - Macroalgae",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE1_2_2": {
+      "field_alias": "QE1-2-2_-_Angiosperms",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE1_2_2].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Moderate status or potential",
+        "4": "Poor status or potential",
+        "5": "Bad status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE1-2-2 - Angiosperms",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE1_2_3": {
+      "field_alias": "QE1-2-3_-_Macrophytes",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE1_2_3].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Moderate status or potential",
+        "4": "Poor status or potential",
+        "5": "Bad status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE1-2-3 - Macrophytes",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE1_2_4": {
+      "field_alias": "QE1-2-4_-_Phytobenthos",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE1_2_4].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Moderate status or potential",
+        "4": "Poor status or potential",
+        "5": "Bad status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE1-2-4 - Phytobenthos",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE1_3": {
+      "field_alias": "QE1-3_-_Benthic_invertebrates",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE1_3].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Moderate status or potential",
+        "4": "Poor status or potential",
+        "5": "Bad status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE1-3 - Benthic invertebrates",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE1_4": {
+      "field_alias": "QE1-4_-_Fish",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE1_4].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Moderate status or potential",
+        "4": "Poor status or potential",
+        "5": "Bad status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE1-4 - Fish",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE2": {
+      "field_alias": "QE2_-_Hydromorphological_quality_elements",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE2].alias",
+      "verified_at": "2026-10-31",
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "locator": "fields[name=QE2].domain=null",
+      "note": "Service aggregate field absent from the inspected StatusQE_Enum. Preserve raw values; component reporting rules are not automatically applied to this aggregate."
+    },
+    "QE2_1": {
+      "field_alias": "QE2-1_-_Hydrological_or_tidal_regime",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE2_1].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE2-1 - Hydrological or tidal regime",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE2_2": {
+      "field_alias": "QE2-2_-_River_continuity_conditions",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE2_2].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE2-2 - River continuity conditions",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE2_3": {
+      "field_alias": "QE2-3_-_Morphological_conditions",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE2_3].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE2-3 - Morphological conditions",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE3": {
+      "field_alias": "QE3_-_Chemical_and_physico-chemical_quality_elements",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3].alias",
+      "verified_at": "2026-10-31",
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "locator": "fields[name=QE3].domain=null",
+      "note": "Service aggregate field absent from the inspected StatusQE_Enum. Preserve raw values; component reporting rules are not automatically applied to this aggregate."
+    },
+    "QE3_1": {
+      "field_alias": "QE3-1_-_General_parameters",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_1].alias",
+      "verified_at": "2026-10-31",
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "locator": "fields[name=QE3_1].domain=null",
+      "note": "Service aggregate field absent from the inspected StatusQE_Enum. Preserve raw values; component reporting rules are not automatically applied to this aggregate."
+    },
+    "QE3_1_1": {
+      "field_alias": "QE3-1-1_-_Transparency_conditions",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_1_1].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE3-1-1 - Transparency conditions",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE3_1_2": {
+      "field_alias": "QE3-1-2_-_Thermal_conditions",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_1_2].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE3-1-2 - Thermal conditions",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE3_1_3": {
+      "field_alias": "QE3-1-3_-_Oxygenation_conditions",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_1_3].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE3-1-3 - Oxygenation conditions",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE3_1_4": {
+      "field_alias": "QE3-1-4_-_Salinity_conditions",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_1_4].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE3-1-4 - Salinity conditions",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE3_1_5": {
+      "field_alias": "QE3-1-5_-_Acidification_status",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_1_5].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE3-1-5 - Acidification status",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE3_1_6": {
+      "field_alias": "QE3-1-6_-_Nutrient_conditions",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_1_6].alias",
+      "verified_at": "2026-10-31",
+      "values": {},
+      "source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "locator": "fields[name=QE3_1_6].domain=null",
+      "note": "Service aggregate field absent from the inspected StatusQE_Enum. Preserve raw values; component reporting rules are not automatically applied to this aggregate."
+    },
+    "QE3_1_6_1": {
+      "field_alias": "QE3-1-6-1_-_Nitrogen_conditions",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_1_6_1].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE3-1-6-1 - Nitrogen conditions",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE3_1_6_2": {
+      "field_alias": "QE3-1-6-2_-_Phosphorus_conditions",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_1_6_2].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE3-1-6-2 - Phosphorus Conditions",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    },
+    "QE3_3": {
+      "field_alias": "QE3-3_-_River_Basin_Specific_Pollutants",
+      "field_alias_source_url": "https://water.discomap.eea.europa.eu/arcgis/rest/services/WISE_WFD/WFD2016_QualityElements_WM/MapServer/4?f=pjson",
+      "field_alias_locator": "fields[name=QE3_3].alias",
+      "verified_at": "2026-10-31",
+      "values": {
+        "1": "High status or maximum potential",
+        "2": "Good status or potential",
+        "3": "Less than good status or potential"
+      },
+      "source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/SWB_2016.xsd",
+      "locator": "complexType QualityElement / element qeStatusOrPotentialValue / annotation/documentation",
+      "reported_component": "QE3-3 - River Basin Specific Pollutants",
+      "component_source_url": "https://dd.eionet.europa.eu/schemas/WFD2016/WFDCommon_2016.xsd",
+      "component_locator": "simpleType StatusQE_Enum / restriction / enumeration",
+      "source_sha256": "32129184cc8212c64de33927ddef8ffcc45e5f2dda0251a6fd20fdbfeb112848",
+      "note": "Only numeric codes verified for this explicitly enumerated reporting component are labelled. Literal None, Unpopulated, Inapplicable and Unknown stay raw and are not substituted with another category. Codes 4 and 5 are not valid for QE2/QE3."
+    }
+  },
+  "reporting_cycle": "2016-2021"
+}

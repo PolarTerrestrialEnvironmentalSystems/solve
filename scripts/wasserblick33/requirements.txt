@@ -1,0 +1,6 @@
+psycopg[binary]>=3.2,<4
+python-dotenv>=1.0,<2
+neo4j>=5.28,<7
+requests>=2.32,<3
+shapely>=2,<3
+pyproj>=3,<4

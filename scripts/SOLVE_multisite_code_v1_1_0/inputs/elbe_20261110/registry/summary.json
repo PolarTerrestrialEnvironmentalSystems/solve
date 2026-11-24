@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-10",
+  "scope_filter": "countryCode='DE' AND euRBDCode='DE5000'",
+  "target_states": [
+    "BB",
+    "BE",
+    "MV",
+    "SN",
+    "ST",
+    "TH"
+  ],
+  "attribute_counts": {
+    "2": 2724,
+    "3": 0,
+    "4": 362
+  },
+  "geometry_completeness": {
+    "2": {
+      "count": 2724,
+      "unique_objectids": 2724,
+      "ids_equal_attributes_and_geometry": true
+    },
+    "4": {
+      "count": 362,
+      "unique_objectids": 362,
+      "ids_equal_attributes_and_geometry": true
+    }
+  },
+  "raw_layer3_ids": {
+    "objectIdFieldName": "OBJECTID",
+    "objectIds": null
+  },
+  "unique_ids": 3086,
+  "selected_reporting_count": 2528,
+  "selected_spatial_count": 2554,
+  "selected_spatial_by_type": {
+    "lake": 343,
+    "river": 2211
+  },
+  "spatial_additions_count": 26,
+  "reporting_not_spatial_count": 0,
+  "per_reporting_state": {
+    "BB": {
+      "lake": 156,
+      "river": 1068
+    },
+    "BE": {
+      "lake": 12,
+      "river": 22
+    },
+    "BY": {
+      "river": 5
+    },
+    "MV": {
+      "lake": 104,
+      "river": 194
+    },
+    "NI": {
+      "river": 18
+    },
+    "SH": {
+      "lake": 1,
+      "river": 2
+    },
+    "SN": {
+      "lake": 29,
+      "river": 528
+    },
+    "ST": {
+      "lake": 30,
+      "river": 289
+    },
+    "TH": {
+      "lake": 11,
+      "river": 85
+    }
+  },
+  "per_spatial_state_memberships_nonadditive": {
+    "BB": {
+      "lake": 174,
+      "river": 1115
+    },
+    "BE": {
+      "lake": 16,
+      "river": 29
+    },
+    "MV": {
+      "lake": 108,
+      "river": 212
+    },
+    "SN": {
+      "river": 558,
+      "lake": 29
+    },
+    "ST": {
+      "river": 346,
+      "lake": 30
+    },
+    "TH": {
+      "river": 114,
+      "lake": 12
+    }
+  },
+  "invalid_geometries_repaired": [],
+  "multistate_candidates": 242,
+  "transnational_yes": 17,
+  "warning": "Source line/polygon geometry and BKG VG250 are generalized differently; boundary intersections are candidates, not legal boundary verdicts. Preserve small overlaps for human review. Reporting state is not spatial state."
+}
