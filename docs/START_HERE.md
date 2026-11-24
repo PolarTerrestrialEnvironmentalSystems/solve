@@ -37,6 +37,8 @@ Pilot-Download noch keinen vollständigen Knowledgegraphen.
 - [Branch holen und auf Linux starten](LINUX_START.md)
 - [Vollständiges Dateiverzeichnis der neu gebündelten Skripte](SCRIPT_FILES.md)
 - [Klassenmodell mit Diagrammen als PDF](model/SOLVE_Klassenmodell_Diagramme_20261119.pdf)
+- [Datenquellen für sechs Bundesländer](model/Seen_Datenquellen_6_Bundeslaender_Brandenburg_KG.pdf)
+- [Vertiefter Seenvergleich und Schnittstellenanalyse vom 09.11.2026](model/Seenvergleich_5_Bundeslaender_Schnittstellen_KG_20261109.pdf)
 
 ## Was im Git liegt und was nicht
 
@@ -47,7 +49,9 @@ Beispieldaten bleiben Bestandteil der geerbten Repository-Historie.
 
 Neu hinzugefügte Inhalte enthalten keine `.env`-Zugangsdaten, Datenbank-Dumps,
 Arbeitsdatenbanken, heruntergeladenen Forschungs-PDFs oder Python-Umgebungen.
-Die Modell-PDF ist eine ausdrücklich mitgelieferte Dokumentation.
+Die Modell-PDF und die beiden Bundesländer-Analysen sind ausdrücklich
+mitgelieferte Dokumentation. Die Analysen dokumentieren den damaligen
+Recherchestand; ihre Aufnahme ist keine erneute Prüfung der Datenportale.
 
 Nicht alle historischen Skripte sind direkt auf Linux ausführbar. Lokale
 Pfadbindungen sind dokumentiert und wurden nicht ohne Datenbanktests umgebaut.
